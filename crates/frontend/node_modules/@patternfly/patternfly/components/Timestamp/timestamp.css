@@ -1,0 +1,34 @@
+.pf-v5-c-timestamp {
+  --pf-v5-c-timestamp--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-timestamp--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-timestamp--OutlineOffset: 0.1875rem;
+  --pf-v5-c-timestamp--m-help-text--TextDecorationLine: underline;
+  --pf-v5-c-timestamp--m-help-text--TextDecorationStyle: dashed;
+  --pf-v5-c-timestamp--m-help-text--TextDecorationThickness: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-timestamp--m-help-text--TextUnderlineOffset: 0.25rem;
+  --pf-v5-c-timestamp--m-help-text--TextDecorationColor: var(--pf-v5-global--BorderColor--200);
+  --pf-v5-c-timestamp--m-help-text--hover--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-timestamp--m-help-text--focus--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-timestamp--m-help-text--hover--TextDecorationColor: var(--pf-v5-global--Color--100);
+  --pf-v5-c-timestamp--m-help-text--focus--TextDecorationColor: var(--pf-v5-global--Color--100);
+  display: inline-block;
+  font-size: var(--pf-v5-c-timestamp--FontSize);
+  color: var(--pf-v5-c-timestamp--Color);
+  outline-offset: var(--pf-v5-c-timestamp--OutlineOffset);
+}
+.pf-v5-c-timestamp.pf-m-help-text {
+  text-decoration-line: var(--pf-v5-c-timestamp--m-help-text--TextDecorationLine);
+  text-decoration-thickness: var(--pf-v5-c-timestamp--m-help-text--TextDecorationThickness);
+  text-decoration-style: var(--pf-v5-c-timestamp--m-help-text--TextDecorationStyle);
+  text-decoration-color: var(--pf-v5-c-timestamp--m-help-text--TextDecorationColor);
+  text-underline-offset: var(--pf-v5-c-timestamp--m-help-text--TextUnderlineOffset);
+  cursor: pointer;
+}
+.pf-v5-c-timestamp.pf-m-help-text:hover {
+  --pf-v5-c-timestamp--Color: var(--pf-v5-c-timestamp--m-help-text--hover--Color);
+  --pf-v5-c-timestamp--m-help-text--TextDecorationColor: var(--pf-v5-c-timestamp--m-help-text--hover--TextDecorationColor);
+}
+.pf-v5-c-timestamp.pf-m-help-text:focus {
+  --pf-v5-c-timestamp--Color: var(--pf-v5-c-timestamp--m-help-text--focus--Color);
+  --pf-v5-c-timestamp--m-help-text--TextDecorationColor: var(--pf-v5-c-timestamp--m-help-text--focus--TextDecorationColor);
+}

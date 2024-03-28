@@ -1,0 +1,827 @@
+// @debug $tabs; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+$pf-v5-c-tabs--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+$pf-v5-c-tabs--spacer-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl");
+
+.#{$tabs} {
+  --#{$tabs}--inset: 0;
+  --#{$tabs}--Width: auto;
+  --#{$tabs}--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$tabs}--before--border-width--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$tabs}--before--BorderTopWidth: 0;
+  --#{$tabs}--before--BorderRightWidth: 0;
+  --#{$tabs}--before--BorderBottomWidth: var(--#{$tabs}--before--border-width--base);
+  --#{$tabs}--before--BorderLeftWidth: 0;
+  --#{$tabs}--m-vertical--inset: var(--#{$pf-global}--spacer--lg);
+
+  // Page insets
+  --#{$tabs}--m-page-insets--inset: var(--#{$pf-global}--spacer--md); // make this the default inset at breaking change
+  --#{$tabs}--m-page-insets--xl--inset: var(--#{$pf-global}--spacer--lg); // make this the default inset at breaking change
+
+  // Vertical
+  --#{$tabs}--m-vertical--Width: 100%;
+  --#{$tabs}--m-vertical--MaxWidth: #{pf-size-prem(250px)};
+  --#{$tabs}--m-vertical--m-box--inset: var(--#{$pf-global}--spacer--xl);
+  --#{$tabs}--m-vertical__list--before--BorderColor: var(--#{$tabs}--before--BorderColor);
+  --#{$tabs}--m-vertical__list--before--BorderTopWidth: 0;
+  --#{$tabs}--m-vertical__list--before--BorderRightWidth: 0;
+  --#{$tabs}--m-vertical__list--before--BorderBottomWidth: 0;
+  --#{$tabs}--m-vertical__list--before--BorderLeftWidth: var(--#{$tabs}--before--border-width--base);
+
+  // Box
+  --#{$tabs}--m-box__item--m-current--first-child__link--before--BorderLeftWidth: var(--#{$tabs}__link--before--border-width--base);
+  --#{$tabs}--m-box__item--m-current--last-child__link--before--BorderRightWidth: var(--#{$tabs}--before--border-width--base);
+
+  // Alt color scheme
+  --#{$tabs}--m-color-scheme--light-300__link--BackgroundColor: transparent;
+  --#{$tabs}--m-color-scheme--light-300__item--m-current__link--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
+  --#{$tabs}--m-color-scheme--light-300__link--disabled--BackgroundColor: var(--#{$pf-global}--palette--black-150);
+
+  // List
+  --#{$tabs}__list--Display: flex;
+
+  // Item
+  --#{$tabs}__item--m-action--before--ZIndex: var(--#{$pf-global}--ZIndex--xs);
+
+  // Tab link
+  --#{$tabs}__link--Color: var(--#{$pf-global}--Color--200);
+  --#{$tabs}__link--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$tabs}__link--BackgroundColor: transparent;
+  --#{$tabs}__link--OutlineOffset: calc(-1 * #{pf-size-prem(6px)});
+  --#{$tabs}__link--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__link--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}__link--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__link--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}__link--disabled--Color: var(--#{$pf-global}--disabled-color--100);
+  --#{$tabs}__link--disabled--BackgroundColor: var(--#{$pf-global}--palette--black-150);
+  --#{$tabs}__item--m-current__link--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__item--m-current__link--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$tabs}--m-vertical__link--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}--m-vertical__link--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}--m-box__link--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$tabs}--m-box__link--disabled--BackgroundColor: var(--#{$pf-global}--disabled-color--200);
+  --#{$tabs}--m-box__item-action--c-button--disabled--BackgroundColor: var(--#{$pf-global}--palette--black-400);
+  --#{$tabs}--m-secondary__link--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$tabs}__item--m-action__link--PaddingRight: var(--#{$pf-global}--spacer--xs);
+
+  // Link before
+  --#{$tabs}__link--before--border-color--base: var(--#{$pf-global}--BorderColor--100);
+  --#{$tabs}__link--before--border-width--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$tabs}__link--before--BorderTopColor: var(--#{$tabs}__link--before--border-color--base);
+  --#{$tabs}__link--before--BorderRightColor: var(--#{$tabs}__link--before--border-color--base);
+  --#{$tabs}__link--before--BorderBottomColor: var(--#{$tabs}__link--before--border-color--base);
+  --#{$tabs}__link--before--BorderLeftColor: var(--#{$tabs}__link--before--border-color--base);
+  --#{$tabs}__link--before--BorderTopWidth: 0;
+  --#{$tabs}__link--before--BorderRightWidth: 0;
+  --#{$tabs}__link--before--BorderBottomWidth: 0;
+  --#{$tabs}__link--before--BorderLeftWidth: 0;
+  --#{$tabs}__link--before--Left: calc(var(--#{$tabs}__link--before--border-width--base) * -1);
+  --#{$tabs}__link--disabled--before--BorderRightWidth: 0;
+  --#{$tabs}__link--disabled--before--BorderBottomWidth: var(--#{$tabs}--before--border-width--base);
+  --#{$tabs}__link--disabled--before--BorderLeftWidth: 0;
+
+  // Link after
+  --#{$tabs}__link--after--Top: auto;
+  --#{$tabs}__link--after--Right: 0;
+  --#{$tabs}__link--after--Bottom: 0;
+  --#{$tabs}__link--after--BorderColor: var(--#{$pf-global}--BorderColor--light-100);
+  --#{$tabs}__link--after--BorderWidth: 0;
+  --#{$tabs}__link--after--BorderTopWidth: 0;
+  --#{$tabs}__link--after--BorderRightWidth: 0;
+  --#{$tabs}__link--after--BorderLeftWidth: 0;
+  --#{$tabs}__link--hover--after--BorderWidth: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$tabs}__link--focus--after--BorderWidth: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$tabs}__link--active--after--BorderWidth: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$tabs}__item--m-current__link--after--BorderColor: var(--#{$pf-global}--active-color--100);
+  --#{$tabs}__item--m-current__link--after--BorderWidth: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$tabs}__link--child--MarginRight: var(--#{$pf-global}--spacer--md);
+
+  // Scroll buttons
+  --#{$tabs}__scroll-button--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__scroll-button--hover--Color: var(--#{$pf-global}--active-color--100);
+  --#{$tabs}__scroll-button--disabled--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$tabs}__scroll-button--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$tabs}__scroll-button--Width: var(--#{$pf-global}--spacer--2xl);
+  --#{$tabs}__scroll-button--xl--Width: var(--#{$pf-global}--spacer--3xl);
+  --#{$tabs}__scroll-button--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+  --#{$tabs}__scroll-button--TransitionDuration--margin: .125s;
+  --#{$tabs}__scroll-button--TransitionDuration--transform: .125s;
+  --#{$tabs}__scroll-button--TransitionDuration--opacity: .125s;
+
+  // Scroll buttons before
+  --#{$tabs}__scroll-button--before--BorderColor: var(--#{$tabs}--before--BorderColor);
+  --#{$tabs}__scroll-button--before--border-width--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$tabs}__scroll-button--before--BorderRightWidth: 0;
+  --#{$tabs}__scroll-button--before--BorderBottomWidth: var(--#{$tabs}__scroll-button--before--border-width--base);
+  --#{$tabs}__scroll-button--before--BorderLeftWidth: 0;
+
+  // Scroll snap
+  --#{$tabs}__list--ScrollSnapTypeAxis: x;
+  --#{$tabs}__list--ScrollSnapTypeStrictness: proximity;
+  --#{$tabs}__list--ScrollSnapType: var(--#{$tabs}__list--ScrollSnapTypeAxis) var(--#{$tabs}__list--ScrollSnapTypeStrictness);
+  --#{$tabs}__item--ScrollSnapAlign: end;
+  --#{$tabs}--m-vertical__list--ScrollSnapTypeAxis: y;
+
+  // Expandable
+  --#{$tabs}__toggle--Display: flex;
+  --#{$tabs}__toggle--MarginBottom: 0;
+  --#{$tabs}--m-expanded__toggle--MarginBottom: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}__toggle-icon--Color: currentcolor;
+  --#{$tabs}__toggle-icon--Transition: var(--#{$pf-global}--Transition);
+  --#{$tabs}__toggle-icon--Rotate: 0;
+  --#{$tabs}__toggle-text--MarginLeft: 0;
+  --#{$tabs}__toggle-button__toggle-text--MarginLeft: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}__toggle-button__toggle-text--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__toggle-button--MarginTop: calc(-1 * var(--#{$pf-global}--spacer--form-element));
+  --#{$tabs}__toggle-button--MarginBottom: calc(-1 * var(--#{$pf-global}--spacer--form-element));
+  --#{$tabs}__toggle-button--MarginLeft: calc(-1 * var(--#{$pf-global}--spacer--md));
+  --#{$tabs}--m-expanded__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}--m-expanded__toggle-icon--Rotate: 90deg;
+
+  // Item action
+  --#{$tabs}__item-action--c-button--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$tabs}--m-secondary__item-action--c-button--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$tabs}__item-action--c-button--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__item-action--c-button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__item-action--c-button--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__item-action--c-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$tabs}__item-action--last-child--c-button--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$tabs}__item-action--c-button--OutlineOffset: #{pf-size-prem(-3px)};
+  --#{$tabs}__item-action-icon--MarginTop: #{pf-size-prem(2px)};
+
+  // Add button
+  --#{$tabs}__add--before--BorderColor: var(--#{$tabs}__link--before--border-color--base);
+  --#{$tabs}__add--before--BorderLeftWidth: var(--#{$tabs}__link--before--border-width--base);
+  --#{$tabs}__add--c-button--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$tabs}--m-secondary__add--c-button--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$tabs}__add--c-button--PaddingTop: var(--#{$tabs}__link--PaddingTop);
+  --#{$tabs}__add--c-button--PaddingBottom: var(--#{$tabs}__link--PaddingBottom);
+  --#{$tabs}__add--c-button--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+
+  // Overflow menu toggle icon
+  --#{$tabs}__link-toggle-icon--Color: var(--#{$pf-global}--Color--200);
+  --#{$tabs}__link-toggle-icon--Transition: .2s ease-in 0s;
+  --#{$tabs}__link-toggle-icon--Rotate: 0;
+  --#{$tabs}__link-toggle-icon--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$tabs}__link--m-expanded__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__link--m-expanded__toggle-icon--Rotate: 90deg;
+  --#{$tabs}__link--hover__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__link--active__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$tabs}__link--focus__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--xl) {
+    --#{$tabs}__scroll-button--Width: var(--#{$tabs}__scroll-button--xl--Width);
+    --#{$tabs}--m-page-insets--inset: var(--#{$tabs}--m-page-insets--xl--inset);
+  }
+
+  position: relative;
+  display: flex;
+  width: var(--#{$tabs}--Width);
+  padding-inline-start: var(--#{$tabs}--inset);
+  padding-inline-end: var(--#{$tabs}--inset);
+  overflow: hidden; // needed for scroll button animation. limit to pf-m-scrollable in breaking change. may need new modifier so this is applied to a menu that supports scrolling, regardless of whether the scroll buttons are shown.
+
+  &::before {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    border: solid var(--#{$tabs}--before--BorderColor);
+    border-block-start-width: var(--#{$tabs}--before--BorderTopWidth);
+    border-block-end-width: var(--#{$tabs}--before--BorderBottomWidth);
+    border-inline-start-width: var(--#{$tabs}--before--BorderLeftWidth);
+    border-inline-end-width: var(--#{$tabs}--before--BorderRightWidth);
+  }
+
+  // Filled style
+  &.pf-m-fill {
+    .#{$tabs}__list {
+      flex-basis: 100%;
+    }
+
+    .#{$tabs}__item {
+      flex-grow: 1;
+
+      &:first-child {
+        --#{$tabs}--m-box__item--m-current--first-child__link--before--BorderLeftWidth: 0;
+      }
+
+      &:last-child {
+        --#{$tabs}--m-box__item--m-current--last-child__link--before--BorderRightWidth: 0;
+      }
+    }
+
+    .#{$tabs}__link {
+      flex-basis: 100%;
+      justify-content: center;
+    }
+  }
+
+  // Scroll buttons enabled
+  &.pf-m-scrollable {
+    .#{$tabs}__scroll-button {
+      opacity: 1;
+    }
+
+    // Scroll buttons
+    .#{$tabs}__scroll-button:nth-of-type(1) {
+      margin-inline-end: 0;
+      transform: translateX(0);
+    }
+
+    .#{$tabs}__scroll-button:nth-of-type(2) {
+      margin-inline-start: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &.pf-m-no-border-bottom {
+    --#{$tabs}--before--BorderBottomWidth: 0;
+    --#{$tabs}__link--disabled--before--BorderBottomWidth: 0;
+  }
+
+  // Remove bottom border for variants
+  &.pf-m-box,
+  &.pf-m-vertical {
+    .#{$tabs}__link {
+      --#{$tabs}__link--after--BorderBottomWidth: 0;
+    }
+  }
+
+  // Box
+  &.pf-m-box {
+    --#{$tabs}__link--BackgroundColor: var(--#{$tabs}--m-box__link--BackgroundColor);
+    --#{$tabs}__link--disabled--BackgroundColor: var(--#{$tabs}--m-box__link--disabled--BackgroundColor);
+    --#{$tabs}__link--before--BorderBottomWidth: var(--#{$tabs}__link--before--border-width--base);
+    --#{$tabs}__link--before--BorderRightWidth: var(--#{$tabs}__link--before--border-width--base);
+    --#{$tabs}__link--disabled--before--BorderRightWidth: var(--#{$tabs}__link--before--border-width--base);
+    --#{$tabs}__link--after--Top: 0;
+    --#{$tabs}__link--after--Bottom: auto;
+
+    // Set hover on top border
+    .#{$tabs}__link {
+      --#{$tabs}__link--after--BorderTopWidth: var(--#{$tabs}__link--after--BorderWidth);
+    }
+
+    // Remove border from last-child
+    .#{$tabs}__item:last-child {
+      --#{$tabs}__link--before--BorderRightWidth: 0;
+    }
+
+    .#{$tabs}__item.pf-m-current {
+      --#{$tabs}__link--BackgroundColor: var(--#{$tabs}__item--m-current__link--BackgroundColor);
+      --#{$tabs}__link--before--BorderBottomColor: var(--#{$tabs}__link--BackgroundColor);
+    }
+
+    // stylelint-disable
+    // Add border to first-child
+    .#{$tabs}__item.pf-m-current:first-child .#{$tabs}__link::before {
+      border-inline-start-width: var(--#{$tabs}--m-box__item--m-current--first-child__link--before--BorderLeftWidth);
+    }
+
+    // Add border to last-child
+    .#{$tabs}__item.pf-m-current:last-child .#{$tabs}__link::before {
+      border-inline-end-width: var(--#{$tabs}--m-box__item--m-current--last-child__link--before--BorderRightWidth);
+    }
+
+    // Collapse left border into scroll button when expanded
+    &.pf-m-scrollable .#{$tabs}__item.pf-m-current:first-child .#{$tabs}__link::before {
+     inset-inline-start: calc(var(--#{$tabs}__link--before--border-width--base) * -1);
+    }
+
+    // Collapse left border into list when expanded
+    &.pf-m-scrollable .#{$tabs}__scroll-button:nth-of-type(2)::before {
+     inset-inline-start: calc(var(--#{$tabs}__link--before--border-width--base) * -1);
+    }
+    // stylelint-enable
+
+    // stylelint-disable selector-max-class
+    // Remove offset from current adjacent item
+    .#{$tabs}__item.pf-m-current + .#{$tabs}__item {
+      --#{$tabs}__link--before--Left: 0;
+    }
+    // stylelint-enable
+
+    &.pf-m-color-scheme--light-300 {
+      --#{$tabs}__link--BackgroundColor: var(--#{$tabs}--m-color-scheme--light-300__link--BackgroundColor);
+      --#{$tabs}__item--m-current__link--BackgroundColor: var(--#{$tabs}--m-color-scheme--light-300__item--m-current__link--BackgroundColor);
+      --#{$tabs}__link--disabled--BackgroundColor: var(--#{$tabs}--m-color-scheme--light-300__link--disabled--BackgroundColor);
+    }
+
+    .#{$tabs}__item-action .#{$button} {
+      --#{$button}--m-plain--disabled--Color: var(--#{$tabs}--m-box__item-action--c-button--disabled--BackgroundColor);
+    }
+  }
+
+  // Vertical
+  &.pf-m-vertical {
+    --#{$tabs}--Width: var(--#{$tabs}--m-vertical--Width);
+    --#{$tabs}--inset: var(--#{$tabs}--m-vertical--inset);
+    --#{$tabs}--before--BorderBottomWidth: 0;
+    --#{$tabs}__link--PaddingTop: var(--#{$tabs}--m-vertical__link--PaddingTop);
+    --#{$tabs}__link--PaddingBottom: var(--#{$tabs}--m-vertical__link--PaddingBottom);
+    --#{$tabs}__link--before--Left: 0;
+    --#{$tabs}__link--disabled--before--BorderBottomWidth: 0;
+    --#{$tabs}__link--disabled--before--BorderLeftWidth: var(--#{$tabs}--before--border-width--base);
+    --#{$tabs}__link--after--Top: 0;
+    --#{$tabs}__link--after--Bottom: 0;
+    --#{$tabs}__link--after--Right: auto;
+    --#{$tabs}__list--ScrollSnapTypeAxis: var(--#{$tabs}--m-vertical__list--ScrollSnapTypeAxis);
+
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%; // If not a flex child, set height
+    padding: 0; // Because vertical variant has no scroll buttons, reset padding
+    overflow: visible; // remove in breaking change release
+
+    .#{$tabs}__list {
+      position: relative;
+      flex-direction: column;
+      flex-grow: 1;
+      max-width: var(--#{$tabs}--m-vertical--MaxWidth);
+
+      &::before {
+        position: absolute;
+        inset-inline-end: auto;
+        border: solid var(--#{$tabs}--m-vertical__list--before--BorderColor);
+        border-block-start-width: var(--#{$tabs}--m-vertical__list--before--BorderTopWidth);
+        border-block-end-width: var(--#{$tabs}--m-vertical__list--before--BorderBottomWidth);
+        border-inline-start-width: var(--#{$tabs}--m-vertical__list--before--BorderLeftWidth);
+        border-inline-end-width: var(--#{$tabs}--m-vertical__list--before--BorderRightWidth);
+      }
+    }
+
+    // Because vertical variant has no scroll buttons, move inset to first/last __item to prevent default scrolling behavior
+    .#{$tabs}__item:first-child {
+      margin-block-start: var(--#{$tabs}--inset);
+    }
+
+    .#{$tabs}__item:last-child {
+      margin-block-end: var(--#{$tabs}--inset);
+    }
+
+    // Set hover on left border
+    .#{$tabs}__link {
+      --#{$tabs}__link--after--BorderTopWidth: 0;
+      --#{$tabs}__link--after--BorderLeftWidth: var(--#{$tabs}__link--after--BorderWidth);
+
+      max-width: 100%;
+      text-align: start;
+    }
+
+    .#{$tabs}__item-text {
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    @each $breakpoint, $breakpoint-value in $pf-v5-c-tabs--breakpoint-map {
+      $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+      @include pf-v5-apply-breakpoint($breakpoint) {
+        // stylelint-disable max-nesting-depth
+        &.pf-m-expandable#{$breakpoint-name} {
+          --#{$tabs}__list--Display: none;
+          --#{$tabs}__toggle--Display: flex;
+        }
+
+        &.pf-m-non-expandable#{$breakpoint-name} {
+          --#{$tabs}__list--Display: flex;
+          --#{$tabs}__toggle--Display: none;
+        }
+        // stylelint-enable
+      }
+    }
+
+    &.pf-m-expanded {
+      --#{$tabs}__list--Display: flex;
+      --#{$tabs}__toggle--MarginBottom: var(--#{$tabs}--m-expanded__toggle--MarginBottom);
+      --#{$tabs}__toggle-icon--Color: var(--#{$tabs}--m-expanded__toggle-icon--Color);
+      --#{$tabs}__toggle-icon--Rotate: var(--#{$tabs}--m-expanded__toggle-icon--Rotate);
+    }
+  }
+
+  // Box, vertical
+  &.pf-m-box.pf-m-vertical {
+    --#{$tabs}--inset: var(--#{$tabs}--m-vertical--m-box--inset);
+    --#{$tabs}--m-vertical__list--before--BorderLeftWidth: 0;
+    --#{$tabs}--m-vertical__list--before--BorderRightWidth: var(--#{$tabs}--before--border-width--base);
+    --#{$tabs}__link--disabled--before--BorderRightWidth: var(--#{$tabs}--before--border-width--base);
+    --#{$tabs}__link--disabled--before--BorderBottomWidth: var(--#{$tabs}--before--border-width--base);
+    --#{$tabs}__link--disabled--before--BorderLeftWidth: 0;
+
+    .#{$tabs}__list::before {
+      inset-inline-start: auto;
+      inset-inline-end: 0;
+    }
+
+    // stylelint-disable selector-max-class
+    // Remove border from last-child
+    .#{$tabs}__item:last-child {
+      --#{$tabs}__link--before--BorderBottomWidth: 0;
+      --#{$tabs}__link--before--BorderRightWidth: var(--#{$tabs}__link--before--border-width--base);
+    }
+
+    // Add border right color and weight
+    .#{$tabs}__item.pf-m-current {
+      --#{$tabs}__link--before--BorderRightColor: var(--#{$tabs}__item--m-current__link--BackgroundColor);
+      --#{$tabs}__link--before--BorderBottomColor: var(--#{$tabs}__link--before--border-color--base);
+      --#{$tabs}__link--before--BorderBottomWidth: var(--#{$tabs}__link--before--border-width--base);
+
+      &:first-child {
+        --#{$tabs}__link--before--BorderTopWidth: var(--#{$tabs}__link--before--border-width--base);
+      }
+    }
+
+    // Add border right color and weight
+    .#{$tabs}__item:first-child.pf-m-current {
+      --#{$tabs}__link--before--BorderTopWidth: var(--#{$tabs}__link--before--border-width--base);
+    }
+
+    // Offset vertical border to overlap horizontal border
+    .#{$tabs}__link::after {
+     inset-block-start: calc(var(--#{$tabs}__link--before--border-width--base) * -1);
+    }
+
+    // Undo offset to .pf-m-current adjacent item
+    .#{$tabs}__item:first-child .#{$tabs}__link::after,
+    .#{$tabs}__item.pf-m-current + .#{$tabs}__item .#{$tabs}__link::after {
+     inset-block-start: 0;
+    }
+    // stylelint-enable
+  }
+
+  &.pf-m-secondary {
+    --#{$tabs}__link--FontSize: var(--#{$tabs}--m-secondary__link--FontSize);
+    --#{$tabs}__item-action--c-button--FontSize: var(--#{$tabs}--m-secondary__item-action--c-button--FontSize);
+    --#{$tabs}__add--c-button--FontSize: var(--#{$tabs}--m-secondary__add--c-button--FontSize);
+  }
+
+  &.pf-m-page-insets {
+    --#{$tabs}--inset: var(--#{$tabs}--m-page-insets--inset);
+  }
+
+  &.pf-m-overflow {
+    &,
+    .#{$tabs}__list {
+      overflow: visible;
+    }
+  }
+}
+
+// Expandable toggle
+.#{$tabs}__toggle {
+  display: var(--#{$tabs}__toggle--Display);
+  align-items: center;
+  margin-block-end: var(--#{$tabs}__toggle--MarginBottom);
+}
+
+.#{$tabs}__toggle-button {
+  --#{$tabs}__toggle-text--MarginLeft: var(--#{$tabs}__toggle-button__toggle-text--MarginLeft);
+  --#{$tabs}__toggle-text--Color: var(--#{$tabs}__toggle-button__toggle-text--Color);
+
+  margin-block-start: var(--#{$tabs}__toggle-button--MarginTop);
+  margin-block-end: var(--#{$tabs}__toggle-button--MarginBottom);
+  margin-inline-start: var(--#{$tabs}__toggle-button--MarginLeft);
+
+  .#{$button} {
+    display: flex;
+    text-align: start;
+    white-space: normal;
+  }
+}
+
+.#{$tabs}__toggle-icon {
+  @include pf-v5-mirror-inline-on-rtl;
+
+  display: inline-block;
+  color: var(--#{$tabs}__toggle-icon--Color);
+  transition: var(--#{$tabs}__toggle-icon--Transition);
+  transform: rotate(var(--#{$tabs}__toggle-icon--Rotate));
+}
+
+.#{$tabs}__toggle-text {
+  margin-inline-start: var(--#{$tabs}__toggle-text--MarginLeft);
+  color: var(--#{$tabs}__toggle-text--Color, inherit);
+}
+
+
+// Tab list
+.#{$tabs}__list {
+  @include pf-v5-overflow-hide-scroll;
+
+  position: relative;
+  display: var(--#{$tabs}__list--Display);
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: var(--#{$tabs}__list--ScrollSnapType);
+  -webkit-overflow-scrolling: touch;
+}
+
+// Tabs item
+.#{$tabs}__item {
+  display: flex;
+  flex: none;
+  scroll-snap-align: var(--#{$tabs}__item--ScrollSnapAlign);
+
+  // Current
+  &.pf-m-current {
+    --#{$tabs}__link--Color: var(--#{$tabs}__item--m-current__link--Color);
+    --#{$tabs}__link--after--BorderColor: var(--#{$tabs}__item--m-current__link--after--BorderColor);
+    --#{$tabs}__link--after--BorderWidth: var(--#{$tabs}__item--m-current__link--after--BorderWidth);
+  }
+
+  // Action
+  &.pf-m-action {
+    --#{$tabs}__link--PaddingRight: var(--#{$tabs}__item--m-action__link--PaddingRight);
+
+    position: relative;
+
+    &::before {
+      z-index: var(--#{$tabs}__item--m-action--before--ZIndex);
+    }
+
+    .#{$tabs}__link::before,
+    .#{$tabs}__link::after {
+      content: revert;
+    }
+  }
+}
+
+.#{$tabs}::before,
+.#{$tabs}__list::before,
+.#{$tabs}__link::before,
+.#{$tabs}__link::after,
+.#{$tabs}__item.pf-m-action::before,
+.#{$tabs}__item.pf-m-action::after,
+.#{$tabs}__scroll-button::before,
+.#{$tabs}__add::before {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
+  content: "";
+  border-style: solid;
+}
+
+.#{$tabs}__list::before,
+.#{$tabs}__link::before,
+.#{$tabs}__link::after,
+.#{$tabs}__item.pf-m-action::before,
+.#{$tabs}__item.pf-m-action::after,
+.#{$tabs}__scroll-button::before,
+.#{$tabs}__add::before {
+ inset-block-start: 0;
+}
+
+.#{$tabs}__link,
+.#{$tabs}__scroll-button,
+.#{$tabs}__list::before,
+.#{$tabs}__add::before {
+  border: 0;
+}
+
+// Tab link
+.#{$tabs}__link {
+  @at-root .#{$tabs}__item.pf-m-action,
+  & {
+    --#{$tabs}__link--after--BorderBottomWidth: var(--#{$tabs}__link--after--BorderWidth); // Set default border target
+
+    background-color: var(--#{$tabs}__link--BackgroundColor);
+  }
+
+  position: relative;
+  display: flex;
+  flex: 1;
+  padding-block-start: var(--#{$tabs}__link--PaddingTop);
+  padding-block-end: var(--#{$tabs}__link--PaddingBottom);
+  padding-inline-start: var(--#{$tabs}__link--PaddingLeft);
+  padding-inline-end: var(--#{$tabs}__link--PaddingRight);
+  font-size: var(--#{$tabs}__link--FontSize);
+  color: var(--#{$tabs}__link--Color);
+  text-decoration: none;
+  outline-offset: var(--#{$tabs}__link--OutlineOffset);
+
+  @at-root .#{$tabs}__item.pf-m-action,
+  & {
+    &::before {
+      pointer-events: none;
+      border-block-start-color: var(--#{$tabs}__link--before--BorderTopColor);
+      border-block-start-width: var(--#{$tabs}__link--before--BorderTopWidth);
+      border-block-end-color: var(--#{$tabs}__link--before--BorderBottomColor);
+      border-block-end-width: var(--#{$tabs}__link--before--BorderBottomWidth);
+      border-inline-start-color: var(--#{$tabs}__link--before--BorderLeftColor);
+      border-inline-start-width: var(--#{$tabs}__link--before--BorderLeftWidth);
+      border-inline-end-color: var(--#{$tabs}__link--before--BorderRightColor);
+      border-inline-end-width: var(--#{$tabs}__link--before--BorderRightWidth);
+    }
+  }
+
+  @at-root .#{$tabs}__item.pf-m-action,
+  & {
+    &::after {
+      inset-block-start: var(--#{$tabs}__link--after--Top);
+      inset-block-end: var(--#{$tabs}__link--after--Bottom);
+      inset-inline-start: var(--#{$tabs}__link--before--Left); // use the ::before Left value to offset the top border / overlap left border
+      inset-inline-end: var(--#{$tabs}__link--after--Right);
+      border-color: var(--#{$tabs}__link--after--BorderColor);
+      border-block-start-width: var(--#{$tabs}__link--after--BorderTopWidth);
+      border-block-end-width: var(--#{$tabs}__link--after--BorderBottomWidth);
+      border-inline-start-width: var(--#{$tabs}__link--after--BorderLeftWidth);
+      border-inline-end-width: var(--#{$tabs}__link--after--BorderRightWidth);
+    }
+  }
+
+  // Tab item hover state
+  @at-root .#{$tabs}__item.pf-m-action,
+  & {
+    &:hover {
+      --#{$tabs}__link--after--BorderWidth: var(--#{$tabs}__link--hover--after--BorderWidth);
+    }
+  }
+
+  @at-root .#{$tabs}__item.pf-m-action:focus-within,
+  &:focus {
+    --#{$tabs}__link--after--BorderWidth: var(--#{$tabs}__link--focus--after--BorderWidth);
+  }
+
+  @at-root .#{$tabs}__item.pf-m-action,
+  & {
+    &:active {
+      --#{$tabs}__link--after--BorderWidth: var(--#{$tabs}__link--active--after--BorderWidth);
+    }
+  }
+
+  &:hover {
+    --#{$tabs}__link-toggle-icon--Color: var(--#{$tabs}__link--hover__toggle-icon--Color);
+  }
+
+  &:focus {
+    --#{$tabs}__link-toggle-icon--Color: var(--#{$tabs}__link--focus__toggle-icon--Color);
+  }
+
+  &:active,
+  &.pf-m-active {
+    --#{$tabs}__link-toggle-icon--Color: var(--#{$tabs}__link--active__toggle-icon--Color);
+  }
+
+  &:disabled,
+  &.pf-m-disabled {
+    pointer-events: none;
+  }
+
+  @at-root .#{$tabs}__item.pf-m-action.pf-m-disabled,
+  &:disabled,
+  &.pf-m-disabled,
+  &.pf-m-aria-disabled {
+    --#{$tabs}__link--Color: var(--#{$tabs}__link--disabled--Color);
+    --#{$tabs}__link--BackgroundColor: var(--#{$tabs}__link--disabled--BackgroundColor);
+    --#{$tabs}__link--before--BorderRightWidth: var(--#{$tabs}__link--disabled--before--BorderRightWidth);
+    --#{$tabs}__link--before--BorderBottomWidth: var(--#{$tabs}__link--disabled--before--BorderBottomWidth);
+    --#{$tabs}__link--before--BorderLeftWidth: var(--#{$tabs}__link--disabled--before--BorderLeftWidth);
+    --#{$tabs}__link--after--BorderWidth: 0;
+  }
+
+  &.pf-m-aria-disabled {
+    cursor: default;
+  }
+
+  // un-nest these selectors in a breaking change release
+  .#{$tabs}__item-icon,
+  .#{$tabs}__item-text {
+    margin-inline-end: var(--#{$tabs}__link--child--MarginRight);
+
+    &:last-child {
+      --#{$tabs}__link--child--MarginRight: 0;
+    }
+  }
+
+  &.pf-m-expanded {
+    --#{$tabs}__link-toggle-icon--Color: var(--#{$tabs}__link--m-expanded__toggle-icon--Color);
+    --#{$tabs}__link-toggle-icon--Rotate: var(--#{$tabs}__link--m-expanded__toggle-icon--Rotate);
+  }
+}
+
+.#{$tabs}__link-toggle-icon {
+  @include pf-v5-mirror-inline-on-rtl;
+
+  align-self: end;
+  font-size: var(--#{$tabs}__link-toggle-icon--FontSize);
+  color: var(--#{$tabs}__link-toggle-icon--Color);
+  transition: var(--#{$tabs}__link-toggle-icon--Transition);
+  transform: rotate(var(--#{$tabs}__link-toggle-icon--Rotate));
+}
+
+.#{$tabs}__item-action {
+  display: flex;
+
+  .#{$button} {
+    --#{$button}--FontSize: var(--#{$tabs}__item-action--c-button--FontSize);
+    --#{$button}--PaddingTop: var(--#{$tabs}__item-action--c-button--PaddingTop);
+    --#{$button}--PaddingRight: var(--#{$tabs}__item-action--c-button--PaddingRight);
+    --#{$button}--PaddingBottom: var(--#{$tabs}__item-action--c-button--PaddingBottom);
+    --#{$button}--PaddingLeft: var(--#{$tabs}__item-action--c-button--PaddingLeft);
+
+    outline-offset: var(--#{$tabs}__item-action--c-button--OutlineOffset);
+  }
+
+  &:last-child {
+    --#{$tabs}__item-action--c-button--PaddingRight: var(--#{$tabs}__item-action--last-child--c-button--PaddingRight);
+  }
+}
+
+.#{$tabs}__item-action-icon {
+  display: inline-block;
+  margin-block-start: var(--#{$tabs}__item-action-icon--MarginTop);
+}
+
+// Scroll buttons
+.#{$tabs}__scroll-button {
+  flex: none;
+  width: var(--#{$tabs}__scroll-button--Width);
+  line-height: 1;
+  color: var(--#{$tabs}__scroll-button--Color);
+  background-color: var(--#{$tabs}__scroll-button--BackgroundColor);
+  outline-offset: var(--#{$tabs}__scroll-button--OutlineOffset);
+  opacity: 0;
+  transition: margin var(--#{$tabs}__scroll-button--TransitionDuration--margin), transform var(--#{$tabs}__scroll-button--TransitionDuration--transform), opacity var(--#{$tabs}__scroll-button--TransitionDuration--opacity);
+
+  > * {
+    @include pf-v5-mirror-inline-on-rtl; // in breaking change, add an icon wrapper and move this style to the wrapper
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    --#{$tabs}__scroll-button--Color: var(--#{$tabs}__scroll-button--hover--Color);
+  }
+
+  &::before {
+    border-color: var(--#{$tabs}__scroll-button--before--BorderColor);
+    border-block-start-width: 0;
+    border-block-end-width: var(--#{$tabs}__scroll-button--before--BorderBottomWidth);
+    border-inline-start-width: var(--#{$tabs}__scroll-button--before--BorderLeftWidth);
+    border-inline-end-width: var(--#{$tabs}__scroll-button--before--BorderRightWidth);
+  }
+
+  &:nth-of-type(1) {
+    --#{$tabs}__scroll-button--before--BorderRightWidth: var(--#{$tabs}__scroll-button--before--border-width--base);
+
+    margin-inline-end: calc(var(--#{$tabs}__scroll-button--Width) * -1);
+    transform: translateX(-100%);
+  }
+
+  &:nth-of-type(2) {
+    --#{$tabs}__scroll-button--before--BorderLeftWidth: var(--#{$tabs}__scroll-button--before--border-width--base);
+
+    margin-inline-start: calc(var(--#{$tabs}__scroll-button--Width) * -1);
+    transform: translateX(100%);
+  }
+
+  &:disabled {
+    --#{$tabs}__scroll-button--Color: var(--#{$tabs}__scroll-button--disabled--Color);
+
+    pointer-events: none;
+  }
+}
+
+.#{$tabs}__add {
+  position: relative;
+  display: flex;
+
+  &::before {
+    border-inline-start: var(--#{$tabs}__add--before--BorderLeftWidth) solid var(--#{$tabs}__add--before--BorderColor);
+  }
+
+  .#{$button} {
+    --#{$button}--FontSize: var(--#{$tabs}__add--c-button--FontSize);
+    --#{$button}--PaddingTop: var(--#{$tabs}__add--c-button--PaddingTop);
+    --#{$button}--PaddingBottom: var(--#{$tabs}__add--c-button--PaddingBottom);
+
+    outline-offset: var(--#{$tabs}__add--c-button--OutlineOffset);
+  }
+}
+
+// stylelint-disable no-duplicate-selectors, max-nesting-depth
+.#{$tabs} {
+  @each $breakpoint, $breakpoint-value in $pf-v5-c-tabs--breakpoint-map {
+    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+    @include pf-v5-apply-breakpoint($breakpoint) {
+      @each $spacer, $spacer-value in $pf-v5-c-tabs--spacer-map {
+        &.pf-m-inset-#{$spacer}#{$breakpoint-name} {
+          --#{$tabs}--inset: #{$spacer-value};
+          --#{$tabs}--m-vertical--inset: #{$spacer-value};
+          --#{$tabs}--m-vertical--m-box--inset: #{$spacer-value};
+        }
+      }
+    }
+  }
+}
+// stylelint-enable
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/tabs";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-tabs;
+}

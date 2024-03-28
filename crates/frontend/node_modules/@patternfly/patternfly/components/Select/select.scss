@@ -1,0 +1,713 @@
+// @debug $select; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$select} {
+  @include pf-v5-t-light; // force the container follow the light theme
+
+  // Toggle
+  --#{$select}__toggle--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$select}__toggle--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$select}__toggle--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle--MinWidth: var(--#{$pf-global}--target-size--MinWidth);
+  --#{$select}__toggle--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$select}__toggle--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$select}__toggle--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$select}__toggle--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$select}__toggle--before--BorderTopWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$select}__toggle--before--BorderRightWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$select}__toggle--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$select}__toggle--before--BorderLeftWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$select}__toggle--before--BorderWidth: initial; // remove at breaking change
+  --#{$select}__toggle--before--BorderTopColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$select}__toggle--before--BorderRightColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$select}__toggle--before--BorderBottomColor: var(--#{$pf-global}--BorderColor--200);
+  --#{$select}__toggle--before--BorderLeftColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$select}__toggle--Color: var(--#{$pf-global}--Color--100);
+  --#{$select}__toggle--hover--before--BorderBottomColor: var(--#{$pf-global}--active-color--100);
+  --#{$select}__toggle--focus--before--BorderBottomColor: var(--#{$pf-global}--active-color--100);
+  --#{$select}__toggle--focus--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$select}__toggle--active--before--BorderBottomColor: var(--#{$pf-global}--active-color--100);
+  --#{$select}__toggle--active--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$select}__toggle--m-expanded--before--BorderBottomColor: var(--#{$pf-global}--active-color--100); // rename to c-select--m-expanded at breaking change
+  --#{$select}__toggle--m-expanded--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md); // rename to c-select--m-expanded at breaking change
+  --#{$select}__toggle--disabled--BackgroundColor: var(--#{$pf-global}--disabled-color--300);
+  --#{$select}__toggle--m-plain--before--BorderColor: transparent;
+  --#{$select}__toggle--m-placeholder--Color: transparent;
+  --#{$select}--m-invalid__toggle--before--BorderBottomColor: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-invalid__toggle--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$select}--m-invalid__toggle--hover--before--BorderBottomColor: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-invalid__toggle--focus--before--BorderBottomColor: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-invalid__toggle--active--before--BorderBottomColor: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-invalid__toggle--m-expanded--before--BorderBottomColor: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-invalid__toggle-status-icon--Color: var(--#{$pf-global}--danger-color--100);
+  --#{$select}--m-success__toggle--before--BorderBottomColor: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-success__toggle--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$select}--m-success__toggle--hover--before--BorderBottomColor: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-success__toggle--focus--before--BorderBottomColor: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-success__toggle--active--before--BorderBottomColor: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-success__toggle--m-expanded--before--BorderBottomColor: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-success__toggle-status-icon--Color: var(--#{$pf-global}--success-color--100);
+  --#{$select}--m-warning__toggle--before--BorderBottomColor: var(--#{$pf-global}--warning-color--100);
+  --#{$select}--m-warning__toggle--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$select}--m-warning__toggle--hover--before--BorderBottomColor: var(--#{$pf-global}--warning-color--100);
+  --#{$select}--m-warning__toggle--focus--before--BorderBottomColor: var(--#{$pf-global}--warning-color--100);
+  --#{$select}--m-warning__toggle--active--before--BorderBottomColor: var(--#{$pf-global}--warning-color--100);
+  --#{$select}--m-warning__toggle--m-expanded--before--BorderBottomColor: var(--#{$pf-global}--warning-color--100);
+  --#{$select}--m-warning__toggle-status-icon--Color: var(--#{$pf-global}--warning-color--100);
+
+  // Space for the children of the toggle
+  --#{$select}__toggle-wrapper--not-last-child--MarginRight: var(--#{$pf-global}--spacer--xs);
+
+  // Max-width is needed for ellipsing the text. This leaves enough space for the toggle caret.
+  // However, for cases where the clear icon button or a badge are added, the correct width will need to be calculated in script
+  --#{$select}__toggle-wrapper--MaxWidth: calc(100% - var(--#{$pf-global}--spacer--lg));
+
+  // Chip group within a toggle-wrapper needs a margin-bottom in case it wraps
+  --#{$select}__toggle-wrapper--c-chip-group--MarginTop: #{pf-size-prem(5px)};
+  --#{$select}__toggle-wrapper--c-chip-group--MarginBottom: #{pf-size-prem(5px)};
+
+  // Select input for typeahead
+  --#{$select}__toggle-typeahead--FlexBasis: 10em;
+  --#{$select}__toggle-typeahead--BackgroundColor: transparent;
+  --#{$select}__toggle-typeahead--BorderTop: var(--#{$pf-global}--BorderWidth--sm) solid transparent;
+  --#{$select}__toggle-typeahead--BorderRight: none;
+  --#{$select}__toggle-typeahead--BorderLeft: none;
+
+  // Typeahead form
+  --#{$select}__toggle-typeahead--MinWidth: #{pf-size-prem(120px)};
+
+  // Toggle text
+  --#{$select}__toggle--m-placeholder__toggle-text--Color: var(--#{$pf-global}--Color--dark-200);
+
+  //  Select toggle icon + toggle text
+  --#{$select}__toggle-icon--toggle-text--MarginLeft: var(--#{$pf-global}--spacer--xs);
+
+  // Select toggle badge
+  --#{$select}__toggle-badge--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // Select toggle status icon
+  --#{$select}__toggle-status-icon--MarginLeft: var(--#{$pf-global}--spacer--xs);
+  --#{$select}__toggle-status-icon--Color: var(--#{$pf-global}--Color--100);
+
+  // Toggle arrow
+  --#{$select}__toggle-arrow--MarginLeft: var(--#{$pf-global}--spacer--md);
+  --#{$select}__toggle-arrow--MarginRight: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle-arrow--with-clear--MarginLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle-arrow--m-top--m-expanded__toggle-arrow--Rotate: 180deg;
+  --#{$select}--m-plain__toggle-arrow--Color: var(--#{$pf-global}--Color--200);
+  --#{$select}--m-plain--hover__toggle-arrow--Color: var(--#{$pf-global}--Color--100);
+
+  // Toggle button
+  --#{$select}__toggle-clear--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle-clear--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$select}__toggle-clear--toggle-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__toggle-button--Color: var(--#{$pf-global}--Color--100);
+
+  // Menu
+  --#{$select}__menu--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
+  --#{$select}__menu--BoxShadow: var(--#{$pf-global}--BoxShadow--md);
+  --#{$select}__menu--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu--Top: calc(100% + var(--#{$pf-global}--spacer--xs)); // The top of the menu must be pushed down to create space between the toggle and menu
+  --#{$select}__menu--ZIndex: var(--#{$pf-global}--ZIndex--sm);
+  --#{$select}__menu--Width: auto;
+  --#{$select}__menu--MinWidth: 100%;
+  --#{$select}__menu--m-top--TranslateY: calc(-100% - var(--#{$pf-global}--spacer--xs)); // The "dropup" menu must be transformed up and this calculates how much to create space between the toggle and menu
+
+  // Menu list item
+  --#{$select}__list-item--m-loading--PaddingTop: var(--#{$pf-global}--spacer--sm);
+
+  // Menu item
+  --#{$select}__menu-item--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu-item--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-item--m-selected--PaddingRight: var(--#{$pf-global}--spacer--2xl);
+  --#{$select}__menu-item--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu-item--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-item--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$select}__menu-item--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$select}__menu-item--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$select}__menu-item--Color: var(--#{$pf-global}--Color--dark-100);
+  --#{$select}__menu-item--disabled--Color: var(--#{$pf-global}--Color--dark-200);
+  --#{$select}__menu-item--Width: 100%;
+  --#{$select}__menu-item--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
+  --#{$select}__menu-item--focus--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
+  --#{$select}__menu-item--disabled--BackgroundColor: transparent;
+  --#{$select}__menu-item--m-link--Width: auto;
+  --#{$select}__menu-item--m-link--hover--BackgroundColor: transparent;
+  --#{$select}__menu-item--m-link--focus--BackgroundColor: transparent;
+  --#{$select}__menu-item--m-action--Color: var(--#{$pf-global}--Color--200);
+  --#{$select}__menu-item--m-action--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$select}__menu-item--m-action--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$select}__menu-item--m-action--disabled--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$select}__menu-item--m-action--Width: auto;
+  --#{$select}__menu-item--m-action--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$select}__menu-item--m-action--hover--BackgroundColor: transparent;
+  --#{$select}__menu-item--m-action--focus--BackgroundColor: transparent;
+  --#{$select}__menu-item--hover__menu-item--m-action--Color: var(--#{$pf-global}--Color--200); // remove at breaking change
+  --#{$select}__menu-item--m-favorite-action--Color: var(--#{$pf-global}--Color--200);
+  --#{$select}__menu-item--m-favorite-action--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$select}__menu-item--m-favorite-action--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--Color: var(--#{$pf-global}--palette--gold-400);
+  --#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--hover--Color: var(--#{$pf-global}--palette--gold-500);
+  --#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--focus--Color: var(--#{$pf-global}--palette--gold-500);
+  --#{$select}__menu-item--m-load--Color: var(--#{$pf-global}--link--Color);
+
+  // Menu item icon
+  --#{$select}__menu-item-icon--Color: var(--#{$pf-global}--active-color--100);
+  --#{$select}__menu-item-icon--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$select}__menu-item-icon--Right: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-item-icon--Top: 50%;
+  --#{$select}__menu-item-icon--TranslateY: -50%;
+
+  // Menu item action icon
+  --#{$select}__menu-item-action-icon--MinHeight: calc(var(--#{$select}__menu-item--FontSize) * var(--#{$select}__menu-item--LineHeight));
+
+  // Match within a menu item when using typeahead
+  --#{$select}__menu-item--match--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+
+  // Menu group padding
+  --#{$select}__menu-search--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu-search--PaddingRight: var(--#{$select}__menu-item--PaddingRight);
+  --#{$select}__menu-search--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-search--PaddingLeft: var(--#{$select}__menu-item--PaddingLeft);
+
+  // Menu group
+  // add a little space if it's not the first group because the first one also has the menu padding
+  --#{$select}__menu-group--menu-group--PaddingTop: var(--#{$pf-global}--spacer--sm);
+
+  // Menu section heading
+  // Paddings are set to always line up with the other menu items
+  --#{$select}__menu-group-title--PaddingTop: var(--#{$select}__menu-item--PaddingTop);
+  --#{$select}__menu-group-title--PaddingRight: var(--#{$select}__menu-item--PaddingRight);
+  --#{$select}__menu-group-title--PaddingBottom: var(--#{$select}__menu-item--PaddingBottom);
+  --#{$select}__menu-group-title--PaddingLeft: var(--#{$select}__menu-item--PaddingLeft);
+  --#{$select}__menu-group-title--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$select}__menu-group-title--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$select}__menu-group-title--Color: var(--#{$pf-global}--Color--dark-200);
+
+  // Menu item count
+  --#{$select}__menu-item-count--MarginLeft: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-item-count--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$select}__menu-item-count--Color: var(--#{$pf-global}--Color--200);
+  --#{$select}__menu-item--disabled__menu-item-count--Color: var(--#{$pf-global}--Color--dark-200);
+
+  // Menu item description
+  --#{$select}__menu-item-description--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$select}__menu-item-description--Color: var(--#{$pf-global}--Color--200);
+  --#{$select}__menu-item-description--PaddingRight: var(--#{$select}__menu-item--PaddingRight);
+
+  // Menu item title
+  --#{$select}__menu-item-main--PaddingRight: var(--#{$select}__menu-item--PaddingRight);
+  --#{$select}__menu-item--m-selected__menu-item-main--PaddingRight: var(--#{$select}__menu-item--m-selected--PaddingRight);
+
+  // Menu footer
+  --#{$select}__menu-footer--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-top);
+  --#{$select}__menu-footer--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-footer--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-footer--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-footer--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$select}__menu-footer--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$select}__menu-footer--MarginBottom: calc(var(--#{$pf-global}--spacer--sm) * -1);
+
+  // Divider
+  --#{$select}-menu--c-divider--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$select}-menu--c-divider--MarginBottom: var(--#{$pf-global}--spacer--sm);
+
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  .#{$divider} {
+    margin-block-start: var(--#{$select}-menu--c-divider--MarginTop);
+    margin-block-end: var(--#{$select}-menu--c-divider--MarginBottom);
+
+    // Support divider as last item in group to separate groups
+    &:last-child {
+      --#{$select}-menu--c-divider--MarginBottom: 0;
+    }
+  }
+
+  &.pf-m-invalid {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}--m-invalid__toggle--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}--m-invalid__toggle--before--BorderBottomWidth);
+    --#{$select}__toggle--hover--before--BorderBottomColor: var(--#{$select}--m-invalid__toggle--hover--before--BorderBottomColor);
+    --#{$select}__toggle--focus--before--BorderBottomColor: var(--#{$select}--m-invalid__toggle--focus--before--BorderBottomColor);
+    --#{$select}__toggle--active--before--BorderBottomColor: var(--#{$select}--m-invalid__toggle--active--before--BorderBottomColor);
+    --#{$select}__toggle--m-expanded--before--BorderBottomColor: var(--#{$select}--m-invalid__toggle--m-expanded--before--BorderBottomColor);
+    --#{$select}__toggle-status-icon--Color: var(--#{$select}--m-invalid__toggle-status-icon--Color);
+  }
+
+  &.pf-m-success {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}--m-success__toggle--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}--m-success__toggle--before--BorderBottomWidth);
+    --#{$select}__toggle--hover--before--BorderBottomColor: var(--#{$select}--m-success__toggle--hover--before--BorderBottomColor);
+    --#{$select}__toggle--focus--before--BorderBottomColor: var(--#{$select}--m-success__toggle--focus--before--BorderBottomColor);
+    --#{$select}__toggle--active--before--BorderBottomColor: var(--#{$select}--m-success__toggle--active--before--BorderBottomColor);
+    --#{$select}__toggle--m-expanded--before--BorderBottomColor: var(--#{$select}--m-success__toggle--m-expanded--before--BorderBottomColor);
+    --#{$select}__toggle-status-icon--Color: var(--#{$select}--m-success__toggle-status-icon--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}--m-warning__toggle--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}--m-warning__toggle--before--BorderBottomWidth);
+    --#{$select}__toggle--hover--before--BorderBottomColor: var(--#{$select}--m-warning__toggle--hover--before--BorderBottomColor);
+    --#{$select}__toggle--focus--before--BorderBottomColor: var(--#{$select}--m-warning__toggle--focus--before--BorderBottomColor);
+    --#{$select}__toggle--active--before--BorderBottomColor: var(--#{$select}--m-warning__toggle--active--before--BorderBottomColor);
+    --#{$select}__toggle--m-expanded--before--BorderBottomColor: var(--#{$select}--m-warning__toggle--m-expanded--before--BorderBottomColor);
+    --#{$select}__toggle-status-icon--Color: var(--#{$select}--m-warning__toggle-status-icon--Color);
+  }
+}
+
+.#{$select}__menu-search + .#{$divider} {
+  --#{$select}-menu--c-divider--MarginTop: 0;
+}
+
+.#{$select}__toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: var(--#{$select}__toggle--MinWidth);
+  padding-block-start: var(--#{$select}__toggle--PaddingTop);
+  padding-block-end: var(--#{$select}__toggle--PaddingBottom);
+  padding-inline-start: var(--#{$select}__toggle--PaddingLeft);
+  padding-inline-end: var(--#{$select}__toggle--PaddingRight);
+  font-size: var(--#{$select}__toggle--FontSize);
+  font-weight: var(--#{$select}__toggle--FontWeight);
+  line-height: var(--#{$select}__toggle--LineHeight);
+  color: var(--#{$select}__toggle--Color);
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: var(--#{$select}__toggle--BackgroundColor);
+  border: none;
+
+  &.pf-m-disabled,
+  &:disabled {
+    --#{$select}__toggle--BackgroundColor: var(--#{$select}__toggle--disabled--BackgroundColor);
+
+    pointer-events: none;
+
+    &::before {
+      border: 0;
+    }
+  }
+
+  &::before {
+    --#{$select}__toggle--before--BorderWidth-base: var(--#{$select}__toggle--before--BorderTopWidth) var(--#{$select}__toggle--before--BorderRightWidth) var(--#{$select}__toggle--before--BorderBottomWidth) var(--#{$select}__toggle--before--BorderLeftWidth); // remove at breaking change
+
+    position: absolute;
+    inset: 0;
+    content: "";
+    border-style: solid;
+    border-width: var(--#{$select}__toggle--before--BorderWidth, var(--#{$select}__toggle--before--BorderWidth-base));
+    border-block-start-color: var(--#{$select}__toggle--before--BorderTopColor);
+    border-block-end-color: var(--#{$select}__toggle--before--BorderBottomColor);
+    border-inline-start-color: var(--#{$select}__toggle--before--BorderLeftColor);
+    border-inline-end-color: var(--#{$select}__toggle--before--BorderRightColor);
+  }
+
+  &:hover {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}__toggle--hover--before--BorderBottomColor);
+  }
+
+  &:focus,
+  &:focus-within {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}__toggle--focus--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}__toggle--focus--before--BorderBottomWidth);
+  }
+
+  &:active,
+  &.pf-m-active {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}__toggle--active--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}__toggle--active--before--BorderBottomWidth);
+  }
+
+  .pf-m-expanded > & {
+    --#{$select}__toggle--before--BorderBottomColor: var(--#{$select}__toggle--m-expanded--before--BorderBottomColor);
+    --#{$select}__toggle--before--BorderBottomWidth: var(--#{$select}__toggle--m-expanded--before--BorderBottomWidth);
+  }
+
+  &.pf-m-plain {
+    --#{$select}__toggle-arrow--Color: var(--#{$select}--m-plain__toggle-arrow--Color);
+
+    &::before {
+      border-color: var(--#{$select}__toggle--m-plain--before--BorderColor);
+    }
+
+    &:hover,
+    &:active,
+    &.pf-m-active,
+    &:focus,
+    .#{$select}.pf-m-expanded > & {
+      --#{$select}--m-plain__toggle-arrow--Color: var(--#{$select}--m-plain--hover__toggle-arrow--Color);
+    }
+  }
+
+  &.pf-m-typeahead {
+    --#{$select}__toggle--PaddingTop: 0;
+    --#{$select}__toggle--PaddingRight: 0;
+    --#{$select}__toggle--PaddingBottom: 0;
+
+    .#{$form-control} {
+      @include pf-v5-text-overflow;
+
+      --#{$form-control}--invalid--BackgroundUrl: none;
+
+      position: relative;
+    }
+  }
+
+  .#{$select}__toggle-clear {
+    padding-inline-start: var(--#{$select}__toggle-clear--PaddingLeft);
+    padding-inline-end: var(--#{$select}__toggle-clear--PaddingRight);
+    margin-inline-start: auto;
+  }
+
+  .#{$select}__toggle-button {
+    color: var(--#{$select}__toggle-button--Color);
+  }
+
+  .#{$select}__toggle-clear + .#{$select}__toggle-button {
+    padding-inline-start: var(--#{$select}__toggle-clear--toggle-button--PaddingLeft);
+  }
+
+  &.pf-m-placeholder {
+    --#{$select}__toggle-text--Color: var(--#{$select}__toggle--m-placeholder__toggle-text--Color);
+  }
+}
+
+.#{$select}__toggle-arrow {
+  color: var(--#{$select}__toggle-arrow--Color, inherit);
+
+  * + & {
+    margin-inline-start: var(--#{$select}__toggle-arrow--MarginLeft);
+    margin-inline-end: var(--#{$select}__toggle-arrow--MarginRight);
+  }
+  // stylelint-disable-next-line
+  .#{$select}.pf-m-top.pf-m-expanded & {
+    transform: rotate(var(--#{$select}__toggle-arrow--m-top--m-expanded__toggle-arrow--Rotate));
+  }
+}
+
+.#{$select}__toggle-text {
+  @include pf-v5-text-overflow;
+
+  color: var(--#{$select}__toggle-text--Color, inherit);
+}
+
+.#{$select}__toggle-wrapper {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+
+  // Max-width is needed for ellipsing the text. This leaves enough space for the toggle caret.
+  // However, for cases where the clear icon button or a badge are added, the correct width will need to be calculated in script
+  min-width: 0;
+  max-width: var(--#{$select}__toggle-wrapper--MaxWidth);
+  white-space: normal;
+
+  // Add space between children
+  > :not(:last-child) {
+    margin-inline-end: var(--#{$select}__toggle-wrapper--not-last-child--MarginRight);
+  }
+
+  // a chip group needs a bottom margin to make some space between the chip group and typeahead input box if it wraps
+  .#{$chip}-group {
+    margin-block-start: var(--#{$select}__toggle-wrapper--c-chip-group--MarginTop);
+    margin-block-end: var(--#{$select}__toggle-wrapper--c-chip-group--MarginBottom);
+  }
+
+  // When the input is the first thing then use a negative left padding so it matches the toggle container
+  > .#{$select}__toggle-typeahead:first-child {
+    margin-inline-start: calc(-1 * var(--#{$select}__toggle--PaddingLeft));
+  }
+}
+
+.#{$select}__toggle-icon + .#{$select}__toggle-text {
+  margin-inline-start: var(--#{$select}__toggle-icon--toggle-text--MarginLeft);
+}
+
+.#{$select}__toggle-status-icon {
+  margin-inline-start: var(--#{$select}__toggle-status-icon--MarginLeft);
+  color: var(--#{$select}__toggle-status-icon--Color);
+}
+
+.#{$select}__toggle-badge {
+  display: flex;
+  padding-inline-start: var(--#{$select}__toggle-badge--PaddingLeft);
+}
+
+.#{$select}__toggle-typeahead {
+  flex-basis: var(--#{$select}__toggle-typeahead--FlexBasis);
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: var(--#{$select}__toggle-typeahead--MinWidth);
+
+  &.#{$form-control} {
+    background-color: var(--#{$select}__toggle-typeahead--BackgroundColor);
+
+    &::before,
+    &::after {
+      border: 0;
+    }
+  }
+}
+
+.#{$select}__menu {
+  position: absolute;
+ inset-block-start: var(--#{$select}__menu--Top);
+  z-index: var(--#{$select}__menu--ZIndex);
+  width: var(--#{$select}__menu--Width);
+  min-width: var(--#{$select}__menu--MinWidth);
+  padding-block-start: var(--#{$select}__menu--PaddingTop);
+  padding-block-end: var(--#{$select}__menu--PaddingBottom);
+  background-color: var(--#{$select}__menu--BackgroundColor);
+  background-clip: padding-box;
+  box-shadow: var(--#{$select}__menu--BoxShadow);
+
+  &.pf-m-align-right {
+   inset-inline-end: 0;
+  }
+
+  .#{$select}.pf-m-top & {
+   inset-block-start: 0;
+    transform: translateY(var(--#{$select}__menu--m-top--TranslateY));
+  }
+
+  &.pf-m-static {
+    --#{$select}__menu--m-top--TranslateY: 0;
+
+    position: static;
+    inset: auto;
+    z-index: auto;
+    min-width: min-content;
+  }
+}
+
+.#{$select}__menu-fieldset {
+  border: 0;
+}
+
+.#{$select}__menu-wrapper {
+  display: flex;
+
+  &.pf-m-favorite .#{$select}__menu-item.pf-m-favorite-action {
+    --#{$select}__menu-item--m-favorite-action--Color: var(--#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--Color);
+    --#{$select}__menu-item--m-favorite-action--hover--Color: var(--#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--hover--Color);
+    --#{$select}__menu-item--m-favorite-action--focus--Color: var(--#{$select}__menu-wrapper--m-favorite__menu-item--m-favorite-action--focus--Color);
+  }
+}
+
+.#{$select}__menu-item {
+  position: relative;
+  width: var(--#{$select}__menu-item--Width);
+  padding-block-start: var(--#{$select}__menu-item--PaddingTop);
+  padding-block-end: var(--#{$select}__menu-item--PaddingBottom);
+  padding-inline-start: var(--#{$select}__menu-item--PaddingLeft);
+  padding-inline-end: var(--#{$select}__menu-item--PaddingRight);
+  font-size: var(--#{$select}__menu-item--FontSize);
+  font-weight: var(--#{$select}__menu-item--FontWeight);
+  line-height: var(--#{$select}__menu-item--LineHeight);
+  color: var(--#{$select}__menu-item--Color);
+  text-align: start;
+  white-space: nowrap;
+  background-color: transparent;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &.pf-m-focus {
+    --#{$select}__menu-item--m-action--Color: var(--#{$select}__menu-item--hover__menu-item--m-action--Color); // remove at breaking change
+
+    text-decoration: none;
+  }
+
+  @at-root .#{$select}__menu-wrapper,
+  & {
+    &:hover {
+      background-color: var(--#{$select}__menu-item--hover--BackgroundColor);
+    }
+  }
+
+  @at-root .#{$select}__menu-wrapper:focus-within,
+  .#{$select}__menu-wrapper.pf-m-focus,
+  &:focus,
+  &.pf-m-focus {
+    position: relative;
+    background-color: var(--#{$select}__menu-item--focus--BackgroundColor);
+  }
+
+  &.pf-m-link {
+    --#{$select}__menu-item--PaddingRight: 0;
+    --#{$select}__menu-item-main--PaddingRight: 0;
+    --#{$select}__menu-item-description--PaddingRight: 0;
+    --#{$select}__menu-item--Width: var(--#{$select}__menu-item--m-link--Width);
+    --#{$select}__menu-item--hover--BackgroundColor: var(--#{$select}__menu-item--m-link--hover--BackgroundColor);
+    --#{$select}__menu-item--focus--BackgroundColor: var(--#{$select}__menu-item--m-link--focus--BackgroundColor);
+
+    flex-grow: 1;
+  }
+
+  &.pf-m-action {
+    --#{$select}__menu-item--Color: var(--#{$select}__menu-item--m-action--Color);
+    --#{$select}__menu-item--Width: var(--#{$select}__menu-item--m-action--Width);
+    --#{$select}__menu-item--hover--BackgroundColor: var(--#{$select}__menu-item--m-action--hover--BackgroundColor);
+    --#{$select}__menu-item--focus--BackgroundColor: var(--#{$select}__menu-item--m-action--focus--BackgroundColor);
+
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--#{$select}__menu-item--m-action--FontSize);
+
+    &:hover {
+      --#{$select}__menu-item--m-action--Color: var(--#{$select}__menu-item--m-action--hover--Color);
+    }
+
+    &:focus {
+      --#{$select}__menu-item--m-action--Color: var(--#{$select}__menu-item--m-action--focus--Color);
+    }
+
+    &:disabled {
+      --#{$select}__menu-item--disabled--Color: var(--#{$select}__menu-item--m-action--disabled--Color);
+    }
+  }
+
+  &.pf-m-favorite-action {
+    --#{$select}__menu-item--m-action--Color: var(--#{$select}__menu-item--m-favorite-action--Color);
+    --#{$select}__menu-item--m-action--hover--Color: var(--#{$select}__menu-item--m-favorite-action--hover--Color);
+    --#{$select}__menu-item--m-action--focus--Color: var(--#{$select}__menu-item--m-favorite-action--focus--Color);
+  }
+
+  &.pf-m-selected {
+    --#{$select}__menu-item--PaddingRight: var(--#{$select}__menu-item--m-selected--PaddingRight);
+    --#{$select}__menu-item-main--PaddingRight: var(--#{$select}__menu-item--m-selected__menu-item-main--PaddingRight);
+  }
+
+  &.pf-m-description {
+    &:not(.#{$check}) {
+      --#{$select}__menu-item--PaddingRight: 0;
+    }
+
+    .#{$check}__label {
+      white-space: nowrap;
+    }
+
+    white-space: normal;
+  }
+
+  @at-root .#{$select}__menu-wrapper.pf-m-disabled,
+  &:disabled,
+  &.pf-m-disabled {
+    --#{$select}__menu-item-count--Color: var(--#{$select}__menu-item--disabled__menu-item-count--Color);
+
+    color: var(--#{$select}__menu-item--disabled--Color);
+    pointer-events: none;
+    background-color: var(--#{$select}__menu-item--disabled--BackgroundColor);
+  }
+
+  &.#{$check} .#{$check}__label {
+    width: 100%;
+  }
+
+  &.pf-m-load {
+    --#{$select}__menu-item--hover--BackgroundColor: transparent;
+    --#{$select}__menu-item--focus--BackgroundColor: transparent;
+    --#{$select}__menu-item--Color: var(--#{$select}__menu-item--m-load--Color);
+  }
+}
+
+.#{$select}__list-item {
+  &.pf-m-loading {
+    padding-block-start: var(--#{$select}__list-item--m-loading--PaddingTop);
+    text-align: center;
+  }
+}
+
+.#{$select}__menu-item-main {
+  position: relative;
+  display: block;
+  padding-inline-end: var(--#{$select}__menu-item-main--PaddingRight);
+  white-space: nowrap;
+}
+
+.#{$select}__menu-item-row {
+  display: flex;
+}
+
+.#{$select}__menu-item-text {
+  flex-grow: 1;
+}
+
+.#{$select}__menu-item-count {
+  align-self: center;
+  margin-inline-start: var(--#{$select}__menu-item-count--MarginLeft);
+  font-size: var(--#{$select}__menu-item-count--FontSize);
+  color: var(--#{$select}__menu-item-count--Color);
+}
+
+.#{$select}__menu-item-description {
+  display: block;
+  padding-inline-end: var(--#{$select}__menu-item-description--PaddingRight);
+  font-size: var(--#{$select}__menu-item-description--FontSize);
+  color: var(--#{$select}__menu-item-description--Color);
+}
+
+.#{$select}__menu-item-icon {
+  position: absolute;
+  inset-block-start: var(--#{$select}__menu-item-icon--Top);
+  inset-inline-end: var(--#{$select}__menu-item-icon--Right);
+  font-size: var(--#{$select}__menu-item-icon--FontSize);
+  color: var(--#{$select}__menu-item-icon--Color);
+  transform: translateY(var(--#{$select}__menu-item-icon--TranslateY));
+}
+
+.#{$select}__menu-item-action-icon {
+  display: flex;
+  align-items: center;
+  min-height: var(--#{$select}__menu-item-action-icon--MinHeight);
+}
+
+.#{$select}__menu-item--match {
+  font-weight: var(--#{$select}__menu-item--match--FontWeight);
+  background-color: inherit;
+}
+
+.#{$select}__menu-group + .#{$select}__menu-group {
+  padding-block-start: var(--#{$select}__menu-group--menu-group--PaddingTop);
+}
+
+.#{$select}__menu-search {
+  padding-block-start: var(--#{$select}__menu-search--PaddingTop);
+  padding-block-end: var(--#{$select}__menu-search--PaddingBottom);
+  padding-inline-start: var(--#{$select}__menu-search--PaddingLeft);
+  padding-inline-end: var(--#{$select}__menu-search--PaddingRight);
+}
+
+.#{$select}__menu-group-title {
+  padding-block-start: var(--#{$select}__menu-group-title--PaddingTop);
+  padding-block-end: var(--#{$select}__menu-group-title--PaddingBottom);
+  padding-inline-start: var(--#{$select}__menu-group-title--PaddingLeft);
+  padding-inline-end: var(--#{$select}__menu-group-title--PaddingRight);
+  font-size: var(--#{$select}__menu-group-title--FontSize);
+  font-weight: var(--#{$select}__menu-group-title--FontWeight);
+  color: var(--#{$select}__menu-group-title--Color);
+}
+
+.#{$select}__menu-footer {
+  padding-block-start: var(--#{$select}__menu-footer--PaddingTop);
+  padding-block-end: var(--#{$select}__menu-footer--PaddingBottom);
+  padding-inline-start: var(--#{$select}__menu-footer--PaddingLeft);
+  padding-inline-end: var(--#{$select}__menu-footer--PaddingRight);
+  margin-block-start: var(--#{$select}__menu-footer--MarginTop);
+  margin-block-end: var(--#{$select}__menu-footer--MarginBottom);
+  box-shadow: var(--#{$select}__menu-footer--BoxShadow);
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/select";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-select;
+}

@@ -1,0 +1,18 @@
+#ws-core-c-table-th-truncation {
+  position: relative;
+  width: 800px;
+}
+
+#ws-core-c-table-th-truncation .pf-v5-c-tooltip {
+  position: absolute;
+ inset-inline-start: 440px;
+ inset-block-start: -18px;
+}
+
+#ws-core-c-table-sticky-header .ws-preview-html {
+  height: 300px;
+}
+
+#ws-core-c-table-sticky-columns-and-header .ws-preview-html {
+  height: 600px;
+}

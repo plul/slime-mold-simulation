@@ -1,0 +1,1443 @@
+// @debug $table; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$table} {
+
+  // stylelint-disable
+  // ============================================================ //
+  // Start non-conformant variables
+  //
+  // these variables do not conform to guidelines as styling targets individual elements
+  // this is purposeful and necessary to avoid adding selectors to each td/th
+  // ============================================================ //
+
+  // Base
+  --#{$table}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$table}--border-width--base: var(--#{$pf-global}--BorderWidth--sm);
+
+  // Caption
+  --#{$table}__caption--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$table}__caption--Color: var(--#{$pf-global}--Color--200);
+  --#{$table}__caption--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$table}__caption--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$table}__caption--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$table}__caption--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$table}__caption--xl--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$table}__caption--xl--PaddingLeft: var(--#{$pf-global}--spacer--md);
+
+  @media screen and (max-width: $pf-v5-global--breakpoint--xl) {
+    --#{$table}__caption--PaddingRight: var(--#{$table}__caption--xl--PaddingRight);
+    --#{$table}__caption--PaddingLeft: var(--#{$table}__caption--xl--PaddingLeft);
+  }
+
+  // Thead
+  --#{$table}__thead--cell--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$table}__thead--cell--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+
+  // Tbody cell
+  --#{$table}__tbody--cell--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$table}__tbody--cell--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+
+  // Tr
+  --#{$table}__tr--BoxShadow--top--base: 0 #{pf-size-prem(-3px)} #{pf-size-prem(4px)} #{pf-size-prem(-2px)} rgba(3,3,3,.08);
+
+  // Th / td shared variables
+  --#{$table}--cell--Padding--base: var(--#{$pf-global}--spacer--md);
+  --#{$table}--cell--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$table}--cell--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$table}--cell--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}--cell--PaddingTop: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingRight: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingBottom: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--PaddingLeft: var(--#{$table}--cell--Padding--base);
+  --#{$table}--cell--first-last-child--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$table}--cell--first-last-child--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$table}--cell--first-last-child--xl--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--cell--first-last-child--xl--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$table}__tr--m-first-cell-offset-reset--cell--PaddingLeft: var(--#{$table}--cell--Padding--base);
+
+  // Default cell variables
+  --#{$table}--cell--MinWidth: 0;
+  --#{$table}--cell--MaxWidth: none;
+  --#{$table}--cell--Width: auto;
+  --#{$table}--cell--Overflow: visible;
+  --#{$table}--cell--TextOverflow: clip;
+  --#{$table}--cell--WhiteSpace: normal;
+  --#{$table}--cell--WordBreak: normal;
+
+  // Border
+  --#{$table}--cell--m-border-right--before--BorderRightWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$table}--cell--m-border-right--before--BorderRightColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$table}--cell--m-border-left--before--BorderLeftWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$table}--cell--m-border-left--before--BorderLeftColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Help
+  --#{$table}--cell--m-help--MinWidth: 11ch;
+
+  // Truncate
+  --#{$table}--m-truncate--cell--MaxWidth: 1px;
+  --#{$table}--m-truncate--cell--MinWidth: calc(5ch + var(--#{$table}--cell--PaddingRight) + var(--#{$table}--cell--PaddingLeft));
+
+  // Hidden visible
+  --#{$table}--cell--hidden-visible--Display: table-cell;
+  // stylelint-enable
+
+  // ============================================================ //
+  // End non-conformant variables
+  // ============================================================ //
+
+  // Table cell - toggle
+  --#{$table}__toggle--c-button--MarginTop: calc(#{pf-size-prem(6px)} * -1); // use var(--#{$pf-global}--spacer--form-element) at breaking change
+  --#{$table}__toggle--c-button--MarginBottom: calc(#{pf-size-prem(6px)} * -1); // use var(--#{$pf-global}--spacer--form-element) at breaking change
+  --#{$table}__toggle--c-button__toggle-icon--Rotate: 270deg;
+  --#{$table}__toggle--c-button__toggle-icon--Transition: .2s ease-in 0s;
+  --#{$table}__toggle--c-button--m-expanded__toggle-icon--Rotate: 360deg;
+
+  // Button
+  --#{$table}__button--BackgroundColor: transparent;
+  --#{$table}__button--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__button--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__button--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__button--active--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__button--OutlineOffset: calc(var(--#{$pf-global}--BorderWidth--lg) * -1);
+
+  // Compact
+  --#{$table}--m-compact__toggle--PaddingTop: 0;
+  --#{$table}--m-compact__toggle--PaddingBottom: 0;
+
+  // Check
+  --#{$table}__check--input--MarginTop: #{pf-size-prem(4px)};
+  --#{$table}__check--input--FontSize: var(--#{$pf-global}--FontSize--md);
+
+  // Favorite
+  --#{$table}--cell--m-favorite--Color: var(--#{$pf-global}--Color--light-300);
+  --#{$table}__favorite--c-button--Color: var(--#{$pf-global}--Color--light-300);
+  --#{$table}__favorite--c-button--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$table}__favorite--c-button--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__favorite--c-button--MarginRight: calc(var(--#{$pf-global}--spacer--md) * -1);
+  --#{$table}__favorite--c-button--MarginBottom: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__favorite--c-button--MarginLeft: calc(var(--#{$pf-global}--spacer--md) * -1);
+  --#{$table}__favorite--m-favorited--c-button--Color: var(--#{$pf-global}--palette--gold-400);
+  --#{$table}__sort--m-favorite__button__text--Color: var(--#{$pf-global}--Color--200);
+  --#{$table}__sort--m-favorite__button--hover__text--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__sort--m-favorite__button--focus__text--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__sort--m-favorite__button--active__text--Color: var(--#{$pf-global}--Color--100);
+
+  // Draggable
+  --#{$table}__draggable--c-button--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__draggable--c-button--MarginRight: calc(var(--#{$pf-global}--spacer--md) * -1);
+  --#{$table}__draggable--c-button--MarginBottom: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__draggable--c-button--MarginLeft: calc(var(--#{$pf-global}--spacer--md) * -1);
+
+  // Ghost row
+  --#{$table}__tr--m-ghost-row--Opacity: .4;
+  --#{$table}__tr--m-ghost-row--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // Action
+  --#{$table}__action--PaddingTop: 0;
+  --#{$table}__action--PaddingRight: 0;
+  --#{$table}__action--PaddingBottom: 0;
+  --#{$table}__action--PaddingLeft: 0;
+
+  // Inline edit
+  --#{$table}__inline-edit-action--PaddingTop: 0;
+  --#{$table}__inline-edit-action--PaddingRight: 0;
+  --#{$table}__inline-edit-action--PaddingBottom: 0;
+  --#{$table}__inline-edit-action--PaddingLeft: 0;
+
+  // Expandable row
+  // hardcoding to match design spec
+  --#{$table}__expandable-row--Transition: var(--#{$pf-global}--Transition);
+  --#{$table}__expandable-row--MaxHeight: #{pf-size-prem(450px)};
+  --#{$table}__expandable-row-content--Transition: var(--#{$pf-global}--Transition);
+  --#{$table}__expandable-row-content--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$table}__expandable-row-content--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+
+  // ::before border
+  --#{$table}__expandable-row--after--Top: calc(var(--#{$table}--border-width--base) * -1);
+  --#{$table}__expandable-row--after--Bottom: calc(var(--#{$table}--border-width--base) * -1);
+  --#{$table}__expandable-row--after--border-width--base: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$table}__expandable-row--after--BorderLeftWidth: 0;
+  --#{$table}__expandable-row--after--BorderColor: var(--#{$pf-global}--active-color--100);
+
+  // Icon inline
+  --#{$table}__icon-inline--MarginRight: var(--#{$pf-global}--spacer--sm);
+
+  // Sort cell
+  --#{$table}__sort--MinWidth: calc(6ch + var(--#{$table}--cell--PaddingRight) + var(--#{$table}--cell--PaddingLeft) + var(--#{$table}__sort-indicator--MarginLeft));
+
+  // Sort button
+  --#{$table}__sort__button--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$table}__sort__button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$table}__sort__button--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$table}__sort__button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$table}__sort__button--MarginTop: calc(var(--#{$table}__sort__button--PaddingTop) * -1);
+  --#{$table}__sort__button--MarginBottom: calc(var(--#{$table}__sort__button--PaddingBottom) * -1);
+  --#{$table}__sort__button--MarginLeft: calc(var(--#{$table}__sort__button--PaddingLeft) * -1);
+  --#{$table}__sort__button--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__sort--m-selected__button--Color: var(--#{$pf-global}--active-color--100);
+  --#{$table}__sort--m-help--MinWidth: 15ch;
+
+  // Sort text
+  --#{$table}__sort__button__text--Color: currentcolor;
+  --#{$table}__sort__button--hover__text--Color: currentcolor;
+  --#{$table}__sort__button--focus__text--Color: currentcolor;
+  --#{$table}__sort__button--active__text--Color: currentcolor;
+
+  // Sort indicator
+  --#{$table}__sort-indicator--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$table}__sort-indicator--MarginLeft: var(--#{$pf-global}--spacer--md);
+  --#{$table}__sort--m-selected__sort-indicator--Color: var(--#{$pf-global}--active-color--100);
+  --#{$table}__sort__button--hover__sort-indicator--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__sort__button--active__sort-indicator--Color: var(--#{$pf-global}--Color--100);
+  --#{$table}__sort__button--focus__sort-indicator--Color: var(--#{$pf-global}--Color--100);
+
+  // Help
+  --#{$table}__th--m-help--MinWidth: 11ch;
+
+  // Table header popover
+  --#{$table}__column-help--MarginLeft: var(--#{$pf-global}--spacer--xs);
+  --#{$table}__column-help--TranslateY: #{pf-size-prem(2px)};
+  --#{$table}__column-help--c-button--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__column-help--c-button--MarginBottom: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$table}__column-help--c-button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$table}__column-help--c-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // Compound expansion toggle button
+  --#{$table}__compound-expansion-toggle__button--Color: var(--#{$pf-global}--active-color--100);
+  --#{$table}__compound-expansion-toggle__button--hover--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$table}__compound-expansion-toggle__button--focus--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$table}__compound-expansion-toggle__button--active--Color: var(--#{$pf-global}--link--Color--hover);
+
+  // ::before border treatment
+  --#{$table}__compound-expansion-toggle__button--before--border-width--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$table}__compound-expansion-toggle__button--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$table}__compound-expansion-toggle__button--before--BorderRightWidth: 0;
+  --#{$table}__compound-expansion-toggle__button--before--BorderLeftWidth: 0;
+  --#{$table}__compound-expansion-toggle__button--before--Bottom: calc(var(--#{$table}__compound-expansion-toggle__button--before--border-width--base) * -1);
+  --#{$table}__compound-expansion-toggle__button--before--Left: calc(var(--#{$table}__compound-expansion-toggle__button--before--border-width--base) * -1);
+
+  // ::before border treatment
+  --#{$table}__compound-expansion-toggle__button--after--border-width--base: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$table}__compound-expansion-toggle__button--after--BorderColor: var(--#{$pf-global}--primary-color--100);
+  --#{$table}__compound-expansion-toggle__button--after--BorderTopWidth: 0;
+  --#{$table}__compound-expansion-toggle__button--after--Top: calc(var(--#{$table}__compound-expansion-toggle__button--before--border-width--base) * -1);
+  --#{$table}__compound-expansion-toggle__button--after--Left: calc(var(--#{$table}__compound-expansion-toggle__button--before--border-width--base) * -1);
+
+  // Compact table
+  --#{$table}--m-compact__th--PaddingTop: calc(var(--#{$pf-global}--spacer--sm) + var(--#{$pf-global}--spacer--xs));
+  --#{$table}--m-compact__th--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$table}--m-compact--cell--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$table}--m-compact--cell--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$table}--m-compact--cell--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$table}--m-compact--cell--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$table}--m-compact--cell--first-last-child--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-compact--cell--first-last-child--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-compact--cell--first-last-child--xl--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--m-compact--cell--first-last-child--xl--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--m-compact--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$table}--m-compact__expandable-row-content--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--m-compact__expandable-row-content--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--m-compact__expandable-row-content--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+  --#{$table}--m-compact__expandable-row-content--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+
+  // Nested table
+  --#{$table}--nested--first-last-child--PaddingRight: var(--#{$table}--m-compact--cell--first-last-child--PaddingLeft);
+  --#{$table}--nested--first-last-child--PaddingLeft: var(--#{$table}--m-compact--cell--first-last-child--PaddingRight);
+
+  // Modifier - expandable row expanded
+  --#{$table}__expandable-row--m-expanded--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+
+  // tr clickable
+  --#{$table}__tr--m-clickable--BoxShadow--top: var(--#{$table}__tr--BoxShadow--top--base);
+  --#{$table}__tr--m-clickable--BackgroundColor: transparent;
+  --#{$table}__tr--m-clickable--BoxShadow: none;
+  --#{$table}__tr--m-clickable--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+  --#{$table}__tr--m-clickable--hover--BoxShadow: var(--#{$table}__tr--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-clickable--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tr--m-clickable--focus--BoxShadow: var(--#{$table}__tr--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-clickable--focus--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tr--m-clickable--active--BoxShadow: var(--#{$table}__tr--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-clickable--active--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tr--m-clickable--m-selected--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom) inset, var(--#{$pf-global}--BoxShadow--sm-bottom);
+
+  // tr selected
+  --#{$table}__tr--m-selected--BoxShadow--top: var(--#{$table}__tr--BoxShadow--top--base);
+  --#{$table}__tr--m-selected--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tr--m-selected--BoxShadow: var(--#{$table}__tr--m-selected--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-selected--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+  --#{$table}__tr--m-selected--after--BorderLeftWidth: calc(2 * var(--#{$table}__expandable-row--after--border-width--base));
+  --#{$table}__tr--m-selected--after--BorderLeftColor: var(--#{$pf-global}--active-color--100);
+  --#{$table}__tr--m-selected--m-selected--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-selected--hover__tr--m-selected--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom) inset, var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tr--m-selected__tr--m-selected--hover--BoxShadow: var(--#{$table}__tr--m-selected--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+
+  // tbody clickable
+  --#{$table}__tbody--m-clickable--BoxShadow--top: var(--#{$table}__tr--BoxShadow--top--base);
+  --#{$table}__tbody--m-clickable--BoxShadow: none;
+  --#{$table}__tbody--m-clickable--BackgroundColor: transparent;
+  --#{$table}__tbody--m-clickable--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+  --#{$table}__tbody--m-clickable--hover--BoxShadow: var(--#{$table}__tbody--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-clickable--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tbody--m-clickable--focus--BoxShadow: var(--#{$table}__tbody--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-clickable--focus--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tbody--m-clickable--active--BoxShadow: var(--#{$table}__tbody--m-clickable--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-clickable--active--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tbody--m-clickable--m-expanded--BorderColor: var(--#{$pf-global}--active-color--400);
+  --#{$table}__tbody--m-clickable--m-selected--hover__tr--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom) inset, var(--#{$pf-global}--BoxShadow--sm-bottom);
+
+  // tbody selected
+  --#{$table}__tbody--m-selected--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$table}__tbody--m-selected--BoxShadow--top: var(--#{$table}__tr--BoxShadow--top--base);
+  --#{$table}__tbody--m-selected--BoxShadow: var(--#{$table}__tbody--m-selected--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-selected--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+  --#{$table}__tbody--m-selected--after--BorderLeftWidth: calc(2 * var(--#{$table}__expandable-row--after--border-width--base));
+  --#{$table}__tbody--m-selected--after--BorderLeftColor: var(--#{$pf-global}--active-color--100);
+  --#{$table}__tbody--m-selected--m-selected--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-selected--hover__tbody--m-selected--BoxShadow: var(--#{$pf-global}--BoxShadow--sm-bottom) inset, var(--#{$pf-global}--BoxShadow--sm-bottom);
+  --#{$table}__tbody--m-selected__tbody--m-selected--hover--BoxShadow: var(--#{$table}__tr--m-selected--BoxShadow--top), var(--#{$pf-global}--BoxShadow--sm-bottom);
+
+  // Nested column header
+  --#{$table}__thead--m-nested-column-header--button--OutlineOffset: #{pf-size-prem(-3px)};
+  --#{$table}__thead--m-nested-column-header__tr--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$table}__thead--m-nested-column-header__tr--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+
+  // Subhead
+  --#{$table}__subhead--Color: var(--#{$pf-global}--Color--200);
+
+  // Striped
+  --#{$table}--m-striped__tr--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-200);
+
+  // Sticky
+  --#{$table}--m-sticky-header--cell--ZIndex: var(--#{$pf-global}--ZIndex--xs);
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--xl) {
+    --#{$table}--cell--first-last-child--PaddingRight: var(--#{$table}--cell--first-last-child--xl--PaddingRight);
+    --#{$table}--cell--first-last-child--PaddingLeft: var(--#{$table}--cell--first-last-child--xl--PaddingLeft);
+    --#{$table}--m-compact--cell--first-last-child--PaddingLeft: var(--#{$table}--m-compact--cell--first-last-child--xl--PaddingLeft);
+    --#{$table}--m-compact--cell--first-last-child--PaddingRight: var(--#{$table}--m-compact--cell--first-last-child--xl--PaddingRight);
+  }
+
+  @include pf-v5-t-light; // This component always needs to be light
+
+  // Base
+  width: 100%;
+  background-color: var(--#{$table}--BackgroundColor);
+
+  &.pf-m-fixed {
+    table-layout: fixed;
+  }
+
+  &.pf-m-sticky-header {
+    position: relative;
+
+    thead:where(.#{$table}__thead) tr:where(.#{$table}__tr) {
+      border-block-end: 0;
+
+      > * {
+        z-index: var(--#{$table}--m-sticky-header--cell--ZIndex); // set z-index here to allow sticky column to override
+      }
+    }
+
+    // standard sticky headers
+    > thead:where(.#{$table}__thead):not(.pf-m-nested-column-header) {
+      > tr:where(.#{$table}__tr) > * {
+        position: sticky;
+       inset-block-start: 0;
+        background: var(--#{$table}--BackgroundColor);
+
+        // stylelint-disable-next-line
+        &::after {
+          position: absolute;
+          inset-block-end: 0;
+          inset-inline-start: 0;
+          inset-inline-end: 0;
+          content: "";
+          border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+        }
+      }
+    }
+
+    // nested column header
+    > .pf-m-nested-column-header {
+      position: sticky;
+     inset-block-start: 0;
+      z-index: var(--#{$pf-global}--ZIndex--xs);
+      background: var(--#{$table}--BackgroundColor);
+
+      > .pf-m-border-row {
+        height: var(--#{$table}--border-width--base);
+        background-color: var(--#{$table}--BorderColor);
+      }
+
+      tr:where(.#{$table}__tr):not(:nth-last-child(2)) {
+        // stylelint-disable max-nesting-depth
+        th:where(.#{$table}__th),
+        td:where(.#{$table}__td) {
+          &:not([rowspan]) {
+            --#{$table}--cell--PaddingBottom: var(--#{$table}__thead--m-nested-column-header__tr--PaddingBottom);
+          }
+        }
+        // stylelint-enable
+      }
+    }
+  }
+
+  &:not(.pf-m-sticky-header) > .pf-m-nested-column-header {
+    tr:where(.#{$table}__tr):not(:last-child) {
+      border-block-end: 0; // hard reset tr borders in nested headers
+
+      // stylelint-disable max-nesting-depth
+      th:where(.#{$table}__th),
+      td:where(.#{$table}__td) {
+        &:not([rowspan]) {
+          --#{$table}--cell--PaddingBottom: var(--#{$table}__thead--m-nested-column-header__tr--PaddingBottom);
+        }
+      }
+      // stylelint-enable
+    }
+  }
+
+  // For regular and expandable tables
+  // stylelint-disable
+  &.pf-m-striped:not(.pf-m-expandable) > tbody:where(.#{$table}__tbody) > tr:where(.#{$table}__tr):nth-child(odd), // regular table
+  &.pf-m-striped.pf-m-expandable > tbody:where(.#{$table}__tbody):nth-of-type(odd) > tr:where(.#{$table}__tr):not(.#{$table}__expandable-row), // expandable table
+  > .pf-m-striped > tr:nth-child(odd), // tbody odd
+  > .pf-m-striped-even > tr:nth-child(even), // tbody even
+  tr:where(.#{$table}__tr).pf-m-striped { // tr
+    --#{$table}__sticky-column--BackgroundColor: var(--#{$table}--m-striped__tr--BackgroundColor);
+
+    background: var(--#{$table}--m-striped__tr--BackgroundColor);
+  }
+  // stylelint-enable
+
+  // Standard table row (non-expandable)
+  // exclude expandable rows
+  tr:where(.#{$table}__tr):not(.#{$table}__expandable-row) {
+    border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+
+    // stylelint-disable-next-line
+    &.pf-m-ghost-row {
+      background-color: var(--#{$table}__tr--m-ghost-row--BackgroundColor);
+      opacity: var(--#{$table}__tr--m-ghost-row--Opacity);
+    }
+  }
+
+  // Table cell
+  tr:where(.#{$table}__tr) > * {
+    @include pf-v5-hidden-visible(var(--#{$table}--cell--hidden-visible--Display));
+
+    // set position relative for ::before/::after borders
+    position: relative;
+    width: var(--#{$table}--cell--Width);
+    min-width: var(--#{$table}--cell--MinWidth);
+    max-width: var(--#{$table}--cell--MaxWidth);
+    padding-block-start: var(--#{$table}--cell--PaddingTop);
+    padding-block-end: var(--#{$table}--cell--PaddingBottom);
+    padding-inline-start: var(--#{$table}--cell--PaddingLeft);
+    padding-inline-end: var(--#{$table}--cell--PaddingRight);
+
+    // default settings
+    overflow: var(--#{$table}--cell--Overflow);
+    font-size: var(--#{$table}--cell--FontSize);
+    font-weight: var(--#{$table}--cell--FontWeight);
+    color: var(--#{$table}--cell--Color);
+    text-overflow: var(--#{$table}--cell--TextOverflow);
+    word-break: var(--#{$table}--cell--WordBreak);
+    white-space: var(--#{$table}--cell--WhiteSpace);
+
+    // First child padding left
+    &:first-child {
+      --#{$table}--cell--PaddingLeft: var(--#{$table}--cell--first-last-child--PaddingLeft);
+    }
+
+    // Last child padding right
+    &:last-child {
+      --#{$table}--cell--PaddingRight: var(--#{$table}--cell--first-last-child--PaddingRight);
+    }
+
+    &.pf-m-center {
+      text-align: center;
+    }
+
+    &:empty {
+      width: auto;
+      min-width: 0;
+      padding: 0;
+    }
+
+    &.pf-m-help {
+      --#{$table}--cell--MinWidth: var(--#{$table}--cell--m-help--MinWidth);
+    }
+
+    &.pf-m-favorite {
+      --#{$table}__button--Color: var(--#{$table}--cell--m-favorite--Color);
+      --#{$table}__sort--MinWidth: fit-content;
+      --#{$table}--cell--MaxWidth: fit-content;
+      --#{$table}--cell--Overflow: visible;
+    }
+
+    &.pf-m-border-right::before,
+    &.pf-m-border-left::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      pointer-events: none;
+      content: "";
+    }
+
+    &.pf-m-border-right::before {
+      border-inline-end: var(--#{$table}--cell--m-border-right--before--BorderRightWidth) solid var(--#{$table}--cell--m-border-right--before--BorderRightColor);
+    }
+
+    &.pf-m-border-left::before {
+      border-inline-start: var(--#{$table}--cell--m-border-left--before--BorderLeftWidth) solid var(--#{$table}--cell--m-border-left--before--BorderLeftColor);
+    }
+  }
+
+  // Table caption
+  caption:where(.#{$table}__caption) {
+    padding-block-start: var(--#{$table}__caption--PaddingTop);
+    padding-block-end: var(--#{$table}__caption--PaddingBottom);
+    padding-inline-start: var(--#{$table}__caption--PaddingLeft);
+    font-size: var(--#{$table}__caption--FontSize);
+    color: var(--#{$table}__caption--Color);
+    text-align: start;
+    background-color: var(--#{$table}--BackgroundColor);
+  }
+
+  // Table header cell
+  thead:where(.#{$table}__thead) {
+    --#{$table}--cell--FontSize: var(--#{$table}__thead--cell--FontSize);
+    --#{$table}--cell--FontWeight: var(--#{$table}__thead--cell--FontWeight);
+
+    vertical-align: bottom;
+
+    // stylelint-disable
+    &.pf-m-nested-column-header {
+      button:where(.#{$button}) {
+        outline-offset: var(--#{$table}__thead--m-nested-column-header--button--OutlineOffset);
+      }
+
+      th:where(.#{$table}__th),
+      td:where(.#{$table}__td),
+      input:where(.#{$check}__input) {
+        vertical-align: middle;
+      }
+
+      .#{$table}__check label {
+        display: flex;
+        align-items: center;
+      }
+
+      tr:where(.#{$table}__tr):not(:first-child) {
+        th:where(.#{$table}__th),
+        td:where(.#{$table}__td) {
+          &:not([rowspan]) {
+            --#{$table}--cell--PaddingTop: var(--#{$table}__thead--m-nested-column-header__tr--PaddingTop);
+          }
+        }
+      }
+    }
+    // stylelint-enable
+
+    .#{$table}__subhead {
+      --#{$table}__sort__button__text--Color: var(--#{$table}__subhead--Color);
+
+      color: var(--#{$table}__subhead--Color);
+    }
+  }
+
+  // Table body cell
+  // stylelint-disable
+  tbody:where(.#{$table}__tbody) {
+    --#{$table}--cell--PaddingTop: var(--#{$table}__tbody--cell--PaddingTop);
+    --#{$table}--cell--PaddingBottom: var(--#{$table}__tbody--cell--PaddingBottom);
+
+    > tr:where(.#{$table}__tr) > * {
+      overflow-wrap: break-word;
+      vertical-align: baseline;
+    }
+
+    // Border treatment
+    // using first child as row does not calculate height appropriately
+    > tr:where(.#{$table}__tr) > :first-child::after {
+      position: absolute;
+
+      // offset top to extend above tr border
+     inset-block-start: var(--#{$table}__expandable-row--after--Top);
+     inset-block-end: var(--#{$table}__expandable-row--after--Bottom);
+     inset-inline-start: 0;
+      content: "";
+
+      // add border left
+      background-color: transparent;
+      border-inline-start: var(--#{$table}__expandable-row--after--BorderLeftWidth) solid var(--#{$table}__expandable-row--after--BorderColor);
+    }
+
+    // Check table cell
+    .#{$table}__check {
+      input:where(.#{$check}__input) {
+        margin-block-start: var(--#{$table}__check--input--MarginTop);
+        vertical-align: top;
+      }
+    }
+
+    &.pf-m-expanded > :first-child:not(.#{$table}__control-row) {
+      border-block-end-width: 0;
+    }
+  }
+  // stylelint-enable
+
+  // REMOVE PADDING FOR SPECIAL CELLS THAT CONTAIN BUTTONS
+  // ==================================================================
+  // unset padding, button adds appropriate padding
+  // unset padding for these cells as the button within provides padding
+  .#{$table}__compound-expansion-toggle {
+    &,
+    &:first-child,
+    &:last-child {
+      // explicitly reset padding rather than css variable, as the button within uses the variable
+      padding: 0;
+    }
+  }
+
+  // set property here to increase specificity
+  .#{$table}__sort {
+    min-width: var(--#{$table}__sort--MinWidth);
+  }
+
+  :where(.#{$table}__th, .#{$table}__td) {
+    &.pf-m-help {
+      min-width: var(--#{$table}__th--m-help--MinWidth);
+    }
+  }
+
+  :where([class*='#{$table}']),
+  :where(&) > :is(thead, tbody) {
+    @at-root .#{$table} > thead,
+    &.pf-m-truncate {
+      --#{$table}--cell--MinWidth: var(--#{$table}--m-truncate--cell--MinWidth);
+      --#{$table}--cell--MaxWidth: var(--#{$table}--m-truncate--cell--MaxWidth);
+      --#{$table}--cell--Overflow: hidden;
+      --#{$table}--cell--TextOverflow: ellipsis;
+      --#{$table}--cell--WhiteSpace: nowrap;
+    }
+
+    &.pf-m-wrap {
+      --#{$table}--cell--MinWidth: 0;
+      --#{$table}--cell--MaxWidth: none;
+      --#{$table}--cell--Overflow: visible;
+      --#{$table}--cell--TextOverflow: clip;
+      --#{$table}--cell--WhiteSpace: normal;
+    }
+
+    &.pf-m-nowrap {
+      --#{$table}--cell--MinWidth: 0;
+      --#{$table}--cell--MaxWidth: none;
+      --#{$table}--cell--Overflow: visible;
+      --#{$table}--cell--TextOverflow: clip;
+      --#{$table}--cell--WhiteSpace: nowrap;
+    }
+
+    .#{$table}__icon,
+    &.pf-m-fit-content {
+      --#{$table}--cell--MinWidth: fit-content;
+      --#{$table}--cell--MaxWidth: none;
+      --#{$table}--cell--Width: 1%;
+      --#{$table}--cell--Overflow: visible;
+      --#{$table}--cell--TextOverflow: clip;
+      --#{$table}--cell--WhiteSpace: nowrap;
+    }
+
+    &.pf-m-break-word {
+      --#{$table}--cell--WordBreak: break-word;
+      --#{$table}--cell--WhiteSpace: normal;
+    }
+  }
+
+  // stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors
+  &.pf-m-no-border-rows > tbody:where(.#{$table}__tbody) {
+    > tr:where(.#{$table}__tr) {
+      border-block-end: 0;
+
+      > :first-child::after {
+        border-inline-start: 0;
+      }
+    }
+
+    &:not(.pf-m-expanded) .#{$table}__compound-expansion-toggle .#{$table}__button::before {
+      display: none;
+    }
+
+    &.pf-m-expanded > .#{$table}__control-row {
+      border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+    }
+
+    .#{$table}__control-row > .#{$table}__compound-expansion-toggle:first-child > ::before {
+      border-inline-start-width: 0;
+    }
+  }
+
+  // tr clickable
+  tr:where(.#{$table}__tr) {
+    &.pf-m-clickable {
+      cursor: pointer;
+      background-color: var(--#{$table}__tr--m-clickable--BackgroundColor);
+      outline-offset: var(--#{$table}__tr--m-clickable--OutlineOffset);
+      box-shadow: var(--#{$table}__tr--m-clickable--BoxShadow);
+
+      &:hover,
+      &:focus,
+      &:active {
+        // stylelint-disable max-nesting-depth
+        &:not(.pf-m-selected) + tr:where(.#{$table}__tr).pf-m-selected {
+          box-shadow: var(--#{$table}__tr--m-clickable--m-selected--BoxShadow);
+        }
+        // stylelint-enable
+      }
+
+      &:hover {
+        --#{$table}__tr--m-clickable--BoxShadow: var(--#{$table}__tr--m-clickable--hover--BoxShadow);
+        --#{$table}__tr--m-clickable--BackgroundColor: var(--#{$table}__tr--m-clickable--hover--BackgroundColor);
+      }
+
+      &:focus {
+        --#{$table}__tr--m-clickable--BoxShadow: var(--#{$table}__tr--m-clickable--focus--BoxShadow);
+        --#{$table}__tr--m-clickable--BackgroundColor: var(--#{$table}__tr--m-clickable--focus--BackgroundColor);
+      }
+
+      &:active {
+        --#{$table}__tr--m-clickable--BoxShadow: var(--#{$table}__tr--m-clickable--active--BoxShadow);
+        --#{$table}__tr--m-clickable--BackgroundColor: var(--#{$table}__tr--m-clickable--active--BackgroundColor);
+      }
+    }
+
+    // tr selected
+    &.pf-m-selected {
+      --#{$table}__expandable-row--after--BorderLeftWidth: var(--#{$table}__tr--m-selected--after--BorderLeftWidth);
+      --#{$table}__expandable-row--after--BorderColor: var(--#{$table}__tr--m-selected--after--BorderLeftColor);
+
+      position: relative;
+      background-color: var(--#{$table}__tr--m-selected--BackgroundColor);
+      outline-offset: var(--#{$table}__tr--m-selected--OutlineOffset);
+      box-shadow: var(--#{$table}__tr--m-selected--BoxShadow);
+
+      & + tr:where(.#{$table}__tr).pf-m-selected {
+        box-shadow: var(--#{$table}__tr--m-selected--m-selected--BoxShadow);
+      }
+
+      & + tr:where(.#{$table}__tr).pf-m-selected:hover {
+        box-shadow: var(--#{$table}__tr--m-selected__tr--m-selected--hover--BoxShadow);
+      }
+
+      &:hover + tr:where(.#{$table}__tr).pf-m-selected {
+        box-shadow: var(--#{$table}__tr--m-selected--hover__tr--m-selected--BoxShadow);
+      }
+    }
+
+    &.pf-m-first-cell-offset-reset {
+      --#{$table}--cell--first-last-child--PaddingLeft: var(--#{$table}__tr--m-first-cell-offset-reset--cell--PaddingLeft);
+    }
+  }
+
+  // tbody clickable
+  // stylelint-disable no-duplicate-selectors
+  tbody:where(.#{$table}__tbody) {
+    &.pf-m-clickable {
+      cursor: pointer;
+      background-color: var(--#{$table}__tbody--m-clickable--BackgroundColor);
+      outline-offset: var(--#{$table}__tbody--m-clickable--OutlineOffset);
+      box-shadow: var(--#{$table}__tbody--m-clickable--BoxShadow);
+
+      &.pf-m-expanded:not(.pf-m-selected) {
+        --#{$table}__expandable-row--after--BorderColor: var(--#{$table}__tbody--m-clickable--m-expanded--BorderColor);
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        // stylelint-disable max-nesting-depth
+        &:not(.pf-m-selected) + tbody:where(.#{$table}__tbody).pf-m-selected {
+          box-shadow: var(--#{$table}__tbody--m-clickable--m-selected--hover__tr--BoxShadow);
+        }
+        // stylelint-enable
+      }
+
+      &:hover {
+        --#{$table}__tbody--m-clickable--BoxShadow: var(--#{$table}__tbody--m-clickable--hover--BoxShadow);
+        --#{$table}__tbody--m-clickable--BackgroundColor: var(--#{$table}__tbody--m-clickable--hover--BackgroundColor);
+      }
+
+      &:focus {
+        --#{$table}__tbody--m-clickable--BoxShadow: var(--#{$table}__tbody--m-clickable--focus--BoxShadow);
+        --#{$table}__tbody--m-clickable--BackgroundColor: var(--#{$table}__tbody--m-clickable--focus--BackgroundColor);
+      }
+
+      &:active {
+        --#{$table}__tbody--m-clickable--BoxShadow: var(--#{$table}__tbody--m-clickable--active--BoxShadow);
+        --#{$table}__tbody--m-clickable--BackgroundColor: var(--#{$table}__tbody--m-clickable--active--BackgroundColor);
+      }
+    }
+
+    // tbody selected
+    &.pf-m-selected {
+      --#{$table}__expandable-row--after--BorderLeftWidth: var(--#{$table}__tbody--m-selected--after--BorderLeftWidth);
+      --#{$table}__expandable-row--after--BorderColor: var(--#{$table}__tbody--m-selected--after--BorderLeftColor);
+
+      background-color: var(--#{$table}__tbody--m-selected--BackgroundColor);
+      outline-offset: var(--#{$table}__tbody--m-selected--OutlineOffset);
+      box-shadow: var(--#{$table}__tbody--m-selected--BoxShadow);
+
+      & + tbody:where(.#{$table}__tbody).pf-m-selected {
+        --#{$table}__tbody--m-selected--BoxShadow: var(--#{$table}__tbody--m-selected--m-selected--BoxShadow);
+      }
+
+      & + tbody:where(.#{$table}__tbody).pf-m-selected:hover {
+        box-shadow: var(--#{$table}__tbody--m-selected__tbody--m-selected--hover--BoxShadow);
+      }
+
+      &:hover + tbody:where(.#{$table}__tbody).pf-m-selected {
+        box-shadow: var(--#{$table}__tbody--m-selected--hover__tbody--m-selected--BoxShadow);
+      }
+    }
+  }
+
+  &.pf-m-drag-over {
+    overflow-anchor: none;
+  }
+}
+
+// Text
+.#{$table}__text {
+  // Allow __text child to inherit th/td modifier settings
+  // reset --#{$table}--cell--MaxWidth here for element and children
+  --#{$table}--cell--MaxWidth: 100%;
+
+  position: relative;
+  display: block;
+  width: var(--#{$table}--cell--Width);
+  min-width: var(--#{$table}--cell--MinWidth);
+  max-width: var(--#{$table}--cell--MaxWidth);
+  overflow: var(--#{$table}--cell--Overflow);
+  text-overflow: var(--#{$table}--cell--TextOverflow);
+  word-break: var(--#{$table}--cell--WordBreak);
+  white-space: var(--#{$table}--cell--WhiteSpace);
+
+  // Only apply these settings if specifically modified
+  &.pf-m-truncate {
+    --#{$table}--cell--MinWidth: 100%;
+
+    > * {
+      overflow: var(--#{$table}--cell--Overflow);
+      text-overflow: var(--#{$table}--cell--TextOverflow);
+      white-space: var(--#{$table}--cell--WhiteSpace);
+    }
+  }
+}
+
+// Button
+.#{$table}__button {
+  position: static;
+  width: 100%;
+  padding-block-start: var(--#{$table}--cell--PaddingTop);
+  padding-block-end: var(--#{$table}--cell--PaddingBottom);
+  padding-inline-start: var(--#{$table}--cell--PaddingLeft);
+  padding-inline-end: var(--#{$table}--cell--PaddingRight);
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--#{$table}__button--Color);
+  text-align: start;
+  white-space: inherit;
+  user-select: text;
+  background-color: var(--#{$table}__button--BackgroundColor);
+  border: 0;
+
+  // Define clickable area with invisible ::before pseudo
+  &::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    cursor: pointer;
+    content: "";
+  }
+
+  &:hover {
+    color: var(--#{$table}__button--hover--Color);
+  }
+
+  &:focus {
+    color: var(--#{$table}__button--focus--Color);
+  }
+
+  &:active {
+    color: var(--#{$table}__button--active--Color);
+  }
+}
+
+// Focus styles
+.#{$table}__sort,
+.#{$table}__compound-expansion-toggle {
+  // Pass properties to text
+  .#{$table}__text {
+    display: block;
+    width: auto;
+    overflow: var(--#{$table}--cell--Overflow);
+    text-overflow: var(--#{$table}--cell--TextOverflow);
+    white-space: var(--#{$table}--cell--WhiteSpace);
+  }
+}
+
+.#{$table}__sort .#{$table}__text {
+  --#{$table}--cell--MinWidth: 0;
+}
+
+// Sort content
+// display grid for buttons is not supported
+.#{$table}__button-content,
+.#{$table}__column-help {
+  display: grid;
+  grid-template-columns: auto max-content;
+  align-items: end;
+  justify-content: start;
+
+  .#{$table}__text {
+    min-width: auto;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-nowrap &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-nowrap &,
+  .#{$table} th:where(.#{$table}__th).pf-m-nowrap & {
+    grid-template-columns: min-content max-content;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-fit-content &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-fit-content &,
+  .#{$table} th:where(.#{$table}__th).pf-m-fit-content & {
+    grid-template-columns: fit-content max-content;
+  }
+
+  .#{$table} thead:where(.#{$table}__thead).pf-m-wrap &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-wrap &,
+  .#{$table} th:where(.#{$table}__th).pf-m-wrap &,
+  .#{$table} thead:where(.#{$table}__thead).pf-m-truncate &,
+  .#{$table} tr:where(.#{$table}__tr).pf-m-truncate &,
+  .#{$table} th:where(.#{$table}__th).pf-m-truncate & {
+    grid-template-columns: auto max-content;
+  }
+}
+
+// Minimize padding
+.#{$table} .#{$table}__toggle,
+.#{$table} .#{$table}__action,
+.#{$table} .#{$table}__inline-edit-action {
+  --#{$table}--cell--PaddingBottom: 0;
+}
+
+// stylelint-disable
+// Minimize width
+.#{$table} .#{$table}__check,
+.#{$table} .#{$table}__toggle,
+.#{$table} .#{$table}__action,
+.#{$table} .#{$table}__favorite,
+.#{$table} th:where(.#{$table}__th).pf-m-favorite,
+.#{$table} .#{$table}__inline-edit-action,
+.#{$table} .#{$table}__draggable {
+  --#{$table}--cell--MinWidth: 0;
+  --#{$table}--cell--Width: 1%;
+}
+// stylelint-enable
+
+// Toggle table cell
+.#{$table}__toggle {
+  --#{$table}--cell--PaddingRight: 0;
+  --#{$table}--cell--PaddingLeft: 0;
+
+  vertical-align: top;
+
+  .#{$button} {
+    margin-block-start: var(--#{$table}__toggle--c-button--MarginTop);
+    margin-block-end: var(--#{$table}__toggle--c-button--MarginBottom);
+
+    &.pf-m-expanded {
+      .#{$table}__toggle-icon {
+        transform: rotate(var(--#{$table}__toggle--c-button--m-expanded__toggle-icon--Rotate));
+      }
+    }
+  }
+
+  .#{$table}__toggle-icon {
+    @include pf-v5-mirror-inline-on-rtl;
+
+    transition: var(--#{$table}__toggle--c-button__toggle-icon--Transition);
+    transform: rotate(var(--#{$table}__toggle--c-button__toggle-icon--Rotate));
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+// Check table cell
+.#{$table}__check {
+  --#{$table}--cell--FontSize: var(--#{$table}__check--input--FontSize);
+
+  label:not([disabled]),
+  input:not([disabled]) {
+    cursor: pointer;
+  }
+
+  label {
+    display: block;
+    padding: inherit;
+    margin-block-start: calc(var(--#{$table}--cell--PaddingTop) * -1);
+    margin-block-end: calc(var(--#{$table}--cell--PaddingBottom) * -1);
+    margin-inline-start: calc(var(--#{$table}--cell--PaddingLeft) * -1);
+    margin-inline-end: calc(var(--#{$table}--cell--PaddingRight) * -1);
+  }
+}
+
+// Favorite body cell
+.#{$table}__favorite {
+  .#{$button} {
+    --#{$button}--m-plain--Color: var(--#{$table}__favorite--c-button--Color);
+    --#{$button}--FontSize: var(--#{$table}__favorite--c-button--FontSize);
+
+    margin-block-start: var(--#{$table}__favorite--c-button--MarginTop);
+    margin-block-end: var(--#{$table}__favorite--c-button--MarginBottom);
+    margin-inline-start: var(--#{$table}__favorite--c-button--MarginLeft);
+    margin-inline-end: var(--#{$table}__favorite--c-button--MarginRight);
+
+    @at-root .pf-m-favorited#{&} {
+      --#{$button}--m-plain--Color: var(--#{$table}__favorite--m-favorited--c-button--Color);
+    }
+  }
+}
+
+// Draggable
+.#{$table}__draggable {
+  .#{$button} {
+    margin-block-start: var(--#{$table}__draggable--c-button--MarginTop);
+    margin-block-end: var(--#{$table}__draggable--c-button--MarginBottom);
+    margin-inline-start: var(--#{$table}__draggable--c-button--MarginLeft);
+    margin-inline-end: var(--#{$table}__draggable--c-button--MarginRight);
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+// Table action cell
+.#{$table}__action,
+.#{$table}__inline-edit-action {
+  --#{$table}--cell--PaddingTop: 0;
+  --#{$table}--cell--PaddingRight: var(--#{$table}__action--PaddingRight);
+  --#{$table}--cell--PaddingBottom: 0;
+  --#{$table}--cell--PaddingLeft: var(--#{$table}__action--PaddingLeft);
+
+  padding-block-start: 0;
+  padding-block-end: 0;
+  vertical-align: middle;
+}
+
+.#{$table}__action {
+  text-align: end;
+}
+
+// Inline edit
+.#{$table}__inline-edit-action {
+  --#{$table}--cell--PaddingLeft: 0;
+  --#{$table}--cell--PaddingRight: 0;
+
+  text-align: end;
+}
+
+// Compound expansion toggle
+.#{$table}__compound-expansion-toggle {
+  --#{$table}__button--Color: var(--#{$table}__compound-expansion-toggle__button--Color);
+  --#{$table}__button--hover--Color: var(--#{$table}__compound-expansion-toggle__button--hover--Color);
+  --#{$table}__button--focus--Color: var(--#{$table}__compound-expansion-toggle__button--focus--Color);
+  --#{$table}__button--active--Color: var(--#{$table}__compound-expansion-toggle__button--active--Color);
+
+  position: relative;
+
+  // show left border, use __text to truncate content
+  &.pf-m-truncate {
+    overflow: visible;
+  }
+
+  .#{$table}__button {
+    min-width: 100%;
+    overflow: hidden;
+
+    // Remove outline and apply to parent td
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+
+  // Apply borders to button to avoid conflicts with expanded states
+  .#{$table}__button::before,
+  .#{$table}__button::after {
+    position: absolute;
+   inset-inline-end: 0;
+    content: "";
+    border-style: solid;
+    border-width: 0;
+  }
+
+  .#{$table}__button::before {
+   inset-block-start: 0;
+   inset-block-end: var(--#{$table}__compound-expansion-toggle__button--before--Bottom);
+   inset-inline-start: var(--#{$table}__compound-expansion-toggle__button--before--Left);
+    border-color: var(--#{$table}__compound-expansion-toggle__button--before--BorderColor);
+    border-inline-start-width: var(--#{$table}__compound-expansion-toggle__button--before--BorderLeftWidth);
+    border-inline-end-width: var(--#{$table}__compound-expansion-toggle__button--before--BorderRightWidth);
+  }
+
+  .#{$table}__button::after {
+    // overlap previous row's border
+   inset-block-start: var(--#{$table}__compound-expansion-toggle__button--after--Top);
+   inset-inline-start: var(--#{$table}__compound-expansion-toggle__button--after--Left);
+    pointer-events: none;
+    border-color: var(--#{$table}__compound-expansion-toggle__button--after--BorderColor);
+    border-block-start-width: var(--#{$table}__compound-expansion-toggle__button--after--BorderTopWidth);
+  }
+
+  &:hover,
+  &:focus-within,
+  &.pf-m-expanded {
+    --#{$table}__compound-expansion-toggle__button--before--BorderRightWidth: var(--#{$table}__compound-expansion-toggle__button--before--border-width--base);
+    --#{$table}__compound-expansion-toggle__button--before--BorderLeftWidth: var(--#{$table}__compound-expansion-toggle__button--before--border-width--base);
+    --#{$table}__compound-expansion-toggle__button--after--BorderTopWidth: var(--#{$table}__compound-expansion-toggle__button--after--border-width--base);
+  }
+
+  &:first-child {
+    --#{$table}__compound-expansion-toggle__button--before--Left: 0;
+    --#{$table}__compound-expansion-toggle__button--after--Left: 0;
+  }
+
+  &.pf-m-expanded {
+    .#{$table}__button::before {
+      border-block-end: var(--#{$table}--BackgroundColor) solid var(--#{$table}__compound-expansion-toggle__button--before--border-width--base);
+    }
+
+    &:first-child {
+      --#{$table}__compound-expansion-toggle__button--before--BorderLeftWidth: 0;
+    }
+  }
+
+  &:focus-within {
+    outline-offset: var(--#{$table}__button--OutlineOffset);
+
+    // stylelint-disable media-feature-name-no-vendor-prefix
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      outline-style: auto;
+      outline-color: -webkit-focus-ring-color;
+    }
+    // stylelint-enable
+  }
+}
+
+.#{$table}__column-help-action {
+  margin-inline-start: var(--#{$table}__column-help--MarginLeft);
+  transform: translateY(var(--#{$table}__column-help--TranslateY));
+
+  .#{$button} {
+    --#{$button}--PaddingRight: var(--#{$table}__column-help--c-button--PaddingRight);
+    --#{$button}--PaddingLeft: var(--#{$table}__column-help--c-button--PaddingLeft);
+
+    margin-block-start: var(--#{$table}__column-help--c-button--MarginTop);
+    margin-block-end: var(--#{$table}__column-help--c-button--MarginBottom);
+    font-size: inherit;
+    line-height: 1;
+  }
+}
+
+// Table sort
+// ==================================================================
+.#{$table}__sort {
+  .#{$table}__button {
+    --#{$table}--cell--PaddingTop: var(--#{$table}__sort__button--PaddingTop);
+    --#{$table}--cell--PaddingRight: var(--#{$table}__sort__button--PaddingRight);
+    --#{$table}--cell--PaddingBottom: var(--#{$table}__sort__button--PaddingBottom);
+    --#{$table}--cell--PaddingLeft: var(--#{$table}__sort__button--PaddingLeft);
+
+    display: flex;
+    width: auto;
+    margin-block-start: var(--#{$table}__sort__button--MarginTop);
+    margin-block-end: var(--#{$table}__sort__button--MarginBottom);
+    margin-inline-start: var(--#{$table}__sort__button--MarginLeft);
+
+    &:hover {
+      --#{$table}__sort-indicator--Color: var(--#{$table}__sort__button--hover__sort-indicator--Color);
+      --#{$table}__sort__button__text--Color: var(--#{$table}__sort__button--hover__text--Color);
+    }
+
+    &:focus {
+      --#{$table}__sort-indicator--Color: var(--#{$table}__sort__button--focus__sort-indicator--Color);
+      --#{$table}__sort__button__text--Color: var(--#{$table}__sort__button--focus__text--Color);
+    }
+
+    &:active {
+      --#{$table}__sort-indicator--Color: var(--#{$table}__sort__button--active__sort-indicator--Color);
+      --#{$table}__sort__button__text--Color: var(--#{$table}__sort__button--active__text--Color);
+    }
+
+    .#{$table}__text {
+      color: var(--#{$table}__sort__button__text--Color);
+    }
+  }
+
+  &.pf-m-selected .#{$table}__button {
+    --#{$table}__sort-indicator--Color: var(--#{$table}__sort--m-selected__sort-indicator--Color);
+    --#{$table}__sort__button__text--Color: var(--#{$table}__sort--m-selected__button__text--Color);
+
+    // override state colors on text
+    color: var(--#{$table}__sort--m-selected__button--Color);
+  }
+
+  &.pf-m-help {
+    --#{$table}__th--m-help--MinWidth: var(--#{$table}__sort--m-help--MinWidth);
+  }
+
+  &.pf-m-favorite {
+    --#{$table}__sort__button__text--Color: var(--#{$table}__sort--m-favorite__button__text--Color);
+    --#{$table}__sort__button--hover__text--Color: var(--#{$table}__sort--m-favorite__button--hover__text--Color);
+    --#{$table}__sort__button--focus__text--Color: var(--#{$table}__sort--m-favorite__button--focus__text--Color);
+    --#{$table}__sort__button--active__text--Color: var(--#{$table}__sort--m-favorite__button--active__text--Color);
+    --#{$table}__sort--m-selected__button__text--Color: currentcolor;
+  }
+}
+
+// Sort indicator
+.#{$table}__sort-indicator {
+  grid-column: 2;
+  margin-inline-start: var(--#{$table}__sort-indicator--MarginLeft);
+  color: var(--#{$table}__sort-indicator--Color);
+  pointer-events: none;
+}
+
+// Expandable row
+// ==================================================================
+.#{$table}__expandable-row {
+  --#{$table}--cell--PaddingTop: 0;
+  --#{$table}--cell--PaddingBottom: 0;
+
+  position: relative;
+  border-block-end: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+
+  &,
+  td:where(.#{$table}__td):first-child::after {
+    transition: var(--#{$table}__expandable-row--Transition);
+  }
+
+  // stylelint-disable
+  td:where(.#{$table}__td),
+  th:where(.#{$table}__th) {
+    &.pf-m-no-padding {
+      padding-block-start: 0;
+      padding-inline-end: 0;
+      padding-block-end: 0;
+      padding-inline-start: var(--#{$table}__expandable-row--after--border-width--base); // set padding-left to adjust for left border.
+
+      .#{$table}__expandable-row-content {
+        padding: 0;
+      }
+    }
+  }
+  // stylelint-enable
+
+  .#{$table}__expandable-row-content {
+    padding-block-start: var(--#{$table}__expandable-row-content--PaddingTop);
+    padding-block-end: var(--#{$table}__expandable-row-content--PaddingBottom);
+  }
+
+  // Modifier - Expanded tr
+  &.pf-m-expanded {
+    border-block-end-color: var(--#{$table}__expandable-row--m-expanded--BorderBottomColor);
+    border-block-end-width: var(--#{$table}--border-width--base);
+    box-shadow: var(--#{$table}__expandable-row--m-expanded--BoxShadow);
+  }
+
+
+  &:not(.pf-m-expanded) {
+    display: none;
+  }
+}
+
+// Nested table
+// ==================================================================
+.#{$table} .#{$table} {
+  tr:where(.#{$table}__tr) > * {
+    // First child padding left
+    &:first-child {
+      --#{$table}--cell--PaddingLeft: var(--#{$table}--nested--first-last-child--PaddingLeft);
+    }
+
+    // Last child padding right
+    &:last-child {
+      --#{$table}--cell--PaddingRight: var(--#{$table}--nested--first-last-child--PaddingRight);
+    }
+  }
+}
+
+// Compact table
+// ==================================================================
+.#{$table}.pf-m-compact {
+  --#{$table}--cell--FontSize: var(--#{$table}--m-compact--FontSize);
+  --#{$table}--cell--PaddingTop: var(--#{$table}--m-compact--cell--PaddingTop);
+  --#{$table}--cell--PaddingBottom: var(--#{$table}--m-compact--cell--PaddingBottom);
+  --#{$table}--cell--PaddingRight: var(--#{$table}--m-compact--cell--PaddingLeft);
+
+  tr:where(.#{$table}__tr) {
+    --#{$table}--cell--PaddingLeft: var(--#{$table}--m-compact--cell--PaddingLeft);
+    --#{$table}--cell--PaddingRight: var(--#{$table}--m-compact--cell--PaddingRight);
+
+    &:not(.#{$table}__expandable-row) {
+      --#{$table}--cell--FontSize: var(--#{$table}--m-compact--FontSize);
+      --#{$table}--cell--PaddingTop: var(--#{$table}--m-compact--cell--PaddingTop);
+      --#{$table}--cell--PaddingBottom: var(--#{$table}--m-compact--cell--PaddingBottom);
+
+      // stylelint-disable
+      > * {
+        &:first-child {
+          --#{$table}--cell--PaddingLeft: var(--#{$table}--m-compact--cell--first-last-child--PaddingLeft);
+        }
+
+        &:last-child {
+          --#{$table}--cell--PaddingRight: var(--#{$table}--m-compact--cell--first-last-child--PaddingRight);
+        }
+      }
+      // stylelint-enable
+    }
+  }
+
+  // Thead
+  thead:where(.#{$table}__thead) {
+    th:where(.#{$table}__th),
+    .#{$table}__toggle {
+      --#{$table}--cell--PaddingTop: var(--#{$table}--m-compact__th--PaddingTop);
+      --#{$table}--cell--PaddingBottom: var(--#{$table}--m-compact__th--PaddingBottom);
+    }
+  }
+
+  .#{$table}__action {
+    --#{$table}--cell--PaddingTop: var(--#{$table}__action--PaddingTop);
+    --#{$table}--cell--PaddingBottom: var(--#{$table}__action--PaddingBottom);
+    --#{$table}--cell--PaddingLeft: var(--#{$table}__action--PaddingLeft);
+  }
+
+  .#{$table}__toggle {
+    --#{$table}--cell--PaddingTop: var(--#{$table}--m-compact__toggle--PaddingTop);
+    --#{$table}--cell--PaddingBottom: var(--#{$table}--m-compact__toggle--PaddingBottom);
+  }
+
+  .#{$table}__icon {
+    width: auto;
+    min-width: 0;
+    text-align: center;
+  }
+
+  // nested tables
+  .#{$table} & tr:where(.#{$table}__tr) > * {
+    &:first-child {
+      --#{$table}--cell--PaddingLeft: var(--#{$table}--nested--first-last-child--PaddingLeft);
+    }
+
+    &:last-child {
+      --#{$table}--cell--PaddingRight: var(--#{$table}--nested--first-last-child--PaddingRight);
+    }
+  }
+
+  .#{$table}__expandable-row-content {
+    --#{$table}__expandable-row-content--PaddingTop: var(--#{$table}--m-compact__expandable-row-content--PaddingTop);
+    --#{$table}__expandable-row-content--PaddingBottom: var(--#{$table}--m-compact__expandable-row-content--PaddingBottom);
+  }
+}
+
+// Icon inline
+// replace this when inline text with icon is in place
+.#{$table}__icon-inline {
+  display: flex;
+  align-items: center;
+
+  > :not(:last-child) {
+    margin-inline-end: var(--#{$table}__icon-inline--MarginRight);
+  }
+}
+
+// Modifier - Width
+// stylelint-disable
+.#{$table} .pf-m-width-10 {
+  --#{$table}--cell--Width: 10%;
+}
+
+.#{$table} .pf-m-width-15 {
+  --#{$table}--cell--Width: 15%;
+}
+
+.#{$table} .pf-m-width-20 {
+  --#{$table}--cell--Width: 20%;
+}
+
+.#{$table} .pf-m-width-25 {
+  --#{$table}--cell--Width: 25%;
+}
+
+.#{$table} .pf-m-width-30 {
+  --#{$table}--cell--Width: 30%;
+}
+
+.#{$table} .pf-m-width-35 {
+  --#{$table}--cell--Width: 35%;
+}
+
+.#{$table} .pf-m-width-40 {
+  --#{$table}--cell--Width: 40%;
+}
+
+.#{$table} .pf-m-width-45 {
+  --#{$table}--cell--Width: 45%;
+}
+
+.#{$table} .pf-m-width-50 {
+  --#{$table}--cell--Width: 50%;
+}
+
+.#{$table} .pf-m-width-60 {
+  --#{$table}--cell--Width: 60%;
+}
+
+.#{$table} .pf-m-width-70 {
+  --#{$table}--cell--Width: 70%;
+}
+
+.#{$table} .pf-m-width-80 {
+  --#{$table}--cell--Width: 80%;
+}
+
+.#{$table} .pf-m-width-90 {
+  --#{$table}--cell--Width: 90%;
+}
+
+.#{$table} .pf-m-width-100 {
+  --#{$table}--cell--Width: 100%;
+}
+// stylelint-enable
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/table";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-table;
+}

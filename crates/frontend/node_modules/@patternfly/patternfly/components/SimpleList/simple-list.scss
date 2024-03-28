@@ -1,0 +1,97 @@
+// @debug $simple-list; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$simple-list} {
+  // Simple list item link
+  --#{$simple-list}__item-link--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$simple-list}__item-link--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$simple-list}__item-link--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$simple-list}__item-link--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$simple-list}__item-link--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$simple-list}__item-link--Color: var(--#{$pf-global}--Color--100);
+  --#{$simple-list}__item-link--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$simple-list}__item-link--FontWeight: var(--#{$pf-global}--FontWeight--normal); // remove at breaking change
+  --#{$simple-list}__item-link--m-current--Color: var(--#{$pf-global}--link--Color);
+  --#{$simple-list}__item-link--m-current--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$simple-list}__item-link--m-current--FontWeight: var(--#{$pf-global}--FontWeight--normal); // remove at breaking change
+  --#{$simple-list}__item-link--hover--Color: var(--#{$pf-global}--Color--100); // remove at breaking change
+  --#{$simple-list}__item-link--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$simple-list}__item-link--focus--Color: var(--#{$pf-global}--Color--100); // remove at breaking change
+  --#{$simple-list}__item-link--focus--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$simple-list}__item-link--focus--FontWeight: var(--#{$pf-global}--FontWeight--normal); // remove at breaking change
+  --#{$simple-list}__item-link--active--Color: var(--#{$pf-global}--Color--100); // remove at breaking change
+  --#{$simple-list}__item-link--active--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$simple-list}__item-link--active--FontWeight: var(--#{$pf-global}--FontWeight--normal); // remove at breaking change
+
+  // Simple list title
+  --#{$simple-list}__title--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$simple-list}__title--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$simple-list}__title--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$simple-list}__title--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$simple-list}__title--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$simple-list}__title--Color: var(--#{$pf-global}--Color--dark-200);
+  --#{$simple-list}__title--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+
+  // Simple list section
+  --#{$simple-list}__section--section--MarginTop: var(--#{$pf-global}--spacer--sm);
+}
+
+.#{$simple-list}__item-link {
+  display: block;
+  width: 100%;
+  padding-block-start: var(--#{$simple-list}__item-link--PaddingTop);
+  padding-block-end: var(--#{$simple-list}__item-link--PaddingBottom);
+  padding-inline-start: var(--#{$simple-list}__item-link--PaddingLeft);
+  padding-inline-end: var(--#{$simple-list}__item-link--PaddingRight);
+  font-size: var(--#{$simple-list}__item-link--FontSize);
+  font-weight: var(--#{$simple-list}__item-link--FontWeight);
+  color: var(--#{$simple-list}__item-link--Color);
+  text-align: start;
+  background-color: var(--#{$simple-list}__item-link--BackgroundColor);
+  border: none;
+
+  &:hover {
+    --#{$simple-list}__item-link--BackgroundColor: var(--#{$simple-list}__item-link--hover--BackgroundColor);
+    --#{$simple-list}__item-link--Color: var(--#{$simple-list}__item-link--hover--Color);
+
+    text-decoration: none;
+  }
+
+  &:focus {
+    --#{$simple-list}__item-link--FontWeight: var(--#{$simple-list}__item-link--focus--FontWeight);
+    --#{$simple-list}__item-link--BackgroundColor: var(--#{$simple-list}__item-link--focus--BackgroundColor);
+    --#{$simple-list}__item-link--Color: var(--#{$simple-list}__item-link--focus--Color);
+  }
+
+  &:active {
+    --#{$simple-list}__item-link--FontWeight: var(--#{$simple-list}__item-link--active--FontWeight);
+    --#{$simple-list}__item-link--BackgroundColor: var(--#{$simple-list}__item-link--active--BackgroundColor);
+    --#{$simple-list}__item-link--Color: var(--#{$simple-list}__item-link--active--Color);
+  }
+
+  &.pf-m-current {
+    --#{$simple-list}__item-link--FontWeight: var(--#{$simple-list}__item-link--m-current--FontWeight);
+    --#{$simple-list}__item-link--BackgroundColor: var(--#{$simple-list}__item-link--m-current--BackgroundColor);
+    --#{$simple-list}__item-link--Color: var(--#{$simple-list}__item-link--m-current--Color);
+  }
+}
+
+.#{$simple-list}__title {
+  padding-block-start: var(--#{$simple-list}__title--PaddingTop);
+  padding-block-end: var(--#{$simple-list}__title--PaddingBottom);
+  padding-inline-start: var(--#{$simple-list}__title--PaddingLeft);
+  padding-inline-end: var(--#{$simple-list}__title--PaddingRight);
+  font-size: var(--#{$simple-list}__title--FontSize);
+  font-weight: var(--#{$simple-list}__title--FontWeight);
+  color: var(--#{$simple-list}__title--Color);
+}
+
+.#{$simple-list}__section + .#{$simple-list}__section {
+  margin-block-start: var(--#{$simple-list}__section--section--MarginTop);
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/simple-list";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-simple-list;
+}

@@ -1,0 +1,542 @@
+// @debug $tree-view; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+$pf-v5-c-tree-view--MaxNesting: 10 !default;
+
+.#{$tree-view} {
+  --#{$tree-view}--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+
+  // Node base
+  --#{$tree-view}__node--indent--base: calc(var(--#{$pf-global}--spacer--md) * 2 + var(--#{$tree-view}__node-toggle-icon--MinWidth)); // based off of the expected width of the toggle button
+  --#{$tree-view}__node--nested-indent--base: calc(var(--#{$tree-view}__node--indent--base) - var(--#{$pf-global}--spacer--md)); // nested spacing that removes the toggle button's left padding, so the icon aligns with text on the node above it
+
+  // Node
+  --#{$tree-view}__node--PaddingTop--base: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node--PaddingTop: var(--#{$tree-view}__node--PaddingTop--base);
+  --#{$tree-view}__node--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node--PaddingLeft: var(--#{$tree-view}__node--indent--base);
+  --#{$tree-view}__node--Color: var(--#{$pf-global}--Color--100);
+  --#{$tree-view}__node--m-current--Color: var(--#{$pf-global}--link--Color);
+  --#{$tree-view}__node--m-current--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+  --#{$tree-view}__node--BackgroundColor: transparent;
+
+  // Container
+  --#{$tree-view}__node-container--Display: contents;
+
+  // Content
+  --#{$tree-view}__node-content--RowGap: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node-content--Overflow: visible;
+
+  // Link hover/focus
+  --#{$tree-view}__node--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$tree-view}__node--focus--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+
+  // Nested toggle
+  --#{$tree-view}__list-item__list-item__node-toggle--Top: var(--#{$tree-view}__node--PaddingTop--base);
+  --#{$tree-view}__list-item__list-item__node-toggle--Left: var(--#{$tree-view}__node--PaddingLeft);
+  --#{$tree-view}__list-item__list-item__node-toggle--TranslateX: -100%;
+
+  // Toggle
+  --#{$tree-view}__node-toggle--Position: absolute;
+  --#{$tree-view}__node-toggle--Color--base: var(--#{$pf-global}--Color--200);
+  --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__node-toggle--Color--base);
+  --#{$tree-view}__node-toggle--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$tree-view}__node-toggle--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$tree-view}__node-toggle--active--Color: var(--#{$pf-global}--Color--100);
+  --#{$tree-view}__node-toggle--BackgroundColor: transparent;
+  --#{$tree-view}__list-item--m-expanded__node-toggle--Color: var(--#{$pf-global}--Color--100);
+
+  // Toggle icon
+  --#{$tree-view}__node-toggle-icon--MinWidth: var(--#{$pf-global}--FontSize--md);
+  --#{$tree-view}__node-toggle-icon--Transition: transform var(--#{$pf-global}--TransitionDuration) var(--#{$pf-global}--TimingFunction);
+  --#{$tree-view}__node-toggle-button--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$tree-view}__node-toggle-button--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$tree-view}__node-toggle-button--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$tree-view}__node-toggle-button--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$tree-view}__node-toggle-button--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$tree-view}__node-toggle-button--MarginBottom: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+
+  // Check
+  --#{$tree-view}__node-check--MarginRight: var(--#{$pf-global}--spacer--sm);
+
+  // Badge
+  --#{$tree-view}__node-count--MarginLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node-count--c-badge--m-read--BackgroundColor: var(--#{$pf-global}--disabled-color--200);
+
+  // Search
+  --#{$tree-view}__search--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__search--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__search--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__search--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // Icon
+  --#{$tree-view}__node-icon--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}__node-icon--Color: var(--#{$pf-global}--icon--Color--light);
+  --#{$tree-view}__node-toggle-icon--base--Rotate: 0;
+  --#{$tree-view}__node-toggle-icon--Rotate: var(--#{$tree-view}__node-toggle-icon--base--Rotate);
+  --#{$tree-view}__list-item--m-expanded__node-toggle-icon--Rotate: 90deg;
+
+  // Text
+  --#{$tree-view}__node-text--max-lines: 1;
+
+  // Title
+  --#{$tree-view}__node-title--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+
+  // Action
+  --#{$tree-view}__action--MarginLeft: var(--#{$pf-global}--spacer--md);
+
+  // Guides
+  // ================================================================== //
+  --#{$tree-view}--m-guides--guide--Left: var(--#{$tree-view}--m-guides--guide-left--base); // starting value, this gets updated for each nesting level
+
+  // Base
+  --#{$tree-view}--m-guides--guide-color--base: var(--#{$pf-global}--BorderColor--100);
+  --#{$tree-view}--m-guides--guide-width--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$tree-view}--m-guides--guide-left--base: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-guides__list-node--guide-width--base));
+  --#{$tree-view}--m-guides--guide-left--base--offset: calc(var(--#{$tree-view}__list-item__list-item__node-toggle--Left) + var(--#{$tree-view}__node-toggle-icon--MinWidth) / 2); // based on toggle positioning
+  --#{$tree-view}--m-guides__list-node--guide-width--base: var(--#{$pf-global}--spacer--lg);
+
+  // List item
+  --#{$tree-view}--m-guides__list-item--before--Top: 0;
+  --#{$tree-view}--m-guides__list-item--before--Width: var(--#{$tree-view}--m-guides--guide-width--base);
+  --#{$tree-view}--m-guides__list-item--before--Height: 100%;
+  --#{$tree-view}--m-guides__list-item--before--BackgroundColor: var(--#{$tree-view}--m-guides--guide-color--base);
+  --#{$tree-view}--m-guides__list-item--last-child--before--Top: var(--#{$tree-view}--m-guides__node--before--Top);
+  --#{$tree-view}--m-guides__list-item--last-child--before--Height: var(--#{$tree-view}--m-guides__list-item--last-child--before--Top);
+  --#{$tree-view}--m-guides__list-item--ZIndex: var(--#{$pf-global}--ZIndex--xs);
+
+  // Node
+  --#{$tree-view}--m-guides__node--before--Width: #{pf-size-prem(16px)};
+  --#{$tree-view}--m-guides__node--before--Height: var(--#{$tree-view}--m-guides--guide-width--base);
+  --#{$tree-view}--m-guides__node--before--Top: #{pf-size-prem(18px)};
+  --#{$tree-view}--m-guides__node--before--BackgroundColor: var(--#{$tree-view}--m-guides--guide-color--base);
+
+  // Compact
+  // ================================================================== //
+  // Base
+  --#{$tree-view}--m-compact--base-border--Left--offset: var(--#{$pf-global}--spacer--md);
+  --#{$tree-view}--m-compact--base-border--Left: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-compact--base-border--Left--offset));
+  --#{$tree-view}--m-compact__node--indent--base: var(--#{$tree-view}__node--indent--base); // based off of the expected width of the toggle button
+  --#{$tree-view}--m-compact__node--nested-indent--base: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact--border--Left: var(--#{$tree-view}--m-compact--base-border--Left);
+
+  // Node
+  --#{$tree-view}--m-compact__node--PaddingTop: 0;
+  --#{$tree-view}--m-compact__node--PaddingBottom: 0;
+  --#{$tree-view}--m-compact__node--nested--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}--m-compact__node--nested--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+
+  // Node toggle
+  --#{$tree-view}--m-compact__list-item__list-item__node-toggle--Top: calc(var(--#{$tree-view}--m-compact__node-container--PaddingTop));
+
+  // List item
+  --#{$tree-view}--m-compact__list-item--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$tree-view}--m-compact__list-item--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$tree-view}--m-compact__list-item--before--Top: 0;
+  --#{$tree-view}--m-compact__list-item--last-child--before--Height: var(--#{$tree-view}--m-compact__node--before--Top);
+  --#{$tree-view}--m-compact__list-item--nested--before--Top: calc(var(--#{$tree-view}__node--PaddingTop--base) * -1);
+  --#{$tree-view}--m-compact__list-item--nested--last-child--before--Height: calc(var(--#{$tree-view}--m-compact__node--before--Top) + var(--#{$tree-view}__node--PaddingTop--base));
+
+  // Node
+  --#{$tree-view}--m-compact__node--PaddingLeft: var(--#{$tree-view}--m-compact__node--indent--base);
+  --#{$tree-view}--m-compact__node--before--Top: calc(var(--#{$tree-view}--m-compact__node-container--PaddingTop) + var(--#{$tree-view}--m-compact__node--nested--PaddingTop) + #{pf-size-prem(4px)});
+  --#{$tree-view}--m-compact__node--level-2--PaddingLeft: var(--#{$tree-view}--m-compact__node--indent--base);
+
+  // Node toggle
+  --#{$tree-view}--m-compact__node-toggle--nested--MarginRight: calc(var(--#{$tree-view}__node-toggle-button--PaddingLeft) * -.5);
+  --#{$tree-view}--m-compact__node-toggle--nested--MarginLeft: calc(var(--#{$tree-view}__node-toggle-button--PaddingLeft) * -1.5);
+
+  // Node container
+  --#{$tree-view}--m-compact__node-container--Display: flex;
+  --#{$tree-view}--m-compact__node-container--PaddingBottom--base: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact__node-container--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact__node-container--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact__node-container--PaddingBottom: var(--#{$tree-view}--m-compact__node-container--PaddingBottom--base);
+  --#{$tree-view}--m-compact__node-container--PaddingLeft: var(--#{$pf-global}--spacer--xs);
+  --#{$tree-view}--m-compact__node-container--nested--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$tree-view}--m-compact__node-container--nested--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact__node-container--nested--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$tree-view}--m-compact__node-container--nested--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$tree-view}--m-compact__node-container--nested--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$tree-view}--m-compact__list-item--m-expanded__node-container--PaddingBottom: 0;
+
+  // Background transparent
+  --#{$tree-view}--m-no-background__node-container--BackgroundColor: transparent;
+
+  // Compact, no background
+  // ================================================================== //
+  --#{$tree-view}--m-compact--m-no-background--base-border--Left--offset: var(--#{$pf-global}--spacer--sm);
+  --#{$tree-view}--m-compact--m-no-background--base-border--Left: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-compact--m-no-background--base-border--Left--offset));
+  --#{$tree-view}--m-compact--m-no-background__node--indent--base: var(--#{$tree-view}__node--indent--base); // based off of the expected width of the toggle button
+  --#{$tree-view}--m-compact--m-no-background__node--nested-indent--base: var(--#{$pf-global}--spacer--2xl);
+  --#{$tree-view}--m-compact--m-no-background__node--nested--PaddingTop: 0;
+  --#{$tree-view}--m-compact--m-no-background__node--nested--PaddingBottom: 0;
+  --#{$tree-view}--m-compact--m-no-background__node--before--Top: calc(var(--#{$tree-view}--m-compact__node-container--nested--PaddingTop) + var(--#{$tree-view}--m-compact__node--nested--PaddingTop) + #{pf-size-prem(4px)});
+
+  padding-block-start: var(--#{$tree-view}--PaddingTop);
+  padding-block-end: var(--#{$tree-view}--PaddingBottom);
+
+  &.pf-m-compact,
+  &.pf-m-guides {
+    .#{$tree-view}__list-item {
+      position: relative;
+
+      .#{$tree-view}__list-item {
+        // stylelint-disable max-nesting-depth, selector-max-class
+        &::before,
+        .#{$tree-view}__node::before {
+          position: absolute;
+         inset-inline-start: var(--#{$tree-view}--m-guides--guide--Left);
+          content: "";
+        }
+
+        // vertical border
+        &::before {
+         inset-block-start: var(--#{$tree-view}--m-guides__list-item--before--Top);
+          z-index: var(--#{$tree-view}--m-guides__list-item--ZIndex);
+          width: var(--#{$tree-view}--m-guides__list-item--before--Width);
+          height: var(--#{$tree-view}--m-guides__list-item--before--Height);
+          background-color: var(--#{$tree-view}--m-guides__list-item--before--BackgroundColor);
+        }
+
+        // horizontal border
+        .#{$tree-view}__node::before {
+         inset-block-start: var(--#{$tree-view}--m-guides__node--before--Top);
+          width: var(--#{$tree-view}--m-guides__node--before--Width);
+          height: var(--#{$tree-view}--m-guides__node--before--Height);
+          background-color: var(--#{$tree-view}--m-guides__node--before--BackgroundColor);
+        }
+
+        &:last-child::before {
+          height: var(--#{$tree-view}--m-guides__list-item--last-child--before--Height);
+        }
+
+        .#{$tree-view}__list-item {
+          --#{$tree-view}--m-guides--guide--Left: var(--#{$tree-view}--m-guides--border--nested--Left); // swap with nested value
+        }
+        // stylelint-enable
+      }
+
+      &:last-child {
+        --#{$tree-view}--m-compact__list-item--BorderBottomWidth: 0; // hide nested list item bottom borders
+      }
+    }
+  }
+
+  &.pf-m-compact {
+    --#{$tree-view}__node--PaddingTop: var(--#{$tree-view}--m-compact__node--PaddingTop);
+    --#{$tree-view}__node--PaddingBottom: var(--#{$tree-view}--m-compact__node--PaddingBottom);
+    --#{$tree-view}__node-container--Display: var(--#{$tree-view}--m-compact__node-container--Display);
+    --#{$tree-view}__node--hover--BackgroundColor: transparent;
+    --#{$tree-view}__node--focus--BackgroundColor: transparent;
+    --#{$tree-view}__list-item__list-item__node-toggle--Top: var(--#{$tree-view}--m-compact__list-item__list-item__node-toggle--Top);
+
+    // Level 1
+    .#{$tree-view}__list-item {
+      border-block-end: var(--#{$tree-view}--m-compact__list-item--BorderBottomWidth) solid var(--#{$tree-view}--m-compact__list-item--BorderBottomColor);
+
+      &.pf-m-expanded {
+        --#{$tree-view}--m-compact__node-container--PaddingBottom: var(--#{$tree-view}--m-compact__list-item--m-expanded__node-container--PaddingBottom);
+      }
+
+      // Level 2
+      .#{$tree-view}__list-item {
+        --#{$tree-view}__node--PaddingTop: var(--#{$tree-view}--m-compact__node--nested--PaddingTop);
+        --#{$tree-view}__node--PaddingBottom: var(--#{$tree-view}--m-compact__node--nested--PaddingBottom);
+        --#{$tree-view}__node-toggle--Position: static;
+        --#{$tree-view}__node--PaddingLeft: var(--#{$tree-view}--m-compact__node--level-2--PaddingLeft); // second+ nested child padding left
+        --#{$tree-view}__list-item__list-item__node-toggle--TranslateX: 0;
+        --#{$tree-view}--m-compact__list-item--BorderBottomWidth: 0; // hide nested list item bottom borders
+        --#{$tree-view}--m-compact__node-container--PaddingBottom: var(--#{$tree-view}--m-compact__node-container--PaddingBottom--base); // reset expanded node container padding
+
+        // stylelint-disable max-nesting-depth, selector-max-class
+        &::before,
+        .#{$tree-view}__node::before {
+         inset-inline-start: var(--#{$tree-view}--m-compact--border--Left);
+        }
+
+        &::before {
+         inset-block-start: var(--#{$tree-view}--m-compact__list-item--before--Top);
+        }
+
+        .#{$tree-view}__node::before {
+         inset-block-start: var(--#{$tree-view}--m-compact__node--before--Top);
+        }
+
+        &:last-child::before {
+          height: var(--#{$tree-view}--m-compact__list-item--last-child--before--Height);
+        }
+
+        // Level 3
+        .#{$tree-view}__list-item {
+          --#{$tree-view}__node--PaddingLeft: var(--#{$tree-view}--m-compact__node--PaddingLeft); // second+ nested child padding left
+          --#{$tree-view}--m-compact--border--Left: var(--#{$tree-view}--m-compact--border--nested--Left);
+          --#{$tree-view}--m-compact__list-item--before--Top: var(--#{$tree-view}--m-compact__list-item--nested--before--Top);
+          --#{$tree-view}--m-compact__list-item--last-child--before--Height: var(--#{$tree-view}--m-compact__list-item--nested--last-child--before--Height);
+        }
+
+        .#{$tree-view}__node-container {
+          padding-block-start: var(--#{$tree-view}--m-compact__node-container--nested--PaddingTop);
+          padding-block-end: var(--#{$tree-view}--m-compact__node-container--nested--PaddingBottom);
+          padding-inline-start: var(--#{$tree-view}--m-compact__node-container--nested--PaddingLeft);
+          padding-inline-end: var(--#{$tree-view}--m-compact__node-container--nested--PaddingRight);
+          background-color: var(--#{$tree-view}--m-compact__node-container--nested--BackgroundColor);
+        }
+
+        // add margins to align item text flush left and offset gap between toggle and text
+        .#{$tree-view}__node-toggle {
+          margin-inline-start: var(--#{$tree-view}--m-compact__node-toggle--nested--MarginLeft);
+          margin-inline-end: var(--#{$tree-view}--m-compact__node-toggle--nested--MarginRight);
+        }
+        // stylelint-enable
+      }
+    }
+
+    .#{$tree-view}__node-container {
+      padding-block-start: var(--#{$tree-view}--m-compact__node-container--PaddingTop);
+      padding-block-end: var(--#{$tree-view}--m-compact__node-container--PaddingBottom);
+      padding-inline-start: var(--#{$tree-view}--m-compact__node-container--PaddingLeft);
+      padding-inline-end: var(--#{$tree-view}--m-compact__node-container--PaddingRight);
+    }
+
+    // stylelint-disable selector-max-class, selector-max-compound-selectors
+    .#{$tree-view}__list-item:not([aria-expanded]) > .#{$tree-view}__content {
+      > .#{$tree-view}__node,
+      > .#{$tree-view}__node > .#{$tree-view}__node-container {
+        cursor: default;
+      }
+    }
+    // stylelint-enable
+
+    &.pf-m-no-background {
+      --#{$tree-view}--m-compact__node--before--Top: var(--#{$tree-view}--m-compact--m-no-background__node--before--Top);
+
+      // stylelint-disable max-nesting-depth, selector-max-class
+      .#{$tree-view}__list-item .#{$tree-view}__list-item {
+        --#{$tree-view}__node--PaddingTop: var(--#{$tree-view}--m-compact--m-no-background__node--nested--PaddingTop);
+        --#{$tree-view}__node--PaddingBottom: var(--#{$tree-view}--m-compact--m-no-background__node--nested--PaddingBottom);
+      }
+
+      // level 3
+      .#{$tree-view}__list-item .#{$tree-view}__list-item .#{$tree-view}__list-item {
+        --#{$tree-view}--m-compact--border--Left: var(--#{$tree-view}--m-compact--m-no-background--border--nested--Left);
+        --#{$tree-view}__node--PaddingLeft: var(--#{$tree-view}--m-compact--m-no-background__node--PaddingLeft); // third+ nested child padding left
+      }
+      // stylelint-enable
+    }
+  }
+
+  &.pf-m-no-background {
+    --#{$tree-view}--m-compact__node-container--nested--BackgroundColor: var(--#{$tree-view}--m-no-background__node-container--BackgroundColor);
+  }
+}
+
+.#{$tree-view}__node-toggle-icon {
+  @include pf-v5-mirror-inline-on-rtl;
+
+  display: inline-block;
+  min-width: var(--#{$tree-view}__node-toggle-icon--MinWidth);
+  text-align: center;
+  transition: var(--#{$tree-view}__node-toggle-icon--Transition);
+  transform: rotate(var(--#{$tree-view}__node-toggle-icon--Rotate));
+}
+
+// stylelint-disable
+.#{$tree-view}__list-item {
+  .#{$tree-view}__list-item {
+    --#{$tree-view}__node-toggle-icon--Rotate: var(--#{$tree-view}__node-toggle-icon--base--Rotate); // reset nested toggle icon rotate
+    --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__node-toggle--Color--base); // reset nested toggle color
+  }
+
+  &.pf-m-expanded {
+    --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__list-item--m-expanded__node-toggle--Color);
+    --#{$tree-view}__node-toggle-icon--Rotate: var(--#{$tree-view}__list-item--m-expanded__node-toggle-icon--Rotate);
+  }
+}
+// stylelint-enable
+
+.#{$tree-view}__node,
+.#{$tree-view}__node-container {
+  flex: 1 1;
+  align-items: flex-start;
+  min-width: 0;
+  text-align: start;
+  cursor: pointer;
+  border: 0;
+}
+
+.#{$tree-view}__node {
+  position: relative;
+  display: flex;
+  padding-block-start: var(--#{$tree-view}__node--PaddingTop);
+  padding-block-end: var(--#{$tree-view}__node--PaddingBottom);
+  padding-inline-start: var(--#{$tree-view}__node--PaddingLeft);
+  padding-inline-end: var(--#{$tree-view}__node--PaddingRight);
+  color: var(--#{$tree-view}__node--Color);
+  background-color: var(--#{$tree-view}__node--BackgroundColor);
+
+  &.pf-m-current {
+    --#{$tree-view}__node--Color: var(--#{$tree-view}__node--m-current--Color);
+
+    font-weight: var(--#{$tree-view}__node--m-current--FontWeight);
+  }
+
+  &:focus {
+    --#{$tree-view}__node--BackgroundColor: var(--#{$tree-view}__node--focus--BackgroundColor);
+  }
+
+  .#{$tree-view}__node-count {
+    margin-inline-start: var(--#{$tree-view}__node-count--MarginLeft);
+
+    .#{$badge}.pf-m-read {
+      --#{$badge}--m-read--BackgroundColor: var(--#{$tree-view}__node-count--c-badge--m-read--BackgroundColor);
+    }
+  }
+
+  &:not(.pf-m-selectable),
+  &.pf-m-selectable .#{$tree-view}__node-toggle {
+    &:hover {
+      --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__node-toggle--hover--Color);
+    }
+
+    &:focus {
+      --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__node-toggle--focus--Color);
+    }
+
+    &:active {
+      --#{$tree-view}__node-toggle--Color: var(--#{$tree-view}__node-toggle--active--Color);
+    }
+  }
+}
+
+.#{$tree-view}__node-container {
+  display: var(--#{$tree-view}__node-container--Display);
+  flex-grow: 1;
+}
+
+.#{$tree-view}__node-content {
+  display: flex;
+  flex-direction: column;
+  overflow: var(--#{$tree-view}__node-content--Overflow);
+
+  // row-gap: var(--#{$tree-view}__node-content--RowGap); update when gap for flex is supported
+  > * + * {
+    margin-block-start: var(--#{$tree-view}__node-content--RowGap);
+  }
+}
+
+.#{$tree-view}__node-check {
+  margin-inline-end: var(--#{$tree-view}__node-check--MarginRight);
+}
+
+.#{$tree-view}__node-toggle {
+  position: var(--#{$tree-view}__node-toggle--Position);
+  inset-block-start: var(--#{$tree-view}__list-item__list-item__node-toggle--Top);
+  inset-inline-start: var(--#{$tree-view}__list-item__list-item__node-toggle--Left);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: var(--#{$tree-view}__node-toggle-button--PaddingTop);
+  padding-block-end: var(--#{$tree-view}__node-toggle-button--PaddingBottom);
+  padding-inline-start: var(--#{$tree-view}__node-toggle-button--PaddingLeft);
+  padding-inline-end: var(--#{$tree-view}__node-toggle-button--PaddingRight);
+  margin-block-start: var(--#{$tree-view}__node-toggle-button--MarginTop);
+  margin-block-end: var(--#{$tree-view}__node-toggle-button--MarginBottom);
+  color: var(--#{$tree-view}__node-toggle--Color);
+  background-color: var(--#{$tree-view}__node-toggle--BackgroundColor);
+  border: 0;
+
+  @include pf-v5-bidirectional-style(
+    $prop: transform,
+    $ltr-val: translateX(var(--#{$tree-view}__list-item__list-item__node-toggle--TranslateX)),
+    $rtl-val: translateX(#{pf-v5-calc-inverse(var(--#{$tree-view}__list-item__list-item__node-toggle--TranslateX))})
+  );
+}
+
+.#{$tree-view}__node-title,
+.#{$tree-view}__node-text {
+  &.pf-m-truncate {
+    --#{$tree-view}__node-content--Overflow: hidden;
+
+    @include pf-v5-text-overflow;
+  }
+
+  @at-root .#{$tree-view}.pf-m-truncate & {
+    --#{$tree-view}__node-content--Overflow: hidden;
+
+    @include pf-v5-text-overflow;
+  }
+}
+
+.#{$tree-view}__node-text {
+  @at-root label#{&} {
+    cursor: pointer;
+  }
+
+  font-weight: inherit;
+  color: inherit;
+  text-align: start;
+  background-color: transparent;
+  border: 0;
+}
+
+.#{$tree-view}__node-title {
+  font-weight: var(--#{$tree-view}__node-title--FontWeight);
+}
+
+.#{$tree-view}__search {
+  padding-block-start: var(--#{$tree-view}__search--PaddingTop);
+  padding-block-end: var(--#{$tree-view}__search--PaddingBottom);
+  padding-inline-start: var(--#{$tree-view}__search--PaddingLeft);
+  padding-inline-end: var(--#{$tree-view}__search--PaddingRight);
+}
+
+.#{$tree-view}__node-icon {
+  padding-inline-end: var(--#{$tree-view}__node-icon--PaddingRight);
+  color: var(--#{$tree-view}__node-icon--Color);
+}
+
+.#{$tree-view}__content {
+  display: flex;
+  align-items: center;
+}
+
+.#{$tree-view}__content:hover,
+.#{$tree-view}__content:focus-within {
+  background-color: var(--#{$tree-view}__node--hover--BackgroundColor);
+}
+
+.#{$tree-view}__action {
+  margin-inline-start: var(--#{$tree-view}__action--MarginLeft);
+}
+
+// stylelint-disable no-duplicate-selectors
+.#{$tree-view}__list-item {
+  $root: &;
+  $nested-item: &;
+
+  @for $i from 1 through $pf-v5-c-tree-view--MaxNesting {
+    #{$nested-item} {
+      --#{$tree-view}__list-item__list-item__node-toggle--Left: var(--#{$tree-view}__node--PaddingLeft);
+      --#{$tree-view}__node--PaddingLeft: calc(var(--#{$tree-view}__node--nested-indent--base) * #{$i} + var(--#{$tree-view}__node--indent--base));
+      --#{$tree-view}--m-guides--border--nested--Left: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-guides--guide-left--base--offset));
+
+      @if $i > 1 {
+        --#{$tree-view}--m-compact__node--PaddingLeft: calc(var(--#{$tree-view}--m-compact__node--nested-indent--base) * #{$i - 1} + var(--#{$tree-view}--m-compact__node--indent--base));
+        --#{$tree-view}--m-compact--border--nested--Left: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-compact--base-border--Left--offset));
+        --#{$tree-view}--m-compact--m-no-background__node--PaddingLeft: calc(var(--#{$tree-view}--m-compact--m-no-background__node--nested-indent--base) * #{$i - 1} + var(--#{$tree-view}--m-compact--m-no-background__node--indent--base));
+        --#{$tree-view}--m-compact--m-no-background--border--nested--Left: calc(var(--#{$tree-view}__node--PaddingLeft) - var(--#{$tree-view}--m-compact--m-no-background--base-border--Left--offset));
+      }
+    }
+
+    $nested-item: $nested-item + " " + $root;
+  }
+}
+// stylelint-enable
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/tree-view";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-tree-view;
+}

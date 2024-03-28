@@ -1,0 +1,87 @@
+// @debug $hint; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$hint} {
+  --#{$hint}--GridRowGap: var(--#{$pf-global}--spacer--md);
+  --#{$hint}--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$hint}--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$hint}--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+  --#{$hint}--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$hint}--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$hint}--BorderColor: var(--#{$pf-global}--palette--blue-100);
+  --#{$hint}--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$hint}--BoxShadow: var(--#{$pf-global}--BoxShadow--sm);
+  --#{$hint}--Color: var(--#{$pf-global}--Color--100);
+
+  // Hint Title
+  --#{$hint}__title--FontSize: var(--#{$pf-global}--FontSize--lg);
+
+  // Hint Body
+  --#{$hint}__body--FontSize: var(--#{$pf-global}--FontSize--md);
+
+  // Hint Footer
+  --#{$hint}__footer--child--MarginRight: var(--#{$pf-global}--spacer--md);
+
+  // Hint Actions
+  --#{$hint}__actions--MarginLeft: var(--#{$pf-global}--spacer--2xl);
+  --#{$hint}__actions--c-dropdown--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-row-gap: var(--#{$hint}--GridRowGap);
+  padding-block-start: var(--#{$hint}--PaddingTop);
+  padding-block-end: var(--#{$hint}--PaddingBottom);
+  padding-inline-start: var(--#{$hint}--PaddingLeft);
+  padding-inline-end: var(--#{$hint}--PaddingRight);
+  color: var(--#{$hint}--Color);
+  background-color: var(--#{$hint}--BackgroundColor);
+  border: var(--#{$hint}--BorderWidth) solid var(--#{$hint}--BorderColor);
+  box-shadow: var(--#{$hint}--BoxShadow);
+
+  // Remove this when the inline link button is updated
+  .#{$button}.pf-m-link.pf-m-inline {
+    text-align: start;
+    white-space: normal;
+  }
+}
+
+.#{$hint}__actions {
+  display: inline-grid;
+  grid-row: 1;
+  grid-column: 2;
+  grid-auto-flow: column;
+  margin-inline-start: var(--#{$hint}__actions--MarginLeft);
+  text-align: end;
+
+  // Only applies to the plain dropdown
+  .#{$dropdown} .#{$dropdown}__toggle.pf-m-plain {
+    margin-block-start: var(--#{$hint}__actions--c-dropdown--MarginTop);
+  }
+
+  + .#{$hint}__body {
+    grid-column: 1;
+  }
+}
+
+.#{$hint}__title {
+  font-size: var(--#{$hint}__title--FontSize);
+}
+
+.#{$hint}__body {
+  grid-column: 1 / -1;
+  font-size: var(--#{$hint}__body--FontSize);
+}
+
+.#{$hint}__footer {
+  grid-column: 1 / -1;
+
+  > :not(:last-child) {
+    margin-inline-end: var(--#{$hint}__footer--child--MarginRight);
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/hint";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-hint;
+}

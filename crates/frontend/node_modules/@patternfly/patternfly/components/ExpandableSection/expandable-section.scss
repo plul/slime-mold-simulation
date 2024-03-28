@@ -1,0 +1,172 @@
+// @debug $expandable-section; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$expandable-section} {
+  // Toggle
+  --#{$expandable-section}__toggle--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$expandable-section}__toggle--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}__toggle--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$expandable-section}__toggle--PaddingLeft: 0;
+  --#{$expandable-section}__toggle--MarginTop: 0;
+  --#{$expandable-section}__toggle--Color: var(--#{$pf-global}--link--Color);
+  --#{$expandable-section}__toggle--hover--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$expandable-section}__toggle--active--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$expandable-section}__toggle--focus--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$expandable-section}__toggle--m-expanded--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$expandable-section}__toggle--BackgroundColor: transparent;
+
+  // Toggle icon
+  --#{$expandable-section}__toggle-icon--MinWidth: 1em;
+  --#{$expandable-section}__toggle-icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$expandable-section}__toggle-icon--Transition: .2s ease-in 0s;
+  --#{$expandable-section}__toggle-icon--Rotate: 0;
+  --#{$expandable-section}__toggle-icon--m-expand-top--Rotate: 0;
+  --#{$expandable-section}--m-expanded__toggle-icon--Rotate: 90deg;
+  --#{$expandable-section}--m-expanded__toggle-icon--m-expand-top--Rotate: -90deg;
+
+  // Toggle text
+  --#{$expandable-section}__toggle-text--MarginLeft: calc(var(--#{$pf-global}--spacer--xs) + var(--#{$pf-global}--spacer--sm));
+
+  // Content
+  --#{$expandable-section}__content--MarginTop: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}__content--MaxWidth: auto;
+
+  // Limit Width
+  --#{$expandable-section}--m-limit-width__content--MaxWidth: #{pf-size-prem(750px)};
+
+  // Large
+  --#{$expandable-section}--m-display-lg--BoxShadow: var(--#{$pf-global}--BoxShadow--md);
+  --#{$expandable-section}--m-display-lg__toggle--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}--m-display-lg__toggle--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}--m-display-lg__toggle--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}--m-display-lg__toggle--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$expandable-section}--m-display-lg__content--MarginTop: 0;
+  --#{$expandable-section}--m-display-lg__content--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$expandable-section}--m-display-lg__content--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+  --#{$expandable-section}--m-display-lg__content--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$expandable-section}--m-display-lg--after--BackgroundColor: transparent;
+  --#{$expandable-section}--m-display-lg--after--Width: var(--#{$pf-global}--BorderWidth--lg);
+  --#{$expandable-section}--m-display-lg--m-expanded--after--BackgroundColor: var(--#{$pf-global}--primary-color--100);
+
+  // Indented
+  --#{$expandable-section}--m-indented__content--PaddingLeft: calc(var(--#{$expandable-section}__toggle-text--MarginLeft) + var(--#{$expandable-section}__toggle-icon--MinWidth));
+
+  // Truncate
+  --#{$expandable-section}--m-truncate__content--LineClamp: 3;
+  --#{$expandable-section}--m-truncate__toggle--MarginTop: var(--#{$pf-global}--spacer--xs);
+
+
+  &.pf-m-expanded {
+    --#{$expandable-section}__toggle--Color: var(--#{$expandable-section}__toggle--m-expanded--Color);
+    --#{$expandable-section}__toggle-icon--Rotate: var(--#{$expandable-section}--m-expanded__toggle-icon--Rotate);
+    --#{$expandable-section}__toggle-icon--m-expand-top--Rotate: var(--#{$expandable-section}--m-expanded__toggle-icon--m-expand-top--Rotate);
+    --#{$expandable-section}--m-display-lg--after--BackgroundColor: var(--#{$expandable-section}--m-display-lg--m-expanded--after--BackgroundColor);
+  }
+
+  &.pf-m-detached,
+  &.pf-m-truncate {
+    --#{$expandable-section}__content--MarginTop: 0;
+  }
+
+  &.pf-m-limit-width {
+    --#{$expandable-section}__content--MaxWidth: var(--#{$expandable-section}--m-limit-width__content--MaxWidth);
+  }
+
+  &.pf-m-display-lg {
+    --#{$expandable-section}__toggle--PaddingTop: var(--#{$expandable-section}--m-display-lg__toggle--PaddingTop);
+    --#{$expandable-section}__toggle--PaddingRight: var(--#{$expandable-section}--m-display-lg__toggle--PaddingRight);
+    --#{$expandable-section}__toggle--PaddingBottom: var(--#{$expandable-section}--m-display-lg__toggle--PaddingBottom);
+    --#{$expandable-section}__toggle--PaddingLeft: var(--#{$expandable-section}--m-display-lg__toggle--PaddingLeft);
+    --#{$expandable-section}__content--PaddingRight: var(--#{$expandable-section}--m-display-lg__content--PaddingRight);
+    --#{$expandable-section}__content--PaddingBottom: var(--#{$expandable-section}--m-display-lg__content--PaddingBottom);
+    --#{$expandable-section}__content--PaddingLeft: var(--#{$expandable-section}--m-display-lg__content--PaddingLeft);
+    --#{$expandable-section}__content--MarginTop: var(--#{$expandable-section}--m-display-lg__content--MarginTop);
+
+    position: relative;
+    box-shadow: var(--#{$expandable-section}--m-display-lg--BoxShadow);
+
+    &::after {
+      position: absolute;
+     inset-block-start: 0;
+     inset-block-end: 0;
+     inset-inline-start: 0;
+      width: var(--#{$expandable-section}--m-display-lg--after--Width);
+      content: "";
+      background-color: var(--#{$expandable-section}--m-display-lg--after--BackgroundColor);
+    }
+  }
+
+  &.pf-m-indented {
+    --#{$expandable-section}__content--PaddingLeft: var(--#{$expandable-section}--m-indented__content--PaddingLeft);
+  }
+
+  &.pf-m-truncate {
+    --#{$expandable-section}__toggle--MarginTop: var(--#{$expandable-section}--m-truncate__toggle--MarginTop);
+    --#{$expandable-section}__toggle--PaddingTop: 0;
+    --#{$expandable-section}__toggle--PaddingRight: 0;
+    --#{$expandable-section}__toggle--PaddingBottom: 0;
+    --#{$expandable-section}__toggle-text--MarginLeft: 0;
+
+    &:not(.pf-m-expanded) .#{$expandable-section}__content {
+      // stylelint-disable
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: var(--#{$expandable-section}--m-truncate__content--LineClamp);
+      // stylelint-enable
+      overflow: hidden;
+    }
+  }
+
+  &.pf-m-detached {
+    --#{$expandable-section}--m-truncate__toggle--MarginTop: 0;
+  }
+}
+
+.#{$expandable-section}__toggle {
+  display: flex;
+  padding-block-start: var(--#{$expandable-section}__toggle--PaddingTop);
+  padding-block-end: var(--#{$expandable-section}__toggle--PaddingBottom);
+  padding-inline-start: var(--#{$expandable-section}__toggle--PaddingLeft);
+  padding-inline-end: var(--#{$expandable-section}__toggle--PaddingRight);
+  margin-block-start: var(--#{$expandable-section}__toggle--MarginTop);
+  color: var(--#{$expandable-section}__toggle--Color);
+  background-color: var(--#{$expandable-section}__toggle--BackgroundColor);
+  border: none;
+
+  &:hover {
+    --#{$expandable-section}__toggle--Color: var(--#{$expandable-section}__toggle--hover--Color);
+  }
+
+  &:active,
+  &.pf-m-active {
+    --#{$expandable-section}__toggle--Color: var(--#{$expandable-section}__toggle--active--Color);
+  }
+
+  &:focus {
+    --#{$expandable-section}__toggle--Color: var(--#{$expandable-section}__toggle--focus--Color);
+  }
+}
+
+.#{$expandable-section}__toggle-icon {
+  @include pf-v5-mirror-inline-on-rtl;
+
+  min-width: var(--#{$expandable-section}__toggle-icon--MinWidth);
+  color: var(--#{$expandable-section}__toggle-icon--Color);
+  transition: var(--#{$expandable-section}__toggle-icon--Transition);
+  transform: rotate(var(--#{$expandable-section}__toggle-icon--Rotate));
+
+  &.pf-m-expand-top {
+    --#{$expandable-section}__toggle-icon--Rotate: var(--#{$expandable-section}__toggle-icon--m-expand-top--Rotate);
+  }
+}
+
+.#{$expandable-section}__toggle-text {
+  margin-inline-start: var(--#{$expandable-section}__toggle-text--MarginLeft);
+}
+
+.#{$expandable-section}__content {
+  max-width: var(--#{$expandable-section}__content--MaxWidth);
+  padding-block-end: var(--#{$expandable-section}__content--PaddingBottom);
+  padding-inline-start: var(--#{$expandable-section}__content--PaddingLeft);
+  padding-inline-end: var(--#{$expandable-section}__content--PaddingRight);
+  margin-block-start: var(--#{$expandable-section}__content--MarginTop);
+}

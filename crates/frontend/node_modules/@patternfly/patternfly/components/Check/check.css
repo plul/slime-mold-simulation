@@ -1,0 +1,69 @@
+.pf-v5-c-check {
+  --pf-v5-c-check--GridGap: var(--pf-v5-global--spacer--xs) var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-check__label--disabled--Color: var(--pf-v5-global--disabled-color--100);
+  --pf-v5-c-check__label--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-check__label--FontWeight: var(--pf-v5-global--FontWeight--normal);
+  --pf-v5-c-check__label--FontSize: var(--pf-v5-global--FontSize--md);
+  --pf-v5-c-check__label--LineHeight: var(--pf-v5-global--LineHeight--md);
+  --pf-v5-c-check__input--TranslateY--moz: 5px;
+  --pf-v5-c-check__description--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-check__description--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-check__body--MarginTop: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-check__label-required--MarginLeft: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-check__label-required--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-check__label-required--Color: var(--pf-v5-global--danger-color--100);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--pf-v5-c-check--GridGap);
+}
+.pf-v5-c-check.pf-m-standalone {
+  --pf-v5-c-check--GridGap: 0;
+  --pf-v5-c-check__input--TranslateY--moz: 0;
+  display: inline-grid;
+}
+
+.pf-v5-c-check__label {
+  align-self: baseline;
+  font-size: var(--pf-v5-c-check__label--FontSize);
+  font-weight: var(--pf-v5-c-check__label--FontWeight);
+  line-height: var(--pf-v5-c-check__label--LineHeight);
+  color: var(--pf-v5-c-check__label--Color);
+}
+
+.pf-v5-c-check__description {
+  grid-column: 2;
+  font-size: var(--pf-v5-c-check__description--FontSize);
+  color: var(--pf-v5-c-check__description--Color);
+}
+
+.pf-v5-c-check__body {
+  grid-column: 2;
+  margin-block-start: var(--pf-v5-c-check__body--MarginTop);
+}
+
+.pf-v5-c-check__input {
+  align-self: baseline;
+  -moz-transform: translateY(var(--pf-v5-c-check__input--TranslateY--moz));
+}
+
+.pf-v5-c-check__label,
+.pf-v5-c-check__input {
+  justify-self: start;
+}
+label.pf-v5-c-check, .pf-v5-c-check__label,
+.pf-v5-c-check__input {
+  cursor: pointer;
+}
+
+.pf-v5-c-check__label:disabled, .pf-v5-c-check__label.pf-m-disabled,
+.pf-v5-c-check__input:disabled,
+.pf-v5-c-check__input.pf-m-disabled {
+  --pf-v5-c-check__label--Color: var(--pf-v5-c-check__label--disabled--Color);
+  cursor: not-allowed;
+}
+
+.pf-v5-c-check__label-required {
+  margin-inline-start: var(--pf-v5-c-check__label-required--MarginLeft);
+  font-size: var(--pf-v5-c-check__label-required--FontSize);
+  color: var(--pf-v5-c-check__label-required--Color);
+}

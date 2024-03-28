@@ -1,0 +1,22 @@
+[package]
+authors = ["Asger Juul Brunshøj <asgerbrunshoj@gmail.com>"]
+edition = "2021"
+name = "common"
+publish = false
+version = "0.1.0"
+
+[lints.rust]
+future_incompatible = "deny"
+nonstandard_style = "deny"
+rust_2018_idioms = "deny"
+
+[lints.clippy]
+mod_module_files = "deny"
+
+[dependencies]
+bytemuck = { version = "1.14", features = ["derive"] }
+rand = "0.8.5"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+smart-default = "0.7.1"
+typed-builder = "0.18.1"

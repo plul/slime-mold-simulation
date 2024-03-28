@@ -1,0 +1,216 @@
+// @debug $skeleton; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$skeleton} {
+  --#{$skeleton}--BackgroundColor: var(--#{$pf-global}--palette--black-150);
+  --#{$skeleton}--Width: auto;
+  --#{$skeleton}--Height: auto;
+  --#{$skeleton}--BorderRadius: var(--#{$pf-global}--BorderRadius--sm);
+
+  // Before
+  --#{$skeleton}--before--PaddingBottom: 0;
+  --#{$skeleton}--before--Height: auto;
+  --#{$skeleton}--before--Content: "\00a0";
+
+  // After
+  --#{$skeleton}--after--LinearGradientAngle: 90deg;
+  --#{$skeleton}--after--LinearGradientColorStop1: var(--#{$pf-global}--palette--black-150);
+  --#{$skeleton}--after--LinearGradientColorStop2: #ededed;
+  --#{$skeleton}--after--LinearGradientColorStop3: var(--#{$pf-global}--palette--black-150);
+  --#{$skeleton}--after--TranslateX: -100%;
+  --#{$skeleton}--after--AnimationName: #{$skeleton}-loading;
+  --#{$skeleton}--after--AnimationDuration: 2s;
+  --#{$skeleton}--after--AnimationIterationCount: infinite;
+  --#{$skeleton}--after--AnimationTimingFunction: linear;
+  --#{$skeleton}--after--AnimationDelay: .5s;
+
+  // Circle
+  --#{$skeleton}--m-circle--BorderRadius: var(--#{$pf-global}--BorderRadius--lg);
+  --#{$skeleton}--m-circle--before--PaddingBottom: 100%;
+
+  // Text modifiers
+  --#{$skeleton}--m-text-4xl--Height: calc(var(--#{$pf-global}--FontSize--4xl) * var(--#{$pf-global}--LineHeight--sm));
+  --#{$skeleton}--m-text-3xl--Height: calc(var(--#{$pf-global}--FontSize--3xl) * var(--#{$pf-global}--LineHeight--sm));
+  --#{$skeleton}--m-text-2xl--Height: calc(var(--#{$pf-global}--FontSize--2xl) * var(--#{$pf-global}--LineHeight--sm));
+  --#{$skeleton}--m-text-xl--Height: calc(var(--#{$pf-global}--FontSize--xl) * var(--#{$pf-global}--LineHeight--sm));
+  --#{$skeleton}--m-text-lg--Height: calc(var(--#{$pf-global}--FontSize--lg) * var(--#{$pf-global}--LineHeight--md));
+  --#{$skeleton}--m-text-md--Height: calc(var(--#{$pf-global}--FontSize--md) * var(--#{$pf-global}--LineHeight--md));
+  --#{$skeleton}--m-text-sm--Height: calc(var(--#{$pf-global}--FontSize--sm) * var(--#{$pf-global}--LineHeight--md));
+
+  // Width
+  --#{$skeleton}--m-width-sm--Width: #{pf-size-prem(100px)};
+  --#{$skeleton}--m-width-md--Width: #{pf-size-prem(200px)};
+  --#{$skeleton}--m-width-lg--Width: #{pf-size-prem(300px)};
+  --#{$skeleton}--m-width-25--Width: 25%;
+  --#{$skeleton}--m-width-33--Width: calc(100% / 3);
+  --#{$skeleton}--m-width-50--Width: 50%;
+  --#{$skeleton}--m-width-66--Width: calc(100% / 3 * 2);
+  --#{$skeleton}--m-width-75--Width: 75%;
+
+  // Height
+  --#{$skeleton}--m-height-sm--Height: #{pf-size-prem(100px)};
+  --#{$skeleton}--m-height-md--Height: #{pf-size-prem(200px)};
+  --#{$skeleton}--m-height-lg--Height: #{pf-size-prem(300px)};
+  --#{$skeleton}--m-height-25--Height: 25%;
+  --#{$skeleton}--m-height-33--Height: calc(100% / 3);
+  --#{$skeleton}--m-height-50--Height: 50%;
+  --#{$skeleton}--m-height-66--Height: calc(100% / 3 * 2);
+  --#{$skeleton}--m-height-75--Height: 75%;
+  --#{$skeleton}--m-height-100--Height: 100%;
+
+  position: relative;
+  width: var(--#{$skeleton}--Width);
+  height: var(--#{$skeleton}--Height);
+  overflow: hidden;
+  background-color: var(--#{$skeleton}--BackgroundColor);
+  border-radius: var(--#{$skeleton}--BorderRadius);
+  transform: translate(0); // Creates stacking context necessary for safari
+
+  &::before {
+    display: block;
+    height: var(--#{$skeleton}--before--Height);
+    padding-block-end: var(--#{$skeleton}--before--PaddingBottom);
+    content: var(--#{$skeleton}--before--Content);
+  }
+
+  &::after {
+    @include pf-v5-mirror-inline-on-rtl;
+
+    position: absolute;
+    inset: 0;
+    display: block;
+    content: "";
+    background: linear-gradient(var(--#{$skeleton}--after--LinearGradientAngle), var(--#{$skeleton}--after--LinearGradientColorStop1), var(--#{$skeleton}--after--LinearGradientColorStop2), var(--#{$skeleton}--after--LinearGradientColorStop3));
+    transform: translate3d(var(--#{$skeleton}--after--TranslateX), 0, 0); // translateZ() to force GPU acceleration
+    animation: var(--#{$skeleton}--after--AnimationName) var(--#{$skeleton}--after--AnimationDuration) var(--#{$skeleton}--after--AnimationTimingFunction) var(--#{$skeleton}--after--AnimationDelay) var(--#{$skeleton}--after--AnimationIterationCount);
+  }
+
+  // Circle
+  &.pf-m-circle {
+    --#{$skeleton}--BorderRadius: var(--#{$skeleton}--m-circle--BorderRadius);
+  }
+
+  &.pf-m-square,
+  &.pf-m-circle {
+    --#{$skeleton}--before--Height: 0;
+    --#{$skeleton}--before--PaddingBottom: var(--#{$skeleton}--m-circle--before--PaddingBottom);
+  }
+
+  // Width
+  &.pf-m-width-sm {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-sm--Width);
+  }
+
+  &.pf-m-width-md {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-md--Width);
+  }
+
+  &.pf-m-width-lg {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-lg--Width);
+  }
+
+  &.pf-m-width-25 {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-25--Width);
+  }
+
+  &.pf-m-width-33 {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-33--Width);
+  }
+
+  &.pf-m-width-50 {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-50--Width);
+  }
+
+  &.pf-m-width-66 {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-66--Width);
+  }
+
+  &.pf-m-width-75 {
+    --#{$skeleton}--Width: var(--#{$skeleton}--m-width-75--Width);
+  }
+
+  // Height
+  &.pf-m-height-sm {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-sm--Height);
+  }
+
+  &.pf-m-height-md {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-md--Height);
+  }
+
+  &.pf-m-height-lg {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-lg--Height);
+  }
+
+  &.pf-m-height-25 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-25--Height);
+  }
+
+  &.pf-m-height-33 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-33--Height);
+  }
+
+  &.pf-m-height-50 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-50--Height);
+  }
+
+  &.pf-m-height-66 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-66--Height);
+  }
+
+  &.pf-m-height-75 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-75--Height);
+  }
+
+  &.pf-m-height-100 {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-height-100--Height);
+  }
+
+  &.pf-m-text-4xl {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-4xl--Height);
+  }
+
+  &.pf-m-text-3xl {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-3xl--Height);
+  }
+
+  &.pf-m-text-2xl {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-2xl--Height);
+  }
+
+  &.pf-m-text-xl {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-xl--Height);
+  }
+
+  &.pf-m-text-lg {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-lg--Height);
+  }
+
+  &.pf-m-text-md {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-md--Height);
+  }
+
+  &.pf-m-text-sm {
+    --#{$skeleton}--Height: var(--#{$skeleton}--m-text-sm--Height);
+  }
+}
+
+@keyframes #{$skeleton}-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  60% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/skeleton";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-skeleton;
+}

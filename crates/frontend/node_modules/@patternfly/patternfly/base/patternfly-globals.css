@@ -1,0 +1,120 @@
+:where(html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6) {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+:where(*::before,
+*::after) {
+  box-sizing: border-box;
+}
+
+:where(html,
+body) {
+  height: 100%;
+}
+
+:where(body) {
+  font-family: var(--pf-v5-global--FontFamily--text);
+  font-size: var(--pf-v5-global--FontSize--md);
+  font-weight: var(--pf-v5-global--FontWeight--normal);
+  line-height: var(--pf-v5-global--LineHeight--md);
+}
+
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6) {
+  font-size: 100%;
+  font-weight: var(--pf-v5-global--FontWeight--normal);
+}
+
+:where(ul) {
+  list-style: none;
+}
+
+:where(button,
+input,
+optgroup,
+select,
+textarea) {
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: var(--pf-v5-global--LineHeight--md);
+  color: var(--pf-v5-global--Color--100);
+}
+
+:where(img,
+embed,
+iframe,
+object,
+audio,
+video) {
+  max-width: 100%;
+  height: auto;
+}
+
+:where(iframe) {
+  border: 0;
+}
+
+:where(table) {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+:where(td,
+th) {
+  padding: 0;
+  text-align: start;
+}
+
+:where(code,
+pre) {
+  font-family: var(--pf-v5-global--FontFamily--monospace);
+}
+
+:where(a) {
+  font-weight: var(--pf-v5-global--link--FontWeight);
+  color: var(--pf-v5-global--link--Color);
+  text-decoration: var(--pf-v5-global--link--TextDecoration);
+}
+
+:where(a:hover) {
+  --pf-v5-global--link--Color: var(--pf-v5-global--link--Color--hover);
+  --pf-v5-global--link--TextDecoration: var(--pf-v5-global--link--TextDecoration--hover);
+}
+
+:where(a,
+button) {
+  cursor: pointer;
+}
+
+:where(.pf-v5-theme-dark) {
+  color-scheme: dark;
+}

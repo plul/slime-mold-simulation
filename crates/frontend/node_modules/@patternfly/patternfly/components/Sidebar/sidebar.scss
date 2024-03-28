@@ -1,0 +1,250 @@
+// @debug $sidebar; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+$pf-v5-c-sidebar--breakpoint-map--width: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+$pf-v5-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
+
+.#{$sidebar} {
+  --#{$sidebar}--inset: var(--#{$pf-global}--spacer--md);
+  --#{$sidebar}--xl--inset: var(--#{$pf-global}--spacer--lg);
+  --#{$sidebar}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$sidebar}--BorderWidth--base: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$sidebar}--BorderColor--base: var(--#{$pf-global}--BorderColor--100);
+
+  // Panel
+  --#{$sidebar}__panel--PaddingTop: 0;
+  --#{$sidebar}__panel--PaddingRight: 0;
+  --#{$sidebar}__panel--PaddingBottom: 0;
+  --#{$sidebar}__panel--PaddingLeft: 0;
+  --#{$sidebar}__panel--Order: -1;
+
+  // Panel padding
+  --#{$sidebar}__panel--m-padding--PaddingTop: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingRight: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingBottom: var(--#{$sidebar}--inset);
+  --#{$sidebar}__panel--m-padding--PaddingLeft: var(--#{$sidebar}--inset);
+
+  // Content
+  --#{$sidebar}__content--PaddingTop: 0;
+  --#{$sidebar}__content--PaddingRight: 0;
+  --#{$sidebar}__content--PaddingBottom: 0;
+  --#{$sidebar}__content--PaddingLeft: 0;
+  --#{$sidebar}__content--Order: 1;
+
+  // Content padding
+  --#{$sidebar}__content--m-padding--PaddingTop: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingRight: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingBottom: var(--#{$sidebar}--inset);
+  --#{$sidebar}__content--m-padding--PaddingLeft: var(--#{$sidebar}--inset);
+
+  // Main
+  --#{$sidebar}__main--FlexDirection: column;
+  --#{$sidebar}__main--md--FlexDirection: row;
+  --#{$sidebar}__main--AlignItems: stretch;
+  --#{$sidebar}__main--md--AlignItems: flex-start;
+  --#{$sidebar}__main--child--MarginTop: 0;
+
+  // Gutter
+  --#{$sidebar}--m-gutter__main--Gap: var(--#{$sidebar}--inset);
+
+  // Border
+  --#{$sidebar}__main--m-border--before--Display: none;
+  --#{$sidebar}__main--m-border--before--md--Display: block;
+  --#{$sidebar}__main--m-border--before--BorderWidth: var(--#{$sidebar}--BorderWidth--base);
+  --#{$sidebar}__main--m-border--before--BorderColor: var(--#{$sidebar}--BorderColor--base);
+
+  // Panel right
+  --#{$sidebar}--m-panel-right__panel--Order: -1;
+  --#{$sidebar}--m-panel-right__panel--md--Order: 1;
+  --#{$sidebar}--m-panel-right__content--md--Order: -1;
+
+  // Stack
+  --#{$sidebar}--m-stack__main--FlexDirection: column;
+  --#{$sidebar}--m-stack__main--AlignItems: stretch;
+  --#{$sidebar}--m-stack__panel--Position: sticky;
+  --#{$sidebar}--m-stack__panel--Top: 0;
+  --#{$sidebar}--m-stack__panel--BoxShadow: var(--#{$sidebar}__panel--BoxShadow--base);
+  --#{$sidebar}--m-stack--m-panel-right__panel--Order: -1;
+
+  // Split
+  --#{$sidebar}--m-split__main--AlignItems: flex-start;
+  --#{$sidebar}--m-split__main--FlexDirection: row;
+  --#{$sidebar}--m-split__panel--Position: static;
+  --#{$sidebar}--m-split__panel--Top: auto;
+  --#{$sidebar}--m-split--m-panel-right__panel--Order: 1;
+  --#{$sidebar}--m-split__main--m-border--before--Display: block;
+
+  // Panel
+  --#{$sidebar}__panel--FlexBasis--base: auto;
+  --#{$sidebar}__panel--BoxShadow--base: #{0 pf-size-prem(4px) pf-size-prem(4px) pf-size-prem(-4px) rgba($pf-v5-color-black-1000, .16)}; // modified so the shadow is only visible on the bottom of the element
+  --#{$sidebar}__panel--BoxShadow: var(--#{$sidebar}__panel--BoxShadow--base);
+  --#{$sidebar}__panel--Top: 0;
+  --#{$sidebar}__panel--md--Top: auto;
+  --#{$sidebar}__panel--Position: sticky;
+  --#{$sidebar}__panel--md--Position: static;
+  --#{$sidebar}__panel--FlexBasis-base: auto;
+  --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--FlexBasis-base);
+  --#{$sidebar}__panel--md--FlexBasis: #{pf-size-prem(250px)};
+  --#{$sidebar}__panel--m-split--FlexBasis: #{pf-size-prem(250px)};
+  --#{$sidebar}__panel--m-stack--FlexBasis: auto;
+  --#{$sidebar}__panel--ZIndex: var(--#{$pf-global}--ZIndex--xs);
+  --#{$sidebar}__panel--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // Content
+  --#{$sidebar}__content--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // Sticky
+  --#{$sidebar}__panel--m-sticky--Top: 0;
+  --#{$sidebar}__panel--m-sticky--Position: sticky;
+
+  @media (min-width: $pf-v5-global--breakpoint--md) {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}__main--md--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}__main--md--AlignItems);
+    --#{$sidebar}__main--m-border--before--Display: var(--#{$sidebar}__main--m-border--before--md--Display); // show border starting at md breakpoint
+    --#{$sidebar}__panel--BoxShadow: none;
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--md--FlexBasis);
+    --#{$sidebar}__panel--Top: var(--#{$sidebar}__panel--md--Top);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}__panel--md--Position);
+  }
+
+  @media (min-width: $pf-v5-global--breakpoint--xl) {
+    --#{$sidebar}--inset: var(--#{$sidebar}--xl--inset);
+  }
+
+  &.pf-m-gutter > .#{$sidebar}__main {
+    gap: var(--#{$sidebar}--m-gutter__main--Gap);
+  }
+
+  &.pf-m-panel-right {
+    --#{$sidebar}__panel--Order: var(--#{$sidebar}--m-panel-right__panel--Order);
+    --#{$sidebar}__content--Order: var(--#{$sidebar}--m-panel-right__content--Order);
+
+    @media (min-width: $pf-v5-global--breakpoint--md) {
+      --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-panel-right__panel--md--Order);
+      --#{$sidebar}--m-panel-right__content--Order: var(--#{$sidebar}--m-panel-right__content--md--Order);
+    }
+  }
+
+  &.pf-m-stack {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}--m-stack__main--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}--m-stack__main--AlignItems);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}--m-stack__panel--Position);
+    --#{$sidebar}__panel--Top: var(--#{$sidebar}--m-stack__panel--Top);
+    --#{$sidebar}__panel--BoxShadow: var(--#{$sidebar}--m-stack__panel--BoxShadow);
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--m-stack--FlexBasis);
+    --#{$sidebar}__main--m-border--before--Display: none;
+    --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-stack--m-panel-right__panel--Order);
+  }
+
+  &.pf-m-split {
+    --#{$sidebar}__main--FlexDirection: var(--#{$sidebar}--m-split__main--FlexDirection);
+    --#{$sidebar}__main--AlignItems: var(--#{$sidebar}--m-split__main--AlignItems);
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}--m-split__panel--Position);
+    --#{$sidebar}__panel--Top: var(--#{$sidebar}--m-split__panel--Top);
+    --#{$sidebar}__panel--BoxShadow: none;
+    --#{$sidebar}__panel--FlexBasis: var(--#{$sidebar}__panel--m-split--FlexBasis);
+    --#{$sidebar}__main--m-border--before--Display: var(--#{$sidebar}--m-split__main--m-border--before--Display);
+    --#{$sidebar}--m-panel-right__panel--Order: var(--#{$sidebar}--m-split--m-panel-right__panel--Order);
+  }
+
+  height: 100%;
+}
+
+.#{$sidebar}__main {
+  display: flex;
+  flex-direction: var(--#{$sidebar}__main--FlexDirection);
+  align-items: var(--#{$sidebar}__main--AlignItems);
+
+  &.pf-m-border::before {
+    display: var(--#{$sidebar}__main--m-border--before--Display);
+    flex: 0 0 var(--#{$sidebar}__main--m-border--before--BorderWidth);
+    align-self: stretch;
+    content: "";
+    background-color: var(--#{$sidebar}__main--m-border--before--BorderColor);
+  }
+}
+
+.#{$sidebar}__panel {
+  position: var(--#{$sidebar}__panel--Position);
+  inset-block-start: var(--#{$sidebar}__panel--Top);
+  z-index: var(--#{$sidebar}__panel--ZIndex);
+  flex-basis: var(--#{$sidebar}__panel--FlexBasis);
+  flex-shrink: 0;
+  order: var(--#{$sidebar}__panel--Order);
+  padding-block-start: var(--#{$sidebar}__panel--PaddingTop);
+  padding-block-end: var(--#{$sidebar}__panel--PaddingBottom);
+  padding-inline-start: var(--#{$sidebar}__panel--PaddingLeft);
+  padding-inline-end: var(--#{$sidebar}__panel--PaddingRight);
+  background-color: var(--#{$sidebar}__panel--BackgroundColor);
+  box-shadow: var(--#{$sidebar}__panel--BoxShadow);
+
+  &.pf-m-padding {
+    --#{$sidebar}__panel--PaddingTop: var(--#{$sidebar}__panel--m-padding--PaddingTop);
+    --#{$sidebar}__panel--PaddingRight: var(--#{$sidebar}__panel--m-padding--PaddingRight);
+    --#{$sidebar}__panel--PaddingBottom: var(--#{$sidebar}__panel--m-padding--PaddingBottom);
+    --#{$sidebar}__panel--PaddingLeft: var(--#{$sidebar}__panel--m-padding--PaddingLeft);
+  }
+
+  &.pf-m-sticky {
+    --#{$sidebar}__panel--Position: var(--#{$sidebar}__panel--m-sticky--Position);
+    --#{$sidebar}__panel--Top: var(--#{$sidebar}__panel--m-sticky--Top);
+  }
+
+  &.pf-m-static {
+    --#{$sidebar}__panel--Position: static;
+    --#{$sidebar}__panel--Top: auto;
+  }
+}
+
+.#{$sidebar}__content {
+  flex-grow: 1;
+  order: var(--#{$sidebar}__content--Order);
+  padding-block-start: var(--#{$sidebar}__content--PaddingTop);
+  padding-block-end: var(--#{$sidebar}__content--PaddingBottom);
+  padding-inline-start: var(--#{$sidebar}__content--PaddingLeft);
+  padding-inline-end: var(--#{$sidebar}__content--PaddingRight);
+  background-color: var(--#{$sidebar}__content--BackgroundColor);
+
+  &.pf-m-padding {
+    --#{$sidebar}__content--PaddingTop: var(--#{$sidebar}__content--m-padding--PaddingTop);
+    --#{$sidebar}__content--PaddingRight: var(--#{$sidebar}__content--m-padding--PaddingRight);
+    --#{$sidebar}__content--PaddingBottom: var(--#{$sidebar}__content--m-padding--PaddingBottom);
+    --#{$sidebar}__content--PaddingLeft: var(--#{$sidebar}__content--m-padding--PaddingTop);
+  }
+
+  &.pf-m-no-background {
+    --#{$sidebar}__content--BackgroundColor: transparent;
+  }
+
+  & + .#{$sidebar}__panel {
+    --#{$sidebar}__panel--Order: 1;
+  }
+
+  :where(&:first-child) {
+    --#{$sidebar}__content--Order: -1;
+  }
+}
+
+.#{$sidebar},
+.#{$sidebar}__panel,
+.#{$sidebar}__content {
+  &.pf-m-no-background {
+    background-color: transparent;
+  }
+}
+
+
+// Responsive width modifiers
+@each $breakpoint, $breakpoint-value in $pf-v5-c-sidebar--breakpoint-map--width {
+  $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+
+  @include pf-v5-apply-breakpoint($breakpoint) {
+    @each $width-value in $pf-v5-c-sidebar__panel--list--width {
+      .pf-v5-c-sidebar__panel.pf-m-width-#{$width-value}#{$breakpoint-name} {
+        @if $width-value == "default" {
+          --pf-v5-c-sidebar__panel--FlexBasis: var(--pf-v5-c-sidebar__panel--FlexBasis--base);
+        } @else {
+          --pf-v5-c-sidebar__panel--FlexBasis: #{percentage(div($width-value, 100))};
+        }
+      }
+    }
+  }
+}

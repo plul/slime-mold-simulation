@@ -1,0 +1,308 @@
+// Don't remove this magic comment. See gulpfile.js.
+// @import "../../sass-utilities/all";
+// @debug $app-launcher; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$app-launcher} {
+  // Menu
+  --#{$app-launcher}__menu--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
+  --#{$app-launcher}__menu--BoxShadow: var(--#{$pf-global}--BoxShadow--md);
+  --#{$app-launcher}__menu--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu--Top: calc(100% + var(--#{$pf-global}--spacer--xs));
+  --#{$app-launcher}__menu--ZIndex: var(--#{$pf-global}--ZIndex--sm);
+  --#{$app-launcher}--m-top__menu--Top: 0;
+  --#{$app-launcher}--m-top__menu--TranslateY: calc(-100% - var(--#{$pf-global}--spacer--xs)); // The "dropup" menu must be transformed up and this calculates how much to create space between the toggle and menu
+
+  // Expanded
+  --#{$app-launcher}__toggle--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$app-launcher}__toggle--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__toggle--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$app-launcher}__toggle--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__toggle--Color: var(--#{$pf-global}--Color--200);
+  --#{$app-launcher}__toggle--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$app-launcher}__toggle--active--Color: var(--#{$pf-global}--Color--100);
+  --#{$app-launcher}__toggle--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$app-launcher}__toggle--disabled--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$app-launcher}__toggle--m-expanded--Color: var(--#{$pf-global}--Color--100);
+  --#{$app-launcher}__toggle--BackgroundColor: transparent;
+
+  // Menu input
+  --#{$app-launcher}__menu-search--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu-search--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-search--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-search--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-search--BottomBorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$app-launcher}__menu-search--BottomBorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$app-launcher}__menu-search--MarginBottom: var(--#{$pf-global}--spacer--sm);
+
+  // Menu item
+  --#{$app-launcher}__menu-item--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu-item--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-item--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu-item--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-item--Color: var(--#{$pf-global}--Color--dark-100);
+  --#{$app-launcher}__menu-item--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$app-launcher}__menu-item--Width: 100%;
+  --#{$app-launcher}__menu-item--disabled--Color: var(--#{$pf-global}--Color--dark-200);
+  --#{$app-launcher}__menu-item--hover--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
+  --#{$app-launcher}__menu-item--m-link--PaddingRight: 0;
+  --#{$app-launcher}__menu-item--m-link--hover--BackgroundColor: transparent;
+  --#{$app-launcher}__menu-item--m-action--Color: var(--#{$pf-global}--Color--200);
+  --#{$app-launcher}__menu-item--m-action--Width: auto;
+  --#{$app-launcher}__menu-item--m-action--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$app-launcher}__menu-item--m-action--hover--BackgroundColor: transparent;
+  --#{$app-launcher}__menu-item--hover__menu-item--m-action--Color: var(--#{$pf-global}--Color--200); // remove at breaking change
+  --#{$app-launcher}__menu-item--m-action--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$app-launcher}__menu-item--m-action--disabled--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$app-launcher}__menu-item--m-favorite__menu-item--m-action--Color: var(--#{$pf-global}--palette--gold-400);
+  --#{$app-launcher}__menu-item--m-favorite__menu-item--m-action--hover--Color: var(--#{$pf-global}--palette--gold-500);
+
+  // Menu item icon
+  --#{$app-launcher}__menu-item-icon--MarginRight: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__menu-item-icon--Width: var(--#{$pf-global}--icon--FontSize--lg);
+  --#{$app-launcher}__menu-item-icon--Height: var(--#{$pf-global}--icon--FontSize--lg);
+
+  // Menu item external icon
+  --#{$app-launcher}__menu-item-external-icon--Color: var(--#{$pf-global}--link--Color);
+  --#{$app-launcher}__menu-item-external-icon--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$app-launcher}__menu-item-external-icon--TranslateY: #{pf-size-prem(-1px)};
+  --#{$app-launcher}__menu-item-external-icon--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+
+  // Groups
+  --#{$app-launcher}__group--group--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__group-title--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}__group-title--PaddingRight: var(--#{$app-launcher}__menu-item--PaddingRight);
+  --#{$app-launcher}__group-title--PaddingBottom: var(--#{$app-launcher}__menu-item--PaddingBottom);
+  --#{$app-launcher}__group-title--PaddingLeft: var(--#{$app-launcher}__menu-item--PaddingLeft);
+  --#{$app-launcher}__group-title--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$app-launcher}__group-title--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$app-launcher}__group-title--Color: var(--#{$pf-global}--Color--dark-200);
+
+  // Divider
+  --#{$app-launcher}--c-divider--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$app-launcher}--c-divider--MarginBottom: var(--#{$pf-global}--spacer--sm);
+
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+
+  &.pf-m-expanded {
+    > .#{$app-launcher}__toggle {
+      color: var(--#{$app-launcher}__toggle--m-expanded--Color);
+    }
+  }
+
+  .#{$divider} {
+    margin-block-start: var(--#{$app-launcher}--c-divider--MarginTop);
+    margin-block-end: var(--#{$app-launcher}--c-divider--MarginBottom);
+
+    // Support divider as last item in group to separate groups
+    &:last-child {
+      --#{$app-launcher}--c-divider--MarginBottom: 0;
+    }
+  }
+}
+
+.#{$app-launcher}__toggle {
+  padding-block-start: var(--#{$app-launcher}__toggle--PaddingTop);
+  padding-block-end: var(--#{$app-launcher}__toggle--PaddingBottom);
+  padding-inline-start: var(--#{$app-launcher}__toggle--PaddingLeft);
+  padding-inline-end: var(--#{$app-launcher}__toggle--PaddingRight);
+  color: var(--#{$app-launcher}__toggle--Color);
+  background-color: var(--#{$app-launcher}__toggle--BackgroundColor);
+  border: none;
+
+  &:hover {
+    --#{$app-launcher}__toggle--Color: var(--#{$app-launcher}__toggle--hover--Color);
+  }
+
+  &:active,
+  &.pf-m-active {
+    --#{$app-launcher}__toggle--Color: var(--#{$app-launcher}__toggle--active--Color);
+  }
+
+  &:focus {
+    --#{$app-launcher}__toggle--Color: var(--#{$app-launcher}__toggle--focus--Color);
+  }
+
+  &:disabled {
+    --#{$app-launcher}__toggle--Color: var(--#{$app-launcher}__toggle--disabled--Color);
+
+    pointer-events: none;
+  }
+}
+
+.#{$app-launcher}__menu {
+  position: absolute;
+  inset-block-start: var(--#{$app-launcher}__menu--Top);
+  z-index: var(--#{$app-launcher}__menu--ZIndex);
+  min-width: 100%;
+  padding-block-start: var(--#{$app-launcher}__menu--PaddingTop);
+  padding-block-end: var(--#{$app-launcher}__menu--PaddingBottom);
+  background-color: var(--#{$app-launcher}__menu--BackgroundColor);
+  background-clip: padding-box;
+  box-shadow: var(--#{$app-launcher}__menu--BoxShadow);
+
+  &.pf-m-align-right {
+   inset-inline-end: 0;
+  }
+
+  .#{$app-launcher}.pf-m-top & {
+    --#{$app-launcher}__menu--Top: var(--#{$app-launcher}--m-top__menu--Top);
+
+    transform: translateY(var(--#{$app-launcher}--m-top__menu--TranslateY));
+  }
+
+  &.pf-m-static {
+    --#{$app-launcher}--m-top__menu--TranslateY: 0;
+
+    position: static;
+    inset-block-start: auto;
+    inset-block-end: auto;
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+    z-index: auto;
+    min-width: min-content;
+  }
+}
+
+.#{$app-launcher}__menu-search {
+  padding-block-start: var(--#{$app-launcher}__menu-search--PaddingTop);
+  padding-block-end: var(--#{$app-launcher}__menu-search--PaddingBottom);
+  padding-inline-start: var(--#{$app-launcher}__menu-search--PaddingLeft);
+  padding-inline-end: var(--#{$app-launcher}__menu-search--PaddingRight);
+  margin-block-end: var(--#{$app-launcher}__menu-search--MarginBottom);
+  border-block-end: var(--#{$app-launcher}__menu-search--BottomBorderWidth) solid var(--#{$app-launcher}__menu-search--BottomBorderColor);
+}
+
+.#{$app-launcher}__menu-wrapper {
+  display: flex;
+
+  &.pf-m-favorite {
+    --#{$app-launcher}__menu-item--m-action--Color: var(--#{$app-launcher}__menu-item--m-favorite__menu-item--m-action--Color);
+    --#{$app-launcher}__menu-item--m-action--hover--Color: var(--#{$app-launcher}__menu-item--m-favorite__menu-item--m-action--hover--Color);
+  }
+}
+
+.#{$app-launcher}__menu-item {
+  display: flex;
+  align-items: center;
+  width: var(--#{$app-launcher}__menu-item--Width);
+  padding-block-start: var(--#{$app-launcher}__menu-item--PaddingTop);
+  padding-block-end: var(--#{$app-launcher}__menu-item--PaddingBottom);
+  padding-inline-start: var(--#{$app-launcher}__menu-item--PaddingLeft);
+  padding-inline-end: var(--#{$app-launcher}__menu-item--PaddingRight);
+  font-weight: var(--#{$app-launcher}__menu-item--FontWeight);
+  color: var(--#{$app-launcher}__menu-item--Color);
+  white-space: nowrap;
+  background: none;
+  border: 0;
+
+  &:hover,
+  &:focus {
+    --#{$app-launcher}__menu-item--m-action--Color: var(--#{$app-launcher}__menu-item--hover__menu-item--m-action--Color); // remove at breaking change
+
+    text-decoration: none;
+  }
+
+  @at-root .#{$app-launcher}__menu-wrapper:hover,
+  .#{$app-launcher}__menu-wrapper:focus-within,
+  .#{$app-launcher}__menu-wrapper.pf-m-focus,
+  &:hover,
+  &:focus {
+    background-color: var(--#{$app-launcher}__menu-item--hover--BackgroundColor);
+  }
+
+  &:disabled,
+  &.pf-m-disabled {
+    --#{$app-launcher}__menu-item--Color: var(--#{$app-launcher}__menu-item--disabled--Color);
+    --#{$app-launcher}__menu-item--m-action--Color: var(--#{$app-launcher}__menu-item--m-action--disabled--Color);
+
+    pointer-events: none;
+  }
+
+  @at-root .#{$app-launcher}__menu-wrapper,
+  & {
+    &:disabled,
+    &.pf-m-disabled {
+      background-color: transparent;
+    }
+  }
+
+  @at-root .#{$app-launcher}__menu-wrapper,
+  & {
+    &.pf-m-external {
+      &:hover,
+      &:focus {
+        // stylelint-disable-next-line
+        .#{$app-launcher}__menu-item-external-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.pf-m-link {
+    --#{$app-launcher}__menu-item--PaddingRight: var(--#{$app-launcher}__menu-item--m-link--PaddingRight);
+    --#{$app-launcher}__menu-item--hover--BackgroundColor: var(--#{$app-launcher}__menu-item--m-link--hover--BackgroundColor);
+  }
+
+  &.pf-m-action {
+    --#{$app-launcher}__menu-item--Color: var(--#{$app-launcher}__menu-item--m-action--Color);
+    --#{$app-launcher}__menu-item--Width: var(--#{$app-launcher}__menu-item--m-action--Width);
+    --#{$app-launcher}__menu-item--hover--BackgroundColor: var(--#{$app-launcher}__menu-item--m-action--hover--BackgroundColor);
+
+    font-size: var(--#{$app-launcher}__menu-item--m-action--FontSize);
+
+    &:hover,
+    &:focus {
+      --#{$app-launcher}__menu-item--m-action--Color: var(--#{$app-launcher}__menu-item--m-action--hover--Color);
+    }
+  }
+}
+
+.#{$app-launcher}__menu-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$app-launcher}__menu-item-icon--Width);
+  height: var(--#{$app-launcher}__menu-item-icon--Height);
+  margin-inline-end: var(--#{$app-launcher}__menu-item-icon--MarginRight);
+
+  > * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.#{$app-launcher}__menu-item-external-icon {
+  padding-inline-start: var(--#{$app-launcher}__menu-item-external-icon--PaddingLeft);
+  margin-inline-start: auto;
+  font-size: var(--#{$app-launcher}__menu-item-external-icon--FontSize);
+  color: var(--#{$app-launcher}__menu-item-external-icon--Color);
+  opacity: 0;
+  transform: translateY(var(--#{$app-launcher}__menu-item-external-icon--TranslateY)); // move icon a bit to appear more visually centered
+}
+
+.#{$app-launcher}__group {
+  & + & {
+    padding-block-start: var(--#{$app-launcher}__group--group--PaddingTop);
+  }
+}
+
+.#{$app-launcher}__group-title {
+  padding-block-start: var(--#{$app-launcher}__group-title--PaddingTop);
+  padding-block-end: var(--#{$app-launcher}__group-title--PaddingBottom);
+  padding-inline-start: var(--#{$app-launcher}__group-title--PaddingLeft);
+  padding-inline-end: var(--#{$app-launcher}__group-title--PaddingRight);
+  font-size: var(--#{$app-launcher}__group-title--FontSize);
+  font-weight: var(--#{$app-launcher}__group-title--FontWeight);
+  color: var(--#{$app-launcher}__group-title--Color);
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/app-launcher";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-app-launcher;
+}

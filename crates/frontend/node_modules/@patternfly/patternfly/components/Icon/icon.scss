@@ -1,0 +1,150 @@
+// @debug $icon; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$icon} {
+  // Sizes
+  --#{$icon}--Width: 1em;
+  --#{$icon}--Height: 1em;
+  --#{$icon}--m-sm--Width: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$icon}--m-sm--Height: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$icon}--m-md--Width: var(--#{$pf-global}--icon--FontSize--md);
+  --#{$icon}--m-md--Height: var(--#{$pf-global}--icon--FontSize--md);
+  --#{$icon}--m-lg--Width: var(--#{$pf-global}--icon--FontSize--lg);
+  --#{$icon}--m-lg--Height: var(--#{$pf-global}--icon--FontSize--lg);
+  --#{$icon}--m-xl--Width: var(--#{$pf-global}--icon--FontSize--xl);
+  --#{$icon}--m-xl--Height: var(--#{$pf-global}--icon--FontSize--xl);
+  --#{$icon}--m-inline--Width: 1em;
+  --#{$icon}--m-inline--Height: 1em;
+
+  // Content
+  --#{$icon}__content--svg--VerticalAlign: -.125em;
+
+  // Content color
+  --#{$icon}__content--Color: initial;
+  --#{$icon}__content--m-danger--Color: var(--#{$pf-global}--danger-color--100);
+  --#{$icon}__content--m-warning--Color: var(--#{$pf-global}--warning-color--100);
+  --#{$icon}__content--m-success--Color: var(--#{$pf-global}--success-color--100);
+  --#{$icon}__content--m-info--Color: var(--#{$pf-global}--info-color--100);
+  --#{$icon}__content--m-custom--Color: var(--#{$pf-global}--custom-color--100);
+  --#{$icon}--m-inline__content--Color: initial;
+
+  // Content sizes
+  --#{$icon}__content--FontSize: 1em;
+  --#{$icon}--m-sm__content--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+  --#{$icon}--m-md__content--FontSize: var(--#{$pf-global}--icon--FontSize--md);
+  --#{$icon}--m-lg__content--FontSize: var(--#{$pf-global}--icon--FontSize--lg);
+  --#{$icon}--m-xl__content--FontSize: var(--#{$pf-global}--icon--FontSize--xl);
+  --#{$icon}--m-inline__content--FontSize: 1em;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$icon}--Width);
+  height: var(--#{$icon}--Height);
+
+  // Inline modifier
+  &.pf-m-inline {
+    --#{$icon}--Width: var(--#{$icon}--m-inline--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-inline--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-inline__content--FontSize);
+    --#{$icon}__content--Color: var(--#{$icon}--m-inline__content--Color);
+
+    line-height: 1;
+
+    .#{$spinner} {
+      --#{$spinner}--diameter: 1em;
+    }
+  }
+
+  // Size modifiers
+  &.pf-m-sm {
+    --#{$icon}--Width: var(--#{$icon}--m-sm--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-sm--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-sm__content--FontSize);
+  }
+
+  &.pf-m-md {
+    --#{$icon}--Width: var(--#{$icon}--m-md--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-md--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-md__content--FontSize);
+  }
+
+  &.pf-m-lg {
+    --#{$icon}--Width: var(--#{$icon}--m-lg--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-lg--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  &.pf-m-xl {
+    --#{$icon}--Width: var(--#{$icon}--m-xl--Width);
+    --#{$icon}--Height: var(--#{$icon}--m-xl--Height);
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-xl__content--FontSize);
+  }
+
+  &.pf-m-in-progress {
+    --#{$icon}__content--Opacity: 0;
+    --#{$icon}__progress--Opacity: 1;
+  }
+}
+
+// Content and progress both have size modifiers
+.#{$icon}__content,
+.#{$icon}__progress {
+  font-size: var(--#{$icon}__content--FontSize);
+
+  svg {
+    vertical-align: var(--#{$icon}__content--svg--VerticalAlign);
+  }
+
+  // Size modifiers
+  &.pf-m-sm {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-sm__content--FontSize);
+  }
+
+  &.pf-m-md {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-md__content--FontSize);
+  }
+
+  &.pf-m-lg {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-lg__content--FontSize);
+  }
+
+  &.pf-m-xl {
+    --#{$icon}__content--FontSize: var(--#{$icon}--m-xl__content--FontSize);
+  }
+}
+
+// Content element
+.#{$icon}__content {
+  color: var(--#{$icon}__content--Color, inherit);
+  opacity: var(--#{$icon}__content--Opacity, 1);
+
+  // Status modifiers
+  &.pf-m-danger {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-danger--Color);
+  }
+
+  &.pf-m-warning {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-warning--Color);
+  }
+
+  &.pf-m-success {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-success--Color);
+  }
+
+  &.pf-m-info {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-info--Color);
+  }
+
+  &.pf-m-custom {
+    --#{$icon}__content--Color: var(--#{$icon}__content--m-custom--Color);
+  }
+}
+
+// Progress element
+.#{$icon}__progress {
+  position: absolute;
+  inset-block-start: calc(50% + calc(.5 * var(--#{$icon}__content--svg--VerticalAlign)));
+  opacity: var(--#{$icon}__progress--Opacity, 0);
+  transform: translateY(calc(-50% - calc(.5 * var(--#{$icon}__content--svg--VerticalAlign))));
+}

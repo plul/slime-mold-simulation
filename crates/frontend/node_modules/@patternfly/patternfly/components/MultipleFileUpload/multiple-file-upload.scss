@@ -1,0 +1,219 @@
+// @debug $multiple-file-upload; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$multiple-file-upload} {
+  --#{$multiple-file-upload}--GridTemplateColumns: 1fr;
+  --#{$multiple-file-upload}--Gap: var(--#{$pf-global}--spacer--lg);
+
+  // main
+  --#{$multiple-file-upload}__main--TextAlign: center;
+  --#{$multiple-file-upload}__main--GridTemplateColumns: auto;
+  --#{$multiple-file-upload}__main--GridTemplateRows: auto;
+  --#{$multiple-file-upload}__main--GridTemplateAreas:
+    "title"
+    "upload"
+    "info";
+  --#{$multiple-file-upload}__main--Gap: var(--#{$pf-global}--spacer--md);
+  --#{$multiple-file-upload}__main--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$multiple-file-upload}__main--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$multiple-file-upload}__main--PaddingBottom: var(--#{$pf-global}--spacer--xl);
+  --#{$multiple-file-upload}__main--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$multiple-file-upload}__main--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$multiple-file-upload}__main--BorderStyle: dashed;
+  --#{$multiple-file-upload}__main--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$multiple-file-upload}__main--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // title
+  --#{$multiple-file-upload}__title--Display: grid;
+  --#{$multiple-file-upload}__title--GridTemplateColumns: auto;
+  --#{$multiple-file-upload}__title--Gap: var(--#{$pf-global}--spacer--sm);
+
+  // title icon
+  --#{$multiple-file-upload}__title-icon--Color: var(--#{$pf-global}--icon--Color--dark);
+
+  // title text separator
+  --#{$multiple-file-upload}__title-text-separator--Display: block;
+  --#{$multiple-file-upload}__title-text-separator--MarginTop: var(--#{$pf-global}--spacer--sm);
+
+  // info
+  --#{$multiple-file-upload}__info--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$multiple-file-upload}__info--Color: var(--#{$pf-global}--Color--200);
+  --#{$multiple-file-upload}__info--MarginTop: var(--#{$pf-global}--spacer--sm);
+
+  // drag-over
+  --#{$multiple-file-upload}--m-drag-over__main--BorderStyle: solid;
+  --#{$multiple-file-upload}--m-drag-over__main--BorderColor: var(--#{$pf-global}--active-color--100);
+  --#{$multiple-file-upload}--m-drag-over__main--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$multiple-file-upload}--m-drag-over__main__title-icon--Color: var(--#{$pf-global}--active-color--100);
+  --#{$multiple-file-upload}--m-drag-over__main__title-text--Color: var(--#{$pf-global}--active-color--100);
+  --#{$multiple-file-upload}--m-drag-over__main__info--Color: var(--#{$pf-global}--active-color--100);
+
+  // horizontal
+  --#{$multiple-file-upload}--m-horizontal--GridTemplateColumns: fit-content(100%);
+  --#{$multiple-file-upload}--m-horizontal__main--TextAlign: start;
+  --#{$multiple-file-upload}--m-horizontal__main--GridTemplateColumns: 1fr auto;
+  --#{$multiple-file-upload}--m-horizontal__main--GridTemplateAreas:
+    "title upload"
+    "info upload";
+  --#{$multiple-file-upload}--m-horizontal__main--Gap: var(--#{$pf-global}--spacer--sm) var(--#{$pf-global}--spacer--2xl);
+  --#{$multiple-file-upload}--m-horizontal__main--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+  --#{$multiple-file-upload}--m-horizontal__title--GridTemplateColumns: auto 1fr;
+  --#{$multiple-file-upload}--m-horizontal__title--Gap: var(--#{$pf-global}--spacer--xs);
+  --#{$multiple-file-upload}--m-horizontal__title-text-separator--Display: inline;
+  --#{$multiple-file-upload}--m-horizontal__title-text-separator--MarginTop: 0;
+  --#{$multiple-file-upload}--m-horizontal__info--MarginTop: 0;
+
+  // status progress
+  --#{$multiple-file-upload}__status-progress--GridTemplateColumns: auto 1fr;
+  --#{$multiple-file-upload}__status-progress--Gap: var(--#{$pf-global}--spacer--sm);
+
+  // status progress icon
+  --#{$multiple-file-upload}__status-progress-icon--Color: var(--#{$pf-global}--icon--Color--dark);
+
+  // status item
+  --#{$multiple-file-upload}__status-item--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$multiple-file-upload}__status-item--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$multiple-file-upload}__status-item--first-child--PaddingTop: 0;
+  --#{$multiple-file-upload}__status-item--GridTemplateColumns: auto 1fr auto;
+  --#{$multiple-file-upload}__status-item--Gap: var(--#{$pf-global}--spacer--sm);
+  --#{$multiple-file-upload}__status-item--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$multiple-file-upload}__status-item--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // status item icon
+  --#{$multiple-file-upload}__status-item-icon--Color: var(--#{$pf-global}--icon--Color--dark);
+
+  // status item close
+  --#{$multiple-file-upload}__status-item-close--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+
+  // status item progress
+  --#{$multiple-file-upload}__status-item-progress--GridTemplateColumns: fit-content(100%) max-content;
+  --#{$multiple-file-upload}__status-item-progress--Gap: var(--#{$pf-global}--spacer--sm);
+
+  // status item progress text
+  --#{$multiple-file-upload}__status-item-progress-text--Color: var(--#{$pf-global}--primary-color--100);
+
+  // status item progress size
+  --#{$multiple-file-upload}__status-item-progress-size--Color: var(--#{$pf-global}--Color--200);
+
+  display: grid;
+  grid-template-columns: var(--#{$multiple-file-upload}--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}--Gap);
+
+  &.pf-m-horizontal {
+    --#{$multiple-file-upload}--GridTemplateColumns: var(--#{$multiple-file-upload}--m-horizontal--GridTemplateColumns);
+    --#{$multiple-file-upload}__main--TextAlign: var(--#{$multiple-file-upload}--m-horizontal__main--TextAlign);
+    --#{$multiple-file-upload}__main--GridTemplateColumns: var(--#{$multiple-file-upload}--m-horizontal__main--GridTemplateColumns);
+    --#{$multiple-file-upload}__main--GridTemplateAreas: var(--#{$multiple-file-upload}--m-horizontal__main--GridTemplateAreas);
+    --#{$multiple-file-upload}__main--Gap: var(--#{$multiple-file-upload}--m-horizontal__main--Gap);
+    --#{$multiple-file-upload}__main--PaddingBottom: var(--#{$multiple-file-upload}--m-horizontal__main--PaddingBottom);
+    --#{$multiple-file-upload}__title--GridTemplateColumns: var(--#{$multiple-file-upload}--m-horizontal__title--GridTemplateColumns);
+    --#{$multiple-file-upload}__title--Gap: var(--#{$multiple-file-upload}--m-horizontal__title--Gap);
+    --#{$multiple-file-upload}__title-text-separator--Display: var(--#{$multiple-file-upload}--m-horizontal__title-text-separator--Display);
+    --#{$multiple-file-upload}__title-text-separator--MarginTop: var(--#{$multiple-file-upload}--m-horizontal__title-text-separator--MarginTop);
+    --#{$multiple-file-upload}__info--MarginTop: var(--#{$multiple-file-upload}--m-horizontal__info--MarginTop);
+  }
+
+  &.pf-m-drag-over {
+    --#{$multiple-file-upload}__main--BorderStyle: var(--#{$multiple-file-upload}--m-drag-over__main--BorderStyle);
+    --#{$multiple-file-upload}__main--BorderColor: var(--#{$multiple-file-upload}--m-drag-over__main--BorderColor);
+    --#{$multiple-file-upload}__main--BackgroundColor: var(--#{$multiple-file-upload}--m-drag-over__main--BackgroundColor);
+    --#{$multiple-file-upload}__title-icon--Color: var(--#{$multiple-file-upload}--m-drag-over__main__title-icon--Color);
+    --#{$multiple-file-upload}__title-text--Color: var(--#{$multiple-file-upload}--m-drag-over__main__title-text--Color);
+    --#{$multiple-file-upload}__info--Color: var(--#{$multiple-file-upload}--m-drag-over__main__info--Color);
+  }
+}
+
+.#{$multiple-file-upload}__main {
+  display: grid;
+  grid-template-areas: var(--#{$multiple-file-upload}__main--GridTemplateAreas);
+  grid-template-rows: var(--#{$multiple-file-upload}__main--GridTemplateRows);
+  grid-template-columns: var(--#{$multiple-file-upload}__main--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}__main--Gap);
+  padding-block-start: var(--#{$multiple-file-upload}__main--PaddingTop);
+  padding-block-end: var(--#{$multiple-file-upload}__main--PaddingBottom);
+  padding-inline-start: var(--#{$multiple-file-upload}__main--PaddingLeft);
+  padding-inline-end: var(--#{$multiple-file-upload}__main--PaddingRight);
+  text-align: var(--#{$multiple-file-upload}__main--TextAlign);
+  background-color: var(--#{$multiple-file-upload}__main--BackgroundColor);
+  border: var(--#{$multiple-file-upload}__main--BorderWidth) var(--#{$multiple-file-upload}__main--BorderStyle) var(--#{$multiple-file-upload}__main--BorderColor);
+}
+
+.#{$multiple-file-upload}__title {
+  display: var(--#{$multiple-file-upload}__title--Display);
+  grid-area: title;
+  grid-template-columns: var(--#{$multiple-file-upload}__title--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}__title--Gap);
+}
+
+.#{$multiple-file-upload}__title-icon {
+  color: var(--#{$multiple-file-upload}__title-icon--Color);
+}
+
+.#{$multiple-file-upload}__title-text {
+  color: var(--#{$multiple-file-upload}__title-text--Color, inherit);
+}
+
+.#{$multiple-file-upload}__title-text-separator {
+  display: var(--#{$multiple-file-upload}__title-text-separator--Display);
+  margin-block-start: var(--#{$multiple-file-upload}__title-text-separator--MarginTop);
+}
+
+.#{$multiple-file-upload}__upload {
+  grid-area: upload;
+}
+
+.#{$multiple-file-upload}__info {
+  grid-area: info;
+  margin-block-start: var(--#{$multiple-file-upload}__info--MarginTop);
+  font-size: var(--#{$multiple-file-upload}__info--FontSize);
+  color: var(--#{$multiple-file-upload}__info--Color);
+}
+
+.#{$multiple-file-upload}__status,
+.#{$multiple-file-upload}__status-item-main {
+  min-width: 0;
+}
+
+.#{$multiple-file-upload}__status-progress {
+  display: grid;
+  grid-template-columns: var(--#{$multiple-file-upload}__status-progress--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}__status-progress--Gap);
+}
+
+.#{$multiple-file-upload}__status-progress-icon {
+  color: var(--#{$multiple-file-upload}__status-progress-icon--Color);
+}
+
+.#{$multiple-file-upload}__status-item {
+  display: grid;
+  grid-template-columns: var(--#{$multiple-file-upload}__status-item--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}__status-item--Gap);
+  padding-block-start: var(--#{$multiple-file-upload}__status-item--PaddingTop);
+  padding-block-end: var(--#{$multiple-file-upload}__status-item--PaddingBottom);
+  border-block-end: var(--#{$multiple-file-upload}__status-item--BorderWidth) solid var(--#{$multiple-file-upload}__status-item--BorderColor);
+
+  &:first-child {
+    --#{$multiple-file-upload}__status-item--PaddingTop: var(--#{$multiple-file-upload}__status-item--first-child--PaddingTop);
+  }
+}
+
+.#{$multiple-file-upload}__status-item-icon {
+  color: var(--#{$multiple-file-upload}__status-item-icon--Color);
+}
+
+.#{$multiple-file-upload}__status-item-close {
+  margin-block-start: var(--#{$multiple-file-upload}__status-item-close--MarginTop);
+}
+
+.#{$multiple-file-upload}__status-item-progress {
+  display: grid;
+  grid-template-columns: var(--#{$multiple-file-upload}__status-item-progress--GridTemplateColumns);
+  gap: var(--#{$multiple-file-upload}__status-item-progress--Gap);
+}
+
+.#{$multiple-file-upload}__status-item-progress-text {
+  color: var(--#{$multiple-file-upload}__status-item-progress-text--Color);
+}
+
+.#{$multiple-file-upload}__status-item-progress-size {
+  color: var(--#{$multiple-file-upload}__status-item-progress-size--Color);
+}

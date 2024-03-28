@@ -1,0 +1,184 @@
+// @debug $code-editor; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$code-editor} {
+  // controls
+  --#{$code-editor}__controls--c-button--m-control--Color: var(--#{$pf-global}--Color--200);
+  --#{$code-editor}__controls--c-button--m-control--hover--Color: var(--#{$pf-global}--Color--100);
+  --#{$code-editor}__controls--c-button--m-control--focus--Color: var(--#{$pf-global}--Color--100);
+  --#{$code-editor}__controls--c-button--m-control--disabled--after--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Header
+  --#{$code-editor}__header--before--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__header--before--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+
+  // main
+  --#{$code-editor}__main--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$code-editor}__main--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__main--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$code-editor}--m-read-only__main--BackgroundColor: var(--#{$pf-global}--disabled-color--300);
+  --#{$code-editor}__main--m-drag-hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__main--m-drag-hover--before--BorderColor: var(--#{$pf-global}--primary-color--100);
+  --#{$code-editor}__main--m-drag-hover--after--BackgroundColor: var(--#{$pf-global}--primary-color--100);
+  --#{$code-editor}__main--m-drag-hover--after--Opacity: .1;
+
+  // code
+  --#{$code-editor}__code--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__code--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__code--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__code--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__code-pre--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$code-editor}__code-pre--FontFamily: var(--#{$pf-global}--FontFamily--monospace);
+
+  // content
+  --#{$code-editor}__header-main--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__header-main--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // tab
+  --#{$code-editor}__tab--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$code-editor}__tab--Color: var(--#{$pf-global}--Color--200);
+  --#{$code-editor}__tab--PaddingTop: var(--#{$pf-global}--spacer--form-element);
+  --#{$code-editor}__tab--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__tab--PaddingBottom: var(--#{$pf-global}--spacer--form-element);
+  --#{$code-editor}__tab--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$code-editor}__tab--BorderTopWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__tab--BorderRightWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__tab--BorderBottomWidth: 0;
+  --#{$code-editor}__tab--BorderLeftWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-editor}__tab--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // tab text
+  --#{$code-editor}__tab-icon--text--MarginLeft: var(--#{$pf-global}--spacer--sm);
+
+  &.pf-m-read-only {
+    --#{$code-editor}__main--BackgroundColor: var(--#{$code-editor}--m-read-only__main--BackgroundColor);
+  }
+}
+
+.#{$code-editor}__header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  &::before {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    pointer-events: none;
+    content: "";
+    border-block-end: var(--#{$code-editor}__header--before--BorderBottomWidth) solid var(--#{$code-editor}__header--before--BorderBottomColor);
+  }
+}
+
+.#{$code-editor}__controls {
+  display: flex;
+
+  .#{$button}.pf-m-control {
+    --#{$button}--m-control--Color: var(--#{$code-editor}__controls--c-button--m-control--Color);
+
+    &:hover {
+      --#{$code-editor}__controls--c-button--m-control--Color: var(--#{$code-editor}__controls--c-button--m-control--hover--Color);
+    }
+
+    &:focus {
+      --#{$code-editor}__controls--c-button--m-control--Color: var(--#{$code-editor}__controls--c-button--m-control--focus--Color);
+    }
+
+    &:disabled {
+      &::after {
+        border-block-end-color: var(--#{$code-editor}__controls--c-button--m-control--disabled--after--BorderBottomColor);
+      }
+    }
+  }
+}
+
+.#{$code-editor}__header-main {
+  flex-grow: 1;
+  padding-inline-start: var(--#{$code-editor}__header-main--PaddingLeft);
+  padding-inline-end: var(--#{$code-editor}__header-main--PaddingRight);
+}
+
+.#{$code-editor}__main {
+  position: relative;
+  color: var(--#{$code-editor}__main--Color, inherit);
+  background-color: var(--#{$code-editor}__main--BackgroundColor);
+  border: var(--#{$code-editor}__main--BorderWidth) solid;
+  border-color: var(--#{$code-editor}__main--BorderColor);
+
+  &.pf-m-drag-hover {
+    &::after {
+      position: absolute;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      content: "";
+      background-color: var(--#{$code-editor}__main--m-drag-hover--after--BackgroundColor);
+      opacity: var(--#{$code-editor}__main--m-drag-hover--after--Opacity);
+    }
+
+    &::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      content: "";
+      border: var(--#{$code-editor}__main--m-drag-hover--before--BorderWidth) solid var(--#{$code-editor}__main--m-drag-hover--before--BorderColor);
+    }
+  }
+
+  // stylelint-disable selector-class-pattern
+  .monaco-editor {
+    background-color: var(--#{$code-editor}__main--BackgroundColor);
+  }
+  // stylelint-enable selector-class-pattern
+}
+
+.#{$code-editor}__header + .#{$code-editor}__main {
+  border-block-start-width: 0;
+}
+
+.#{$code-editor}__code {
+  position: relative;
+  padding-block-start: var(--#{$code-editor}__code--PaddingTop);
+  padding-block-end: var(--#{$code-editor}__code--PaddingBottom);
+  padding-inline-start: var(--#{$code-editor}__code--PaddingLeft);
+  padding-inline-end: var(--#{$code-editor}__code--PaddingRight);
+
+  .#{$code-editor}__code-pre {
+    font-family: var(--#{$code-editor}__code-pre--FontFamily);
+    font-size: var(--#{$code-editor}__code-pre--FontSize);
+    white-space: pre-wrap;
+  }
+}
+
+.#{$code-editor}__tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-block-start: var(--#{$code-editor}__tab--PaddingTop);
+  padding-block-end: var(--#{$code-editor}__tab--PaddingBottom);
+  padding-inline-start: var(--#{$code-editor}__tab--PaddingLeft);
+  padding-inline-end: var(--#{$code-editor}__tab--PaddingRight);
+  margin-inline-start: auto; // remove at breaking change
+  color: var(--#{$code-editor}__tab--Color);
+  background-color: var(--#{$code-editor}__tab--BackgroundColor);
+  border-color: var(--#{$code-editor}__tab--BorderColor);
+  border-style: solid;
+  border-block-start-width: var(--#{$code-editor}__tab--BorderTopWidth);
+  border-block-end-width: var(--#{$code-editor}__tab--BorderBottomWidth);
+  border-inline-start-width: var(--#{$code-editor}__tab--BorderLeftWidth);
+  border-inline-end-width: var(--#{$code-editor}__tab--BorderRightWidth);
+}
+
+.#{$code-editor}__tab-icon + .#{$code-editor}__tab-text {
+  margin-inline-start: var(--#{$code-editor}__tab-icon--text--MarginLeft);
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/code-editor";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-code-editor;
+}

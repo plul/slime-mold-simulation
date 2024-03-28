@@ -1,0 +1,98 @@
+// @debug $chip-group; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$chip}-group {
+  @include pf-v5-t-light; // force the container follow the light theme
+
+  // Chip group - spaces main and close
+  // column-gap spacer supports legacy chip group
+  --#{$chip}-group--PaddingTop: 0;
+  --#{$chip}-group--PaddingRight: 0;
+  --#{$chip}-group--PaddingBottom: 0;
+  --#{$chip}-group--PaddingLeft: 0;
+  --#{$chip}-group--RowGap: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}-group--ColumnGap: 0;
+
+  // Chip group main - spaces the category label and list
+  --#{$chip}-group__main--RowGap: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}-group__main--ColumnGap: var(--#{$pf-global}--spacer--sm);
+
+  // Chip group list - spaces the chips
+  --#{$chip}-group__list--RowGap: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}-group__list--ColumnGap: var(--#{$pf-global}--spacer--xs);
+
+  // Category modifier
+  --#{$chip}-group--m-category--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}-group--m-category--PaddingRight: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}-group--m-category--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}-group--m-category--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}-group--m-category--BorderRadius: var(--#{$pf-global}--BorderRadius--sm);
+  --#{$chip}-group--m-category--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+
+  // Label in group
+  --#{$chip}-group__label--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$chip}-group__label--MaxWidth: 18ch;
+
+  // Chip group close - negative margin stretches height for click area
+  --#{$chip}-group__close--MarginTop: calc(var(--#{$pf-global}--spacer--xs) * -1);
+  --#{$chip}-group__close--MarginBottom: calc(var(--#{$pf-global}--spacer--xs) * -1);
+
+  row-gap: var(--#{$chip}-group--RowGap);
+  column-gap: var(--#{$chip}-group--ColumnGap);
+  max-width: 100%;
+  padding-block-start: var(--#{$chip}-group--PaddingTop);
+  padding-block-end: var(--#{$chip}-group--PaddingBottom);
+  padding-inline-start: var(--#{$chip}-group--PaddingLeft);
+  padding-inline-end: var(--#{$chip}-group--PaddingRight);
+
+  &.pf-m-category {
+    --#{$chip}-group--PaddingTop: var(--#{$chip}-group--m-category--PaddingTop);
+    --#{$chip}-group--PaddingRight: var(--#{$chip}-group--m-category--PaddingRight);
+    --#{$chip}-group--PaddingBottom: var(--#{$chip}-group--m-category--PaddingBottom);
+    --#{$chip}-group--PaddingLeft: var(--#{$chip}-group--m-category--PaddingLeft);
+
+    background-color: var(--#{$chip}-group--m-category--BackgroundColor);
+    border-radius: var(--#{$chip}-group--m-category--BorderRadius);
+  }
+}
+
+.#{$chip}-group__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  row-gap: var(--#{$chip}-group__main--RowGap);
+  column-gap: var(--#{$chip}-group__main--ColumnGap);
+  align-items: baseline;
+  min-width: 0;
+}
+
+.#{$chip}-group,
+.#{$chip}-group__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
+}
+
+.#{$chip}-group__list {
+  row-gap: var(--#{$chip}-group__list--RowGap);
+  column-gap: var(--#{$chip}-group__list--ColumnGap);
+}
+
+.#{$chip}-group__list-item {
+  display: inline-flex;
+  min-width: 0;
+}
+
+.#{$chip}-group__label {
+  @include pf-v5-text-overflow;
+
+  max-width: var(--#{$chip}-group__label--MaxWidth);
+  font-size: var(--#{$chip}-group__label--FontSize);
+}
+
+.#{$chip}-group__close {
+  display: flex;
+  align-self: flex-start;
+  margin-block-start: var(--#{$chip}-group__close--MarginTop);
+  margin-block-end: var(--#{$chip}-group__close--MarginBottom);
+}

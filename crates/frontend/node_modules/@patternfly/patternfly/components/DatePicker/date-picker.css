@@ -1,0 +1,59 @@
+.pf-v5-c-date-picker {
+  --pf-v5-c-date-picker--m-top__calendar--Top: 0;
+  --pf-v5-c-date-picker--m-top__calendar--TranslateY: calc(-100% - var(--pf-v5-global--spacer--xs));
+  --pf-v5-c-date-picker__helper-text--MarginTop: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-date-picker__input--c-form-control--Width: calc(var(--pf-v5-c-date-picker__input--c-form-control--width-chars) * 1ch + var(--pf-v5-c-date-picker__input--c-form-control--width-base));
+  --pf-v5-c-date-picker__input--c-form-control--width-base: calc(var(--pf-v5-global--spacer--xl) + var(--pf-v5-global--spacer--sm));
+  --pf-v5-c-date-picker__input--c-form-control--width-chars: 10;
+  --pf-v5-c-date-picker__calendar--BackgroundColor: var(--pf-v5-global--BackgroundColor--light-100);
+  --pf-v5-c-date-picker__calendar--BoxShadow: var(--pf-v5-global--BoxShadow--md);
+  --pf-v5-c-date-picker__calendar--ZIndex: var(--pf-v5-global--ZIndex--sm);
+  --pf-v5-c-date-picker__calendar--Top: calc(100% + var(--pf-v5-global--spacer--xs));
+  --pf-v5-c-date-picker__calendar--Right: auto;
+  --pf-v5-c-date-picker__calendar--Left: 0;
+  --pf-v5-c-date-picker__calendar--m-align-right--Right: 0;
+  --pf-v5-c-date-picker__calendar--m-align-right--Left: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.pf-v5-c-date-picker__helper-text {
+  margin-block-start: var(--pf-v5-c-date-picker__helper-text--MarginTop);
+}
+
+.pf-v5-c-date-picker__input .pf-v5-c-form-control {
+  width: var(--pf-v5-c-date-picker__input--c-form-control--Width);
+}
+
+.pf-v5-c-date-picker__calendar {
+  position: absolute;
+  inset-block-start: var(--pf-v5-c-date-picker__calendar--Top);
+  inset-inline-start: var(--pf-v5-c-date-picker__calendar--Left);
+  inset-inline-end: var(--pf-v5-c-date-picker__calendar--Right);
+  z-index: var(--pf-v5-c-date-picker__calendar--ZIndex);
+  background-color: var(--pf-v5-c-date-picker__calendar--BackgroundColor);
+  box-shadow: var(--pf-v5-c-date-picker__calendar--BoxShadow);
+}
+.pf-v5-c-date-picker__calendar.pf-m-align-right {
+  --pf-v5-c-date-picker__calendar--Right: var(--pf-v5-c-date-picker__calendar--m-align-right--Right);
+  --pf-v5-c-date-picker__calendar--Left: var(--pf-v5-c-date-picker__calendar--m-align-right--Left);
+}
+.pf-v5-c-date-picker.pf-m-top .pf-v5-c-date-picker__calendar {
+  --pf-v5-c-date-picker__calendar--Top: var(--pf-v5-c-date-picker--m-top__calendar--Top);
+  transform: translateY(var(--pf-v5-c-date-picker--m-top__calendar--TranslateY));
+}
+.pf-v5-c-date-picker__calendar.pf-m-static {
+  --pf-v5-c-date-picker--m-top__calendar--TranslateY: 0;
+  position: static;
+  inset-block-start: auto;
+  inset-block-end: auto;
+  inset-inline-start: auto;
+  inset-inline-end: auto;
+  z-index: auto;
+  min-width: min-content;
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-date-picker {
+  --pf-v5-c-date-picker__calendar--BackgroundColor: var(--pf-v5-global--BackgroundColor--300);
+  --pf-v5-c-date-picker__calendar--Top: 100%;
+}

@@ -1,0 +1,112 @@
+.pf-v5-c-notification-badge {
+  --pf-v5-c-notification-badge--PaddingTop: var(--pf-v5-global--spacer--form-element);
+  --pf-v5-c-notification-badge--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-notification-badge--PaddingBottom: var(--pf-v5-global--spacer--form-element);
+  --pf-v5-c-notification-badge--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-notification-badge--MarginTop: calc(-1 * var(--pf-v5-global--spacer--form-element));
+  --pf-v5-c-notification-badge--MarginRight: calc(-1 * var(--pf-v5-global--spacer--md));
+  --pf-v5-c-notification-badge--MarginBottom: calc(-1 * var(--pf-v5-global--spacer--form-element));
+  --pf-v5-c-notification-badge--MarginLeft: calc(-1 * var(--pf-v5-global--spacer--md));
+  --pf-v5-c-notification-badge--after--BorderColor: transparent;
+  --pf-v5-c-notification-badge--after--BorderRadius: var(--pf-v5-global--BorderRadius--sm);
+  --pf-v5-c-notification-badge--after--BorderWidth: 0;
+  --pf-v5-c-notification-badge--after--Top: 0;
+  --pf-v5-c-notification-badge--after--Right: 0;
+  --pf-v5-c-notification-badge--after--Width: auto;
+  --pf-v5-c-notification-badge--after--Height: auto;
+  --pf-v5-c-notification-badge--after--BackgroundColor: transparent;
+  --pf-v5-c-notification-badge--after--TranslateX: 0;
+  --pf-v5-c-notification-badge--after--TranslateY: 0;
+  --pf-v5-c-notification-badge__i--Width: auto;
+  --pf-v5-c-notification-badge__i--Height: auto;
+  --pf-v5-c-notification-badge--m-read--after--BorderColor: transparent;
+  --pf-v5-c-notification-badge--m-read--after--BackgroundColor: transparent;
+  --pf-v5-c-notification-badge--m-read--m-expanded--after--BackgroundColor: var(--pf-v5-global--BackgroundColor--dark-200);
+  --pf-v5-c-notification-badge--m-unread--Color: var(--pf-v5-global--Color--light-100);
+  --pf-v5-c-notification-badge--m-unread--after--BackgroundColor: var(--pf-v5-global--active-color--100);
+  --pf-v5-c-notification-badge--m-unread--hover--after--BackgroundColor: var(--pf-v5-global--primary-color--200);
+  --pf-v5-c-notification-badge--m-unread--m-expanded--after--BackgroundColor: var(--pf-v5-global--primary-color--200);
+  --pf-v5-c-notification-badge--m-attention--Color: var(--pf-v5-global--Color--light-100);
+  --pf-v5-c-notification-badge--m-attention--after--BackgroundColor: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-notification-badge--m-attention--hover--after--BackgroundColor: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-notification-badge--m-attention--m-expanded--after--BackgroundColor: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-notification-badge__count--MarginLeft: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-notification-badge--pf-v5-pficon-attention-bell--LineHeight: var(--pf-v5-global--LineHeight--sm);
+  position: relative;
+  display: inline-block;
+  padding-block-start: var(--pf-v5-c-notification-badge--PaddingTop);
+  padding-block-end: var(--pf-v5-c-notification-badge--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-notification-badge--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-notification-badge--PaddingRight);
+  margin-block-start: var(--pf-v5-c-notification-badge--MarginTop);
+  margin-block-end: var(--pf-v5-c-notification-badge--MarginBottom);
+  margin-inline-start: var(--pf-v5-c-notification-badge--MarginLeft);
+  margin-inline-end: var(--pf-v5-c-notification-badge--MarginRight);
+  background-color: var(--pf-v5-c-notification-badge--after--BackgroundColor);
+  border-radius: var(--pf-v5-c-notification-badge--after--BorderRadius);
+}
+.pf-v5-c-notification-badge::before {
+  position: absolute;
+  inset-block-start: var(--pf-v5-c-notification-badge--after--Top);
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inset-inline-end: var(--pf-v5-c-notification-badge--after--Right);
+  width: var(--pf-v5-c-notification-badge--after--Width);
+  height: var(--pf-v5-c-notification-badge--after--Height);
+  content: "";
+  border: var(--pf-v5-c-notification-badge--after--BorderWidth) solid var(--pf-v5-c-notification-badge--after--BorderColor);
+  border-radius: var(--pf-v5-c-notification-badge--after--BorderRadius);
+  transform: translate(var(--pf-v5-c-notification-badge--after--TranslateX), var(--pf-v5-c-notification-badge--after--TranslateY));
+}
+.pf-v5-c-notification-badge > i {
+  width: var(--pf-v5-c-notification-badge__i--Width);
+  height: var(--pf-v5-c-notification-badge__i--Height);
+}
+.pf-v5-c-notification-badge > * {
+  position: relative;
+}
+.pf-v5-c-notification-badge .pf-v5-c-icon-attention-bell,
+.pf-v5-c-notification-badge .pf-v5-c-icon-bell {
+  display: inline-block;
+  line-height: var(--pf-v5-c-notification-badge--pf-v5-pficon-attention-bell--LineHeight);
+}
+.pf-v5-c-notification-badge .pf-v5-c-icon-attention-bell::before,
+.pf-v5-c-notification-badge .pf-v5-c-icon-bell::before {
+  vertical-align: bottom;
+}
+.pf-v5-c-notification-badge.pf-m-read {
+  --pf-v5-c-notification-badge--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-read--after--BackgroundColor);
+  --pf-v5-c-notification-badge--after--BorderColor: var(--pf-v5-c-notification-badge--m-read--after--BorderColor);
+  color: var(--pf-v5-c-notification-badge--m-read--Color, inherit);
+}
+.pf-v5-c-notification-badge.pf-m-unread {
+  --pf-v5-c-notification-badge--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-unread--after--BackgroundColor);
+  color: var(--pf-v5-c-notification-badge--m-unread--Color);
+}
+.pf-v5-c-notification-badge.pf-m-unread:hover {
+  --pf-v5-c-notification-badge--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-unread--hover--after--BackgroundColor);
+}
+.pf-v5-c-notification-badge.pf-m-attention {
+  --pf-v5-c-notification-badge--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-attention--after--BackgroundColor);
+  color: var(--pf-v5-c-notification-badge--m-attention--Color);
+}
+.pf-v5-c-notification-badge.pf-m-attention:hover {
+  --pf-v5-c-notification-badge--m-attention--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-attention--hover--after--BackgroundColor);
+}
+.pf-v5-c-notification-badge.pf-m-expanded {
+  --pf-v5-c-notification-badge--m-read--Color: var(--pf-v5-global--Color--light-100);
+  --pf-v5-c-notification-badge--m-read--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-read--m-expanded--after--BackgroundColor);
+  --pf-v5-c-notification-badge--m-unread--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-unread--m-expanded--after--BackgroundColor);
+  --pf-v5-c-notification-badge--m-attention--after--BackgroundColor: var(--pf-v5-c-notification-badge--m-attention--m-expanded--after--BackgroundColor);
+}
+
+.pf-v5-c-notification-badge__count {
+  margin-inline-start: var(--pf-v5-c-notification-badge__count--MarginLeft);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-notification-badge {
+  --pf-v5-c-notification-badge--m-read--m-expanded--after--BackgroundColor: var(--pf-v5-global--BackgroundColor--400);
+  --pf-v5-c-notification-badge--m-unread--Color: var(--pf-v5-global--primary-color--400);
+  --pf-v5-c-notification-badge--m-unread--after--BackgroundColor: var(--pf-v5-global--primary-color--300);
+  --pf-v5-c-notification-badge--m-attention--Color: var(--pf-v5-global--palette--black-900);
+}

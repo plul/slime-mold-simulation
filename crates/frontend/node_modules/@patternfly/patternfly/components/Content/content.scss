@@ -1,0 +1,315 @@
+// @debug $content; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$content} {
+  // Body
+  --#{$content}--MarginBottom: var(--#{$pf-global}--spacer--md);
+  --#{$content}--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$content}--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // this ensures color is not overridden
+  --#{$content}--Color: var(--#{$pf-global}--Color--100);
+
+  // Headings
+  --#{$content}--heading--FontFamily: var(--#{$pf-global}--FontFamily--heading);
+
+  // h1
+  --#{$content}--h1--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h1--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h1--LineHeight: var(--#{$pf-global}--LineHeight--sm);
+  --#{$content}--h1--FontSize: var(--#{$pf-global}--FontSize--2xl);
+  --#{$content}--h1--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // h2
+  --#{$content}--h2--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h2--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h2--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--h2--FontSize: var(--#{$pf-global}--FontSize--xl);
+  --#{$content}--h2--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // h3
+  --#{$content}--h3--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h3--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h3--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--h3--FontSize: var(--#{$pf-global}--FontSize--lg);
+  --#{$content}--h3--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // h4
+  --#{$content}--h4--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h4--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h4--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--h4--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$content}--h4--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // h5
+  --#{$content}--h5--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h5--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h5--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--h5--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$content}--h5--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // h6
+  --#{$content}--h6--MarginTop: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--h6--MarginBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--h6--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--h6--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$content}--h6--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // Small text
+  --#{$content}--small--MarginBottom: var(--#{$pf-global}--spacer--md);
+  --#{$content}--small--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$content}--small--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$content}--small--Color: var(--#{$pf-global}--Color--200);
+
+  // Links
+  --#{$content}--a--Color: var(--#{$pf-global}--link--Color);
+  --#{$content}--a--TextDecoration: var(--#{$pf-global}--link--TextDecoration);
+  --#{$content}--a--hover--Color: var(--#{$pf-global}--link--Color--hover);
+  --#{$content}--a--hover--TextDecoration: var(--#{$pf-global}--link--TextDecoration--hover);
+  --#{$content}--a--visited--Color: var(--#{$pf-global}--link--Color--visited);
+
+  // Blockquote
+  --#{$content}--blockquote--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$content}--blockquote--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$content}--blockquote--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$content}--blockquote--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$content}--blockquote--Color: var(--#{$pf-global}--Color--200);
+  --#{$content}--blockquote--BorderLeftColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$content}--blockquote--BorderLeftWidth: var(--#{$pf-global}--BorderWidth--lg);
+
+  // Lists
+  --#{$content}--ol--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--ol--MarginLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--ol--nested--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--ol--nested--MarginLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--ul--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--ul--MarginLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$content}--ul--nested--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--ul--nested--MarginLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--ul--ListStyle: var(--#{$pf-global}--ListStyle);
+  --#{$content}--li--MarginTop: var(--#{$pf-global}--spacer--sm);
+  --#{$content}--dl--ColumnGap: var(--#{$pf-global}--spacer--2xl);
+  --#{$content}--dl--RowGap: var(--#{$pf-global}--spacer--md);
+  --#{$content}--dt--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+  --#{$content}--dt--MarginTop: var(--#{$pf-global}--spacer--md);
+  --#{$content}--dt--sm--MarginTop: 0;
+
+  // hr
+  --#{$content}--hr--Height: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$content}--hr--BackgroundColor: var(--#{$pf-global}--BorderColor--100);
+
+  font-size: var(--#{$content}--FontSize);
+  line-height: var(--#{$content}--LineHeight);
+  color: var(--#{$content}--Color);
+
+  a {
+    color: var(--#{$content}--a--Color);
+    text-decoration: var(--#{$content}--a--TextDecoration);
+
+    &:hover {
+      --#{$content}--a--Color: var(--#{$content}--a--hover--Color);
+      --#{$content}--a--TextDecoration: var(--#{$content}--a--hover--TextDecoration);
+    }
+  }
+
+  // stylelint-disable selector-no-qualifying-type
+  &.pf-m-visited a,
+  a.pf-m-visited {
+    &:visited {
+      color: var(--#{$content}--a--visited--Color);
+    }
+  }
+  // stylelint-enable
+
+  li + li {
+    margin-block-start: var(--#{$content}--li--MarginTop);
+  }
+
+  p,
+  dl,
+  ol,
+  ul,
+  blockquote,
+  small,
+  pre,
+  table,
+  hr {
+    &:not(:last-child) {
+      // This variable name doesn't reflect the selector, it's an excpection to the variable system.
+      margin-block-end: var(--#{$content}--MarginBottom);
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-family: var(--#{$content}--heading--FontFamily);
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+
+    &:last-child {
+      margin-block-end: 0;
+    }
+  }
+
+  ol,
+  ul {
+    margin: 0;
+
+    // stylelint-disable selector-no-qualifying-type
+    &.pf-m-plain {
+      padding-inline-start: 0;
+      margin-inline-start: 0;
+      list-style: none;
+    }
+    // stylelint-enable
+  }
+
+  h1 {
+    margin-block-start: var(--#{$content}--h1--MarginTop);
+    margin-block-end: var(--#{$content}--h1--MarginBottom);
+    font-size: var(--#{$content}--h1--FontSize);
+    font-weight: var(--#{$content}--h1--FontWeight);
+    line-height: var(--#{$content}--h1--LineHeight);
+  }
+
+  h2 {
+    margin-block-start: var(--#{$content}--h2--MarginTop);
+    margin-block-end: var(--#{$content}--h2--MarginBottom);
+    font-size: var(--#{$content}--h2--FontSize);
+    font-weight: var(--#{$content}--h2--FontWeight);
+    line-height: var(--#{$content}--h2--LineHeight);
+  }
+
+  h3 {
+    margin-block-start: var(--#{$content}--h3--MarginTop);
+    margin-block-end: var(--#{$content}--h3--MarginBottom);
+    font-size: var(--#{$content}--h3--FontSize);
+    font-weight: var(--#{$content}--h3--FontWeight);
+    line-height: var(--#{$content}--h3--LineHeight);
+  }
+
+  h4 {
+    margin-block-start: var(--#{$content}--h4--MarginTop);
+    margin-block-end: var(--#{$content}--h4--MarginBottom);
+    font-size: var(--#{$content}--h4--FontSize);
+    font-weight: var(--#{$content}--h4--FontWeight);
+    line-height: var(--#{$content}--h4--LineHeight);
+  }
+
+  h5 {
+    margin-block-start: var(--#{$content}--h5--MarginTop);
+    margin-block-end: var(--#{$content}--h5--MarginBottom);
+    font-size: var(--#{$content}--h5--FontSize);
+    font-weight: var(--#{$content}--h5--FontWeight);
+    line-height: var(--#{$content}--h5--LineHeight);
+  }
+
+  h6 {
+    margin-block-start: var(--#{$content}--h6--MarginTop);
+    margin-block-end: var(--#{$content}--h6--MarginBottom);
+    font-size: var(--#{$content}--h6--FontSize);
+    font-weight: var(--#{$content}--h6--FontWeight);
+    line-height: var(--#{$content}--h6--LineHeight);
+  }
+
+  small {
+    display: block;
+    font-size: var(--#{$content}--small--FontSize);
+    line-height: var(--#{$content}--small--LineHeight);
+    color: var(--#{$content}--small--Color);
+
+    &:not(:last-child) {
+      margin-block-end: var(--#{$content}--small--MarginBottom);
+    }
+  }
+
+  blockquote {
+    padding-block-start: var(--#{$content}--blockquote--PaddingTop);
+    padding-block-end: var(--#{$content}--blockquote--PaddingBottom);
+    padding-inline-start: var(--#{$content}--blockquote--PaddingLeft);
+    padding-inline-end: var(--#{$content}--blockquote--PaddingRight);
+    color: var(--#{$content}--blockquote--Color);
+    border-inline-start: var(--#{$content}--blockquote--BorderLeftWidth) solid var(--#{$content}--blockquote--BorderLeftColor);
+  }
+
+  hr {
+    height: var(--#{$content}--hr--Height);
+    background-color: var(--#{$content}--hr--BackgroundColor);
+    border: none;
+  }
+
+  ol {
+    padding-inline-start: var(--#{$content}--ol--PaddingLeft);
+    margin-inline-start: var(--#{$content}--ol--MarginLeft);
+
+    ul {
+      --#{$content}--ul--MarginLeft: var(--#{$content}--ul--nested--MarginLeft);
+
+      margin-block-start: var(--#{$content}--ul--nested--MarginTop);
+    }
+
+    ol {
+      --#{$content}--ol--MarginLeft: var(--#{$content}--ol--nested--MarginLeft);
+
+      margin-block-start: var(--#{$content}--ol--nested--MarginTop);
+    }
+  }
+
+  ul {
+    padding-inline-start: var(--#{$content}--ul--PaddingLeft);
+    margin-inline-start: var(--#{$content}--ul--MarginLeft);
+    list-style: var(--#{$content}--ul--ListStyle);
+
+    ul {
+      --#{$content}--ul--MarginLeft: var(--#{$content}--ul--nested--MarginLeft);
+
+      margin-block-start: var(--#{$content}--ul--nested--MarginTop);
+    }
+
+    ol {
+      --#{$content}--ol--MarginLeft: var(--#{$content}--ol--nested--MarginLeft);
+
+      margin-block-start: var(--#{$content}--ol--nested--MarginTop);
+    }
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+      grid-template: auto / auto 1fr;
+      grid-row-gap: var(--#{$content}--dl--RowGap);
+      grid-column-gap: var(--#{$content}--dl--ColumnGap);
+    }
+  }
+
+  dt {
+    font-weight: var(--#{$content}--dt--FontWeight);
+
+    &:not(:first-child) {
+      margin-block-start: var(--#{$content}--dt--MarginTop);
+
+      @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+        --#{$content}--dt--MarginTop: var(--#{$content}--dt--sm--MarginTop);
+      }
+    }
+
+    @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+      grid-column: 1;
+    }
+  }
+
+  dd {
+    @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+      grid-column: 2;
+    }
+  }
+}

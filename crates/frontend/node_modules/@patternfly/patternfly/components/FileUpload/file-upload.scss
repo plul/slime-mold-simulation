@@ -1,0 +1,84 @@
+// @debug $file-upload; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$file-upload} {
+  // pf-m-loading
+  --#{$file-upload}--m-loading__file-details--before--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$file-upload}--m-loading__file-details--before--Left: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$file-upload}--m-loading__file-details--before--Right: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$file-upload}--m-loading__file-details--before--Bottom: var(--#{$pf-global}--BorderWidth--sm);
+
+  // pf-m-drag-hover
+  --#{$file-upload}--m-drag-hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$file-upload}--m-drag-hover--before--BorderColor: var(--#{$pf-global}--primary-color--100);
+  --#{$file-upload}--m-drag-hover--before--ZIndex: var(--#{$pf-global}--ZIndex--xs);
+  --#{$file-upload}--m-drag-hover--after--BackgroundColor: var(--#{$pf-global}--primary-color--100);
+  --#{$file-upload}--m-drag-hover--after--Opacity: .1;
+
+  // Text area
+  --#{$file-upload}__file-details__c-form-control--MinHeight: calc(var(--#{$pf-global}--spacer--3xl) * 2);
+
+  // Button overrides
+  --#{$file-upload}__file-select__c-button--m-control--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &.pf-m-drag-hover {
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: var(--#{$file-upload}--m-drag-hover--before--ZIndex);
+      content: "";
+      border: var(--#{$file-upload}--m-drag-hover--before--BorderWidth) solid var(--#{$file-upload}--m-drag-hover--before--BorderColor);
+    }
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-color: var(--#{$file-upload}--m-drag-hover--after--BackgroundColor);
+      opacity: var(--#{$file-upload}--m-drag-hover--after--Opacity);
+    }
+  }
+
+  &.pf-m-loading {
+    .#{$file-upload}__file-details {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        inset-block-start: 0;
+        inset-block-end: var(--#{$file-upload}--m-loading__file-details--before--Left);
+        inset-inline-start: var(--#{$file-upload}--m-loading__file-details--before--Left);
+        inset-inline-end: var(--#{$file-upload}--m-loading__file-details--before--Left);
+        content: "";
+        background-color: var(--#{$file-upload}--m-loading__file-details--before--BackgroundColor);
+      }
+    }
+  }
+}
+
+.#{$file-upload}__file-select {
+  .#{$button}.pf-m-control {
+    outline-offset: var(--#{$file-upload}__file-select__c-button--m-control--OutlineOffset);
+  }
+}
+
+.#{$file-upload}__file-details {
+  position: relative;
+  display: flex;
+
+  .#{$form-control} {
+    flex: 1 1 auto;
+    min-height: var(--#{$file-upload}__file-details__c-form-control--MinHeight);
+    border-block-start: 0;
+  }
+}
+
+.#{$file-upload}__file-details-spinner {
+  position: absolute;
+ inset-block-start: 50%;
+ inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}

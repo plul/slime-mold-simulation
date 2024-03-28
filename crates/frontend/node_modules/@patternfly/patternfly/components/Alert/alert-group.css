@@ -1,0 +1,57 @@
+.pf-v5-c-alert-group {
+  --pf-v5-c-alert-group__item--MarginTop: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-alert-group--m-toast--Top: var(--pf-v5-global--spacer--2xl);
+  --pf-v5-c-alert-group--m-toast--Right: var(--pf-v5-global--spacer--xl);
+  --pf-v5-c-alert-group--m-toast--MaxWidth: 37.5rem;
+  --pf-v5-c-alert-group--m-toast--ZIndex: var(--pf-v5-global--ZIndex--2xl);
+  --pf-v5-c-alert-group__overflow-button--BorderWidth: 0;
+  --pf-v5-c-alert-group__overflow-button--PaddingTop: var(--pf-v5-global--spacer--lg);
+  --pf-v5-c-alert-group__overflow-button--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-alert-group__overflow-button--PaddingBottom: var(--pf-v5-global--spacer--lg);
+  --pf-v5-c-alert-group__overflow-button--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-alert-group__overflow-button--Color: var(--pf-v5-global--link--Color);
+  --pf-v5-c-alert-group__overflow-button--BoxShadow: var(--pf-v5-global--BoxShadow--lg);
+  --pf-v5-c-alert-group__overflow-button--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+  --pf-v5-c-alert-group__overflow-button--hover--Color: var(--pf-v5-global--link--Color--hover);
+  --pf-v5-c-alert-group__overflow-button--hover--BoxShadow: var(--pf-v5-global--BoxShadow--lg), var(--pf-v5-global--BoxShadow--lg-bottom);
+  --pf-v5-c-alert-group__overflow-button--focus--Color: var(--pf-v5-global--link--Color--hover);
+  --pf-v5-c-alert-group__overflow-button--focus--BoxShadow: var(--pf-v5-global--BoxShadow--lg), var(--pf-v5-global--BoxShadow--lg-bottom);
+  --pf-v5-c-alert-group__overflow-button--active--Color: var(--pf-v5-global--link--Color--hover);
+  --pf-v5-c-alert-group__overflow-button--active--BoxShadow: var(--pf-v5-global--BoxShadow--lg), var(--pf-v5-global--BoxShadow--lg-bottom);
+}
+.pf-v5-c-alert-group > * + * {
+  margin-block-start: var(--pf-v5-c-alert-group__item--MarginTop);
+}
+.pf-v5-c-alert-group.pf-m-toast {
+  position: fixed;
+  inset-block-start: var(--pf-v5-c-alert-group--m-toast--Top);
+  inset-inline-end: var(--pf-v5-c-alert-group--m-toast--Right);
+  z-index: var(--pf-v5-c-alert-group--m-toast--ZIndex);
+  width: calc(100% - var(--pf-v5-c-alert-group--m-toast--Right) * 2);
+  max-width: var(--pf-v5-c-alert-group--m-toast--MaxWidth);
+}
+
+.pf-v5-c-alert-group__overflow-button {
+  position: relative;
+  width: 100%;
+  padding-block-start: var(--pf-v5-c-alert-group__overflow-button--PaddingTop);
+  padding-block-end: var(--pf-v5-c-alert-group__overflow-button--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-alert-group__overflow-button--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-alert-group__overflow-button--PaddingRight);
+  color: var(--pf-v5-c-alert-group__overflow-button--Color);
+  background-color: var(--pf-v5-c-alert-group__overflow-button--BackgroundColor);
+  border-width: var(--pf-v5-c-alert-group__overflow-button--BorderWidth);
+  box-shadow: var(--pf-v5-c-alert-group__overflow-button--BoxShadow);
+}
+.pf-v5-c-alert-group__overflow-button:hover {
+  --pf-v5-c-alert-group__overflow-button--Color: var(--pf-v5-c-alert-group__overflow-button--hover--Color);
+  --pf-v5-c-alert-group__overflow-button--BoxShadow: var(--pf-v5-c-alert-group__overflow-button--hover--BoxShadow);
+}
+.pf-v5-c-alert-group__overflow-button:focus {
+  --pf-v5-c-alert-group__overflow-button--Color: var(--pf-v5-c-alert-group__overflow-button--focus--Color);
+  --pf-v5-c-alert-group__overflow-button--BoxShadow: var(--pf-v5-c-alert-group__overflow-button--focus--BoxShadow);
+}
+.pf-v5-c-alert-group__overflow-button:active {
+  --pf-v5-c-alert-group__overflow-button--Color: var(--pf-v5-c-alert-group__overflow-button--active--Color);
+  --pf-v5-c-alert-group__overflow-button--BoxShadow: var(--pf-v5-c-alert-group__overflow-button--active--BoxShadow);
+}

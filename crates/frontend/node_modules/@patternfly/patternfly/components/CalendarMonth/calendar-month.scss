@@ -1,0 +1,237 @@
+.#{$calendar-month} {
+  --#{$calendar-month}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$calendar-month}--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$calendar-month}--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$calendar-month}--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$calendar-month}--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+  --#{$calendar-month}--FontSize: var(--#{$pf-global}--FontSize--sm);
+
+  // header
+  --#{$calendar-month}__header--MarginBottom: var(--#{$pf-global}--spacer--md);
+  --#{$calendar-month}__header-year--Width: 8.5ch;
+  --#{$calendar-month}__header-nav-control--MarginRight: 0;
+  --#{$calendar-month}__header-nav-control--MarginLeft: 0;
+  --#{$calendar-month}__header-nav-control--m-prev-month--MarginRight: 0; // remove in breaking change
+  --#{$calendar-month}__header-nav-control--m-prev-month--MarginLeft: 0; // remove in breaking change
+  --#{$calendar-month}__header-nav-control--m-next-month--MarginRight: 0; // remove in breaking change
+  --#{$calendar-month}__header-nav-control--m-next-month--MarginLeft: 0; // remove in breaking change
+
+  // week days thead
+  --#{$calendar-month}__days--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$calendar-month}__days--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+
+  // day th
+  --#{$calendar-month}__day--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$calendar-month}__day--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+
+  // dates td
+  --#{$calendar-month}__dates-cell--PaddingTop: #{pf-size-prem(2px)};
+  --#{$calendar-month}__dates-cell--PaddingRight: #{pf-size-prem(2px)};
+  --#{$calendar-month}__dates-cell--PaddingBottom: #{pf-size-prem(2px)};
+  --#{$calendar-month}__dates-cell--PaddingLeft: #{pf-size-prem(2px)};
+  --#{$calendar-month}__dates-row--first-child__dates-cell--PaddingTop: var(--#{$pf-global}--spacer--sm);
+  --#{$calendar-month}__dates-cell--m-current__date--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$calendar-month}__dates-cell--m-selected__date--BackgroundColor: var(--#{$pf-global}--active-color--100);
+  --#{$calendar-month}__dates-cell--m-selected__date--hover--BackgroundColor: var(--#{$pf-global}--active-color--100);
+  --#{$calendar-month}__dates-cell--m-selected__date--focus--BackgroundColor: var(--#{$pf-global}--primary-color--200);
+  --#{$calendar-month}__dates-cell--m-selected__date--focus--after--BorderColor: var(--#{$pf-global}--primary-color--200);
+  --#{$calendar-month}__dates-cell--m-selected__date--focus--BoxShadow: 0 0 #{pf-size-prem(5px)} var(--#{$pf-global}--primary-color--100);
+  --#{$calendar-month}__dates-cell--m-selected__date--Color: var(--#{$pf-global}--Color--light-100);
+  --#{$calendar-month}__dates-cell--before--BackgroundColor: transparent;
+  --#{$calendar-month}__dates-cell--before--Top: 0;
+  --#{$calendar-month}__dates-cell--before--Right: 0;
+  --#{$calendar-month}__dates-cell--before--Bottom: var(--#{$calendar-month}__dates-cell--PaddingBottom);
+  --#{$calendar-month}__dates-cell--before--Left: 0;
+  --#{$calendar-month}__dates-cell--m-in-range--before--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$calendar-month}__dates-cell--m-in-range--m-start-range--before--Left: 50%;
+  --#{$calendar-month}__dates-cell--m-in-range--m-end-range--before--Right: 50%;
+  --#{$calendar-month}__dates-cell--m-in-range__date--hover--BackgroundColor: var(--#{$pf-global}--palette--blue-100);
+  --#{$calendar-month}__dates-cell--m-in-range__date--focus--BackgroundColor: var(--#{$pf-global}--palette--blue-100);
+  --#{$calendar-month}__dates-cell--m-adjacent-month__date--Color: var(--#{$pf-global}--Color--200);
+
+  // date button
+  --#{$calendar-month}__date--Width: 4ch;
+  --#{$calendar-month}__date--Height: 4ch;
+  --#{$calendar-month}__date--BorderRadius: var(--#{$pf-global}--BorderRadius--lg);
+  --#{$calendar-month}__date--Color: var(--#{$pf-global}--Color--100);
+  --#{$calendar-month}__date--BackgroundColor: transparent;
+  --#{$calendar-month}__date--disabled--Color: var(--#{$pf-global}--disabled-color--200);
+  --#{$calendar-month}__date--after--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$calendar-month}__date--after--BorderColor: transparent;
+  --#{$calendar-month}__date--hover--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$calendar-month}__date--focus--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$calendar-month}__date--focus--after--BorderColor: var(--#{$pf-global}--active-color--100);
+  --#{$calendar-month}__date--focus--BoxShadow: none;
+
+  @include pf-v5-t-light;
+
+  display: inline-flex;
+  flex-direction: column;
+  padding-block-start: var(--#{$calendar-month}--PaddingTop);
+  padding-block-end: var(--#{$calendar-month}--PaddingBottom);
+  padding-inline-start: var(--#{$calendar-month}--PaddingLeft);
+  padding-inline-end: var(--#{$calendar-month}--PaddingRight);
+  font-size: var(--#{$calendar-month}--FontSize);
+  background-color: var(--#{$calendar-month}--BackgroundColor);
+}
+
+.#{$calendar-month}__header {
+  display: flex;
+  margin-block-end: var(--#{$calendar-month}__header--MarginBottom);
+}
+
+.#{$calendar-month}__header-nav-control {
+  @include pf-v5-mirror-inline-on-rtl;
+
+  margin-inline-start: var(--#{$calendar-month}__header-nav-control--MarginLeft);
+  margin-inline-end: var(--#{$calendar-month}__header-nav-control--MarginRight);
+
+  &.pf-m-prev-month {
+    --#{$calendar-month}__header-nav-control--MarginRight: var(--#{$calendar-month}__header-nav-control--m-prev-month--MarginRight);
+    --#{$calendar-month}__header-nav-control--MarginLeft: var(--#{$calendar-month}__header-nav-control--m-prev-month--MarginLeft);
+  }
+
+  &.pf-m-next-month {
+    --#{$calendar-month}__header-nav-control--MarginRight: var(--#{$calendar-month}__header-nav-control--m-next-month--MarginRight);
+    --#{$calendar-month}__header-nav-control--MarginLeft: var(--#{$calendar-month}__header-nav-control--m-next-month--MarginLeft);
+  }
+}
+
+.#{$calendar-month}__header-month {
+  flex-grow: 1;
+}
+
+.#{$calendar-month}__header-year {
+  width: var(--#{$calendar-month}__header-year--Width);
+}
+
+.#{$calendar-month}__calendar {
+  table-layout: fixed;
+}
+
+.#{$calendar-month}__days {
+  border-block-end: var(--#{$calendar-month}__days--BorderBottomWidth) solid var(--#{$calendar-month}__days--BorderBottomColor);
+}
+
+.#{$calendar-month}__day {
+  padding-block-end: var(--#{$calendar-month}__day--PaddingBottom);
+  font-weight: var(--#{$calendar-month}__day--FontWeight);
+  text-align: center;
+}
+
+.#{$calendar-month}__dates-row:first-child {
+  --#{$calendar-month}__dates-cell--PaddingTop: var(--#{$calendar-month}__dates-row--first-child__dates-cell--PaddingTop);
+}
+
+.#{$calendar-month}__dates-cell {
+  --#{$calendar-month}__dates-cell--before--Top: var(--#{$calendar-month}__dates-cell--PaddingTop);
+
+  position: relative;
+  padding-block-start: var(--#{$calendar-month}__dates-cell--PaddingTop);
+  padding-block-end: var(--#{$calendar-month}__dates-cell--PaddingBottom);
+  padding-inline-start: var(--#{$calendar-month}__dates-cell--PaddingLeft);
+  padding-inline-end: var(--#{$calendar-month}__dates-cell--PaddingRight);
+  text-align: center;
+
+  &::before {
+    position: absolute;
+    inset-block-start: var(--#{$calendar-month}__dates-cell--before--Top);
+    inset-block-end: var(--#{$calendar-month}__dates-cell--before--Bottom);
+    inset-inline-start: var(--#{$calendar-month}__dates-cell--before--Left);
+    inset-inline-end: var(--#{$calendar-month}__dates-cell--before--Right);
+    content: "";
+    background-color: var(--#{$calendar-month}__dates-cell--before--BackgroundColor);
+  }
+
+  &.pf-m-current {
+    --#{$calendar-month}__date--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-current__date--BackgroundColor);
+  }
+
+  &.pf-m-in-range {
+    --#{$calendar-month}__dates-cell--before--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-in-range--before--BackgroundColor);
+    --#{$calendar-month}__date--hover--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-in-range__date--hover--BackgroundColor);
+    --#{$calendar-month}__date--focus--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-in-range__date--focus--BackgroundColor);
+  }
+
+  &.pf-m-start-range {
+    --#{$calendar-month}__dates-cell--before--Left: var(--#{$calendar-month}__dates-cell--m-in-range--m-start-range--before--Left);
+  }
+
+  &.pf-m-end-range {
+    --#{$calendar-month}__dates-cell--before--Right: var(--#{$calendar-month}__dates-cell--m-in-range--m-end-range--before--Right);
+  }
+
+  &.pf-m-adjacent-month {
+    --#{$calendar-month}__date--Color: var(--#{$calendar-month}__dates-cell--m-adjacent-month__date--Color);
+  }
+
+  &.pf-m-selected {
+    --#{$calendar-month}__date--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-selected__date--BackgroundColor);
+    --#{$calendar-month}__date--hover--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-selected__date--hover--BackgroundColor);
+    --#{$calendar-month}__date--focus--BackgroundColor: var(--#{$calendar-month}__dates-cell--m-selected__date--focus--BackgroundColor);
+    --#{$calendar-month}__date--focus--after--BorderColor: var(--#{$calendar-month}__dates-cell--m-selected__date--focus--after--BorderColor);
+    --#{$calendar-month}__date--focus--BoxShadow: var(--#{$calendar-month}__dates-cell--m-selected__date--focus--BoxShadow);
+    --#{$calendar-month}__date--Color: var(--#{$calendar-month}__dates-cell--m-selected__date--Color);
+  }
+
+  &.pf-m-disabled {
+    --#{$calendar-month}__dates-cell--before--BackgroundColor: transparent;
+    --#{$calendar-month}__date--BackgroundColor: transparent;
+  }
+}
+
+.#{$calendar-month}__date {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$calendar-month}__date--Width);
+  height: var(--#{$calendar-month}__date--Height);
+  line-height: 1;
+  color: var(--#{$calendar-month}__date--Color);
+  background-color: var(--#{$calendar-month}__date--BackgroundColor);
+  border: 0;
+
+  &::after {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    content: "";
+    border: var(--#{$calendar-month}__date--after--BorderWidth) solid var(--#{$calendar-month}__date--after--BorderColor);
+  }
+
+  &,
+  &::after {
+    border-radius: var(--#{$calendar-month}__date--BorderRadius);
+  }
+
+  &:hover,
+  &.pf-m-hover {
+    --#{$calendar-month}__date--BackgroundColor: var(--#{$calendar-month}__date--hover--BackgroundColor);
+  }
+
+  &:focus,
+  &.pf-m-focus {
+    --#{$calendar-month}__date--BackgroundColor: var(--#{$calendar-month}__date--focus--BackgroundColor);
+    --#{$calendar-month}__date--after--BorderColor: var(--#{$calendar-month}__date--focus--after--BorderColor);
+
+    outline: 0;
+    box-shadow: var(--#{$calendar-month}__date--focus--BoxShadow);
+  }
+
+  &:disabled {
+    --#{$calendar-month}__date--Color: var(--#{$calendar-month}__date--disabled--Color);
+    --#{$calendar-month}__date--hover--focus--BorderColor: transparent;
+
+    pointer-events: none;
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/calendar-month";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-calendar-month;
+}

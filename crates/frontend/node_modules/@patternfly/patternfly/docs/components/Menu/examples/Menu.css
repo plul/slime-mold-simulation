@@ -1,0 +1,26 @@
+[id^="ws-core-c-menu-with-flyout"],
+[id^="ws-core-c-menu-standard-menu-flyout-child"] {
+  display: flex;
+  height: 400px;
+}
+
+#ws-core-c-menu-with-flyout-menu-top {
+  align-items: flex-end;
+}
+
+#ws-core-c-menu-with-flyout-menu-left {
+  justify-content: flex-end;
+}
+
+#ws-core-c-menu-with-flyout-menu-left-top {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+:is([id="ws-core-c-menu-drilldown-with-breadcrumbs---level-3"], [id="ws-core-c-menu-drilldown-with-breadcrumbs---level-4"]) {
+  position: relative;
+}
+
+:is([id="ws-core-c-menu-drilldown-with-breadcrumbs---level-3"], [id="ws-core-c-menu-drilldown-with-breadcrumbs---level-4"]) .pf-v5-c-breadcrumb__dropdown .pf-v5-c-menu {
+  position: absolute;
+}

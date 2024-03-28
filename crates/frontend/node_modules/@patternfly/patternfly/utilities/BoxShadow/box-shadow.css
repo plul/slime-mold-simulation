@@ -1,0 +1,83 @@
+.pf-v5-u-box-shadow-sm {
+  box-shadow: var(--pf-v5-global--BoxShadow--sm) !important;
+}
+
+.pf-v5-u-box-shadow-sm-top {
+  box-shadow: var(--pf-v5-global--BoxShadow--sm-top) !important;
+}
+
+.pf-v5-u-box-shadow-sm-right {
+  box-shadow: var(--pf-v5-global--BoxShadow--sm-right) !important;
+}
+
+.pf-v5-u-box-shadow-sm-bottom {
+  box-shadow: var(--pf-v5-global--BoxShadow--sm-bottom) !important;
+}
+
+.pf-v5-u-box-shadow-sm-left {
+  box-shadow: var(--pf-v5-global--BoxShadow--sm-left) !important;
+}
+
+.pf-v5-u-box-shadow-md {
+  box-shadow: var(--pf-v5-global--BoxShadow--md) !important;
+}
+
+.pf-v5-u-box-shadow-md-top {
+  box-shadow: var(--pf-v5-global--BoxShadow--md-top) !important;
+}
+
+.pf-v5-u-box-shadow-md-right {
+  box-shadow: var(--pf-v5-global--BoxShadow--md-right) !important;
+}
+
+.pf-v5-u-box-shadow-md-bottom {
+  box-shadow: var(--pf-v5-global--BoxShadow--md-bottom) !important;
+}
+
+.pf-v5-u-box-shadow-md-left {
+  box-shadow: var(--pf-v5-global--BoxShadow--md-left) !important;
+}
+
+.pf-v5-u-box-shadow-lg {
+  box-shadow: var(--pf-v5-global--BoxShadow--lg) !important;
+}
+
+.pf-v5-u-box-shadow-lg-top {
+  box-shadow: var(--pf-v5-global--BoxShadow--lg-top) !important;
+}
+
+.pf-v5-u-box-shadow-lg-right {
+  box-shadow: var(--pf-v5-global--BoxShadow--lg-right) !important;
+}
+
+.pf-v5-u-box-shadow-lg-bottom {
+  box-shadow: var(--pf-v5-global--BoxShadow--lg-bottom) !important;
+}
+
+.pf-v5-u-box-shadow-lg-left {
+  box-shadow: var(--pf-v5-global--BoxShadow--lg-left) !important;
+}
+
+.pf-v5-u-box-shadow-xl {
+  box-shadow: var(--pf-v5-global--BoxShadow--xl) !important;
+}
+
+.pf-v5-u-box-shadow-xl-top {
+  box-shadow: var(--pf-v5-global--BoxShadow--xl-top) !important;
+}
+
+.pf-v5-u-box-shadow-xl-right {
+  box-shadow: var(--pf-v5-global--BoxShadow--xl-right) !important;
+}
+
+.pf-v5-u-box-shadow-xl-bottom {
+  box-shadow: var(--pf-v5-global--BoxShadow--xl-bottom) !important;
+}
+
+.pf-v5-u-box-shadow-xl-left {
+  box-shadow: var(--pf-v5-global--BoxShadow--xl-left) !important;
+}
+
+.pf-v5-u-box-shadow-inset {
+  box-shadow: var(--pf-v5-global--BoxShadow--inset) !important;
+}

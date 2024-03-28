@@ -1,0 +1,38 @@
+[package]
+authors = ["Asger Juul Brunshøj <asgerbrunshoj@gmail.com>"]
+edition = "2021"
+name = "simulation"
+publish = false
+version = "0.1.0"
+
+[lints.rust]
+future_incompatible = "deny"
+nonstandard_style = "deny"
+rust_2018_idioms = "deny"
+
+[lints.clippy]
+mod_module_files = "deny"
+
+[dependencies]
+bytemuck = { version = "1.14", features = ["derive"] }
+clap = { version = "4.4", features = ["derive", "cargo"] }
+common.path = "../common"
+futures = "0.3"
+num-integer = "0.1.45"
+rand = "0.8.5"
+serde = { version = "1", features = ["derive"] }
+smart-default = "0.7.1"
+thiserror = "1"
+tokio = { version = "1.33", default-features = false, features = [
+  "rt-multi-thread",
+] }
+tokio-stream = { version = "0.1", features = ["sync"] }
+tokio-tungstenite = "0.20.1"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+type-toppings = "0.1.0"
+wgpu = "0.19"
+
+[dependencies.winit]
+git = "https://github.com/rust-windowing/winit"
+# version = "0.29"

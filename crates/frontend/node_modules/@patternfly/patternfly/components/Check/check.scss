@@ -1,0 +1,79 @@
+// @debug $check; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$check} {
+  --#{$check}--GridGap: var(--#{$pf-global}--spacer--xs) var(--#{$pf-global}--spacer--sm);
+  --#{$check}__label--disabled--Color: var(--#{$pf-global}--disabled-color--100);
+  --#{$check}__label--Color: var(--#{$pf-global}--Color--100);
+  --#{$check}__label--FontWeight: var(--#{$pf-global}--FontWeight--normal);
+  --#{$check}__label--FontSize: var(--#{$pf-global}--FontSize--md);
+  --#{$check}__label--LineHeight: var(--#{$pf-global}--LineHeight--md);
+  --#{$check}__input--TranslateY--moz: 5px;
+  --#{$check}__description--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$check}__description--Color: var(--#{$pf-global}--Color--200);
+  --#{$check}__body--MarginTop: var(--#{$pf-global}--spacer--sm);
+
+  // Required checkbox
+  --#{$check}__label-required--MarginLeft: var(--#{$pf-global}--spacer--xs);
+  --#{$check}__label-required--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$check}__label-required--Color: var(--#{$pf-global}--danger-color--100);
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: var(--#{$check}--GridGap);
+
+  &.pf-m-standalone {
+    --#{$check}--GridGap: 0;
+    --#{$check}__input--TranslateY--moz: 0;
+
+    display: inline-grid;
+  }
+}
+
+.#{$check}__label {
+  align-self: baseline;
+  font-size: var(--#{$check}__label--FontSize);
+  font-weight: var(--#{$check}__label--FontWeight);
+  line-height: var(--#{$check}__label--LineHeight);
+  color: var(--#{$check}__label--Color);
+}
+
+.#{$check}__description {
+  grid-column: 2;
+  font-size: var(--#{$check}__description--FontSize);
+  color: var(--#{$check}__description--Color);
+}
+
+.#{$check}__body {
+  grid-column: 2;
+  margin-block-start: var(--#{$check}__body--MarginTop);
+}
+
+// stylelint-disable property-no-vendor-prefix
+.#{$check}__input {
+  align-self: baseline;
+  -moz-transform: translateY(var(--#{$check}__input--TranslateY--moz));
+}
+// stylelint-enable
+
+.#{$check}__label,
+.#{$check}__input {
+  justify-self: start;
+
+  @at-root label.#{$check},
+  & {
+    cursor: pointer;
+  }
+
+  &:disabled,
+  &.pf-m-disabled {
+    --#{$check}__label--Color: var(--#{$check}__label--disabled--Color);
+
+    cursor: not-allowed;
+  }
+}
+
+.#{$check}__label-required {
+  margin-inline-start: var(--#{$check}__label-required--MarginLeft);
+  font-size: var(--#{$check}__label-required--FontSize);
+  color: var(--#{$check}__label-required--Color);
+}

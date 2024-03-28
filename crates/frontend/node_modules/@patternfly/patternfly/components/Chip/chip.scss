@@ -1,0 +1,140 @@
+// @debug $chip; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$chip} {
+  --#{$chip}--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}--BackgroundColor: var(--#{$pf-global}--Color--light-100);
+  --#{$chip}--BorderRadius: var(--#{$pf-global}--BorderRadius--sm);
+  --#{$chip}--before--BorderColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$chip}--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$chip}--before--BorderRadius: var(--#{$chip}--BorderRadius);
+
+  // overflow chip button
+  --#{$chip}--m-overflow__text--Color: var(--#{$pf-global}--primary-color--100);
+
+  // draggable chip
+  --#{$chip}--m-draggable--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$chip}--m-draggable--BoxShadow: var(--#{$pf-global}--BoxShadow--sm);
+  --#{$chip}--m-draggable__icon--FontSize: var(--#{$pf-global}--icon--FontSize--sm);
+
+  // chip content
+  --#{$chip}__content--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$chip}__content--ColumnGap: var(--#{$pf-global}--spacer--xs);
+
+  // chip text
+  --#{$chip}__text--Color: var(--#{$pf-global}--Color--100);
+  --#{$chip}__text--MaxWidth: 16ch;
+  --#{$chip}__c-badge--MarginLeft: var(--#{$pf-global}--spacer--xs);
+
+  // chip actions
+  --#{$chip}__actions--FontSize: var(--#{$pf-global}--FontSize--xs);
+
+  // buttons within chip actions
+  --#{$chip}__actions--c-button--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}__actions--c-button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}__actions--c-button--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$chip}__actions--c-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$chip}__actions--c-button--MarginTop: calc(var(--#{$chip}--PaddingTop) * -1);
+  --#{$chip}__actions--c-button--MarginRight: calc(var(--#{$chip}--PaddingRight) / 2 * -1);
+  --#{$chip}__actions--c-button--MarginBottom: calc(var(--#{$chip}--PaddingBottom) * -1);
+  --#{$chip}__actions--c-button--FontSize: var(--#{$pf-global}--FontSize--xs);
+
+  // icon
+  --#{$chip}__icon--MarginLeft: var(--#{$pf-global}--spacer--sm);
+
+  @include pf-v5-t-light;  // This component always needs to be light
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  padding-block-start: var(--#{$chip}--PaddingTop);
+  padding-block-end: var(--#{$chip}--PaddingBottom);
+  padding-inline-start: var(--#{$chip}--PaddingLeft);
+  padding-inline-end: var(--#{$chip}--PaddingRight);
+  list-style: none;
+  background-color: var(--#{$chip}--BackgroundColor);
+  border-radius: var(--#{$chip}--BorderRadius);
+
+  &::before {
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    content: "";
+    border: var(--#{$chip}--before--BorderWidth) solid var(--#{$chip}--before--BorderColor);
+    border-radius: var(--#{$chip}--before--BorderRadius);
+  }
+
+  // Chip overflow modifier
+  &.pf-m-overflow {
+    border: 0;
+
+    .#{$chip}__text {
+      color: var(--#{$chip}--m-overflow__text--Color);
+    }
+  }
+
+  &.pf-m-draggable {
+    --#{$chip}--BackgroundColor: var(--#{$chip}--m-draggable--BackgroundColor);
+
+    box-shadow: var(--#{$chip}--m-draggable--BoxShadow);
+
+    .#{$chip}__icon {
+      font-size: var(--#{$chip}--m-draggable__icon--FontSize);
+    }
+  }
+}
+
+// Text element
+.#{$chip}__text {
+  @include pf-v5-text-overflow;
+
+  position: relative;
+  max-width: var(--#{$chip}__text--MaxWidth);
+  color: var(--#{$chip}__text--Color);
+
+  .#{$badge} {
+    margin-inline-start: var(--#{$chip}__c-badge--MarginLeft); // remove in breaking change
+  }
+}
+
+.#{$chip}__icon + .#{$chip}__text,
+.#{$chip}__text + .#{$chip}__icon {
+  margin-inline-start: var(--#{$chip}__icon--MarginLeft);
+}
+
+.#{$chip}__content {
+  display: flex;
+  column-gap: var(--#{$chip}__content--ColumnGap);
+  align-items: center;
+  font-size: var(--#{$chip}__content--FontSize);
+}
+
+.#{$chip}__actions {
+  font-size: var(--#{$chip}__actions--FontSize);
+
+  // Actions Button
+  .#{$button} {
+    --#{$button}--PaddingTop: var(--#{$chip}__actions--c-button--PaddingTop);
+    --#{$button}--PaddingRight: var(--#{$chip}__actions--c-button--PaddingRight);
+    --#{$button}--PaddingBottom: var(--#{$chip}__actions--c-button--PaddingBottom);
+    --#{$button}--PaddingLeft: var(--#{$chip}__actions--c-button--PaddingLeft);
+    --#{$button}--FontSize: var(--#{$chip}__actions--c-button--FontSize);
+
+    margin-block-start: var(--#{$chip}__actions--c-button--MarginTop);
+    margin-block-end: var(--#{$chip}__actions--c-button--MarginBottom);
+    margin-inline-end: var(--#{$chip}__actions--c-button--MarginRight);
+    line-height: 1;
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/chip";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-chip;
+}

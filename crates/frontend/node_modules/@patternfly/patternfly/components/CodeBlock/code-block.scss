@@ -1,0 +1,43 @@
+// @debug $code-block; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$code-block} {
+  --#{$code-block}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$code-block}__header--BorderBottomWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$code-block}__header--BorderBottomColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$code-block}__content--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$code-block}__content--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$code-block}__content--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$code-block}__content--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$code-block}__pre--FontFamily: var(--#{$pf-global}--FontFamily--monospace);
+  --#{$code-block}__pre--FontSize: var(--#{$pf-global}--FontSize--sm);
+
+  background-color: var(--#{$code-block}--BackgroundColor);
+}
+
+.#{$code-block}__header {
+  display: flex;
+  border-block-end: var(--#{$code-block}__header--BorderBottomWidth) solid var(--#{$code-block}__header--BorderBottomColor);
+}
+
+.#{$code-block}__actions {
+  display: flex;
+  margin-inline-start: auto;
+}
+
+.#{$code-block}__content {
+  padding-block-start: var(--#{$code-block}__content--PaddingTop);
+  padding-block-end: var(--#{$code-block}__content--PaddingBottom);
+  padding-inline-start: var(--#{$code-block}__content--PaddingLeft);
+  padding-inline-end: var(--#{$code-block}__content--PaddingRight);
+}
+
+.#{$code-block}__pre {
+  font-family: var(--#{$code-block}__pre--FontFamily);
+  font-size: var(--#{$code-block}__pre--FontSize);
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.#{$code-block}__code {
+  font-family: var(--#{$code-block}__code--FontFamily, inherit);
+}

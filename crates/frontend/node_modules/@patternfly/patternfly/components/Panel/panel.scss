@@ -1,0 +1,116 @@
+// @debug $panel; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$panel} {
+  --#{$panel}--Width: auto;
+  --#{$panel}--MinWidth: auto;
+  --#{$panel}--MaxWidth: none;
+  --#{$panel}--ZIndex: auto;
+  --#{$panel}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$panel}--BoxShadow: none;
+
+  // border
+  --#{$panel}--before--BorderWidth: 0;
+  --#{$panel}--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // bordered
+  --#{$panel}--m-bordered--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+
+  // raised
+  --#{$panel}--m-raised--BoxShadow: var(--#{$pf-global}--BoxShadow--md);
+  --#{$panel}--m-raised--ZIndex: var(--#{$pf-global}--ZIndex--sm);
+  --#{$panel}--m-raised--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // header
+  --#{$panel}__header--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__header--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__header--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__header--PaddingLeft: var(--#{$pf-global}--spacer--md);
+
+  // main
+  --#{$panel}__main--MaxHeight: none;
+  --#{$panel}__main--Overflow: visible;
+
+  // body
+  --#{$panel}__main-body--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__main-body--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__main-body--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__main-body--PaddingLeft: var(--#{$pf-global}--spacer--md);
+
+  // footer
+  --#{$panel}__footer--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__footer--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__footer--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__footer--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$panel}__footer--BoxShadow: none;
+
+  // scrollable
+  --#{$panel}--m-scrollable__main--MaxHeight: #{pf-size-prem(300px)};
+  --#{$panel}--m-scrollable__main--Overflow: auto;
+  --#{$panel}--m-scrollable__footer--BoxShadow: 0 #{pf-size-prem(-5px)} #{pf-size-prem(4px)} #{pf-size-prem(-4px)} #{rgba($pf-v5-color-black-1000, .16)}; // insets the shadow so it doesn't show on left/right sides
+
+  position: relative;
+  z-index: var(--#{$panel}--ZIndex);
+  width: var(--#{$panel}--Width);
+  min-width: var(--#{$panel}--MinWidth);
+  max-width: var(--#{$panel}--MaxWidth);
+  background-color: var(--#{$panel}--BackgroundColor);
+  box-shadow: var(--#{$panel}--BoxShadow);
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$panel}--before--BorderWidth) solid var(--#{$panel}--before--BorderColor);
+  }
+
+  &.pf-m-bordered {
+    --#{$panel}--before--BorderWidth: var(--#{$panel}--m-bordered--before--BorderWidth);
+  }
+
+  &.pf-m-raised {
+    --#{$panel}--BackgroundColor: var(--#{$panel}--m-raised--BackgroundColor);
+    --#{$panel}--BoxShadow: var(--#{$panel}--m-raised--BoxShadow);
+    --#{$panel}--ZIndex: var(--#{$panel}--m-raised--ZIndex);
+  }
+
+  &.pf-m-scrollable {
+    --#{$panel}__main--MaxHeight: var(--#{$panel}--m-scrollable__main--MaxHeight);
+    --#{$panel}__main--Overflow: var(--#{$panel}--m-scrollable__main--Overflow);
+    --#{$panel}__footer--BoxShadow: var(--#{$panel}--m-scrollable__footer--BoxShadow);
+  }
+}
+
+.#{$panel}__header {
+  padding-block-start: var(--#{$panel}__header--PaddingTop);
+  padding-block-end: var(--#{$panel}__header--PaddingBottom);
+  padding-inline-start: var(--#{$panel}__header--PaddingLeft);
+  padding-inline-end: var(--#{$panel}__header--PaddingRight);
+}
+
+.#{$panel}__main {
+  max-height: var(--#{$panel}__main--MaxHeight);
+  overflow: var(--#{$panel}__main--Overflow);
+}
+
+.#{$panel}__main-body {
+  padding-block-start: var(--#{$panel}__main-body--PaddingTop);
+  padding-block-end: var(--#{$panel}__main-body--PaddingBottom);
+  padding-inline-start: var(--#{$panel}__main-body--PaddingLeft);
+  padding-inline-end: var(--#{$panel}__main-body--PaddingRight);
+}
+
+.#{$panel}__footer {
+  padding-block-start: var(--#{$panel}__footer--PaddingTop);
+  padding-block-end: var(--#{$panel}__footer--PaddingBottom);
+  padding-inline-start: var(--#{$panel}__footer--PaddingLeft);
+  padding-inline-end: var(--#{$panel}__footer--PaddingRight);
+  box-shadow: var(--#{$panel}__footer--BoxShadow);
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/panel";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-panel;
+}

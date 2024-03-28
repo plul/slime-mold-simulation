@@ -1,0 +1,50 @@
+// @debug $tab-content; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$tab-content} {
+  --#{$tab-content}__body--PaddingTop: 0;
+  --#{$tab-content}__body--PaddingRight: 0;
+  --#{$tab-content}__body--PaddingBottom: 0;
+  --#{$tab-content}__body--PaddingLeft: 0;
+
+  // Padding
+  --#{$tab-content}__body--m-padding--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$tab-content}__body--m-padding--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$tab-content}__body--m-padding--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$tab-content}__body--m-padding--PaddingLeft: var(--#{$pf-global}--spacer--md);
+
+  // Match page padding
+  --#{$tab-content}__body--m-padding--xl--PaddingTop: var(--#{$pf-global}--spacer--lg);
+  --#{$tab-content}__body--m-padding--xl--PaddingRight: var(--#{$pf-global}--spacer--lg);
+  --#{$tab-content}__body--m-padding--xl--PaddingBottom: var(--#{$pf-global}--spacer--lg);
+  --#{$tab-content}__body--m-padding--xl--PaddingLeft: var(--#{$pf-global}--spacer--lg);
+
+  // Light
+  --#{$tab-content}--m-light-300: var(--#{$pf-global}--BackgroundColor--light-300);
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--xl) {
+    --#{$tab-content}__body--m-padding--PaddingTop: var(--#{$tab-content}__body--m-padding--xl--PaddingTop);
+    --#{$tab-content}__body--m-padding--PaddingRight: var(--#{$tab-content}__body--m-padding--xl--PaddingRight);
+    --#{$tab-content}__body--m-padding--PaddingBottom: var(--#{$tab-content}__body--m-padding--xl--PaddingBottom);
+    --#{$tab-content}__body--m-padding--PaddingLeft: var(--#{$tab-content}__body--m-padding--xl--PaddingLeft);
+  }
+
+
+  &.pf-m-light-300 {
+    background-color: var(--#{$tab-content}--m-light-300);
+  }
+}
+
+// Body
+.#{$tab-content}__body {
+  padding-block-start: var(--#{$tab-content}__body--PaddingTop);
+  padding-block-end: var(--#{$tab-content}__body--PaddingBottom);
+  padding-inline-start: var(--#{$tab-content}__body--PaddingLeft);
+  padding-inline-end: var(--#{$tab-content}__body--PaddingRight);
+
+  &.pf-m-padding {
+    --#{$tab-content}__body--PaddingTop: var(--#{$tab-content}__body--m-padding--PaddingTop);
+    --#{$tab-content}__body--PaddingRight: var(--#{$tab-content}__body--m-padding--PaddingRight);
+    --#{$tab-content}__body--PaddingBottom: var(--#{$tab-content}__body--m-padding--PaddingBottom);
+    --#{$tab-content}__body--PaddingLeft: var(--#{$tab-content}__body--m-padding--PaddingLeft);
+  }
+}

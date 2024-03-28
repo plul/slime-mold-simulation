@@ -1,0 +1,14 @@
+.ws-example-wrapper {
+  position: relative;
+}
+
+.ws-example-wrapper .pf-v5-c-menu,
+.ws-example-wrapper .pf-v5-c-panel {
+  position: absolute;
+ inset-block-start: 40px;
+  width: 100%;
+}
+
+#ws-core-c-text-input-group-search-input-group-advanced-search-expanded-with-autocomplete {
+  height: 540px;
+}

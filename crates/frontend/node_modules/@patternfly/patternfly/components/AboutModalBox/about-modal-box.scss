@@ -1,0 +1,241 @@
+// @debug $about-modal-box; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$about-modal-box} {
+  // Component variables
+  --#{$about-modal-box}--BackgroundImage: none;
+  --#{$about-modal-box}--BackgroundColor: var(--#{$pf-global}--palette--black-1000); // Modal uses a non-standard background color
+  --#{$about-modal-box}--BackgroundPosition: bottom right;
+  --#{$about-modal-box}--BackgroundSize--min-width: 200px;
+  --#{$about-modal-box}--BackgroundSize--width: 60%;
+  --#{$about-modal-box}--BackgroundSize--max-width: 600px;
+  --#{$about-modal-box}--BackgroundSize: clamp(var(--#{$about-modal-box}--BackgroundSize--min-width), var(--#{$about-modal-box}--BackgroundSize--width), var(--#{$about-modal-box}--BackgroundSize--max-width));
+  --#{$about-modal-box}--Height: 100%;
+  --#{$about-modal-box}--lg--Height: #{pf-size-prem(762px)}; // Height is optimized for the exact height desired
+  --#{$about-modal-box}--Width: 100%;
+  --#{$about-modal-box}--sm--GridTemplateColumns: 5fr 1fr;
+  --#{$about-modal-box}--lg--GridTemplateColumns: 1fr .6fr;
+
+  @include pf-v5-bidirectional-style(
+    $prop: --#{$about-modal-box}--BackgroundPosition,
+    $ltr-val: bottom right,
+    $rtl-val: bottom left
+  );
+
+
+  // Brand
+  --#{$about-modal-box}__brand--PaddingTop: var(--#{$pf-global}--spacer--2xl);
+  --#{$about-modal-box}__brand--PaddingRight: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__brand--PaddingLeft: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__brand--PaddingBottom: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__brand--sm--PaddingRight: var(--#{$pf-global}--spacer--3xl);
+  --#{$about-modal-box}__brand--sm--PaddingLeft: var(--#{$pf-global}--spacer--3xl);
+  --#{$about-modal-box}__brand--sm--PaddingBottom: var(--#{$pf-global}--spacer--3xl);
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    --#{$about-modal-box}__brand--PaddingRight: var(--#{$about-modal-box}__brand--sm--PaddingRight);
+    --#{$about-modal-box}__brand--PaddingLeft: var(--#{$about-modal-box}__brand--sm--PaddingLeft);
+    --#{$about-modal-box}__brand--PaddingBottom: var(--#{$about-modal-box}__brand--sm--PaddingBottom);
+  }
+
+  // Close
+  --#{$about-modal-box}__close--ZIndex: var(--#{$pf-global}--ZIndex--2xl);
+  --#{$about-modal-box}__close--PaddingTop: var(--#{$pf-global}--spacer--2xl);
+  --#{$about-modal-box}__close--PaddingRight: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__close--PaddingBottom: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__close--sm--PaddingBottom: var(--#{$pf-global}--spacer--3xl);
+  --#{$about-modal-box}__close--lg--PaddingRight: var(--#{$pf-global}--spacer--3xl);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    --#{$about-modal-box}__close--PaddingBottom: var(--#{$about-modal-box}__close--sm--PaddingBottom);
+  }
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--lg) {
+    --#{$about-modal-box}__close--PaddingRight: var(--#{$about-modal-box}__close--lg--PaddingRight);
+  }
+
+  // Close Button
+  --#{$about-modal-box}__close--c-button--Color: var(--#{$pf-global}--Color--100);
+  --#{$about-modal-box}__close--c-button--FontSize: var(--#{$pf-global}--FontSize--xl);
+  --#{$about-modal-box}__close--c-button--BorderRadius: var(--#{$pf-global}--BorderRadius--lg);
+  --#{$about-modal-box}__close--c-button--Width: calc(var(--#{$about-modal-box}__close--c-button--FontSize) * 2); // Height and width are 2x font-size
+  --#{$about-modal-box}__close--c-button--Height: calc(var(--#{$about-modal-box}__close--c-button--FontSize) * 2);
+  --#{$about-modal-box}__close--c-button--BackgroundColor: var(--#{$pf-global}--palette--black-1000); // Close button uses a non-standard background color
+  --#{$about-modal-box}__close--c-button--hover--BackgroundColor: #{rgba($pf-v5-color-black-1000, .4)};
+
+  // Brand img
+  --#{$about-modal-box}__brand-image--Height: #{pf-size-prem(40px)};
+
+  // Header
+  --#{$about-modal-box}__header--PaddingRight: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__header--PaddingBottom: var(--#{$pf-global}--spacer--sm);
+  --#{$about-modal-box}__header--PaddingLeft: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__header--sm--PaddingRight: var(--#{$pf-global}--spacer--3xl);
+  --#{$about-modal-box}__header--sm--PaddingLeft: var(--#{$pf-global}--spacer--3xl);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    --#{$about-modal-box}__header--PaddingRight: var(--#{$about-modal-box}__header--sm--PaddingRight);
+    --#{$about-modal-box}__header--PaddingLeft: var(--#{$about-modal-box}__header--sm--PaddingLeft);
+  }
+
+  // Strapline
+  --#{$about-modal-box}__strapline--PaddingTop: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__strapline--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$about-modal-box}__strapline--sm--PaddingTop: var(--#{$pf-global}--spacer--2xl);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    --#{$about-modal-box}__strapline--PaddingTop: var(--#{$about-modal-box}__strapline--sm--PaddingTop);
+  }
+
+  // Content
+  --#{$about-modal-box}__content--MarginTop: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__content--MarginRight: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__content--MarginBottom: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__content--MarginLeft: var(--#{$pf-global}--spacer--xl);
+  --#{$about-modal-box}__content--sm--MarginTop: var(--#{$pf-global}--spacer--2xl);
+  --#{$about-modal-box}__content--sm--MarginRight: var(--#{$pf-global}--spacer--3xl);
+  --#{$about-modal-box}__content--sm--MarginBottom: var(--#{$pf-global}--spacer--2xl);
+  --#{$about-modal-box}__content--sm--MarginLeft: var(--#{$pf-global}--spacer--3xl);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    --#{$about-modal-box}__content--MarginTop: var(--#{$about-modal-box}__content--sm--MarginTop);
+    --#{$about-modal-box}__content--MarginRight: var(--#{$about-modal-box}__content--sm--MarginRight);
+    --#{$about-modal-box}__content--MarginBottom: var(--#{$about-modal-box}__content--sm--MarginBottom);
+    --#{$about-modal-box}__content--MarginLeft: var(--#{$about-modal-box}__content--sm--MarginLeft);
+  }
+
+  // This component always needs to be dark
+  @include pf-v5-t-dark;
+
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "brand close"
+    "header header"
+    "content content";
+  grid-template-rows: max-content max-content auto;
+  width: var(--#{$about-modal-box}--Width);
+  height: var(--#{$about-modal-box}--Height);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--#{$about-modal-box}--BackgroundColor); // Because this component is always dark, set the background color
+  background-image: var(--#{$about-modal-box}--BackgroundImage);
+  background-repeat: no-repeat;
+  background-position: var(--#{$about-modal-box}--BackgroundPosition);
+  background-size: var(--#{$about-modal-box}--BackgroundSize);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    grid-template-areas:
+    "brand          close"
+    "header         close"
+    "content        close";
+    grid-template-columns: var(--#{$about-modal-box}--sm--GridTemplateColumns);
+  }
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--lg) {
+    --#{$about-modal-box}--Height: var(--#{$about-modal-box}--lg--Height);
+    --#{$about-modal-box}--Width: var(--#{$about-modal-box}--lg--Width);
+
+    grid-template-rows: max-content max-content auto;
+    grid-template-columns: var(--#{$about-modal-box}--lg--GridTemplateColumns);
+  }
+}
+
+// Brand
+.#{$about-modal-box}__brand {
+  display: flex;
+  grid-area: brand;
+  padding-block-start: var(--#{$about-modal-box}__brand--PaddingTop);
+  padding-block-end: var(--#{$about-modal-box}__brand--PaddingBottom);
+  padding-inline-start: var(--#{$about-modal-box}__brand--PaddingLeft);
+  padding-inline-end: var(--#{$about-modal-box}__brand--PaddingRight);
+}
+
+.#{$about-modal-box}__brand-image {
+  height: var(--#{$about-modal-box}__brand-image--Height);
+}
+
+// Header
+.#{$about-modal-box}__header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  padding-block-end: var(--#{$about-modal-box}__header--PaddingBottom);
+  padding-inline-start: var(--#{$about-modal-box}__header--PaddingLeft);
+  padding-inline-end: var(--#{$about-modal-box}__header--PaddingRight);
+}
+
+// Strapline
+.#{$about-modal-box}__strapline {
+  padding-block-start: var(--#{$about-modal-box}__strapline--PaddingTop);
+  margin-block-start: auto;
+  font-size: var(--#{$about-modal-box}__strapline--FontSize);
+}
+
+// Content
+.#{$about-modal-box}__content {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  margin-block-start: var(--#{$about-modal-box}__content--MarginTop);
+  margin-block-end: var(--#{$about-modal-box}__content--MarginBottom);
+  margin-inline-start: var(--#{$about-modal-box}__content--MarginLeft); // Using margin instead of padding to prevent scrollbar extending to top of content block
+  margin-inline-end: var(--#{$about-modal-box}__content--MarginRight);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  word-break: break-word;
+  -webkit-overflow-scrolling: touch;
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    overflow: visible;
+    overscroll-behavior: auto;
+  }
+}
+
+// Close
+.#{$about-modal-box}__close {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  grid-area: close;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-block-start: var(--#{$about-modal-box}__close--PaddingTop);
+  padding-block-end: var(--#{$about-modal-box}__close--PaddingBottom);
+  padding-inline-end: var(--#{$about-modal-box}__close--PaddingRight);
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--sm) {
+    grid-area: 1 / 2;
+    justify-content: center;
+  }
+
+  @media only screen and (min-width: $pf-v5-global--breakpoint--lg) {
+    justify-content: flex-end;
+  }
+
+  // Close button
+  // Since this btn is unique to the about modal, use contextual selectors in this specific instance
+  .#{$button}.pf-m-plain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--#{$about-modal-box}__close--c-button--Width);
+    height: var(--#{$about-modal-box}__close--c-button--Height);
+    padding: 0;
+    font-size: var(--#{$about-modal-box}__close--c-button--FontSize);
+    color: var(--#{$about-modal-box}__close--c-button--Color);
+    background-color: var(--#{$about-modal-box}__close--c-button--BackgroundColor);
+    border-radius: var(--#{$about-modal-box}__close--c-button--BorderRadius);
+
+    &:hover {
+      --#{$about-modal-box}__close--c-button--BackgroundColor: var(--#{$about-modal-box}__close--c-button--hover--BackgroundColor);
+    }
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/about-modal-box";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-about-modal-box;
+}

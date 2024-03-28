@@ -1,0 +1,80 @@
+@mixin pf-v5-c-data-list-responsive-block() {
+  // base responsive styles
+  @at-root .#{$data-list}:not([class*="pf-m-grid"]) {
+    @media screen and (min-width: $pf-v5-global--breakpoint--md) {
+      @content;
+    }
+  }
+
+  @at-root .#{$data-list}.pf-m-grid-none {
+    @media screen and (min-width: $pf-v5-global--breakpoint--xs) {
+      @content;
+    }
+  }
+
+  // grid modifiers
+  @each $size, $bp in $pf-v5-global--breakpoint-name-map {
+    @at-root .#{$data-list}.pf-m-grid-#{$size} {
+      @media screen and (min-width: #{$bp}) {
+        @content;
+      }
+    }
+  }
+}
+
+@include pf-v5-c-data-list-responsive-block {
+  --#{$data-list}__cell--cell--PaddingTop: var(--#{$data-list}__cell--cell--md--PaddingTop);
+  --#{$data-list}__cell--PaddingBottom: var(--#{$data-list}__cell--md--PaddingBottom);
+  --#{$data-list}__item-control--MarginRight: var(--#{$data-list}__item-control--md--MarginRight);
+  --#{$data-list}__item-action--MarginLeft: var(--#{$data-list}__item-action--md--MarginLeft);
+  --#{$data-list}__expandable-content-body--PaddingTop: var(--#{$data-list}__expandable-content-body--md--PaddingTop);
+  --#{$data-list}__expandable-content-body--PaddingBottom: var(--#{$data-list}__expandable-content-body--md--PaddingBottom);
+  --#{$data-list}--m-compact__cell--PaddingBottom: var(--#{$data-list}--m-compact__cell--md--PaddingBottom);
+  --#{$data-list}--m-compact__cell-cell--PaddingTop: var(--#{$data-list}--m-compact__cell-cell--md--PaddingTop);
+
+  @media screen and (min-width: $pf-v5-global--breakpoint--xl) {
+    --#{$data-list}__item-row--PaddingRight: var(--#{$data-list}__item-row--xl--PaddingRight);
+    --#{$data-list}__item-row--PaddingLeft: var(--#{$data-list}__item-row--xl--PaddingLeft);
+    --#{$data-list}__expandable-content-body--PaddingRight: var(--#{$data-list}__expandable-content-body--xl--PaddingRight);
+    --#{$data-list}__expandable-content-body--PaddingLeft: var(--#{$data-list}__expandable-content-body--xl--PaddingLeft);
+  }
+
+  .#{$data-list}__item-content {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    padding-block-end: var(--#{$data-list}__item-content--md--PaddingBottom);
+  }
+
+  .#{$data-list}__cell {
+    // stylelint-disable selector-not-notation
+    // update to single :not() in breaking change
+    &:not(:last-child):not(.pf-m-icon) {
+      margin-inline-end: var(--#{$data-list}__cell--MarginRight);
+    }
+
+    // for all subsequent .#{$data-list}__cell's, set to full width
+    & + .#{$data-list}__cell {
+      flex: 1;
+      order: initial;
+    }
+
+    &.pf-m-align-right {
+      margin-inline-start: auto;
+    }
+
+    &.pf-m-no-fill {
+      flex: none;
+    }
+
+    &.pf-m-flex-2 { flex-grow: 2; }
+    &.pf-m-flex-3 { flex-grow: 3; }
+    &.pf-m-flex-4 { flex-grow: 4; }
+    &.pf-m-flex-5 { flex-grow: 5; }
+  }
+
+  .#{$data-list}__expandable-content {
+    max-height: initial;
+    overflow-y: visible;
+  }
+}

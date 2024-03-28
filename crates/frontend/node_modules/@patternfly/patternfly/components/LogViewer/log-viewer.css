@@ -1,0 +1,197 @@
+.pf-v5-c-log-viewer.pf-m-dark .pf-v5-c-log-viewer__main {
+  --pf-v5-global--Color--100: var(--pf-v5-global--Color--light-100);
+  --pf-v5-global--Color--200: var(--pf-v5-global--Color--light-200);
+  --pf-v5-global--BorderColor--100: var(--pf-v5-global--BorderColor--light-100);
+  --pf-v5-global--primary-color--100: var(--pf-v5-global--primary-color--light-100);
+  --pf-v5-global--link--Color: var(--pf-v5-global--link--Color--light);
+  --pf-v5-global--link--Color--hover: var(--pf-v5-global--link--Color--light);
+  --pf-v5-global--BackgroundColor--100: var(--pf-v5-global--BackgroundColor--dark-100);
+  --pf-v5-global--icon--Color--light: var(--pf-v5-global--icon--Color--light--light);
+  --pf-v5-global--icon--Color--dark: var(--pf-v5-global--icon--Color--dark--light);
+}
+.pf-v5-c-log-viewer.pf-m-dark .pf-v5-c-log-viewer__main .pf-v5-c-button {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--pf-v5-global--primary-color--dark-100);
+}
+
+.pf-v5-c-log-viewer {
+  --pf-v5-c-log-viewer--Height: 100%;
+  --pf-v5-c-log-viewer--MaxHeight: auto;
+  --pf-v5-c-log-viewer--m-line-numbers__index--Display: inline;
+  --pf-v5-c-log-viewer__header--MarginBottom: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-log-viewer__main--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+  --pf-v5-c-log-viewer__main--BorderWidth: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-log-viewer__main--BorderColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-log-viewer__scroll-container--Height: 37.5rem;
+  --pf-v5-c-log-viewer__scroll-container--PaddingTop: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-log-viewer__scroll-container--PaddingBottom: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-log-viewer--m-line-numbers__main--before--Top: 0;
+  --pf-v5-c-log-viewer--m-line-numbers__main--before--Bottom: 0;
+  --pf-v5-c-log-viewer--m-line-numbers__main--before--Width: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-log-viewer--m-line-numbers__main--before--BackgroundColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-log-viewer__list--Height: auto;
+  --pf-v5-c-log-viewer--m-line-numbers__list--Left: var(--pf-v5-c-log-viewer__index--Width);
+  --pf-v5-c-log-viewer__list--FontFamily: var(--pf-v5-global--FontFamily--monospace);
+  --pf-v5-c-log-viewer__list--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-log-viewer__index--Display: none;
+  --pf-v5-c-log-viewer__index--Width: 4.0625rem;
+  --pf-v5-c-log-viewer__index--PaddingRight: var(--pf-v5-global--spacer--xl);
+  --pf-v5-c-log-viewer__index--PaddingLeft: var(--pf-v5-global--spacer--lg);
+  --pf-v5-c-log-viewer__index--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-log-viewer__index--BackgroundColor: transparent;
+  --pf-v5-c-log-viewer--line-number-chars: 4.4;
+  --pf-v5-c-log-viewer--m-line-number-chars__index--PaddingRight: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-log-viewer--m-line-number-chars__index--Width: calc(1ch * var(--pf-v5-c-log-viewer--line-number-chars) + var(--pf-v5-c-log-viewer__index--PaddingRight) + var(--pf-v5-c-log-viewer__index--PaddingLeft));
+  --pf-v5-c-log-viewer__text--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-log-viewer__text--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-log-viewer__text--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-log-viewer__text--WordBreak: break-all;
+  --pf-v5-c-log-viewer__text--WhiteSpace: break-spaces;
+  --pf-v5-c-log-viewer__text--LineBreak: anywhere;
+  --pf-v5-c-log-viewer--m-nowrap__text--WhiteSpace: nowrap;
+  --pf-v5-c-log-viewer__string--m-match--Color: var(--pf-v5-global--palette--gold-700);
+  --pf-v5-c-log-viewer__string--m-match--BackgroundColor: var(--pf-v5-global--palette--gold-100);
+  --pf-v5-c-log-viewer__string--m-current--Color: var(--pf-v5-global--palette--gold-700);
+  --pf-v5-c-log-viewer__string--m-current--BackgroundColor: var(--pf-v5-global--palette--gold-400);
+  --pf-v5-c-log-viewer__timestamp--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-log-viewer--c-toolbar--PaddingTop: 0;
+  --pf-v5-c-log-viewer--c-toolbar--PaddingBottom: 0;
+  --pf-v5-c-log-viewer--c-toolbar__content--PaddingRight: 0;
+  --pf-v5-c-log-viewer--c-toolbar__content--PaddingLeft: 0;
+  --pf-v5-c-log-viewer--c-toolbar__group--m-toggle-group--spacer: 0;
+  --pf-v5-c-log-viewer--c-toolbar__group--m-toggle-group--m-show--spacer: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-log-viewer--m-dark__main--BorderWidth: 0;
+  display: flex;
+  flex-direction: column;
+  height: var(--pf-v5-c-log-viewer--Height);
+  max-height: var(--pf-v5-c-log-viewer--MaxHeight);
+}
+.pf-v5-c-log-viewer.pf-m-dark {
+  --pf-v5-c-log-viewer__main--BorderWidth: var(--pf-v5-c-log-viewer--m-dark__main--BorderWidth);
+}
+.pf-v5-c-log-viewer.pf-m-dark .pf-v5-c-log-viewer__main {
+  color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-log-viewer__main--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+  --pf-v5-c-log-viewer__main--BorderColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-log-viewer__text--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-log-viewer__index--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-log-viewer--m-line-numbers__main--before--BackgroundColor: var(--pf-v5-global--BorderColor--100);
+}
+.pf-v5-c-log-viewer.pf-m-wrap-text {
+  word-break: break-all;
+}
+.pf-v5-c-log-viewer.pf-m-nowrap {
+  --pf-v5-c-log-viewer__text--WhiteSpace: var(--pf-v5-c-log-viewer--m-nowrap__text--WhiteSpace);
+}
+.pf-v5-c-log-viewer.pf-m-line-numbers {
+  --pf-v5-c-log-viewer__index--Display: var(--pf-v5-c-log-viewer--m-line-numbers__index--Display);
+}
+.pf-v5-c-log-viewer.pf-m-line-numbers .pf-v5-c-log-viewer__list {
+  position: absolute;
+  inset-inline-start: var(--pf-v5-c-log-viewer--m-line-numbers__list--Left);
+  inset-inline-end: 0;
+}
+.pf-v5-c-log-viewer.pf-m-line-numbers .pf-v5-c-log-viewer__list::before {
+  position: absolute;
+  inset-block-start: var(--pf-v5-c-log-viewer--m-line-numbers__main--before--Top);
+  inset-block-end: var(--pf-v5-c-log-viewer--m-line-numbers__main--before--Bottom);
+  inset-inline-start: 0;
+  width: var(--pf-v5-c-log-viewer--m-line-numbers__main--before--Width);
+  content: "";
+  background: var(--pf-v5-c-log-viewer--m-line-numbers__main--before--BackgroundColor);
+}
+.pf-v5-c-log-viewer.pf-m-line-number-chars {
+  --pf-v5-c-log-viewer__index--PaddingRight: var(--pf-v5-c-log-viewer--m-line-number-chars__index--PaddingRight);
+  --pf-v5-c-log-viewer__index--Width: var(--pf-v5-c-log-viewer--m-line-number-chars__index--Width);
+}
+.pf-v5-c-log-viewer .pf-v5-c-toolbar {
+  --pf-v5-c-toolbar--PaddingTop: var(--pf-v5-c-log-viewer--c-toolbar--PaddingTop);
+  --pf-v5-c-toolbar--PaddingBottom: var(--pf-v5-c-log-viewer--c-toolbar--PaddingBottom);
+  --pf-v5-c-toolbar__content--PaddingRight: var(--pf-v5-c-log-viewer--c-toolbar__content--PaddingRight);
+  --pf-v5-c-toolbar__content--PaddingLeft: var(--pf-v5-c-log-viewer--c-toolbar__content--PaddingLeft);
+  --pf-v5-c-toolbar__group--m-toggle-group--spacer: 0;
+  --pf-v5-c-toolbar__group--m-toggle-group--m-show--spacer: var(--pf-v5-c-log-viewer--c-toolbar__group--m-toggle-group--m-show--spacer);
+}
+.pf-v5-c-log-viewer .pf-v5-c-toolbar__content-section {
+  flex-wrap: nowrap;
+}
+
+.pf-v5-c-log-viewer__header {
+  margin-block-end: var(--pf-v5-c-log-viewer__header--MarginBottom);
+}
+
+.pf-v5-c-log-viewer__main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background-color: var(--pf-v5-c-log-viewer__main--BackgroundColor);
+  border: var(--pf-v5-c-log-viewer__main--BorderWidth) solid var(--pf-v5-c-log-viewer__main--BorderColor);
+}
+
+.pf-v5-c-log-viewer__scroll-container {
+  position: relative;
+  height: var(--pf-v5-c-log-viewer__scroll-container--Height);
+  padding-block-start: var(--pf-v5-c-log-viewer__scroll-container--PaddingTop);
+  padding-block-end: var(--pf-v5-c-log-viewer__scroll-container--PaddingBottom);
+  overflow: auto;
+  will-change: transform;
+  direction: ltr;
+}
+
+.pf-v5-c-log-viewer__list {
+  position: relative;
+  height: var(--pf-v5-c-log-viewer__list--Height);
+  font-family: var(--pf-v5-c-log-viewer__list--FontFamily);
+  font-size: var(--pf-v5-c-log-viewer__list--FontSize);
+}
+
+.pf-v5-c-log-viewer__list-item {
+  inset-inline-start: 0;
+  width: 100%;
+}
+
+.pf-v5-c-log-viewer__string.pf-m-match {
+  color: var(--pf-v5-c-log-viewer__string--m-match--Color, inherit);
+  background-color: var(--pf-v5-c-log-viewer__string--m-match--BackgroundColor);
+}
+.pf-v5-c-log-viewer__string.pf-m-current {
+  color: var(--pf-v5-c-log-viewer__string--m-current--Color, inherit);
+  background-color: var(--pf-v5-c-log-viewer__string--m-current--BackgroundColor);
+}
+
+.pf-v5-c-log-viewer__index {
+  position: fixed;
+  inset-inline-start: 0;
+  display: var(--pf-v5-c-log-viewer__index--Display);
+  width: var(--pf-v5-c-log-viewer__index--Width);
+  padding-inline-start: var(--pf-v5-c-log-viewer__index--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-log-viewer__index--PaddingRight);
+  font-family: var(--pf-v5-c-log-viewer__index--FontFamily, inherit);
+  font-size: var(--pf-v5-c-log-viewer__index--FontSize, inherit);
+  color: var(--pf-v5-c-log-viewer__index--Color);
+  user-select: none;
+  background-color: var(--pf-v5-c-log-viewer__index--BackgroundColor);
+}
+
+.pf-v5-c-log-viewer__text {
+  display: block;
+  padding-inline-start: var(--pf-v5-c-log-viewer__text--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-log-viewer__text--PaddingRight);
+  font-family: var(--pf-v5-c-log-viewer__text--FontFamily, inherit);
+  font-size: var(--pf-v5-c-log-viewer__text--FontSize, inherit);
+  color: var(--pf-v5-c-log-viewer__text--Color);
+  word-break: var(--pf-v5-c-log-viewer__text--WordBreak);
+  white-space: var(--pf-v5-c-log-viewer__text--WhiteSpace);
+  line-break: var(--pf-v5-c-log-viewer__text--LineBreak);
+}
+
+.pf-v5-c-log-viewer__timestamp {
+  font-weight: var(--pf-v5-c-log-viewer__timestamp--FontWeight);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-log-viewer.pf-m-dark .pf-v5-c-log-viewer__main .pf-v5-c-button {
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--pf-v5-global--primary-color--300);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-log-viewer.pf-m-dark .pf-v5-c-log-viewer__main {
+  color: var(--pf-v5-global--Color--100);
+}

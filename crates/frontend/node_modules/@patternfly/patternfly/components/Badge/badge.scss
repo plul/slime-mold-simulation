@@ -1,0 +1,47 @@
+// @debug $badge; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$badge} {
+  // Component
+  --#{$badge}--BorderRadius: var(--#{$pf-global}--BorderRadius--lg);
+  --#{$badge}--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$badge}--FontWeight: var(--#{$pf-global}--FontWeight--bold);
+  --#{$badge}--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$badge}--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$badge}--Color: var(--#{$pf-global}--Color--dark-100);
+  --#{$badge}--MinWidth: var(--#{$pf-global}--spacer--xl);
+
+  // Modifiers
+  --#{$badge}--m-read--BackgroundColor: var(--#{$pf-global}--BackgroundColor--200);
+  --#{$badge}--m-read--Color: var(--#{$pf-global}--Color--dark-100);
+  --#{$badge}--m-unread--BackgroundColor: var(--#{$pf-global}--primary-color--100);
+  --#{$badge}--m-unread--Color: var(--#{$pf-global}--Color--light-100);
+
+  display: inline-block;
+  min-width: var(--#{$badge}--MinWidth);
+  padding-inline-start: var(--#{$badge}--PaddingLeft);
+  padding-inline-end: var(--#{$badge}--PaddingRight);
+  font-size: var(--#{$badge}--FontSize);
+  font-weight: var(--#{$badge}--FontWeight);
+  color: var(--#{$badge}--Color);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--#{$badge}--BackgroundColor);
+  border-radius: var(--#{$badge}--BorderRadius);
+
+  &.pf-m-read {
+    --#{$badge}--Color: var(--#{$badge}--m-read--Color);
+    --#{$badge}--BackgroundColor: var(--#{$badge}--m-read--BackgroundColor);
+  }
+
+  &.pf-m-unread {
+    --#{$badge}--Color: var(--#{$badge}--m-unread--Color);
+    --#{$badge}--BackgroundColor: var(--#{$badge}--m-unread--BackgroundColor);
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/badge";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-badge;
+}

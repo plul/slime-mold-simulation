@@ -1,0 +1,27 @@
+.pf-v5-c-action-list {
+  --pf-v5-c-action-list--m-icon--spacer: 0;
+  --pf-v5-c-action-list--child--spacer-base: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-action-list--group--spacer-base: var(--pf-v5-global--spacer--2xl);
+}
+
+.pf-v5-c-action-list,
+.pf-v5-c-action-list__group {
+  --pf-v5-c-action-list--child--spacer: var(--pf-v5-c-action-list--child--spacer-base);
+  --pf-v5-c-action-list--group--spacer: var(--pf-v5-c-action-list--group--spacer-base);
+  display: flex;
+  align-items: center;
+}
+.pf-v5-c-action-list > * + *,
+.pf-v5-c-action-list__group > * + * {
+  margin-inline-start: var(--pf-v5-c-action-list--child--spacer);
+}
+.pf-v5-c-action-list > * + .pf-v5-c-action-list__group,
+.pf-v5-c-action-list .pf-v5-c-action-list__group + *,
+.pf-v5-c-action-list__group > * + .pf-v5-c-action-list__group,
+.pf-v5-c-action-list__group .pf-v5-c-action-list__group + * {
+  margin-inline-start: var(--pf-v5-c-action-list--group--spacer);
+}
+.pf-v5-c-action-list.pf-m-icons,
+.pf-v5-c-action-list__group.pf-m-icons {
+  --pf-v5-c-action-list--child--spacer: var(--pf-v5-c-action-list--m-icon--spacer);
+}

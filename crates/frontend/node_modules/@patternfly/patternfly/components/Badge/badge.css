@@ -1,0 +1,38 @@
+.pf-v5-c-badge {
+  --pf-v5-c-badge--BorderRadius: var(--pf-v5-global--BorderRadius--lg);
+  --pf-v5-c-badge--FontSize: var(--pf-v5-global--FontSize--xs);
+  --pf-v5-c-badge--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-badge--PaddingRight: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-badge--PaddingLeft: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-badge--Color: var(--pf-v5-global--Color--dark-100);
+  --pf-v5-c-badge--MinWidth: var(--pf-v5-global--spacer--xl);
+  --pf-v5-c-badge--m-read--BackgroundColor: var(--pf-v5-global--BackgroundColor--200);
+  --pf-v5-c-badge--m-read--Color: var(--pf-v5-global--Color--dark-100);
+  --pf-v5-c-badge--m-unread--BackgroundColor: var(--pf-v5-global--primary-color--100);
+  --pf-v5-c-badge--m-unread--Color: var(--pf-v5-global--Color--light-100);
+  display: inline-block;
+  min-width: var(--pf-v5-c-badge--MinWidth);
+  padding-inline-start: var(--pf-v5-c-badge--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-badge--PaddingRight);
+  font-size: var(--pf-v5-c-badge--FontSize);
+  font-weight: var(--pf-v5-c-badge--FontWeight);
+  color: var(--pf-v5-c-badge--Color);
+  text-align: center;
+  white-space: nowrap;
+  background-color: var(--pf-v5-c-badge--BackgroundColor);
+  border-radius: var(--pf-v5-c-badge--BorderRadius);
+}
+.pf-v5-c-badge.pf-m-read {
+  --pf-v5-c-badge--Color: var(--pf-v5-c-badge--m-read--Color);
+  --pf-v5-c-badge--BackgroundColor: var(--pf-v5-c-badge--m-read--BackgroundColor);
+}
+.pf-v5-c-badge.pf-m-unread {
+  --pf-v5-c-badge--Color: var(--pf-v5-c-badge--m-unread--Color);
+  --pf-v5-c-badge--BackgroundColor: var(--pf-v5-c-badge--m-unread--BackgroundColor);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-badge {
+  --pf-v5-c-badge--m-read--BackgroundColor: var(--pf-v5-global--palette--black-500);
+  --pf-v5-c-badge--m-unread--Color: var(--pf-v5-global--primary-color--400);
+  --pf-v5-c-badge--m-unread--BackgroundColor: var(--pf-v5-global--primary-color--300);
+}

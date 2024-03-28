@@ -1,0 +1,534 @@
+@font-face {
+  font-family: "pf-v5-pficon";
+  src: url("./assets/pficon/pf-v5-pficon.woff2") format("woff2");
+}
+.pf-v5-pficon-zone:before, .pf-v5-pficon-warning-triangle:before, .pf-v5-pficon-volume:before, .pf-v5-pficon-virtual-machine:before, .pf-v5-pficon-users:before, .pf-v5-pficon-user:before, .pf-v5-pficon-unplugged:before, .pf-v5-pficon-unlocked:before, .pf-v5-pficon-unknown:before, .pf-v5-pficon-trend-up:before, .pf-v5-pficon-trend-down:before, .pf-v5-pficon-treeview:before, .pf-v5-pficon-topology:before, .pf-v5-pficon-thumb-tack:before, .pf-v5-pficon-tenant:before, .pf-v5-pficon-task:before, .pf-v5-pficon-storage-domain:before, .pf-v5-pficon-spinner2:before, .pf-v5-pficon-spinner:before, .pf-v5-pficon-services:before, .pf-v5-pficon-service:before, .pf-v5-pficon-service-catalog:before, .pf-v5-pficon-server:before, .pf-v5-pficon-server-group:before, .pf-v5-pficon-security:before, .pf-v5-pficon-screen:before, .pf-v5-pficon-save:before, .pf-v5-pficon-running:before, .pf-v5-pficon-resources-full:before, .pf-v5-pficon-resources-empty:before, .pf-v5-pficon-resources-almost-full:before, .pf-v5-pficon-resources-almost-empty:before, .pf-v5-pficon-resource-pool:before, .pf-v5-pficon-repository:before, .pf-v5-pficon-replicator:before, .pf-v5-pficon-remove2:before, .pf-v5-pficon-registry:before, .pf-v5-pficon-regions:before, .pf-v5-pficon-rebooting:before, .pf-v5-pficon-rebalance:before, .pf-v5-pficon-project:before, .pf-v5-pficon-process-automation:before, .pf-v5-pficon-private:before, .pf-v5-pficon-print:before, .pf-v5-pficon-port:before, .pf-v5-pficon-plugged:before, .pf-v5-pficon-pficon-vcenter:before, .pf-v5-pficon-pficon-template:before, .pf-v5-pficon-pficon-sort-common-desc:before, .pf-v5-pficon-pficon-sort-common-asc:before, .pf-v5-pficon-pficon-satellite:before, .pf-v5-pficon-pficon-network-range:before, .pf-v5-pficon-pficon-history:before, .pf-v5-pficon-pficon-dragdrop:before, .pf-v5-pficon-pending:before, .pf-v5-pficon-paused:before, .pf-v5-pficon-panel-open:before, .pf-v5-pficon-panel-close:before, .pf-v5-pficon-package:before, .pf-v5-pficon-os-image:before, .pf-v5-pficon-orders:before, .pf-v5-pficon-optimize:before, .pf-v5-pficon-openstack:before, .pf-v5-pficon-openshift:before, .pf-v5-pficon-open-drawer-right:before, .pf-v5-pficon-on:before, .pf-v5-pficon-on-running:before, .pf-v5-pficon-ok:before, .pf-v5-pficon-off:before, .pf-v5-pficon-not-started:before, .pf-v5-pficon-new-process:before, .pf-v5-pficon-network:before, .pf-v5-pficon-namespaces:before, .pf-v5-pficon-multicluster:before, .pf-v5-pficon-monitoring:before, .pf-v5-pficon-module:before, .pf-v5-pficon-migration:before, .pf-v5-pficon-middleware:before, .pf-v5-pficon-messages:before, .pf-v5-pficon-memory:before, .pf-v5-pficon-maintenance:before, .pf-v5-pficon-locked:before, .pf-v5-pficon-key:before, .pf-v5-pficon-integration:before, .pf-v5-pficon-infrastructure:before, .pf-v5-pficon-info:before, .pf-v5-pficon-in-progress:before, .pf-v5-pficon-import:before, .pf-v5-pficon-home:before, .pf-v5-pficon-history:before, .pf-v5-pficon-help:before, .pf-v5-pficon-globe-route:before, .pf-v5-pficon-folder-open:before, .pf-v5-pficon-folder-close:before, .pf-v5-pficon-flavor:before, .pf-v5-pficon-filter:before, .pf-v5-pficon-export:before, .pf-v5-pficon-error-circle-o:before, .pf-v5-pficon-equalizer:before, .pf-v5-pficon-enterprise:before, .pf-v5-pficon-enhancement:before, .pf-v5-pficon-edit:before, .pf-v5-pficon-domain:before, .pf-v5-pficon-disconnected:before, .pf-v5-pficon-degraded:before, .pf-v5-pficon-data-source:before, .pf-v5-pficon-data-sink:before, .pf-v5-pficon-data-processor:before, .pf-v5-pficon-critical-risk:before, .pf-v5-pficon-cpu:before, .pf-v5-pficon-container-node:before, .pf-v5-pficon-connected:before, .pf-v5-pficon-cluster:before, .pf-v5-pficon-cloud-tenant:before, .pf-v5-pficon-cloud-security:before, .pf-v5-pficon-close:before, .pf-v5-pficon-chat:before, .pf-v5-pficon-catalog:before, .pf-v5-pficon-bundle:before, .pf-v5-pficon-builder-image:before, .pf-v5-pficon-build:before, .pf-v5-pficon-blueprint:before, .pf-v5-pficon-bell:before, .pf-v5-pficon-automation:before, .pf-v5-pficon-attention-bell:before, .pf-v5-pficon-asleep:before, .pf-v5-pficon-arrow:before, .pf-v5-pficon-applications:before, .pf-v5-pficon-ansible-tower:before, .pf-v5-pficon-add-circle-o:before {
+  font-family: "pf-v5-pficon";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.pf-v5-pficon-add-circle-o:before {
+  content: "\e61b";
+}
+
+.pf-v5-pficon-ansible-tower:before {
+  content: "\e950";
+}
+
+.pf-v5-pficon-applications:before {
+  content: "\e936";
+}
+
+.pf-v5-pficon-arrow:before {
+  content: "\e929";
+}
+
+.pf-v5-pficon-asleep:before {
+  content: "\e92e";
+}
+
+.pf-v5-pficon-attention-bell:before {
+  content: "\e951";
+}
+
+.pf-v5-pficon-automation:before {
+  content: "\e937";
+}
+
+.pf-v5-pficon-bell:before {
+  content: "\e952";
+}
+
+.pf-v5-pficon-blueprint:before {
+  content: "\e915";
+}
+
+.pf-v5-pficon-build:before {
+  content: "\e902";
+}
+
+.pf-v5-pficon-builder-image:before {
+  content: "\e800";
+}
+
+.pf-v5-pficon-bundle:before {
+  content: "\e918";
+}
+
+.pf-v5-pficon-catalog:before {
+  content: "\e953";
+}
+
+.pf-v5-pficon-chat:before {
+  content: "\e954";
+}
+
+.pf-v5-pficon-close:before {
+  content: "\e60b";
+}
+
+.pf-v5-pficon-cloud-security:before {
+  content: "\e903";
+}
+
+.pf-v5-pficon-cloud-tenant:before {
+  content: "\e904";
+}
+
+.pf-v5-pficon-cluster:before {
+  content: "\e620";
+}
+
+.pf-v5-pficon-connected:before {
+  content: "\e938";
+}
+
+.pf-v5-pficon-container-node:before {
+  content: "\e621";
+}
+
+.pf-v5-pficon-cpu:before {
+  content: "\e927";
+}
+
+.pf-v5-pficon-critical-risk:before {
+  content: "\e976";
+}
+
+.pf-v5-pficon-data-processor:before {
+  content: "\e97b";
+}
+
+.pf-v5-pficon-data-sink:before {
+  content: "\e978";
+}
+
+.pf-v5-pficon-data-source:before {
+  content: "\e979";
+}
+
+.pf-v5-pficon-degraded:before {
+  content: "\e91b";
+}
+
+.pf-v5-pficon-disconnected:before {
+  content: "\e955";
+}
+
+.pf-v5-pficon-domain:before {
+  content: "\e919";
+}
+
+.pf-v5-pficon-edit:before {
+  content: "\e60a";
+}
+
+.pf-v5-pficon-enhancement:before {
+  content: "\e93a";
+}
+
+.pf-v5-pficon-enterprise:before {
+  content: "\e906";
+}
+
+.pf-v5-pficon-equalizer:before {
+  content: "\e956";
+}
+
+.pf-v5-pficon-error-circle-o:before {
+  content: "\e926";
+}
+
+.pf-v5-pficon-export:before {
+  content: "\e616";
+}
+
+.pf-v5-pficon-filter:before {
+  content: "\e943";
+}
+
+.pf-v5-pficon-flavor:before {
+  content: "\e957";
+}
+
+.pf-v5-pficon-folder-close:before {
+  content: "\e607";
+}
+
+.pf-v5-pficon-folder-open:before {
+  content: "\e606";
+}
+
+.pf-v5-pficon-globe-route:before {
+  content: "\e958";
+}
+
+.pf-v5-pficon-help:before {
+  content: "\e605";
+}
+
+.pf-v5-pficon-history:before {
+  content: "\e617";
+}
+
+.pf-v5-pficon-home:before {
+  content: "\e618";
+}
+
+.pf-v5-pficon-import:before {
+  content: "\e615";
+}
+
+.pf-v5-pficon-in-progress:before {
+  content: "\e933";
+}
+
+.pf-v5-pficon-info:before {
+  content: "\e92b";
+}
+
+.pf-v5-pficon-infrastructure:before {
+  content: "\e93d";
+}
+
+.pf-v5-pficon-integration:before {
+  content: "\e948";
+}
+
+.pf-v5-pficon-key:before {
+  content: "\e924";
+}
+
+.pf-v5-pficon-locked:before {
+  content: "\e923";
+}
+
+.pf-v5-pficon-maintenance:before {
+  content: "\e932";
+}
+
+.pf-v5-pficon-memory:before {
+  content: "\e908";
+}
+
+.pf-v5-pficon-messages:before {
+  content: "\e603";
+}
+
+.pf-v5-pficon-middleware:before {
+  content: "\e917";
+}
+
+.pf-v5-pficon-migration:before {
+  content: "\e931";
+}
+
+.pf-v5-pficon-module:before {
+  content: "\e959";
+}
+
+.pf-v5-pficon-monitoring:before {
+  content: "\e95a";
+}
+
+.pf-v5-pficon-multicluster:before {
+  content: "\e97c";
+}
+
+.pf-v5-pficon-namespaces:before {
+  content: "\e95b";
+}
+
+.pf-v5-pficon-network:before {
+  content: "\e909";
+}
+
+.pf-v5-pficon-new-process:before {
+  content: "\e95c";
+}
+
+.pf-v5-pficon-not-started:before {
+  content: "\e95d";
+}
+
+.pf-v5-pficon-off:before {
+  content: "\e92d";
+}
+
+.pf-v5-pficon-ok:before {
+  content: "\e602";
+}
+
+.pf-v5-pficon-on-running:before {
+  content: "\e925";
+}
+
+.pf-v5-pficon-on:before {
+  content: "\e92c";
+}
+
+.pf-v5-pficon-open-drawer-right:before {
+  content: "\e977";
+}
+
+.pf-v5-pficon-openshift:before {
+  content: "\e95e";
+}
+
+.pf-v5-pficon-openstack:before {
+  content: "\e95f";
+}
+
+.pf-v5-pficon-optimize:before {
+  content: "\e93e";
+}
+
+.pf-v5-pficon-orders:before {
+  content: "\e93f";
+}
+
+.pf-v5-pficon-os-image:before {
+  content: "\e960";
+}
+
+.pf-v5-pficon-package:before {
+  content: "\e961";
+}
+
+.pf-v5-pficon-panel-close:before {
+  content: "\e962";
+}
+
+.pf-v5-pficon-panel-open:before {
+  content: "\e963";
+}
+
+.pf-v5-pficon-paused:before {
+  content: "\e92f";
+}
+
+.pf-v5-pficon-pending:before {
+  content: "\e964";
+}
+
+.pf-v5-pficon-pficon-dragdrop:before {
+  content: "\e965";
+}
+
+.pf-v5-pficon-pficon-history:before {
+  content: "\e966";
+}
+
+.pf-v5-pficon-pficon-network-range:before {
+  content: "\e967";
+}
+
+.pf-v5-pficon-pficon-satellite:before {
+  content: "\e968";
+}
+
+.pf-v5-pficon-pficon-sort-common-asc:before {
+  content: "\e94e";
+}
+
+.pf-v5-pficon-pficon-sort-common-desc:before {
+  content: "\e94f";
+}
+
+.pf-v5-pficon-pficon-template:before {
+  content: "\e94c";
+}
+
+.pf-v5-pficon-pficon-vcenter:before {
+  content: "\e969";
+}
+
+.pf-v5-pficon-plugged:before {
+  content: "\e96a";
+}
+
+.pf-v5-pficon-port:before {
+  content: "\e96b";
+}
+
+.pf-v5-pficon-print:before {
+  content: "\e612";
+}
+
+.pf-v5-pficon-private:before {
+  content: "\e914";
+}
+
+.pf-v5-pficon-process-automation:before {
+  content: "\e949";
+}
+
+.pf-v5-pficon-project:before {
+  content: "\e96c";
+}
+
+.pf-v5-pficon-rebalance:before {
+  content: "\e91c";
+}
+
+.pf-v5-pficon-rebooting:before {
+  content: "\e96d";
+}
+
+.pf-v5-pficon-regions:before {
+  content: "\e90a";
+}
+
+.pf-v5-pficon-registry:before {
+  content: "\e623";
+}
+
+.pf-v5-pficon-remove2:before {
+  content: "\e96e";
+}
+
+.pf-v5-pficon-replicator:before {
+  content: "\e624";
+}
+
+.pf-v5-pficon-repository:before {
+  content: "\e90b";
+}
+
+.pf-v5-pficon-resource-pool:before {
+  content: "\e90c";
+}
+
+.pf-v5-pficon-resources-almost-empty:before {
+  content: "\e91d";
+}
+
+.pf-v5-pficon-resources-almost-full:before {
+  content: "\e912";
+}
+
+.pf-v5-pficon-resources-empty:before {
+  content: "\e96f";
+}
+
+.pf-v5-pficon-resources-full:before {
+  content: "\e913";
+}
+
+.pf-v5-pficon-running:before {
+  content: "\e970";
+}
+
+.pf-v5-pficon-save:before {
+  content: "\e601";
+}
+
+.pf-v5-pficon-screen:before {
+  content: "\e971";
+}
+
+.pf-v5-pficon-security:before {
+  content: "\e946";
+}
+
+.pf-v5-pficon-server-group:before {
+  content: "\e91a";
+}
+
+.pf-v5-pficon-server:before {
+  content: "\e90d";
+}
+
+.pf-v5-pficon-service-catalog:before {
+  content: "\e972";
+}
+
+.pf-v5-pficon-service:before {
+  content: "\e61e";
+}
+
+.pf-v5-pficon-services:before {
+  content: "\e947";
+}
+
+.pf-v5-pficon-spinner:before {
+  content: "\e973";
+}
+
+.pf-v5-pficon-spinner2:before {
+  content: "\e613";
+}
+
+.pf-v5-pficon-storage-domain:before {
+  content: "\e90e";
+}
+
+.pf-v5-pficon-task:before {
+  content: "\e974";
+}
+
+.pf-v5-pficon-tenant:before {
+  content: "\e916";
+}
+
+.pf-v5-pficon-thumb-tack:before {
+  content: "\e920";
+}
+
+.pf-v5-pficon-topology:before {
+  content: "\e608";
+}
+
+.pf-v5-pficon-treeview:before {
+  content: "\e97d";
+}
+
+.pf-v5-pficon-trend-down:before {
+  content: "\e900";
+}
+
+.pf-v5-pficon-trend-up:before {
+  content: "\e901";
+}
+
+.pf-v5-pficon-unknown:before {
+  content: "\e935";
+}
+
+.pf-v5-pficon-unlocked:before {
+  content: "\e922";
+}
+
+.pf-v5-pficon-unplugged:before {
+  content: "\e942";
+}
+
+.pf-v5-pficon-user:before {
+  content: "\e91e";
+}
+
+.pf-v5-pficon-users:before {
+  content: "\e91f";
+}
+
+.pf-v5-pficon-virtual-machine:before {
+  content: "\e90f";
+}
+
+.pf-v5-pficon-volume:before {
+  content: "\e910";
+}
+
+.pf-v5-pficon-warning-triangle:before {
+  content: "\e975";
+}
+
+.pf-v5-pficon-zone:before {
+  content: "\e911";
+}

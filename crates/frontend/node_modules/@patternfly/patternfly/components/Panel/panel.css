@@ -1,0 +1,90 @@
+.pf-v5-c-panel {
+  --pf-v5-c-panel--Width: auto;
+  --pf-v5-c-panel--MinWidth: auto;
+  --pf-v5-c-panel--MaxWidth: none;
+  --pf-v5-c-panel--ZIndex: auto;
+  --pf-v5-c-panel--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+  --pf-v5-c-panel--BoxShadow: none;
+  --pf-v5-c-panel--before--BorderWidth: 0;
+  --pf-v5-c-panel--before--BorderColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-panel--m-bordered--before--BorderWidth: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-panel--m-raised--BoxShadow: var(--pf-v5-global--BoxShadow--md);
+  --pf-v5-c-panel--m-raised--ZIndex: var(--pf-v5-global--ZIndex--sm);
+  --pf-v5-c-panel--m-raised--BackgroundColor: var(--pf-v5-global--BackgroundColor--100);
+  --pf-v5-c-panel__header--PaddingTop: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__header--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__header--PaddingBottom: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__header--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__main--MaxHeight: none;
+  --pf-v5-c-panel__main--Overflow: visible;
+  --pf-v5-c-panel__main-body--PaddingTop: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__main-body--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__main-body--PaddingBottom: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__main-body--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__footer--PaddingTop: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__footer--PaddingRight: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__footer--PaddingBottom: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__footer--PaddingLeft: var(--pf-v5-global--spacer--md);
+  --pf-v5-c-panel__footer--BoxShadow: none;
+  --pf-v5-c-panel--m-scrollable__main--MaxHeight: 18.75rem;
+  --pf-v5-c-panel--m-scrollable__main--Overflow: auto;
+  --pf-v5-c-panel--m-scrollable__footer--BoxShadow: 0 -0.3125rem 0.25rem -0.25rem rgba(3, 3, 3, 0.16);
+  position: relative;
+  z-index: var(--pf-v5-c-panel--ZIndex);
+  width: var(--pf-v5-c-panel--Width);
+  min-width: var(--pf-v5-c-panel--MinWidth);
+  max-width: var(--pf-v5-c-panel--MaxWidth);
+  background-color: var(--pf-v5-c-panel--BackgroundColor);
+  box-shadow: var(--pf-v5-c-panel--BoxShadow);
+}
+.pf-v5-c-panel::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  border: var(--pf-v5-c-panel--before--BorderWidth) solid var(--pf-v5-c-panel--before--BorderColor);
+}
+.pf-v5-c-panel.pf-m-bordered {
+  --pf-v5-c-panel--before--BorderWidth: var(--pf-v5-c-panel--m-bordered--before--BorderWidth);
+}
+.pf-v5-c-panel.pf-m-raised {
+  --pf-v5-c-panel--BackgroundColor: var(--pf-v5-c-panel--m-raised--BackgroundColor);
+  --pf-v5-c-panel--BoxShadow: var(--pf-v5-c-panel--m-raised--BoxShadow);
+  --pf-v5-c-panel--ZIndex: var(--pf-v5-c-panel--m-raised--ZIndex);
+}
+.pf-v5-c-panel.pf-m-scrollable {
+  --pf-v5-c-panel__main--MaxHeight: var(--pf-v5-c-panel--m-scrollable__main--MaxHeight);
+  --pf-v5-c-panel__main--Overflow: var(--pf-v5-c-panel--m-scrollable__main--Overflow);
+  --pf-v5-c-panel__footer--BoxShadow: var(--pf-v5-c-panel--m-scrollable__footer--BoxShadow);
+}
+
+.pf-v5-c-panel__header {
+  padding-block-start: var(--pf-v5-c-panel__header--PaddingTop);
+  padding-block-end: var(--pf-v5-c-panel__header--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-panel__header--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-panel__header--PaddingRight);
+}
+
+.pf-v5-c-panel__main {
+  max-height: var(--pf-v5-c-panel__main--MaxHeight);
+  overflow: var(--pf-v5-c-panel__main--Overflow);
+}
+
+.pf-v5-c-panel__main-body {
+  padding-block-start: var(--pf-v5-c-panel__main-body--PaddingTop);
+  padding-block-end: var(--pf-v5-c-panel__main-body--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-panel__main-body--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-panel__main-body--PaddingRight);
+}
+
+.pf-v5-c-panel__footer {
+  padding-block-start: var(--pf-v5-c-panel__footer--PaddingTop);
+  padding-block-end: var(--pf-v5-c-panel__footer--PaddingBottom);
+  padding-inline-start: var(--pf-v5-c-panel__footer--PaddingLeft);
+  padding-inline-end: var(--pf-v5-c-panel__footer--PaddingRight);
+  box-shadow: var(--pf-v5-c-panel__footer--BoxShadow);
+}
+
+:where(.pf-v5-theme-dark) .pf-v5-c-panel {
+  --pf-v5-c-panel--m-raised--BackgroundColor: var(--pf-v5-global--BackgroundColor--300);
+}

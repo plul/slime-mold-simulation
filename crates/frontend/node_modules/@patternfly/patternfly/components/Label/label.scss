@@ -1,0 +1,487 @@
+// @debug $label; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$label} {
+  // Component
+  --#{$label}--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$label}--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$label}--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$label}--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$label}--MaxWidth: 100%;
+  --#{$label}--BorderRadius: var(--#{$pf-global}--BorderRadius--lg);
+  --#{$label}--BackgroundColor: var(--#{$pf-global}--palette--black-150);
+  --#{$label}--Color: var(--#{$pf-global}--Color--100);
+  --#{$label}--FontSize: var(--#{$pf-global}--FontSize--sm);
+
+  // Border base styles
+  --#{$label}__content--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Outline
+  --#{$label}--m-outline--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$label}--m-outline__content--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-outline__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Content as link
+  --#{$label}__content--link--hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}__content--link--focus--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--200);
+  --#{$label}__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--200);
+
+  // Outline + link
+  --#{$label}--m-outline__content--link--hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}--m-outline__content--link--focus--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Blue
+  --#{$label}--m-blue--BackgroundColor: var(--#{$pf-global}--palette--blue-50);
+  --#{$label}--m-blue__icon--Color: var(--#{$pf-global}--primary-color--100);
+  --#{$label}--m-blue__content--Color: var(--#{$pf-global}--info-color--200);
+  --#{$label}--m-blue__content--before--BorderColor: var(--#{$pf-global}--palette--blue-100);
+  --#{$label}--m-blue__content--link--hover--before--BorderColor: var(--#{$pf-global}--primary-color--100);
+  --#{$label}--m-blue__content--link--focus--before--BorderColor: var(--#{$pf-global}--primary-color--100);
+  --#{$label}--m-outline--m-blue__content--Color: var(--#{$pf-global}--primary-color--100);
+  --#{$label}--m-outline--m-blue__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-blue__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-blue__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Green
+  --#{$label}--m-green--BackgroundColor: var(--#{$pf-global}--palette--green-50);
+  --#{$label}--m-green__icon--Color: var(--#{$pf-global}--success-color--100);
+  --#{$label}--m-green__content--Color: var(--#{$pf-global}--success-color--200);
+  --#{$label}--m-green__content--before--BorderColor: var(--#{$pf-global}--palette--green-100);
+  --#{$label}--m-green__content--link--hover--before--BorderColor: var(--#{$pf-global}--success-color--100);
+  --#{$label}--m-green__content--link--focus--before--BorderColor: var(--#{$pf-global}--success-color--100);
+  --#{$label}--m-outline--m-green__content--Color: var(--#{$pf-global}--success-color--100);
+  --#{$label}--m-outline--m-green__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-green__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-green__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Orange
+  --#{$label}--m-orange--BackgroundColor: var(--#{$pf-global}--palette--orange-50);
+  --#{$label}--m-orange__icon--Color: var(--#{$pf-global}--palette--orange-300);
+  --#{$label}--m-orange__content--Color: var(--#{$pf-global}--palette--orange-700);
+  --#{$label}--m-orange__content--before--BorderColor: var(--#{$pf-global}--palette--orange-100);
+  --#{$label}--m-orange__content--link--hover--before--BorderColor: var(--#{$pf-global}--palette--orange-300);
+  --#{$label}--m-orange__content--link--focus--before--BorderColor: var(--#{$pf-global}--palette--orange-300);
+  --#{$label}--m-outline--m-orange__content--Color: var(--#{$pf-global}--palette--orange-500);
+  --#{$label}--m-outline--m-orange__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-orange__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-orange__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Red
+  --#{$label}--m-red--BackgroundColor: var(--#{$pf-global}--palette--red-50);
+  --#{$label}--m-red__icon--Color: var(--#{$pf-global}--danger-color--100);
+  --#{$label}--m-red__content--Color: var(--#{$pf-global}--palette--red-300);
+  --#{$label}--m-red__content--before--BorderColor: var(--#{$pf-global}--palette--red-100);
+  --#{$label}--m-red__content--link--hover--before--BorderColor: var(--#{$pf-global}--danger-color--100);
+  --#{$label}--m-red__content--link--focus--before--BorderColor: var(--#{$pf-global}--danger-color--100);
+  --#{$label}--m-outline--m-red__content--Color: var(--#{$pf-global}--danger-color--100);
+  --#{$label}--m-outline--m-red__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-red__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-red__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Purple
+  --#{$label}--m-purple--BackgroundColor: var(--#{$pf-global}--palette--purple-50);
+  --#{$label}--m-purple__icon--Color: var(--#{$pf-global}--palette--purple-500);
+  --#{$label}--m-purple__content--Color: var(--#{$pf-global}--palette--purple-700);
+  --#{$label}--m-purple__content--before--BorderColor: var(--#{$pf-global}--palette--purple-100);
+  --#{$label}--m-purple__content--link--hover--before--BorderColor: var(--#{$pf-global}--palette--purple-500);
+  --#{$label}--m-purple__content--link--focus--before--BorderColor: var(--#{$pf-global}--palette--purple-500);
+  --#{$label}--m-outline--m-purple__content--Color: var(--#{$pf-global}--palette--purple-500);
+  --#{$label}--m-outline--m-purple__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-purple__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-purple__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Cyan
+  --#{$label}--m-cyan--BackgroundColor: var(--#{$pf-global}--palette--cyan-50);
+  --#{$label}--m-cyan__icon--Color: var(--#{$pf-global}--custom-color--200);
+  --#{$label}--m-cyan__content--Color: var(--#{$pf-global}--custom-color--300);
+  --#{$label}--m-cyan__content--before--BorderColor: var(--#{$pf-global}--palette--cyan-100);
+  --#{$label}--m-cyan__content--link--hover--before--BorderColor: var(--#{$pf-global}--custom-color--200);
+  --#{$label}--m-cyan__content--link--focus--before--BorderColor: var(--#{$pf-global}--custom-color--200);
+  --#{$label}--m-outline--m-cyan__content--Color: var(--#{$pf-global}--palette--cyan-400);
+  --#{$label}--m-outline--m-cyan__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-cyan__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-cyan__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Gold
+  --#{$label}--m-gold--BackgroundColor: var(--#{$pf-global}--palette--gold-50);
+  --#{$label}--m-gold__icon--Color: var(--#{$pf-global}--palette--gold-400);
+  --#{$label}--m-gold__content--Color: var(--#{$pf-global}--palette--gold-700);
+  --#{$label}--m-gold__content--before--BorderColor: var(--#{$pf-global}--palette--gold-100);
+  --#{$label}--m-gold__content--link--hover--before--BorderColor: var(--#{$pf-global}--palette--gold-300);
+  --#{$label}--m-gold__content--link--focus--before--BorderColor: var(--#{$pf-global}--palette--gold-300);
+  --#{$label}--m-outline--m-gold__content--Color: var(--#{$pf-global}--palette--gold-600);
+  --#{$label}--m-outline--m-gold__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-gold__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+  --#{$label}--m-outline--m-gold__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100); // remove at breaking change
+
+  // Overflow
+  --#{$label}--m-overflow__content--Color: var(--#{$pf-global}--link--Color);
+  --#{$label}--m-overflow__content--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+  --#{$label}--m-overflow__content--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-overflow__content--before--BorderColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$label}--m-overflow__content--link--hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}--m-overflow__content--link--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$label}--m-overflow__content--link--focus--before--BorderWidth: var(--#{$pf-global}--BorderWidth--md);
+  --#{$label}--m-overflow__content--link--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--300);
+
+  // Compact
+  --#{$label}--m-compact--PaddingTop: 0;
+  --#{$label}--m-compact--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$label}--m-compact--PaddingBottom: 0;
+  --#{$label}--m-compact--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$label}--m-compact--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$label}--m-compact--m-editable--TextDecorationOffset: #{pf-size-prem(1px)};
+
+  // Content
+  --#{$label}__content--Color: var(--#{$pf-global}--Color--100);
+  --#{$label}__content--BackgroundColor: transparent;
+  --#{$label}__content--MaxWidth: 100%;
+  --#{$label}--m-outline__content--Color: var(--#{$pf-global}--Color--100);
+  --#{$label}--m-editable__content--MaxWidth: 16ch;
+
+  // Text
+  --#{$label}__text--MaxWidth: 100%;
+
+  // Icon
+  --#{$label}__icon--Color: var(--#{$pf-global}--Color--100);
+  --#{$label}__icon--MarginRight: var(--#{$pf-global}--spacer--xs);
+
+  // Actions
+  --#{$label}__actions--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$label}__actions--MarginRight: calc(var(--#{$label}__actions--c-button--PaddingRight) * -1);
+
+  // Actions button (close)
+  --#{$label}__actions--c-button--FontSize: var(--#{$pf-global}--FontSize--xs);
+  --#{$label}__actions--c-button--MarginTop: calc(var(--#{$label}__actions--c-button--PaddingTop) * -1);
+  --#{$label}__actions--c-button--MarginBottom: calc(var(--#{$label}__actions--c-button--PaddingBottom) * -1);
+  --#{$label}__actions--c-button--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$label}__actions--c-button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$label}__actions--c-button--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$label}__actions--c-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // Editable
+  --#{$label}--m-editable--Cursor: pointer;
+  --#{$label}--m-editable--TextDecoration: underline;
+  --#{$label}--m-editable--TextDecorationStyle: dashed;
+  --#{$label}--m-editable--TextDecorationThickness: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-editable--TextDecorationOffset: #{pf-size-prem(4px)};
+  --#{$label}--m-editable--TextDecorationColor: var(--#{$pf-global}--BorderColor--200);
+  --#{$label}--m-editable--hover--TextDecorationColor: var(--#{$pf-global}--Color--100);
+  --#{$label}--m-editable--focus--TextDecorationColor: var(--#{$pf-global}--Color--100);
+  --#{$label}--m-editable__content--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-editable__content--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$label}--m-editable__content--hover--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+  --#{$label}--m-editable__content--focus--before--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$pf-global}--BorderColor--100);
+
+  // Editable active
+  --#{$label}--m-editable--m-editable-active--Cursor: auto;
+  --#{$label}--m-editable--m-editable-active--TextDecoration: none;
+  --#{$label}--m-editable--m-editable-active--BackgroundColor: transparent;
+  --#{$label}--m-editable--m-editable-active__content--before--BorderWidth: 0;
+  --#{$label}--m-editable--m-editable-active__content--before--BorderColor: transparent;
+
+  position: relative;
+  max-width: var(--#{$label}--MaxWidth);
+  padding-block-start: var(--#{$label}--PaddingTop);
+  padding-block-end: var(--#{$label}--PaddingBottom);
+  padding-inline-start: var(--#{$label}--PaddingLeft);
+  padding-inline-end: var(--#{$label}--PaddingRight);
+  font-size: var(--#{$label}--FontSize);
+  color: var(--#{$label}--Color);
+  white-space: nowrap;
+  background-color: var(--#{$label}--BackgroundColor);
+  border: 0;
+  border-radius: var(--#{$label}--BorderRadius);
+
+  &.pf-m-compact {
+    --#{$label}--PaddingTop: var(--#{$label}--m-compact--PaddingTop);
+    --#{$label}--PaddingRight: var(--#{$label}--m-compact--PaddingRight);
+    --#{$label}--PaddingBottom: var(--#{$label}--m-compact--PaddingBottom);
+    --#{$label}--PaddingLeft: var(--#{$label}--m-compact--PaddingLeft);
+    --#{$label}--FontSize: var(--#{$label}--m-compact--FontSize);
+    --#{$label}--m-editable--TextDecorationOffset: var(--#{$label}--m-compact--m-editable--TextDecorationOffset);
+  }
+
+  &.pf-m-blue {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-blue--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-blue__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-blue__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-blue__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-blue__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-blue__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-blue__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-blue__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-blue__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-blue__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-blue__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-blue__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-blue__content--before--BorderColor);
+  }
+
+  &.pf-m-green {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-green--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-green__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-green__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-green__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-green__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-green__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-green__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-green__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-green__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-green__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-green__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-green__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-green__content--before--BorderColor);
+  }
+
+  &.pf-m-orange {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-orange--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-orange__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-orange__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-orange__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-orange__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-orange__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-orange__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-orange__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-orange__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-orange__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-orange__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-orange__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-orange__content--before--BorderColor);
+  }
+
+  &.pf-m-red {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-red--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-red__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-red__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-red__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-red__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-red__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-red__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-red__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-red__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-red__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-red__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-red__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-red__content--before--BorderColor);
+  }
+
+  &.pf-m-purple {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-purple--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-purple__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-purple__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-purple__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-purple__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-purple__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-purple__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-purple__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-purple__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-purple__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-purple__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-purple__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-purple__content--before--BorderColor);
+  }
+
+  &.pf-m-cyan {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-cyan--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-cyan__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-cyan__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-cyan__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-cyan__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-cyan__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-cyan__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-cyan__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-cyan__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-cyan__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-cyan__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-cyan__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-cyan__content--before--BorderColor);
+  }
+
+  &.pf-m-gold {
+    --#{$label}--BackgroundColor: var(--#{$label}--m-gold--BackgroundColor);
+    --#{$label}__icon--Color: var(--#{$label}--m-gold__icon--Color);
+    --#{$label}__content--Color: var(--#{$label}--m-gold__content--Color);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-gold__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-gold__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-gold__content--link--focus--before--BorderColor);
+    --#{$label}--m-outline__content--Color: var(--#{$label}--m-outline--m-gold__content--Color);
+    --#{$label}--m-outline__content--before--BorderColor: var(--#{$label}--m-outline--m-gold__content--before--BorderColor);
+    --#{$label}--m-outline__content--link--hover--before--BorderColor: var(--#{$label}--m-outline--m-gold__content--link--hover--before--BorderColor);
+    --#{$label}--m-outline__content--link--focus--before--BorderColor: var(--#{$label}--m-outline--m-gold__content--link--focus--before--BorderColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-gold__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-gold__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-gold__content--before--BorderColor);
+  }
+
+  &.pf-m-outline {
+    --#{$label}__content--Color: var(--#{$label}--m-outline__content--Color);
+    --#{$label}__content--before--BorderWidth: var(--#{$label}--m-outline__content--before--BorderWidth);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-outline__content--before--BorderColor);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-outline--BackgroundColor);
+    --#{$label}--m-editable__content--before--BorderColor: var(--#{$label}--m-outline__content--before--BorderColor);
+    --#{$label}--m-editable__content--hover--before--BorderColor: var(--#{$label}--m-outline__content--before--BorderColor);
+    --#{$label}--m-editable__content--focus--before--BorderColor: var(--#{$label}--m-outline__content--before--BorderColor);
+
+    // stylelint-disable selector-no-qualifying-type, max-nesting-depth
+    a,
+    button {
+      @at-root .#{$label}.pf-m-overflow,
+      .#{$label}.pf-m-add,
+      &.#{$label}__content {
+        // stylelint-enable selector-no-qualifying-type
+        &:hover {
+          --#{$label}__content--before--BorderWidth: var(--#{$label}--m-outline__content--link--hover--before--BorderWidth);
+          --#{$label}__content--before--BorderColor: var(--#{$label}--m-outline__content--link--hover--before--BorderColor);
+        }
+
+        &:focus {
+          --#{$label}__content--before--BorderWidth: var(--#{$label}--m-outline__content--link--focus--before--BorderWidth);
+          --#{$label}__content--before--BorderColor: var(--#{$label}--m-outline__content--link--focus--before--BorderColor);
+        }
+        // stylelint-enable max-nesting-depth
+      }
+    }
+  }
+
+  &.pf-m-editable {
+    --#{$label}__content--MaxWidth: var(--#{$label}--m-editable__content--MaxWidth);
+    --#{$label}__content--before--BorderWidth: var(--#{$label}--m-editable__content--before--BorderWidth);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-editable__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderWidth: var(--#{$label}--m-editable__content--hover--before--BorderWidth);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-editable__content--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderWidth: var(--#{$label}--m-editable__content--focus--before--BorderWidth);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-editable__content--focus--before--BorderColor);
+
+    // override the outline variant border width
+    --#{$label}--m-outline__content--link--hover--before--BorderWidth: var(--#{$label}--m-editable__content--before--BorderWidth);
+    --#{$label}--m-outline__content--link--focus--before--BorderWidth: var(--#{$label}--m-editable__content--before--BorderWidth);
+
+    text-decoration: var(--#{$label}--m-editable--TextDecoration);
+    text-decoration-thickness: var(--#{$label}--m-editable--TextDecorationThickness);
+    text-decoration-style: var(--#{$label}--m-editable--TextDecorationStyle);
+    text-decoration-color: var(--#{$label}--m-editable--TextDecorationColor);
+    text-underline-offset: var(--#{$label}--m-editable--TextDecorationOffset);
+    cursor: var(--#{$label}--m-editable--Cursor);
+
+    &:hover {
+      --#{$label}--m-editable--TextDecorationColor: var(--#{$label}--m-editable--hover--TextDecorationColor);
+    }
+
+    &:focus {
+      --#{$label}--m-editable--TextDecorationColor: var(--#{$label}--m-editable--focus--TextDecorationColor);
+    }
+  }
+
+  &.pf-m-editable-active {
+    --#{$label}--m-editable--Cursor: var(--#{$label}--m-editable--m-editable-active--Cursor);
+    --#{$label}--m-editable--TextDecoration: var(--#{$label}--m-editable--m-editable-active--TextDecoration);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-editable--m-editable-active--BackgroundColor);
+  }
+
+  &.pf-m-overflow,
+  &.pf-m-add {
+    --#{$label}__content--Color: var(--#{$label}--m-overflow__content--Color);
+    --#{$label}--BackgroundColor: var(--#{$label}--m-overflow__content--BackgroundColor);
+    --#{$label}__content--before--BorderWidth: var(--#{$label}--m-overflow__content--before--BorderWidth);
+    --#{$label}__content--before--BorderColor: var(--#{$label}--m-overflow__content--before--BorderColor);
+    --#{$label}__content--link--hover--before--BorderWidth: var(--#{$label}--m-overflow__content--link--hover--before--BorderWidth);
+    --#{$label}__content--link--hover--before--BorderColor: var(--#{$label}--m-overflow__content--link--hover--before--BorderColor);
+    --#{$label}__content--link--focus--before--BorderWidth: var(--#{$label}--m-overflow__content--link--focus--before--BorderWidth);
+    --#{$label}__content--link--focus--before--BorderColor: var(--#{$label}--m-overflow__content--link--focus--before--BorderColor);
+  }
+}
+
+.#{$label},
+.#{$label}__content {
+  display: inline-flex;
+  align-items: center;
+}
+
+.#{$label}__text {
+  @include pf-v5-text-overflow;
+
+  max-width: var(--#{$label}__text--MaxWidth);
+}
+
+.#{$label}__content {
+  max-width: var(--#{$label}__content--MaxWidth);
+  overflow: hidden;
+  color: var(--#{$label}__content--Color);
+  background-color: var(--#{$label}__content--BackgroundColor);
+  border-width: 0;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    border: var(--#{$label}__content--before--BorderWidth) solid var(--#{$label}__content--before--BorderColor);
+    border-radius: var(--#{$label}--BorderRadius);
+  }
+
+  // truncate input fields
+  @at-root input#{&} {
+    @include pf-v5-text-overflow;
+  }
+
+  // the content element can be used as a link
+  @at-root {
+    a#{&},
+    button#{&} {
+      padding: 0;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+
+      &,
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      &:hover {
+        --#{$label}__content--before--BorderWidth: var(--#{$label}__content--link--hover--before--BorderWidth);
+        --#{$label}__content--before--BorderColor: var(--#{$label}__content--link--hover--before--BorderColor);
+      }
+
+      &:focus {
+        --#{$label}__content--before--BorderWidth: var(--#{$label}__content--link--focus--before--BorderWidth);
+        --#{$label}__content--before--BorderColor: var(--#{$label}__content--link--focus--before--BorderColor);
+      }
+    }
+  }
+}
+
+.#{$label}__icon {
+  margin-inline-end: var(--#{$label}__icon--MarginRight);
+  color: var(--#{$label}__icon--Color);
+}
+
+.#{$label}__actions {
+  margin-inline-end: var(--#{$label}__actions--MarginRight);
+  font-size: var(--#{$label}__actions--FontSize);
+
+  .#{$button} {
+    --#{$button}--FontSize: var(--#{$label}__actions--c-button--FontSize);
+    --#{$button}--PaddingTop: var(--#{$label}__actions--c-button--PaddingTop);
+    --#{$button}--PaddingRight: var(--#{$label}__actions--c-button--PaddingRight);
+    --#{$button}--PaddingBottom: var(--#{$label}__actions--c-button--PaddingBottom);
+    --#{$button}--PaddingLeft: var(--#{$label}__actions--c-button--PaddingLeft);
+
+    margin-block-start: var(--#{$label}__actions--c-button--MarginTop);
+    margin-block-end: var(--#{$label}__actions--c-button--MarginBottom);
+  }
+}
+
+// stylelint-disable no-invalid-position-at-import-rule
+@import "themes/dark/label";
+
+@include pf-v5-theme-dark {
+  @include pf-v5-theme-dark-label;
+}

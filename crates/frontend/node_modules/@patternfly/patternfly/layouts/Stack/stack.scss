@@ -1,0 +1,15 @@
+.#{$stack} {
+  --#{$stack}--m-gutter--Gap: var(--#{$pf-global}--gutter);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.#{$stack}__item.pf-m-fill {
+  flex-grow: 1;
+}
+
+.#{$stack}.pf-m-gutter {
+  gap: var(--#{$stack}--m-gutter--Gap);
+}

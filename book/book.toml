@@ -1,0 +1,10 @@
+[book]
+authors = ["Asger Juul Brunshøj"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Slime Mold Simulation"
+
+[output.html]
+additional-js = ["wgsl.min.js", "highlight_init.js"]
+default-theme = "light"

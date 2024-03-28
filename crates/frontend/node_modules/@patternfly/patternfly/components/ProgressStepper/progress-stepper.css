@@ -1,0 +1,607 @@
+.pf-v5-c-progress-stepper {
+  --pf-v5-c-progress-stepper--m-vertical--GridAutoFlow: row;
+  --pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns: auto 1fr;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top: 0;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left: calc(var(--pf-v5-c-progress-stepper__step-icon--Width) / 2);
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width: auto;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height: 100%;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth: var(--pf-v5-global--BorderWidth--md);
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth: 0;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor: transparent;
+  --pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform: translateX(-50%);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight: 0;
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom: var(--pf-v5-global--spacer--xl);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns: 1fr;
+  --pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow: auto;
+  --pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginTop: 0;
+  --pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginRight: 0;
+  --pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginLeft: 0;
+  --pf-v5-c-progress-stepper--m-vertical--m-center__step-main--MarginRight: 0;
+  --pf-v5-c-progress-stepper--m-vertical--m-center__step-main--MarginLeft: 0;
+  --pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow: column;
+  --pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns: initial;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top: calc(var(--pf-v5-c-progress-stepper__step-icon--Height) / 2);
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left: 0;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width: 100%;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height: auto;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth: 0;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor: unset;
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth: var(--pf-v5-global--BorderWidth--md);
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform: translateY(-50%);
+  --pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom: 0;
+  --pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft: 0;
+  --pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns: repeat(auto-fill, 1.75rem);
+  --pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom: 0;
+  --pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow: 2;
+  --pf-v5-c-progress-stepper--m-compact--GridAutoFlow: row;
+  --pf-v5-c-progress-stepper--m-compact__step-main--MarginTop: 0;
+  --pf-v5-c-progress-stepper--m-compact__step-main--MarginBottom: var(--pf-v5-global--spacer--sm);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--MinWidth: 1.75rem;
+  --pf-v5-c-progress-stepper--m-compact__step-icon--Width: 1.125rem;
+  --pf-v5-c-progress-stepper--m-compact__step-icon--FontSize: var(--pf-v5-global--icon--FontSize--sm);
+  --pf-v5-c-progress-stepper--m-compact__step-title--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-progress-stepper--m-compact__step-title--FontWeight: var(--pf-v5-global--FontWeight--normal);
+  --pf-v5-c-progress-stepper--m-compact__pficon--MarginTop: 2px;
+  --pf-v5-c-progress-stepper--m-compact__fa-exclamation-triangle--MarginTop: -3px;
+  --pf-v5-c-progress-stepper--m-center__step-connector--before--Left: 50%;
+  --pf-v5-c-progress-stepper--m-center--GridTemplateColumns: 1fr;
+  --pf-v5-c-progress-stepper--m-center__step-connector--JustifyContent: center;
+  --pf-v5-c-progress-stepper--m-center__step-main--MarginRight: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-progress-stepper--m-center__step-main--MarginLeft: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-progress-stepper--m-center__step-main--TextAlign: center;
+  --pf-v5-c-progress-stepper--m-center__step-description--MarginRight: 0;
+  --pf-v5-c-progress-stepper--m-center__step-description--MarginLeft: 0;
+  --pf-v5-c-progress-stepper--GridTemplateRows: auto 1fr;
+  --pf-v5-c-progress-stepper__step-connector--JustifyContent: flex-start;
+  --pf-v5-c-progress-stepper__step-icon--ZIndex: var(--pf-v5-global--ZIndex--xs);
+  --pf-v5-c-progress-stepper__step-icon--Width: 1.75rem;
+  --pf-v5-c-progress-stepper__step-icon--Height: var(--pf-v5-c-progress-stepper__step-icon--Width);
+  --pf-v5-c-progress-stepper__step-icon--FontSize: var(--pf-v5-global--icon--FontSize--md);
+  --pf-v5-c-progress-stepper__step-icon--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step-icon--BackgroundColor: var(--pf-v5-global--BackgroundColor--light-200);
+  --pf-v5-c-progress-stepper__step-icon--BorderWidth: var(--pf-v5-global--BorderWidth--md);
+  --pf-v5-c-progress-stepper__step-icon--BorderColor: var(--pf-v5-global--BorderColor--100);
+  --pf-v5-c-progress-stepper__pficon--MarginTop: 3px;
+  --pf-v5-c-progress-stepper__fa-exclamation-triangle--MarginTop: -5px;
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step-title--TextAlign: start;
+  --pf-v5-c-progress-stepper__step-title--FontSize: var(--pf-v5-global--FontSize--md);
+  --pf-v5-c-progress-stepper__step-title--FontWeight: var(--pf-v5-global--FontWeight--normal);
+  --pf-v5-c-progress-stepper__step--m-current__step-title--FontWeight: var(--pf-v5-global--FontWeight--bold);
+  --pf-v5-c-progress-stepper__step--m-current__step-title--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step--m-pending__step-title--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--Color: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationColor: var(--pf-v5-global--BorderColor--200);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationThickness: var(--pf-v5-global--BorderWidth--sm);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextUnderlineOffset: 0.25rem;
+  --pf-v5-c-progress-stepper__step-title--m-help-text--hover--TextDecorationColor: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--focus--TextDecorationColor: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--hover--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--focus--Color: var(--pf-v5-global--Color--100);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--hover--Color: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--focus--Color: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--TextDecorationColor: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--hover--TextDecorationColor: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--focus--TextDecorationColor: var(--pf-v5-global--danger-color--200);
+  --pf-v5-c-progress-stepper__step-description--MarginTop: var(--pf-v5-global--spacer--xs);
+  --pf-v5-c-progress-stepper__step-description--FontSize: var(--pf-v5-global--FontSize--sm);
+  --pf-v5-c-progress-stepper__step-description--Color: var(--pf-v5-global--Color--200);
+  --pf-v5-c-progress-stepper__step-description--TextAlign: start;
+  --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+  --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+  --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+  --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+  --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+  --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+  --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+  --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+  --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+  --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+  --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+  --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+  --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+  --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  position: relative;
+  display: grid;
+  grid-template-rows: var(--pf-v5-c-progress-stepper--GridTemplateRows);
+  grid-template-columns: var(--pf-v5-c-progress-stepper--GridTemplateColumns);
+  grid-auto-columns: 1fr;
+  grid-auto-flow: var(--pf-v5-c-progress-stepper--GridAutoFlow);
+}
+@media screen and (min-width: 768px) {
+  .pf-v5-c-progress-stepper {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+}
+.pf-v5-c-progress-stepper.pf-m-center {
+  --pf-v5-c-progress-stepper__step-connector--JustifyContent: var(--pf-v5-c-progress-stepper--m-center__step-connector--JustifyContent);
+  --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-center__step-main--MarginRight);
+  --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-center__step-main--MarginLeft);
+  --pf-v5-c-progress-stepper--step-main--TextAlign: var(--pf-v5-c-progress-stepper--m-center__step-main--TextAlign, auto);
+  --pf-v5-c-progress-stepper__step-title--TextAlign: var(--pf-v5-c-progress-stepper--m-center__step-title--TextAlign, auto);
+  --pf-v5-c-progress-stepper__step-description--MarginRight: var(--pf-v5-c-progress-stepper--m-center__step-description--MarginRight);
+  --pf-v5-c-progress-stepper__step-description--MarginLeft: var(--pf-v5-c-progress-stepper--m-center__step-description--MarginLeft);
+  --pf-v5-c-progress-stepper__step-description--TextAlign: var(--pf-v5-c-progress-stepper--m-center__step-description--TextAlign, auto);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical--m-center__step-main--MarginRight);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical--m-center__step-main--MarginLeft);
+  grid-template-columns: var(--pf-v5-c-progress-stepper--m-center--GridTemplateColumns);
+}
+.pf-v5-c-progress-stepper.pf-m-center .pf-v5-c-progress-stepper__step-main {
+  position: relative;
+}
+.pf-v5-c-progress-stepper.pf-m-center .pf-v5-c-progress-stepper__step:not(:last-of-type) > .pf-v5-c-progress-stepper__step-connector::before {
+  inset-inline-start: var(--pf-v5-c-progress-stepper--m-center__step-connector--before--Left);
+}
+.pf-v5-c-progress-stepper.pf-m-center:not(.pf-m-compact) .pf-v5-c-progress-stepper__step:not(:last-of-type) > .pf-v5-c-progress-stepper__step-main::before {
+  content: var(--pf-v5-c-progress-stepper--m-center__step-main--before--Content);
+}
+.pf-v5-c-progress-stepper.pf-m-center:not(.pf-m-compact) .pf-v5-c-progress-stepper__step:not(:last-of-type) > .pf-v5-c-progress-stepper__step-connector::before {
+  content: var(--pf-v5-c-progress-stepper--m-center__step-connector--before--Content);
+}
+.pf-v5-c-progress-stepper.pf-m-compact {
+  --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-compact__step-main--MarginTop);
+  --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-compact__step-main--MarginBottom);
+  --pf-v5-c-progress-stepper__step-icon--Width: var(--pf-v5-c-progress-stepper--m-compact__step-icon--Width);
+  --pf-v5-c-progress-stepper__step-icon--FontSize: var(--pf-v5-c-progress-stepper--m-compact__step-icon--FontSize);
+  --pf-v5-c-progress-stepper__step-title--FontSize: var(--pf-v5-c-progress-stepper--m-compact__step-title--FontSize);
+  --pf-v5-c-progress-stepper__step--m-current__step-title--FontWeight: var(--pf-v5-c-progress-stepper--m-compact__step-title--FontWeight);
+  --pf-v5-c-progress-stepper__pficon--MarginTop: var(--pf-v5-c-progress-stepper--m-compact__pficon--MarginTop);
+  --pf-v5-c-progress-stepper__fa-exclamation-triangle--MarginTop: var(--pf-v5-c-progress-stepper--m-compact__fa-exclamation-triangle--MarginTop);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginTop);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginRight);
+  --pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-main--MarginLeft);
+  display: inline-grid;
+  grid-template-columns: var(--pf-v5-c-progress-stepper--m-compact--GridTemplateColumns);
+  grid-auto-flow: var(--pf-v5-c-progress-stepper--m-compact--GridAutoFlow);
+}
+.pf-v5-c-progress-stepper.pf-m-compact .pf-v5-c-progress-stepper__step-connector {
+  grid-row: var(--pf-v5-c-progress-stepper--m-compact__step-connector--GridRow);
+  min-width: var(--pf-v5-c-progress-stepper--m-compact__step-connector--MinWidth);
+  padding-block-end: var(--pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom);
+}
+.pf-v5-c-progress-stepper.pf-m-compact .pf-v5-c-progress-stepper__step-main {
+  margin-block-end: var(--pf-v5-c-progress-stepper--m-compact__step-main--MarginBottom);
+}
+.pf-v5-c-progress-stepper.pf-m-compact .pf-v5-c-progress-stepper__step:not(.pf-m-current) .pf-v5-c-progress-stepper__step-main {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.pf-v5-c-progress-stepper.pf-m-compact .pf-v5-c-progress-stepper__step.pf-m-current .pf-v5-c-progress-stepper__step-main {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+.pf-v5-c-progress-stepper.pf-m-compact .pf-v5-c-progress-stepper__step-description {
+  display: none;
+}
+
+.pf-v5-c-progress-stepper__step {
+  display: contents;
+}
+.pf-v5-c-progress-stepper__step.pf-m-current {
+  --pf-v5-c-progress-stepper__step-title--FontWeight: var(--pf-v5-c-progress-stepper__step--m-current__step-title--FontWeight);
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-c-progress-stepper__step--m-current__step-title--Color);
+}
+.pf-v5-c-progress-stepper__step.pf-m-pending {
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-c-progress-stepper__step--m-pending__step-title--Color);
+}
+.pf-v5-c-progress-stepper__step.pf-m-success {
+  --pf-v5-c-progress-stepper__step-icon--Color: var(--pf-v5-global--success-color--100);
+}
+.pf-v5-c-progress-stepper__step.pf-m-danger {
+  --pf-v5-c-progress-stepper__step-icon--Color: var(--pf-v5-global--danger-color--100);
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--Color);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--hover--Color: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--hover--Color);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--focus--Color: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--focus--Color);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationColor: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--TextDecorationColor);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--hover--TextDecorationColor: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--hover--TextDecorationColor);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--focus--TextDecorationColor: var(--pf-v5-c-progress-stepper__step--m-danger__step-title--m-help-text--focus--TextDecorationColor);
+}
+.pf-v5-c-progress-stepper__step.pf-m-warning {
+  --pf-v5-c-progress-stepper__step-icon--Color: var(--pf-v5-global--warning-color--100);
+}
+.pf-v5-c-progress-stepper__step.pf-m-info {
+  --pf-v5-c-progress-stepper__step-icon--Color: var(--pf-v5-global--info-color--100);
+}
+.pf-v5-c-progress-stepper__step:last-child {
+  --pf-v5-c-progress-stepper__step-main--MarginBottom: 0;
+}
+
+.pf-v5-c-progress-stepper__step-connector {
+  position: relative;
+  display: flex;
+  justify-content: var(--pf-v5-c-progress-stepper__step-connector--JustifyContent);
+  width: 100%;
+}
+.pf-v5-c-progress-stepper__step:not(:last-of-type) > .pf-v5-c-progress-stepper__step-connector::before {
+  position: absolute;
+  inset-block-start: var(--pf-v5-c-progress-stepper__step-connector--before--Top);
+  inset-inline-start: var(--pf-v5-c-progress-stepper__step-connector--before--Left);
+  width: var(--pf-v5-c-progress-stepper__step-connector--before--Width);
+  height: var(--pf-v5-c-progress-stepper__step-connector--before--Height);
+  content: "";
+  border-block-end: var(--pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth) solid var(--pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor);
+  border-inline-end: var(--pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth) solid var(--pf-v5-c-progress-stepper__step-connector--before--BorderRightColor);
+  transform: var(--pf-v5-c-progress-stepper__step-connector--before--Transform);
+}
+
+.pf-v5-c-progress-stepper__step-icon {
+  z-index: var(--pf-v5-c-progress-stepper__step-icon--ZIndex);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pf-v5-c-progress-stepper__step-icon--Width);
+  height: var(--pf-v5-c-progress-stepper__step-icon--Height);
+  font-size: var(--pf-v5-c-progress-stepper__step-icon--FontSize);
+  color: var(--pf-v5-c-progress-stepper__step-icon--Color);
+  background-color: var(--pf-v5-c-progress-stepper__step-icon--BackgroundColor);
+  border: var(--pf-v5-c-progress-stepper__step-icon--BorderWidth) solid var(--pf-v5-c-progress-stepper__step-icon--BorderColor);
+  border-radius: 50%;
+}
+.pf-v5-c-progress-stepper__step-icon .pf-v5-pficon {
+  margin-block-start: var(--pf-v5-c-progress-stepper__pficon--MarginTop);
+}
+.pf-v5-c-progress-stepper__step-icon .fa-exclamation-triangle {
+  margin-block-start: var(--pf-v5-c-progress-stepper__fa-exclamation-triangle--MarginTop);
+}
+
+.pf-v5-c-progress-stepper__step-main {
+  min-width: 0;
+  margin-block-start: var(--pf-v5-c-progress-stepper__step-main--MarginTop);
+  margin-block-end: var(--pf-v5-c-progress-stepper__step-main--MarginBottom);
+  margin-inline-start: var(--pf-v5-c-progress-stepper__step-main--MarginLeft);
+  margin-inline-end: var(--pf-v5-c-progress-stepper__step-main--MarginRight);
+  text-align: var(--pf-v5-c-progress-stepper--step-main--TextAlign, auto);
+  overflow-wrap: anywhere;
+}
+.pf-v5-c-progress-stepper__step:not(:last-of-type) > .pf-v5-c-progress-stepper__step-main::before {
+  position: absolute;
+  inset-block-start: calc(100% + var(--pf-v5-c-progress-stepper__step-main--MarginTop));
+  inset-inline-start: calc(50% - var(--pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth) / 2);
+  width: auto;
+  height: calc(var(--pf-v5-c-progress-stepper__step-main--MarginTop) + var(--pf-v5-c-progress-stepper__step-main--MarginBottom));
+  border-inline-end: var(--pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth) solid var(--pf-v5-c-progress-stepper__step-connector--before--BorderRightColor);
+}
+
+.pf-v5-c-progress-stepper__step-title {
+  font-size: var(--pf-v5-c-progress-stepper__step-title--FontSize);
+  font-weight: var(--pf-v5-c-progress-stepper__step-title--FontWeight);
+  color: var(--pf-v5-c-progress-stepper__step-title--Color);
+  text-align: var(--pf-v5-c-progress-stepper__step-title--TextAlign);
+  background: none;
+  border: 0;
+}
+.pf-v5-c-progress-stepper__step-title.pf-m-help-text {
+  text-decoration: underline;
+  text-decoration-thickness: var(--pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationThickness);
+  text-decoration-style: dashed;
+  text-decoration-color: var(--pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationColor);
+  text-underline-offset: var(--pf-v5-c-progress-stepper__step-title--m-help-text--TextUnderlineOffset);
+  cursor: pointer;
+}
+.pf-v5-c-progress-stepper__step-title.pf-m-help-text:hover {
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-c-progress-stepper__step-title--m-help-text--hover--Color);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationColor: var(--pf-v5-c-progress-stepper__step-title--m-help-text--hover--TextDecorationColor);
+}
+.pf-v5-c-progress-stepper__step-title.pf-m-help-text:focus {
+  --pf-v5-c-progress-stepper__step-title--Color: var(--pf-v5-c-progress-stepper__step-title--m-help-text--focus--Color);
+  --pf-v5-c-progress-stepper__step-title--m-help-text--TextDecorationColor: var(--pf-v5-c-progress-stepper__step-title--m-help-text--focus--TextDecorationColor);
+}
+
+.pf-v5-c-progress-stepper__step-description {
+  margin-block-start: var(--pf-v5-c-progress-stepper__step-description--MarginTop);
+  font-size: var(--pf-v5-c-progress-stepper__step-description--FontSize);
+  color: var(--pf-v5-c-progress-stepper__step-description--Color);
+  text-align: var(--pf-v5-c-progress-stepper__step-description--TextAlign);
+}
+
+.pf-v5-c-progress-stepper.pf-m-horizontal {
+  --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+  --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+  --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+  --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+  --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+  --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+  --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+  --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+  --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+  --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+  --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+  --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+  --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+  --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+}
+.pf-v5-c-progress-stepper.pf-m-vertical {
+  --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+  --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+  --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+  --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+  --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+  --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+  --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+  --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+  --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+  --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+  --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+  --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+  --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+  --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+  --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+  --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+}
+@media (min-width: 576px) {
+  .pf-v5-c-progress-stepper.pf-m-horizontal-on-sm {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+  .pf-v5-c-progress-stepper.pf-m-vertical-on-sm {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  }
+}
+@media (min-width: 768px) {
+  .pf-v5-c-progress-stepper.pf-m-horizontal-on-md {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+  .pf-v5-c-progress-stepper.pf-m-vertical-on-md {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  }
+}
+@media (min-width: 992px) {
+  .pf-v5-c-progress-stepper.pf-m-horizontal-on-lg {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+  .pf-v5-c-progress-stepper.pf-m-vertical-on-lg {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  }
+}
+@media (min-width: 1200px) {
+  .pf-v5-c-progress-stepper.pf-m-horizontal-on-xl {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+  .pf-v5-c-progress-stepper.pf-m-vertical-on-xl {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  }
+}
+@media (min-width: 1450px) {
+  .pf-v5-c-progress-stepper.pf-m-horizontal-on-2xl {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-horizontal--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-horizontal__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-horizontal__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-horizontal--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: "";
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: none;
+  }
+  .pf-v5-c-progress-stepper.pf-m-vertical-on-2xl {
+    --pf-v5-c-progress-stepper--GridAutoFlow: var(--pf-v5-c-progress-stepper--m-vertical--GridAutoFlow);
+    --pf-v5-c-progress-stepper--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--GridTemplateColumns);
+    --pf-v5-c-progress-stepper__step-connector--before--Top: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Top);
+    --pf-v5-c-progress-stepper__step-connector--before--Left: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Left);
+    --pf-v5-c-progress-stepper__step-connector--before--Width: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Width);
+    --pf-v5-c-progress-stepper__step-connector--before--Height: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Height);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderRightColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderRightColor);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomWidth: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomWidth);
+    --pf-v5-c-progress-stepper__step-connector--before--BorderBottomColor: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--BorderBottomColor);
+    --pf-v5-c-progress-stepper__step-connector--before--Transform: var(--pf-v5-c-progress-stepper--m-vertical__step-connector--before--Transform);
+    --pf-v5-c-progress-stepper__step-main--MarginTop: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginTop);
+    --pf-v5-c-progress-stepper__step-main--MarginRight: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginRight);
+    --pf-v5-c-progress-stepper__step-main--MarginBottom: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginBottom);
+    --pf-v5-c-progress-stepper__step-main--MarginLeft: var(--pf-v5-c-progress-stepper--m-vertical__step-main--MarginLeft);
+    --pf-v5-c-progress-stepper--m-compact--GridTemplateColumns: var(--pf-v5-c-progress-stepper--m-vertical--m-compact--GridTemplateColumns);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--GridRow: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--GridRow);
+    --pf-v5-c-progress-stepper--m-compact__step-connector--PaddingBottom: var(--pf-v5-c-progress-stepper--m-vertical--m-compact__step-connector--PaddingBottom);
+    --pf-v5-c-progress-stepper--m-center__step-connector--before--Content: none;
+    --pf-v5-c-progress-stepper--m-center__step-main--before--Content: "";
+  }
+}

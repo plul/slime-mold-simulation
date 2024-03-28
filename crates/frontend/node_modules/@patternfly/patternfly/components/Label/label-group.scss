@@ -1,0 +1,169 @@
+// @debug $label-group; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
+
+.#{$label-group} {
+  // Label group - spaces main with the close button
+  --#{$label-group}--RowGap: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--ColumnGap: 0;
+  --#{$label-group}--m-vertical--RowGap: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-vertical--ColumnGap: var(--#{$pf-global}--spacer--sm);
+
+  // Main - spaces the category label with the list
+  --#{$label-group}__main--RowGap: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}__main--ColumnGap: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-vertical__main--RowGap: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-vertical__main--ColumnGap: var(--#{$pf-global}--spacer--xs);
+
+  // List - spaces the items
+  --#{$label-group}__list--RowGap: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}__list--ColumnGap: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}--m-vertical__list--RowGap: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}--m-vertical__list--ColumnGap: var(--#{$pf-global}--spacer--xs);
+
+  // Category
+  --#{$label-group}--m-category--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}--m-category--PaddingRight: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}--m-category--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}--m-category--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-vertical--m-category--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-category--BorderRadius: var(--#{$pf-global}--BorderRadius--sm);
+  --#{$label-group}--m-category--BorderWidth: var(--#{$pf-global}--BorderWidth--sm);
+  --#{$label-group}--m-category--BorderColor: var(--#{$pf-global}--BorderColor--300);
+  --#{$label-group}--m-category--BackgroundColor: var(--#{$pf-global}--BackgroundColor--100);
+
+  // Label
+  --#{$label-group}__label--FontSize: var(--#{$pf-global}--FontSize--sm);
+  --#{$label-group}__label--MaxWidth: 18ch;
+
+  // Close
+  --#{$label-group}__close--MarginTop: calc(var(--#{$pf-global}--spacer--xs) * -1);
+  --#{$label-group}__close--MarginBottom: calc(var(--#{$pf-global}--spacer--xs) * -1);
+  --#{$label-group}--m-vertical__close--MarginTop: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$label-group}--m-vertical__close--MarginRight: calc(var(--#{$pf-global}--spacer--form-element) * -1);
+  --#{$label-group}--m-vertical__close--c-button--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$label-group}--m-vertical__close--c-button--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+
+  // Textarea
+  --#{$label-group}__textarea--MinWidth: #{pf-size-prem(200px)};
+  --#{$label-group}__textarea--PaddingTop: #{pf-size-prem(2px)};
+  --#{$label-group}__textarea--PaddingRight: var(--#{$pf-global}--spacer--xs);
+  --#{$label-group}__textarea--PaddingBottom: 0;
+  --#{$label-group}__textarea--PaddingLeft: var(--#{$pf-global}--spacer--xs);
+
+  display: inline-flex;
+  row-gap: var(--#{$label-group}--RowGap);
+  column-gap: var(--#{$label-group}--ColumnGap);
+  align-items: center;
+
+  &.pf-m-category {
+    padding-block-start: var(--#{$label-group}--m-category--PaddingTop);
+    padding-block-end: var(--#{$label-group}--m-category--PaddingBottom);
+    padding-inline-start: var(--#{$label-group}--m-category--PaddingLeft);
+    padding-inline-end: var(--#{$label-group}--m-category--PaddingRight);
+    background-color: var(--#{$label-group}--m-category--BackgroundColor);
+    border: var(--#{$label-group}--m-category--BorderWidth) solid var(--#{$label-group}--m-category--BorderColor);
+    border-radius: var(--#{$label-group}--m-category--BorderRadius);
+  }
+
+  &.pf-m-vertical {
+    --#{$label-group}--RowGap: var(--#{$label-group}--m-vertical--RowGap);
+    --#{$label-group}--ColumnGap: var(--#{$label-group}--m-vertical--ColumnGap);
+    --#{$label-group}__main--RowGap: var(--#{$label-group}--m-vertical__main--RowGap);
+    --#{$label-group}__main--ColumnGap: var(--#{$label-group}--m-vertical__main--ColumnGap);
+    --#{$label-group}__list--RowGap: var(--#{$label-group}--m-vertical__list--RowGap);
+    --#{$label-group}__list--ColumnGap: var(--#{$label-group}--m-vertical__list--ColumnGap);
+    --#{$label-group}__close--MarginTop: var(--#{$label-group}--m-vertical__close--MarginTop);
+    --#{$label-group}__close--MarginLeft: var(--#{$label-group}--m-vertical__close--MarginLeft);
+    --#{$label-group}__close--MarginBottom: 0;
+    --#{$label-group}__close--MarginRight: var(--#{$label-group}--m-vertical__close--MarginRight);
+    --#{$label-group}--m-category--PaddingRight: var(--#{$label-group}--m-vertical--m-category--PaddingRight);
+
+    &.#{$label-group} {
+      align-items: flex-start;
+    }
+
+    .#{$label-group}__list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .#{$label-group}__main {
+      flex-direction: column;
+    }
+
+    .#{$label-group}__close .#{$button} {
+      --#{$button}--PaddingLeft: var(--#{$label-group}--m-vertical__close--c-button--PaddingLeft);
+      --#{$button}--PaddingRight: var(--#{$label-group}--m-vertical__close--c-button--PaddingRight);
+    }
+  }
+
+  &.pf-m-editable {
+    &,
+    .#{$label-group}__main,
+    .#{$label-group}__list {
+      display: flex;
+    }
+
+    .#{$label-group}__main,
+    .#{$label-group}__list,
+    .#{$label-group}__list-item.pf-m-textarea,
+    .#{$label-group}__textarea {
+      flex: 1;
+    }
+  }
+}
+
+.#{$label-group}__main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  row-gap: var(--#{$label-group}__main--RowGap);
+  column-gap: var(--#{$label-group}__main--ColumnGap);
+  align-items: baseline;
+}
+
+.#{$label-group}__list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  row-gap: var(--#{$label-group}__list--RowGap);
+  column-gap: var(--#{$label-group}__list--ColumnGap);
+}
+
+.#{$label-group}__list-item {
+  display: inline-flex;
+}
+
+.#{$label-group}__label {
+  @include pf-v5-text-overflow;
+
+  max-width: var(--#{$label-group}__label--MaxWidth);
+  font-size: var(--#{$label-group}__label--FontSize);
+}
+
+.#{$label-group}__close {
+  display: flex;
+  align-self: flex-start;
+  margin-block-start: var(--#{$label-group}__close--MarginTop);
+  margin-block-end: var(--#{$label-group}__close--MarginBottom);
+  margin-inline-start: var(--#{$label-group}__close--MarginLeft);
+  margin-inline-end: var(--#{$label-group}__close--MarginRight);
+}
+
+.#{$label-group}__textarea {
+  min-width: var(--#{$label-group}__textarea--MinWidth);
+  padding-block-start: var(--#{$label-group}__textarea--PaddingTop);
+  padding-block-end: var(--#{$label-group}__textarea--PaddingBottom);
+  padding-inline-start: var(--#{$label-group}__textarea--PaddingLeft);
+  padding-inline-end: var(--#{$label-group}__textarea--PaddingRight);
+  white-space: nowrap;
+  resize: none;
+  border: 0;
+
+  // Hide scrollbar for IE, Edge and Firefox
+  -ms-overflow-style: none;  // IE and Edge
+  scrollbar-width: none;  // Firefox
+
+  // Hide scrollbar for Chrome, Safari and Opera
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

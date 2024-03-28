@@ -1,0 +1,301 @@
+$pf-v5-c-tree-view--MaxDepth: 10;
+
+.#{$table} {
+  --#{$table}__tree-view-main--indent--base: calc(var(--#{$pf-global}--spacer--md) * 2 + var(--#{$table}__tree-view-icon--MinWidth)); // based off of the expected width of the toggle button
+  --#{$table}__tree-view-main--nested-indent--base: calc(var(--#{$table}__tree-view-main--indent--base) - var(--#{$pf-global}--spacer--md)); // nested spacing that removes the toggle button's left padding, so the icon aligns with text on the node above it
+
+  // main
+  --#{$table}__tree-view-main--PaddingLeft: var(--#{$table}__tree-view-main--indent--base);
+  --#{$table}__tree-view-main--MarginLeft: calc(var(--#{$table}--cell--PaddingLeft) * -1);
+
+  // check
+  --#{$table}__tree-view-main--c-table__check--PaddingRight: var(--#{$pf-global}--spacer--sm);
+  --#{$table}__tree-view-main--c-table__check--PaddingLeft: var(--#{$pf-global}--spacer--sm);
+  --#{$table}__tree-view-main--c-table__check--MarginRight: var(--#{$pf-global}--spacer--sm);
+
+  // icon
+  --#{$table}__tree-view-icon--MinWidth: var(--#{$pf-global}--FontSize--md);
+  --#{$table}__tree-view-icon--MarginRight: var(--#{$pf-global}--spacer--sm);
+
+  // toggle
+  --#{$table}--m-tree-view__toggle--Position: absolute;
+  --#{$table}--m-tree-view__toggle--Left: var(--#{$table}__tree-view-main--PaddingLeft);
+  --#{$table}--m-tree-view__toggle--TranslateX: -100%;
+
+  // toggle icon
+  --#{$table}--m-tree-view__toggle__toggle-icon--MinWidth: var(--#{$pf-global}--FontSize--md);
+
+
+  // no node children
+  --#{$table}--m-no-inset__tree-view-main--PaddingLeft: 0;
+  --#{$table}--m-no-inset__tree-view-main--MarginLeft: 0;
+
+  &.pf-m-tree-view {
+    // stylelint-disable selector-no-qualifying-type
+    > tbody > tr {
+      --#{$table}--m-tree-view__toggle--Left: var(--#{$table}__tree-view-main--PaddingLeft);
+
+      &.pf-m-no-inset {
+        --#{$table}__tree-view-main--PaddingLeft: var(--#{$table}--m-no-inset__tree-view-main--PaddingLeft);
+        --#{$table}__tree-view-main--MarginLeft: var(--#{$table}--m-no-inset__tree-view-main--MarginLeft);
+      }
+    }
+    // stylelint-enable
+
+    &.pf-m-no-inset {
+      --#{$table}__tree-view-main--PaddingLeft: var(--#{$table}--m-no-inset__tree-view-main--PaddingLeft);
+      --#{$table}__tree-view-main--MarginLeft: var(--#{$table}--m-no-inset__tree-view-main--MarginLeft);
+    }
+
+    @for $i from 2 through $pf-v5-c-tree-view--MaxDepth {
+      tr:where(.#{$table}__tr)[aria-level="#{$i}"] {
+        --#{$table}__tree-view-main--PaddingLeft: calc(var(--#{$table}__tree-view-main--nested-indent--base) * #{$i - 1} + var(--#{$table}__tree-view-main--indent--base));
+      }
+    }
+  }
+}
+
+.#{$table}__tree-view-main {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  padding-inline-start: var(--#{$table}__tree-view-main--PaddingLeft);
+  margin-inline-start: var(--#{$table}__tree-view-main--MarginLeft);
+  text-align: start;
+  cursor: pointer;
+
+  > .#{$table}__toggle {
+    @include pf-v5-bidirectional-style (
+      $prop: 'transform',
+      $ltr-val: translateX(var(--#{$table}--m-tree-view__toggle--TranslateX)),
+      $rtl-val: translateX(#{pf-v5-calc-inverse(var(--#{$table}--m-tree-view__toggle--TranslateX))})
+    );
+
+    position: var(--#{$table}--m-tree-view__toggle--Position);
+    inset-inline-start: var(--#{$table}--m-tree-view__toggle--Left);
+
+    .#{$table}__toggle-icon {
+      min-width: var(--#{$table}--m-tree-view__toggle__toggle-icon--MinWidth);
+    }
+  }
+
+  > .#{$table}__check {
+    margin-inline-end: var(--#{$table}__tree-view-main--c-table__check--MarginRight);
+  }
+
+  > .#{$table}__check label {
+    padding-inline-start: var(--#{$table}__tree-view-main--c-table__check--PaddingLeft);
+    padding-inline-end: var(--#{$table}__tree-view-main--c-table__check--PaddingRight);
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: calc(var(--#{$table}__tree-view-main--c-table__check--MarginRight) * -1);
+  }
+}
+
+.#{$table}__tree-view-text {
+  display: flex;
+}
+
+.#{$table}__tree-view-icon {
+  min-width: var(--#{$table}__tree-view-icon--MinWidth);
+  margin-inline-end: var(--#{$table}__tree-view-icon--MarginRight);
+}
+
+.#{$table}__tree-view-details-toggle {
+  display: none;
+}
+
+@mixin pf-tree-view-grid {
+  .pf-m-tree-view-grid.#{$table} {
+    @content;
+  }
+
+  .pf-m-tree-view-grid-md.#{$table} {
+    @media screen and (max-width: $pf-v5-global--breakpoint--md) {
+      @content;
+    }
+  }
+
+  .pf-m-tree-view-grid-lg.#{$table} {
+    @media screen and (max-width: $pf-v5-global--breakpoint--lg) {
+      @content;
+    }
+  }
+
+  .pf-m-tree-view-grid-xl.#{$table} {
+    @media screen and (max-width: $pf-v5-global--breakpoint--xl) {
+      @content;
+    }
+  }
+
+  .pf-m-tree-view-grid-2xl.#{$table} {
+    @media screen and (max-width: $pf-v5-global--breakpoint--2xl) {
+      @content;
+    }
+  }
+}
+
+@include pf-tree-view-grid {
+  --#{$table}--m-tree-view-grid--tr--OutlineOffset: calc(-1 * var(--#{$pf-global}--spacer--xs));
+
+  // tbody cells
+  --#{$table}--m-tree-view-grid__tbody--cell--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-tree-view-grid__tbody--cell--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-tree-view-grid__tbody--cell--PaddingLeft: var(--#{$table}__tree-view-main--indent--base);
+  --#{$table}--m-tree-view-grid__tbody--cell--GridColumnGap: var(--#{$pf-global}--spacer--sm);
+
+  // action
+  --#{$table}--m-tree-view-grid--c-table__action--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-tree-view-grid--c-table__action--PaddingBottom: var(--#{$pf-global}--spacer--md);
+  --#{$table}--m-tree-view-grid--c-table__action--PaddingLeft: 0;
+  --#{$table}--m-tree-view-grid__tr--expanded__tree-view-title-cell--action--PaddingTop: var(--#{$pf-global}--spacer--xl);
+
+  // details
+  --#{$table}--m-tree-view-grid--m-tree-view-details-expanded--PaddingBottom: var(--#{$pf-global}--spacer--xl);
+
+  // node cells
+  --#{$table}--m-tree-view-grid__tr--expanded__tree-view-title-cell--PaddingTop: var(--#{$pf-global}--spacer--xl);
+  --#{$table}--m-tree-view-grid__td--data-label--GridTemplateColumns: repeat(auto-fit, minmax(150px, 1fr)); // use minmax func to contain possible text modifier width
+  --#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingTop: var(--#{$pf-global}--spacer--xs);
+  --#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingBottom: var(--#{$pf-global}--spacer--xs);
+
+  // main
+  --#{$table}--m-tree-view-mobile__tree-view-main--c-table__check--MarginRight: 0;
+  --#{$table}--m-tree-view-mobile__tree-view-main--c-table__check--Order: 4;
+
+  // text
+  --#{$table}__tree-view-text--PaddingRight: var(--#{$pf-global}--spacer--sm);
+
+  // tbody cells
+  --#{$table}__tbody--cell--PaddingTop: var(--#{$table}--m-tree-view-grid__tbody--cell--PaddingTop);
+  --#{$table}__tbody--cell--PaddingBottom: var(--#{$table}--m-tree-view-grid__tbody--cell--PaddingBottom);
+
+  // toggle
+  --#{$table}__tree-view-details-toggle--MarginTop: calc(#{pf-size-prem(6px)} * -1);
+  --#{$table}__tree-view-details-toggle--MarginBottom: calc(#{pf-size-prem(6px)} * -1);
+
+  // toggle
+  --#{$table}--m-tree-view-grid--c-dropdown--MarginTop: calc(#{pf-size-prem(6px)} * -1);
+  --#{$table}--m-tree-view-grid--c-dropdown--MarginBottom: calc(#{pf-size-prem(6px)} * -1);
+
+  tbody:where(.#{$table}__tbody) tr:where(.#{$table}__tr) {
+    position: relative;
+    border: none;
+    outline-offset: var(--#{$table}--m-tree-view-grid--tr--OutlineOffset);
+
+    &::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-block-end: 0;
+      inset-inline-start: var(--#{$table}--m-tree-view-grid__tbody--cell--PaddingLeft);
+      inset-inline-end: 0;
+      content: '';
+      border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+    }
+  }
+
+  tr:where(.#{$table}__tr):not([hidden]) {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+  }
+
+  // target node rows
+  tr:where(.#{$table}__tr)[aria-expanded] {
+    .#{$table}__tree-view-title-cell {
+      --#{$table}--cell--PaddingTop: var(--#{$table}--m-tree-view-grid__tr--expanded__tree-view-title-cell--PaddingTop);
+    }
+
+    .#{$table}__tree-view-title-cell ~ .#{$table}__action {
+      --#{$table}--cell--PaddingTop: var(--#{$table}--m-tree-view-grid__tr--expanded__tree-view-title-cell--action--PaddingTop);
+    }
+  }
+
+  td:where(.#{$table}__td):not(.#{$table}__tree-view-title-cell) {
+    --#{$table}--cell--PaddingTop: var(--#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingTop);
+    --#{$table}--cell--PaddingBottom: var(--#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingBottom);
+
+    padding-inline-start: var(--#{$table}--m-tree-view-grid__tbody--cell--PaddingLeft);
+  }
+
+  .#{$table}__tree-view-text {
+    padding-inline-end: var(--#{$table}__tree-view-text--PaddingRight);
+  }
+
+  thead:where(.#{$table}__thead) th:where(.#{$table}__th) {
+    display: none;
+  }
+
+  td:where(.#{$table}__td) {
+    display: none;
+  }
+
+  // Standard td, in standard row (non-expandable)
+  td:where(.#{$table}__td)[data-label] {
+    grid-template-columns: var(--#{$table}--m-tree-view-grid__td--data-label--GridTemplateColumns);
+    grid-column: 1;
+    grid-column-gap: var(--#{$table}--m-tree-view-grid__tbody--cell--GridColumnGap);
+    align-items: start;
+
+    // set contents of td to start at column two of td grid
+    > * {
+      grid-column: 2;
+    }
+
+    &::before {
+      font-weight: var(--#{$pf-global}--FontWeight--bold);;
+      text-align: start;
+      content: attr(data-label);
+    }
+  }
+
+  tr:where(.#{$table}__tr).pf-m-tree-view-details-expanded {
+    padding-block-end: var(--#{$table}--m-tree-view-grid--m-tree-view-details-expanded--PaddingBottom);
+
+    td:where(.#{$table}__td)[data-label] {
+      display: grid;
+    }
+  }
+
+  .#{$table}__tree-view-title-header-cell {
+    display: block;
+  }
+
+  .#{$table}__tree-view-details-toggle,
+  .#{$table}__action {
+    display: inline-block;
+  }
+
+  .#{$table}__action {
+    --#{$table}--cell--Width: auto;
+    --#{$table}--m-tree-view-grid__tbody--cell--PaddingLeft: var(--#{$table}--m-tree-view-grid--c-table__action--PaddingLeft);
+    --#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingTop: var(--#{$table}--m-tree-view-grid--c-table__action--PaddingTop);
+    --#{$table}--m-tree-view-grid__td--not--c-table__tree-view-title-cell--PaddingBottom: var(--#{$table}--m-tree-view-grid--c-table__action--PaddingBottom);
+
+    grid-row: 1;
+    grid-column: 2;
+
+    > .#{$dropdown} {
+      margin-block-start: var(--#{$table}--m-tree-view-grid--c-dropdown--MarginTop);
+      margin-block-end: var(--#{$table}--m-tree-view-grid--c-dropdown--MarginBottom);
+    }
+  }
+
+  .#{$table}__tree-view-main > .#{$table}__check {
+    order: var(--#{$table}--m-tree-view-mobile__tree-view-main--c-table__check--Order);
+    margin-inline-start: auto;
+    margin-inline-end: var(--#{$table}--m-tree-view-mobile__tree-view-main--c-table__check--MarginRight);
+  }
+
+  .#{$table}__tree-view-details-toggle {
+    margin-block-start: var(--#{$table}__tree-view-details-toggle--MarginTop);
+    margin-block-end: var(--#{$table}__tree-view-details-toggle--MarginBottom);
+  }
+
+  @for $i from 2 through $pf-v5-c-tree-view--MaxDepth {
+    tr:where(.#{$table}__tr)[aria-level="#{$i}"] {
+      --#{$table}--m-tree-view-grid__tbody--cell--PaddingLeft: calc(var(--#{$table}__tree-view-main--nested-indent--base) * #{$i - 1} + var(--#{$table}__tree-view-main--indent--base)); // indent, plus indent level, plus
+    }
+  }
+}
