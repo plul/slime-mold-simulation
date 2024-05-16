@@ -439,7 +439,6 @@ async fn create_window_surface<'w>(gpu: &Gpu, window: winit::window::Window) -> 
     let texture_format = surface_texture_format();
 
     let surface_caps = surface.get_capabilities(&gpu.adapter);
-    assert!(surface_caps.formats.contains(&texture_format));
 
     // Configure surface
     let PhysicalSize { width, height } = window.inner_size();
@@ -449,7 +448,7 @@ async fn create_window_surface<'w>(gpu: &Gpu, window: winit::window::Window) -> 
         width,
         height,
         present_mode: wgpu::PresentMode::Fifo,
-        alpha_mode: wgpu::CompositeAlphaMode::PreMultiplied,
+        alpha_mode: wgpu::CompositeAlphaMode::Opaque,
         view_formats: vec![],
         desired_maximum_frame_latency: 2,
     };
@@ -747,7 +746,7 @@ fn create_pipelines(device: &wgpu::Device, surface_format: wgpu::TextureFormat, 
 }
 
 fn surface_texture_format() -> wgpu::TextureFormat {
-    wgpu::TextureFormat::Rgba8UnormSrgb
+    wgpu::TextureFormat::Bgra8UnormSrgb
 }
 
 struct WindowSurface<'w> {
