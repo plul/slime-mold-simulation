@@ -61,22 +61,37 @@
           };
         };
 
-        devShells.default = pkgs.mkShell {
+        devShells.default = let
+          buildInputs = [
+            pkgs.pkg-config
+
+            pkgs.xorg.libX11
+            pkgs.xorg.libXcursor
+            pkgs.xorg.libxcb
+            pkgs.xorg.libXi
+            pkgs.xorg.libXft
+            pkgs.xorg.libXrandr
+
+            pkgs.wayland
+            pkgs.libxkbcommon
+
+            pkgs.shaderc
+            pkgs.directx-shader-compiler
+            pkgs.libGL
+            pkgs.vulkan-headers
+            pkgs.vulkan-loader
+            pkgs.vulkan-tools
+            pkgs.vulkan-tools-lunarg
+            pkgs.vulkan-validation-layers
+          ];
+        in pkgs.mkShell {
+          inherit buildInputs;
           packages = [
             # Building
             config.packages.stable-rust-toolchain
             pkgs.cmake
             pkgs.gnumake
             pkgs.pkg-config
-
-            # OBS: Updated to a much more correct way of exposing these libs from the system nixos/home-manager conf
-            # Simulation runtime deps
-            # pkgs.fontconfig
-            # pkgs.freetype
-            # pkgs.libxkbcommon # (Prevents runtime panic in winit)
-            # pkgs.wayland
-            # pkgs.vulkan-loader
-            # pkgs.vulkan-validation-layers
 
             # Dev tools
             inputs.wgsl-analyzer.packages.${system}.default
@@ -103,20 +118,7 @@
             pkgs.dart-sass
             pkgs.wasm-bindgen-cli
           ];
-
-          # winit makes assumptions about what shared libraries are available at runtime, or nix fails to recognize which transient shared libraries will be loaded.
-          # In a real nix derivation this would go in buildinputs, but for the shell here we overwrite LD_LIBRARY_PATH.
-          #
-          # winit uses dlopen or specifically wayland-dlopen.
-          #
-          # OBS: `pkgs` here must match the nixpkgs revision for the system (the last time I did nixos-rebuild switch)!
-          # Otherwise, if it's not in sync winit errors at runtime. Therefore, write a dummy package in the system nixos or home manager configuration to expose these libs
-          LD_LIBRARY_PATH = "/home/plul/.local/state/nix/profiles/home-manager/home-path/lib";
-          # LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-          #   pkgs.libxkbcommon
-          #   pkgs.wayland
-          #   pkgs.vulkan-loader
-          # ];
+          LD_LIBRARY_PATH = lib.makeLibraryPath buildInputs;
         };
       };
     };
