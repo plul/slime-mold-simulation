@@ -33,10 +33,10 @@ fmt:
     prettier --write `fd --extension=md`
 
 run-sim RESOLUTION:
-    cargo run --manifest-path crates/simulation/Cargo.toml -- --resolution {{RESOLUTION}}
+    cargo run --manifest-path crates/simulation/Cargo.toml -- --resolution {{ RESOLUTION }}
 
 demo RESOLUTION:
-    cargo run --manifest-path crates/simulation/Cargo.toml -- --presentation --resolution {{RESOLUTION}}
+    cargo run --manifest-path crates/simulation/Cargo.toml -- --presentation --resolution {{ RESOLUTION }}
 
 run-frontend: trunk-serve
 

@@ -41,6 +41,6 @@ fn vertex_main(@builtin(vertex_index) vertex_index: u32) -> @builtin(position) v
 }
 ```
 
-## Turn this thing on 
+## Turn this thing on
 
 <http://127.0.0.1:8080/presentation/triangles>

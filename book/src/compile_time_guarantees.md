@@ -1,4 +1,4 @@
-# Compile time guarantees 
+# Compile time guarantees
 
 ## Add/Remove/Rename a field in `ShaderParameters`
 

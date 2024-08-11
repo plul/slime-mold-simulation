@@ -16,7 +16,7 @@ workspace
 
 ## DRY: Shader Parameters in `common`
 
-- Rust struct 
+- Rust struct
 
 ```rust, noplayground
 // ──────────────────────────────────────────────────

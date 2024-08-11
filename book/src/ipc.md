@@ -16,7 +16,7 @@ pub struct ShaderParameters {
 }
 ```
 
-allows for 
+allows for
 
 ```rust,noplayground
 impl ShaderParameters {

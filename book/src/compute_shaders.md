@@ -4,7 +4,7 @@
 - Fragment shader: Colors the triangles
 - **Compute shader: General purpose computing on the GPU**
 
-## Setup: Mirror the types 
+## Setup: Mirror the types
 
 Example: Agent structs
 

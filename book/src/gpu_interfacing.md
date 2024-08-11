@@ -9,13 +9,13 @@
 #[derive(Serialize, Deserialize)]
 +
 + // All bytes can safely be set to zero and it will still make sense
-+ #[derive(bytemuck::Zeroable)] 
++ #[derive(bytemuck::Zeroable)]
 +
 + // No bytes are ever left un-initialized
-+ #[derive(bytemuck::NoUninit)] 
++ #[derive(bytemuck::NoUninit)]
 +
 + // Reliable data layout
-+ #[repr(C)] 
++ #[repr(C)]
 pub struct ShaderParameters {
     /// Sensor distance (in pixels)
     #[builder(default = 9.0)]

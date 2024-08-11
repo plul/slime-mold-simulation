@@ -1,17 +1,17 @@
 # Compute shader complexity
 
 ```diff
-  @compute 
+  @compute
 + @workgroup_size(8,8,1) // 8x8x1 = 64 threads per workgroup
   fn compute_agents(
 +     // ID of thread within the workgroup
-+     @builtin(local_invocation_index) local_invocation_index: u32, 
++     @builtin(local_invocation_index) local_invocation_index: u32,
 +
 +     // ID of _this_ workgroup out of all the dispatched workgroups
-+     @builtin(workgroup_id) workgroup_id : vec3<u32>,              
++     @builtin(workgroup_id) workgroup_id : vec3<u32>,
 +
 +     // Number of workgroups dispatched in each dimension
-+     @builtin(num_workgroups) num_workgroups: vec3<u32>,           
++     @builtin(num_workgroups) num_workgroups: vec3<u32>,
   ) {
 ```
 
@@ -51,13 +51,13 @@ let agent_idx = local_invocation_index;
 
 ### Problems
 
-- These are `u16`, so max is 65536 
+- These are `u16`, so max is 65536
 - Horrible for performance
 
 ### Proper solution - more boilerplate
 
 ```diff
-  @compute 
+  @compute
   @workgroup_size(8,8,1)
   fn compute_agents(
       @builtin(local_invocation_index) local_invocation_index: u32,
@@ -70,16 +70,16 @@ let agent_idx = local_invocation_index;
 +         workgroup_id.y * num_workgroups.x +
 +         workgroup_id.z * num_workgroups.x * num_workgroups.y;
 +     let global_invocation_index = workgroup_index * num_threads_per_workgroup + local_invocation_index;
-+ 
++
 +     let agent_idx = global_invocation_index;
-+ 
++
 +     // Handle overflow
 +     if agent_idx >= ctx.number_of_active_agents {
 +         return;
 +     }
-  
+
       var agent = agents_buffer[agent_idx];
-  
+
       // Update the agent:
       // sense, rotate, move, deposit chemoattractant
   }

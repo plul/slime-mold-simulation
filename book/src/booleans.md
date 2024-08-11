@@ -34,9 +34,9 @@ error[E0512]: cannot transmute between types of different sizes, or dependently-
 ```rust,noplayground
     // BOOLEAN! Set it to 0 or 1
     #[builder(default = 1)]
-    pub bool_enable_agent_bounce: u32, 
+    pub bool_enable_agent_bounce: u32,
 ```
 
 ## My wishlist for the next generation of Graphics APIs
 
-- Support for CPUs and GPUs to exchange booleans 
+- Support for CPUs and GPUs to exchange booleans
