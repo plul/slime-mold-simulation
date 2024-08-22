@@ -7,15 +7,7 @@ remedy: && fmt check
 
 # Check project
 check:
-    just --unstable --fmt --check
-    nix fmt -- --check .
-    taplo fmt --check `fd --extension=toml`
-    prettier --check `fd --extension=md`
-    cargo fmt --manifest-path crates/frontend/Cargo.toml --check
-    cargo fmt --manifest-path crates/simulation/Cargo.toml --check
-    cargo fmt --manifest-path crates/common/Cargo.toml --check
-    cargo clippy --tests --examples -- -D warnings
-    taplo lint `fd --extension=toml`
+    bc-check
     RUSTDOCFLAGS='-Dwarnings' cargo doc --no-deps
     cargo nextest run
     nix flake show
@@ -24,13 +16,7 @@ check:
 
 # Format code
 fmt:
-    just --unstable --fmt
-    nix fmt
-    taplo fmt `fd --extension=toml`
-    cargo fmt --manifest-path crates/frontend/Cargo.toml
-    cargo fmt --manifest-path crates/simulation/Cargo.toml
-    cargo fmt --manifest-path crates/common/Cargo.toml
-    prettier --write `fd --extension=md`
+    bc-fmt
 
 run-sim RESOLUTION:
     cargo run --manifest-path crates/simulation/Cargo.toml -- --resolution {{ RESOLUTION }}

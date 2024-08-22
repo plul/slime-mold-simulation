@@ -5,7 +5,7 @@
     rust-overlay.url = "github:oxalica/rust-overlay";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
-    basecamp.url = "github:plul/basecamp/refactor";
+    basecamp.url = "github:plul/basecamp";
     basecamp.inputs.nixpkgs.follows = "nixpkgs";
     basecamp.inputs.rust-overlay.follows = "rust-overlay";
 

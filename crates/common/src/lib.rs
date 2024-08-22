@@ -18,7 +18,7 @@ impl ServerToApp {
     }
 
     pub fn deser(text: &str) -> Self {
-        serde_json::from_str::<Self>(&text).expect("Failed deserialization")
+        serde_json::from_str::<Self>(text).expect("Failed deserialization")
     }
 }
 
@@ -41,7 +41,7 @@ impl AppToServer {
     }
 
     pub fn deser(text: &str) -> Self {
-        serde_json::from_str::<Self>(&text).expect("Failed deserialization")
+        serde_json::from_str::<Self>(text).expect("Failed deserialization")
     }
 }
 

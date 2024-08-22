@@ -395,6 +395,7 @@ fn normalize(vec: [f32; 2]) -> [f32; 2] {
     [vec[0] / magnitude, vec[1] / magnitude]
 }
 
+#[allow(dead_code)]
 fn random_number(from: f32, to: f32) -> f32 {
     rand::Rng::gen_range(&mut rand::thread_rng(), from..=to)
 }
@@ -414,6 +415,7 @@ fn random_point_in_circle(radius: f32) -> [f32; 2] {
     [r * theta.cos(), r * theta.sin()]
 }
 
+#[allow(dead_code)]
 fn scale(vec: [f32; 2], factor: f32) -> [f32; 2] {
     [vec[0] * factor, vec[1] * factor]
 }
@@ -949,6 +951,7 @@ fn handle_event(event: Event<()>, active_event_loop: &ActiveEventLoop, window_su
         },
         Event::UserEvent(()) => {}
         Event::WindowEvent { event, window_id: _ } => match event {
+            WindowEvent::PanGesture { .. } => {}
             WindowEvent::PinchGesture { .. } => {}
             WindowEvent::RotationGesture { .. } => {}
             WindowEvent::DoubleTapGesture { .. } => {}
@@ -964,8 +967,8 @@ fn handle_event(event: Event<()>, active_event_loop: &ActiveEventLoop, window_su
             WindowEvent::Focused(focused) => {
                 tracing::info!("Focused: {focused}");
             }
-            WindowEvent::KeyboardInput { event, .. } => match event {
-                KeyEvent {
+            WindowEvent::KeyboardInput { event, .. } => {
+                let KeyEvent {
                     logical_key,
                     physical_key: _,
                     text: _,
@@ -973,7 +976,8 @@ fn handle_event(event: Event<()>, active_event_loop: &ActiveEventLoop, window_su
                     state: key_state,
                     repeat: _,
                     ..
-                } => match logical_key {
+                } = event;
+                match logical_key {
                     Key::Character(c) if c.as_ref() == "q" && matches!(key_state, ElementState::Released) => {
                         active_event_loop.exit();
                     }
@@ -1002,8 +1006,8 @@ fn handle_event(event: Event<()>, active_event_loop: &ActiveEventLoop, window_su
                         send_command(&ctx.user_input_tx, common::Command::ActivatePreset(5));
                     }
                     _ => {}
-                },
-            },
+                }
+            }
             WindowEvent::ModifiersChanged(_) => {}
             WindowEvent::Ime(_) => {}
             WindowEvent::CursorMoved { .. } => {}

@@ -362,7 +362,7 @@ mod my_switch {
         let state = if checked { "Enabled" } else { "Disabled" };
 
         let onchange = {
-            let fn_command = fn_command.as_ref().map(Clone::clone);
+            let fn_command = fn_command.clone();
             move |val: bool| {
                 log::info!("onchange fired");
                 if let Some(fn_command) = fn_command.as_ref() {
@@ -477,7 +477,7 @@ mod my_slider {
         };
 
         let onchange = {
-            let fn_command = fn_command.as_ref().map(Clone::clone);
+            let fn_command = fn_command.clone();
             let value = value.clone();
             move |val: f32| {
                 log::info!("onchange: {val}");
